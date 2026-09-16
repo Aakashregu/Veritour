@@ -1,0 +1,5504 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 6698
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0 g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 1) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.114 0.306 0.847 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 1: Tourist) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Tourist) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Priya Sharma) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 28) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Graphic Designer) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Mumbai, India) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: To confidently and safely explore remote and scenic locations in Northeast India as a solo traveler., To have) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(a reliable and quick way to alert authorities in case of an emergency., To provide peace of mind to her family by) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(allowing them to see her location when she is in remote areas., To stay informed about potentially unsafe or) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(restricted zones in real-time.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 439.3703149606298552 Td
+(- To confidently and safely explore remote and scenic locations in Northeast India as a solo traveler.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 416.69314960629913 Td
+(- To have a reliable and quick way to alert authorities in case of an emergency.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- To provide peace of mind to her family by allowing them to see her location when she is in remote areas.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- To stay informed about potentially unsafe or restricted zones in real-time.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 348.6616535433070112 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 325.9844881889763428 Td
+(- Tech-savvy and comfortable using smartphone apps for travel and safety.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- Adventurous and enjoys off-the-beaten-path travel experiences.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(- Safety-conscious but values her privacy and autonomy.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(- Wants a seamless travel experience without the hassle of carrying multiple physical documents.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 235.2758267716534419 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 212.5986614173227736 Td
+(- Anxiety about personal safety when traveling alone in unfamiliar regions.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Worrying her parents who are concerned about her well-being during solo trips.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Fear of not being able to communicate her exact location quickly in an emergency, especially in areas with) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(poor network.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- Uncertainty about local conditions and which areas might be restricted or high-risk.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- The risk of losing important physical documents like her ID card while traveling.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 76.5356692913385359 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(Thinking: I really hope this app's panic button is easy to access and works instantly, even with a poor signal. I'm) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 5433
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 2) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(okay with sharing my location for safety, but I value my privacy—I don't want to feel like I'm being constantly) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(monitored. Will this app drain my phone battery? I need it to last all day.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 646.2994488188976447 Td
+(Seeing: I see stunning photos of remote mountains and valleys on social media that I want to explore. I also see) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 623.6222834645668627 Td
+(news reports about tourist safety incidents, which makes me cautious. I see my smartphone as my lifeline for) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 600.9451181102361943 Td
+(navigation, communication, and safety.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 572.5986614173227736 Td
+(Saying: "I'll share my live location with you, Mom, so you don't have to worry while I'm on my trek." "Is there) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 549.9214960629921052 Td
+(an app that can alert me if I accidentally wander into a restricted area?" "Having a secure digital ID on my phone) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 527.2443307086614368 Td
+(would be so much easier than carrying my passport everywhere.") Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 498.8978740157479592 Td
+(Doing: I'm researching safety tips for solo female travelers in Northeast India. I'm downloading and setting up) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 476.2207086614172908 Td
+(the VeriTour app before my trip. I'm carefully planning my itinerary and sharing it with my family. I'm enabling) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 453.5435433070865656 Td
+(opt-in location sharing for a specific hike.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 425.1970866141731449 Td
+(Hearing: I hear my parents' voices telling me to be extremely careful and to call them every day. I hear friends) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 402.5199212598424765 Td
+(telling me how brave I am to travel alone. I read reviews from other travelers about the best and safest places to) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 379.8427559055117513 Td
+(visit.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 351.4962992125983874 Td
+(Feeling: I feel excited and adventurous about my upcoming solo trip, but also a little anxious about my safety. I) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 328.8191338582676053 Td
+(feel empowered by my independence, but I also want the reassurance that help is just a button-press away. I feel) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 306.1419685039369369 Td
+(confident when I have the right technology to keep me safe and my family informed.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 277.7955118110235162 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 6834
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 3) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.02 0.588 0.412 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 2: Police Officer) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Police Officer) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Inspector Arjun Singh) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 42) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Police Inspector, Tourist Police Unit) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Shillong, Meghalaya) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: To rapidly assess emergency alerts and dispatch the nearest response team effectively., To reduce the time) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(spent on manual paperwork, especially for filing missing person FIRs., To have a single, reliable source of truth for) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(a tourist's identity, location, and itinerary during an incident., To proactively identify and monitor potential) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(high-risk zones for tourists to prevent incidents before they happen.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 439.3703149606298552 Td
+(- To rapidly assess emergency alerts and dispatch the nearest response team effectively.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 416.69314960629913 Td
+(- To reduce the time spent on manual paperwork, especially for filing missing person FIRs.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- To have a single, reliable source of truth for a tourist's identity, location, and itinerary during an incident.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- To proactively identify and monitor potential high-risk zones for tourists to prevent incidents before they) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 348.6616535433070112 Td
+(happen.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 325.9844881889763428 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- Tech-savvy enough to use modern software but requires interfaces to be extremely intuitive and fast, especially) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(under pressure.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(- Dedicated to public safety and feels a strong sense of responsibility for the well-being of tourists in his) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 235.2758267716534419 Td
+(jurisdiction.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 212.5986614173227736 Td
+(- Accustomed to a high-stress, time-critical work environment where quick decisions are paramount.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Methodical and detail-oriented when it comes to incident logging and investigation.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 167.2443307086613231 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Receiving delayed or incomplete information about a tourist in distress, leading to slower response times.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- The cumbersome and time-consuming manual process of filing a First Information Report \(FIR\).) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- Lack of real-time location data for tourists, especially in remote areas or places with poor network coverage.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 76.5356692913385359 Td
+(- Difficulty coordinating with the tourism department during emergencies due to siloed communication) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(channels.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 6507
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 4) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(- Wasting critical resources responding to false alarms or unverified information.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(Thinking: This is so much better than the old way. I have all the critical information in one place. Every second) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 629.291574803149615 Td
+(we save could be the difference between life and death. I hope the network in the remote areas is strong enough) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 606.614409448818833 Td
+(to keep the data flowing. We have a huge responsibility to use this data ethically and protect tourist privacy.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 578.2679527559055259 Td
+(Seeing: I see a large screen with a real-time map of my jurisdiction. Alerts pop up with a loud sound, showing) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 555.5907874015747439 Td
+(the exact location of a tourist in distress. I can see their photo, their itinerary, and their last known movements) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 532.9136220472440755 Td
+(on a single dashboard, instead of shuffling through papers.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 504.5671653543306547 Td
+(Saying: 'Dispatch the nearest unit to these coordinates immediately. I'm sending the tourist's full profile to your) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 481.8899999999999295 Td
+(device now.' 'Acknowledge alert. We are responding.' 'This pre-filled E-FIR will save us hours of paperwork.' 'Is) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 459.2128346456692611 Td
+(this alert verified or another false alarm?') Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 430.8663779527558404 Td
+(Doing: I am acknowledging a new panic alert on the dashboard within seconds. I am clicking on the alert to pull) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 408.1892125984251152 Td
+(up the tourist's complete profile and live location. I am coordinating with my field units over the radio,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 385.5120472440944468 Td
+(providing them with real-time updates from the system. I am generating an E-FIR with a single click for a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 362.8348818897637216 Td
+(confirmed missing person case.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 334.4884251968503008 Td
+(Hearing: I hear the distinct, urgent sound of a new alert from the system. Over the radio, I hear my team) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 311.8112598425195756 Td
+(confirming, 'We have visual on the tourist, they are safe.' I hear my superior asking for a status update, which I) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 289.1340944881889072 Td
+(can give instantly by looking at the dashboard. I hear a tourism official on the phone coordinating about a newly) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 266.4569291338582389 Td
+(marked high-risk zone.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 238.1104724409448181 Td
+(Feeling: I feel a surge of adrenaline and responsibility when a critical alert comes in. I feel confident and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 215.4333070866141497 Td
+(empowered because the system gives me the clear, real-time information I need to act decisively. I feel immense) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 192.7561417322833677 Td
+(relief when my team reports that a tourist has been found safe. I feel frustrated when a false alarm wastes our) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 170.0789763779526993 Td
+(precious time and resources.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 141.7325196850392786 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+11 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 12 0 R
+>>
+endobj
+12 0 obj
+<<
+/Length 6842
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 5) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.961 0.62 0.259 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 3: Tourism Official) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Tourism Official) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Rajiv Mehra) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 48) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Director of Safety & Operations, State Tourism Department) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Shillong, Meghalaya) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: To proactively manage tourist safety by using data-driven insights to prevent incidents before they occur., To) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(improve the state's reputation as a premier, safe tourist destination, thereby boosting tourism revenue., To) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(efficiently allocate safety resources \(like tourist police\) to high-risk or high-density areas identified through) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(real-time data., To establish a seamless, rapid communication and coordination protocol with police departments) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 439.3703149606298552 Td
+(during emergencies., To analyze long-term safety data and trends to inform tourism policies and infrastructure) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 416.69314960629913 Td
+(development.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- To proactively manage tourist safety by using data-driven insights to prevent incidents before they occur.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- To improve the state's reputation as a premier, safe tourist destination, thereby boosting tourism revenue.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 348.6616535433070112 Td
+(- To efficiently allocate safety resources \(like tourist police\) to high-risk or high-density areas identified through) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 325.9844881889763428 Td
+(real-time data.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- To establish a seamless, rapid communication and coordination protocol with police departments during) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(emergencies.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(- To analyze long-term safety data and trends to inform tourism policies and infrastructure development.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 235.2758267716534419 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 212.5986614173227736 Td
+(- Data-driven and analytical; prefers evidence over anecdotes.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Strategic thinker focused on prevention and long-term planning.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Tech-savvy for a government official; understands the value of a centralized digital dashboard.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Collaborative and adept at navigating inter-departmental politics, especially with law enforcement.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- Possesses a strong sense of public service and accountability for tourist welfare.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 99.2128346456692043 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 76.5356692913385359 Td
+(- Lack of a single, real-time view of tourist locations makes it impossible to get an accurate picture during a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(crisis.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 14 0 R
+>>
+endobj
+14 0 obj
+<<
+/Length 7399
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 6) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(- Communication with police during incidents is often slow and inefficient, relying on phone calls and manual) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(information sharing.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(- Resource allocation is based on historical data and guesswork, not on live situations.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 629.291574803149615 Td
+(- Inability to quickly warn tourists about sudden, localized risks like landslides or civil unrest.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 606.614409448818833 Td
+(- A single negative safety incident receives significant media attention, damaging years of work to build a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 583.9372440944881646 Td
+(positive reputation.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 561.2600787401574962 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 538.5829133858267141 Td
+(Thinking: I feel the weight of responsibility for every tourist's safety. I'm constantly worried that a major) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 515.9057480314959321 Td
+(incident will happen on my watch and we won't be able to respond effectively. I'm frustrated with the) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 493.2285826771653205 Td
+(bureaucratic delays that slow down the adoption of crucial technology. I wonder if I can get all the stakeholders,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 470.5514173228345953 Td
+(especially the police, to truly buy into a shared system. This VeriTour dashboard could finally give me the tools) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 447.8742519685038701 Td
+(I need to do my job properly.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 419.5277952755905062 Td
+(Seeing: I see daily reports on tourist numbers, but they're always outdated. I see news headlines that) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 396.850629921259781 Td
+(sensationalize any single safety incident, threatening our state's reputation. I look at static maps and try to guess) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 374.1734645669290558 Td
+(where our resources are most needed. I see the potential for technology to give me a real-time, bird's-eye view of) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 351.4962992125983874 Td
+(everything, but my current tools are archaic.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 323.1498425196849666 Td
+(Saying: 'We need to move from being reactive to proactive. A unified dashboard is not a luxury, it's a necessity.') Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 300.4726771653542983 Td
+(I often say, 'How can we get law enforcement the information they need in seconds, not minutes?' In meetings,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 277.7955118110235162 Td
+(I'm constantly pushing for 'data-driven resource allocation' instead of relying on last year's statistics.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 249.4490551181102092 Td
+(Doing: I spend my days in meetings trying to foster better collaboration between my department and the police.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 226.7718897637794271 Td
+(I'm constantly analyzing past incident reports to find patterns that could have been prevented. I'm championing) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 204.0947244094487587 Td
+(the VeriTour project, creating presentations and proposals to get the necessary approvals and budget. During a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 181.4175590551179766 Td
+(crisis, I'm on the phone constantly, trying to piece together information from multiple, disconnected sources.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 153.0711023622046696 Td
+(Hearing: I hear from my team about the challenges of managing safety on the ground with limited information. I) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 130.3939370078738875 Td
+(hear from police officials about the slow and inefficient communication channels during emergencies. From my) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 107.7167716535432191 Td
+(superiors, I hear the pressure to boost tourism revenue, which I know is directly tied to our reputation for safety.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 85.0396062992125508 Td
+(After an incident, I hear the criticism from the media and the public.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 56.69314960629913 Td
+(Feeling: I feel a deep sense of accountability for the well-being of visitors to my state. I'm often frustrated by the) Tj
+ET
+endstream
+endobj
+15 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 16 0 R
+>>
+endobj
+16 0 obj
+<<
+/Length 2871
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 7) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(limitations of our current systems, especially when I know better solutions exist. I'm hopeful and optimistic) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(about the potential of a system like VeriTour to revolutionize how we manage tourist safety. During an) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(emergency, I feel an immense amount of stress, knowing that every second counts.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 623.6222834645668627 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+17 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 18 0 R
+>>
+endobj
+18 0 obj
+<<
+/Length 6769
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 8) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.851 0.275 0.937 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 4: Entry Point Staff) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Entry Point Staff) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Rajesh Kumar) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 42) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Immigration Officer at an International Airport) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Guwahati, Assam) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: To process and verify tourist documents efficiently and accurately to minimize queue times., To quickly and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(securely issue VeriTour Digital IDs to every eligible tourist., To contribute to the overall safety and positive) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(experience of tourists visiting the region., To easily navigate the VeriTour portal without requiring extensive) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(technical training.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 439.3703149606298552 Td
+(- To process and verify tourist documents efficiently and accurately to minimize queue times.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 416.69314960629913 Td
+(- To quickly and securely issue VeriTour Digital IDs to every eligible tourist.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- To contribute to the overall safety and positive experience of tourists visiting the region.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- To easily navigate the VeriTour portal without requiring extensive technical training.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 348.6616535433070112 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 325.9844881889763428 Td
+(- Detail-oriented and methodical, ensuring all verification steps are followed correctly.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- Calm and efficient under pressure, especially during peak travel hours.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(- Comfortable using web-based portals and computer systems for daily tasks.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(- Values security protocols and understands the importance of accurate data.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 235.2758267716534419 Td
+(- Communicates clearly and professionally with a diverse, international group of travelers.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 212.5986614173227736 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Frustration with current slow and often manual verification processes that lead to long queues.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Stress associated with accurately handling sensitive documents and data for a high volume of people.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Concern that a new system might be complex and slow down his workflow instead of improving it.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- Dealing with language barriers when explaining new procedures to tourists.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- Lack of integrated systems, requiring him to switch between multiple applications to complete one) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 76.5356692913385359 Td
+(verification.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 53.8585039370077538 Td
+(Empathy Map) Tj
+ET
+endstream
+endobj
+19 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 20 0 R
+>>
+endobj
+20 0 obj
+<<
+/Length 5686
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+509.1026771653544074 34.0159842519684616 Td
+(Page 9) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(Thinking: I hope this new VeriTour system is truly faster. The last thing I need is another complicated process) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(that creates longer queues. I must be extremely careful with this data; a mistake could cause a serious problem) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(for the tourist and for security. I wish all these verification steps were on a single, integrated platform.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 623.6222834645668627 Td
+(Seeing: I see a long line of tourists in front of my counter, many looking tired from their journey. I see my) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 600.9451181102361943 Td
+(computer screen with the new VeriTour portal open next to our old immigration system. I see stacks of passports) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 578.2679527559055259 Td
+(and visa documents that I need to process.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 549.9214960629921052 Td
+(Saying: Welcome, ma'am. May I see your passport? I will now issue your secure Digital Tourist ID for your) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 527.2443307086614368 Td
+(safety here. Please scan the QR code to activate it on your phone. Have a safe and pleasant trip.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 498.8978740157479592 Td
+(Doing: I am carefully scanning each tourist's passport and visa. I am entering their details into the VeriTour) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 476.2207086614172908 Td
+(portal to generate their Digital ID. I am trying to work quickly and methodically to keep the queue moving,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 453.5435433070865656 Td
+(switching between multiple screens to complete the process.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 425.1970866141731449 Td
+(Hearing: I hear the constant hum of the airport, the announcements over the PA system, and the chatter of people) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 402.5199212598424765 Td
+(in different languages. I hear my colleague at the next counter explaining the same new ID process. I hear the) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 379.8427559055117513 Td
+(sound of my keyboard clicking and the stamp hitting the passports.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 351.4962992125983874 Td
+(Feeling: I feel a sense of pressure to work quickly but also a great responsibility to be accurate. I feel frustrated) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 328.8191338582676053 Td
+(when the current systems are slow and I have to make people wait. I am hopeful that this new VeriTour system) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 306.1419685039369369 Td
+(will make my job easier and help keep our visitors safe, but I'm also a bit anxious about how complex it might) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 283.4648031496062686 Td
+(be.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 255.1183464566928478 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+21 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 22 0 R
+>>
+endobj
+22 0 obj
+<<
+/Length 6835
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 10) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.957 0.247 0.369 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 5: Government Representative) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Government Representative) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Rajan Verma) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 52) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Joint Secretary, Ministry of Tourism) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: New Delhi, India) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: Successfully implement VeriTour to enhance India's reputation as a safe and modern tourist destination.,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(Establish a clear governance and legal framework for the project, ensuring compliance with data privacy laws like) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(DPDPA., Improve inter-departmental coordination between Tourism, Home Affairs, and External Affairs to create a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(unified safety ecosystem., Use data and analytics from the system to make informed policy decisions and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 439.3703149606298552 Td
+(demonstrate a measurable reduction in tourist safety incidents.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 416.69314960629913 Td
+(- Successfully implement VeriTour to enhance India's reputation as a safe and modern tourist destination.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- Establish a clear governance and legal framework for the project, ensuring compliance with data privacy laws) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(like DPDPA.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 348.6616535433070112 Td
+(- Improve inter-departmental coordination between Tourism, Home Affairs, and External Affairs to create a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 325.9844881889763428 Td
+(unified safety ecosystem.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- Use data and analytics from the system to make informed policy decisions and demonstrate a measurable) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(reduction in tourist safety incidents.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 257.952992125984224 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 235.2758267716534419 Td
+(- Policy-oriented and strategically focused on the project's long-term impact on tourism.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 212.5986614173227736 Td
+(- Concerned with legal compliance, data governance, and national security implications.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Data-driven, requiring clear metrics and success criteria to justify project investment and continuation.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Adept at navigating government bureaucracy and fostering collaboration between different ministries.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Reputation-conscious, both for the ministry and the country.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 121.8899999999998727 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- Negative international press from isolated tourist safety incidents damages the national brand and tourism) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 76.5356692913385359 Td
+(revenue.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(- Siloed communication and data sharing between police and tourism departments lead to inefficient and slow) Tj
+ET
+endstream
+endobj
+23 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 24 0 R
+>>
+endobj
+24 0 obj
+<<
+/Length 6997
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 11) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(incident response.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(- Lack of real-time, aggregated data makes it difficult to proactively manage tourist safety risks and allocate) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(resources.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 629.291574803149615 Td
+(- The legal and privacy challenges of implementing a large-scale monitoring system are complex and carry) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 606.614409448818833 Td
+(significant political risk.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 583.9372440944881646 Td
+(- Bureaucratic hurdles in getting various state and central government agencies to adopt and integrate with a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 561.2600787401574962 Td
+(unified platform.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 538.5829133858267141 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 515.9057480314959321 Td
+(Thinking: "A single data breach could be a political and diplomatic disaster. Are the security measures truly) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 493.2285826771653205 Td
+(robust? How can I navigate the bureaucratic hurdles to get all state and central agencies to adopt this platform) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 470.5514173228345953 Td
+(uniformly? This project has the potential to be a game-changer, but the implementation risks are significant.") Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 442.2049606299212314 Td
+(Seeing: I'm looking at the detailed Business Requirements Document for VeriTour, focusing on the sections for) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 419.5277952755905062 Td
+(legal compliance, stakeholder responsibilities, and the risk assessment, particularly the parts about data privacy) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 396.850629921259781 Td
+(and inter-agency dependencies.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 368.5041732283464171 Td
+(Saying: "We must ensure this system is fully compliant with the Digital Personal Data Protection Act. I need to) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 345.8270078740156919 Td
+(see clear metrics on how this will reduce incident response times and improve our national image as a safe) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 323.1498425196849666 Td
+(tourist destination. How will we ensure seamless coordination between the police and tourism departments) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 300.4726771653542983 Td
+(across different states?") Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 272.1262204724408775 Td
+(Doing: I am organizing inter-ministerial meetings with representatives from Home Affairs and External Affairs,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 249.4490551181102092 Td
+(drafting policy briefs for the project's governance framework, and consulting with legal advisors to vet the data) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 226.7718897637794271 Td
+(handling protocols outlined in the BRD.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 198.4254330708660063 Td
+(Hearing: I'm hearing concerns from my counterparts in the Ministry of Home Affairs about data access) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 175.748267716535338 Td
+(protocols, pressure from the Prime Minister's Office to showcase technological advancements in governance,) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 153.0711023622046696 Td
+(and reports from international media about past tourist safety incidents.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 124.7246456692912489 Td
+(Feeling: I feel a strong sense of responsibility for the project's success, as it directly impacts our national) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 102.0474803149605805 Td
+(reputation. I'm cautiously optimistic about its potential but also pressured by the complexity of the legal) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 79.3703149606297984 Td
+(compliance and the need for flawless inter-departmental collaboration.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 51.0238582677164914 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+25 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 26 0 R
+>>
+endobj
+26 0 obj
+<<
+/Length 2185
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 12) Tj
+ET
+endstream
+endobj
+27 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 28 0 R
+>>
+endobj
+28 0 obj
+<<
+/Length 6701
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 13) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.98 0.8 0.082 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 6: Family Member) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as Family Member) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Anjali Sharma) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 52) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Bank Manager) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Mumbai, India) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: Have peace of mind by being able to occasionally check on her son's location during his solo trekking trip in) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(Northeast India., Receive immediate and actionable alerts if her son activates the panic button or is flagged by the) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(system., Access a simple, secure, and easy-to-use web portal to view her son's shared location without needing) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(technical expertise.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 439.3703149606298552 Td
+(- Have peace of mind by being able to occasionally check on her son's location during his solo trekking trip in) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 416.69314960629913 Td
+(Northeast India.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- Receive immediate and actionable alerts if her son activates the panic button or is flagged by the system.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- Access a simple, secure, and easy-to-use web portal to view her son's shared location without needing) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 348.6616535433070112 Td
+(technical expertise.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 325.9844881889763428 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(- Caring and protective parent, but respectful of her adult son's independence.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(- Moderately tech-savvy; uses a smartphone and laptop daily for banking and communication but prefers) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(straightforward interfaces.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 235.2758267716534419 Td
+(- Prone to anxiety when her son travels to remote areas, especially those with known connectivity issues.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 212.5986614173227736 Td
+(- Values security and official channels for information during a potential crisis.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 189.9214960629919915 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Worry and stress when her son doesn't respond to calls or messages for several hours.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Feeling helpless and not knowing who the right local authorities are to contact in an emergency.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- Doesn't want to constantly bother her son by calling, which might ruin his travel experience.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- Fear of receiving delayed information in a critical situation.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 76.5356692913385359 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(Thinking: I feel a bit guilty for tracking him like he's a child, but the peace of mind is worth it. What if he loses) Tj
+ET
+endstream
+endobj
+29 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 30 0 R
+>>
+endobj
+30 0 obj
+<<
+/Length 5447
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 14) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(network signal for a long time? How will the system know if he's okay? I trust him, but I don't trust the) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(unpredictable terrain. I'm so glad this system exists; at least I know who to contact if something goes wrong.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 646.2994488188976447 Td
+(Seeing: I see the secure web portal on my laptop with a map showing my son's last updated location. I see news) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 623.6222834645668627 Td
+(reports about the dangers of solo trekking which makes me nervous. I see notifications pop up on my phone, and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 600.9451181102361943 Td
+(I hope it's a message from him, not an emergency alert.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 572.5986614173227736 Td
+(Saying: "I hope he remembers to keep his phone charged. I just want to know that he's safe. This tracking portal) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 549.9214960629921052 Td
+(is a relief, but I hope we never need the panic button. Can you just send me one message a day so I don't) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 527.2443307086614368 Td
+(worry?") Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 498.8978740157479592 Td
+(Doing: I am opening the web link every few hours to check his location on the map. I am keeping my phone) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 476.2207086614172908 Td
+(close and the ringer volume on high, just in case an alert comes through. I am trying to distract myself with my) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 453.5435433070865656 Td
+(work, but I keep thinking about his trip.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 425.1970866141731449 Td
+(Hearing: I hear the constant notification sounds from my phone, and my heart skips a beat each time. I hear my) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 402.5199212598424765 Td
+(husband telling me to relax and let our son enjoy his adventure. I hear my son's voice in my head, reassuring me) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 379.8427559055117513 Td
+(he'll be careful before he left.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 351.4962992125983874 Td
+(Feeling: I feel a constant mix of anxiety and reassurance. I'm worried about all the things that could go wrong in) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 328.8191338582676053 Td
+(a remote area. But when I see his location update on the portal, I feel a wave of relief. I feel helpless when I can't) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 306.1419685039369369 Td
+(reach him, but empowered knowing there's a formal system in place to respond in an emergency.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 277.7955118110235162 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+31 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 32 0 R
+>>
+endobj
+32 0 obj
+<<
+/Length 6810
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 15) Tj
+ET
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0.063 0.725 0.506 rg
+28.3464566929133888 697.3230708661417339 Td
+(Role 7: System Administrator) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 674.6459055118109518 Td
+(Description Users who interact with the system as System Administrator) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 651.9687401574802834 Td
+(Persona 1) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 620.7876377952754865 Td
+(Name: Aarav Sharma) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 598.1104724409448181 Td
+(Age: 38) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 575.4333070866141497 Td
+(Occupation: Lead Cloud & Security Administrator) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 552.7561417322833677 Td
+(Location: Bangalore, India) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 530.0789763779526993 Td
+(Goals: To maintain 99.9% uptime for the VeriTour system to ensure it's always available during emergencies., To) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 507.4018110236219741 Td
+(guarantee zero security breaches and ensure full compliance with the Digital Personal Data Protection Act) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 484.7246456692913057 Td
+(\(DPDPA\)., To implement robust monitoring and alerting to proactively identify and resolve infrastructure issues) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 462.0474803149605805 Td
+(before they impact users., To automate deployment and scaling processes to handle fluctuating tourist loads) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 439.3703149606298552 Td
+(efficiently., To streamline the management of secure, role-based access for Police, Tourism, and other government) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 416.69314960629913 Td
+(stakeholders.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 394.0159842519684616 Td
+(- To maintain 99.9% uptime for the VeriTour system to ensure it's always available during emergencies.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 371.3388188976377364 Td
+(- To guarantee zero security breaches and ensure full compliance with the Digital Personal Data Protection Act) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 348.6616535433070112 Td
+(\(DPDPA\).) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 325.9844881889763428 Td
+(- To implement robust monitoring and alerting to proactively identify and resolve infrastructure issues before) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 303.3073228346455608 Td
+(they impact users.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 280.6301574803148924 Td
+(- To automate deployment and scaling processes to handle fluctuating tourist loads efficiently.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 257.952992125984224 Td
+(- To streamline the management of secure, role-based access for Police, Tourism, and other government) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 235.2758267716534419 Td
+(stakeholders.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 212.5986614173227736 Td
+(Key Characteristics) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 189.9214960629919915 Td
+(- Highly technical with deep expertise in cloud infrastructure \(AWS/Azure\), Kubernetes, and CI/CD pipelines.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 167.2443307086613231 Td
+(- Extremely security-conscious, with a 'zero-trust' mindset.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 144.5671653543306547 Td
+(- Methodical and process-oriented, especially when managing system changes and updates.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 121.8899999999998727 Td
+(- Remains calm and analytical under pressure, particularly during critical incidents or system outages.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 99.2128346456692043 Td
+(- Proactive problem-solver who prefers preventing issues over fixing them.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 76.5356692913385359 Td
+(Pain Points) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 53.8585039370077538 Td
+(- The immense pressure of managing a system where downtime could directly impact someone's safety.) Tj
+ET
+endstream
+endobj
+33 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 34 0 R
+>>
+endobj
+34 0 obj
+<<
+/Length 7322
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 16) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(- Frustration with the unreliability of external government APIs \(for KYC, E-FIR\) which can cause system) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 674.6459055118109518 Td
+(instability.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 651.9687401574802834 Td
+(- The complexity of managing a distributed system with microservices, AI models, and a blockchain network.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 629.291574803149615 Td
+(- Worrying about sophisticated cyber threats targeting sensitive tourist PII and location data.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 606.614409448818833 Td
+(- Being on-call 24/7 and the challenge of diagnosing issues across a complex technology stack late at night.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 583.9372440944881646 Td
+(Empathy Map) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 561.2600787401574962 Td
+(Thinking: This system's uptime is directly linked to someone's safety; there is zero room for error. I hope our) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 538.5829133858267141 Td
+(fallback mechanism for the government APIs is robust enough for the upcoming tourist season. Are we truly) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 515.9057480314959321 Td
+(DPDPA compliant with how we're handling off-chain PII storage? I need to think about how to better protect us) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 493.2285826771653205 Td
+(from a sophisticated DDoS attack.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 464.8821259842518998 Td
+(Seeing: A wall of monitors showing Grafana dashboards with real-time system metrics, Kubernetes pod) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 442.2049606299212314 Td
+(statuses, and security alerts from our SIEM. I'm constantly watching latency graphs, error rate counters, and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 419.5277952755905062 Td
+(CI/CD pipeline logs. I also see a backlog of Jira tickets for access requests and infrastructure changes.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 391.1813385826770855 Td
+(Saying: “I'm seeing a latency spike on the KYC verification API again. We need to check the status of that) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 368.5041732283464171 Td
+(external government service. Let’s double-check our firewall rules and access policies before onboarding the) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 345.8270078740156919 Td
+(new police unit. The system must remain in a zero-trust state. This critical patch needs to be deployed across all) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 323.1498425196849666 Td
+(production nodes before the end of the day.”) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 294.8033858267715459 Td
+(Doing: I'm writing a Terraform script to automate the scaling of our backend microservices. I'm reviewing a pull) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 272.1262204724408775 Td
+(request for a new chaincode deployment on the Hyperledger network. I'm running a security audit and) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 249.4490551181102092 Td
+(penetration test on our new API endpoints. At 2 AM, I'm acknowledging a PagerDuty alert and SSH-ing into a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 226.7718897637794271 Td
+(server to diagnose a memory leak.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 198.4254330708660063 Td
+(Hearing: I hear the constant pinging of Slack notifications for system alerts. I hear from the development team) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 175.748267716535338 Td
+(that they need new environment variables for the AI service. I hear from a project manager about the slow) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 153.0711023622046696 Td
+(dashboard performance reported by a police unit. I hear the compliance team asking for audit logs to prove our) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 130.3939370078738875 Td
+(data protection measures are working.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 102.0474803149605805 Td
+(Feeling: I feel an immense sense of responsibility, knowing a system failure could have real-world) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 79.3703149606297984 Td
+(consequences. I'm often stressed by the 24/7 on-call schedule and anxious about the unreliability of external) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 56.69314960629913 Td
+(dependencies we can't control. I feel frustrated when I have to debug a complex issue across microservices, but) Tj
+ET
+endstream
+endobj
+35 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 36 0 R
+>>
+endobj
+36 0 obj
+<<
+/Length 2494
+>>
+stream
+0.5670000000000001 w
+0 G
+q
+240. 0 0 46.5 28.3464566929133888 778.3821259842519567 cm
+/I0 Do
+Q
+BT
+/F10 11 Tf
+12.6499999999999986 TL
+0. g
+245.9927952755905949 734.1734645669291695 Td
+(User Research Report) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.8 0.333 0. rg
+177.1653543307086807 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.776 0.329 0.008 rg
+191.3385826771653626 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.749 0.325 0.016 rg
+205.511811023622073 34.0159842519684616 Td
+(w) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.725 0.322 0.024 rg
+219.6850393700787549 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.698 0.318 0.031 rg
+233.8582677165354653 34.0159842519684616 Td
+(d) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.675 0.31 0.039 rg
+248.0314960629921472 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.647 0.306 0.047 rg
+262.2047244094488292 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.624 0.302 0.055 rg
+276.3779527559055396 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.6 0.298 0.067 rg
+290.5511811023622499 34.0159842519684616 Td
+(-) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.573 0.294 0.075 rg
+304.7244094488189035 34.0159842519684616 Td
+(s) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.549 0.29 0.082 rg
+318.8976377952756138 34.0159842519684616 Td
+(m) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.522 0.286 0.09 rg
+333.0708661417323242 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.498 0.282 0.098 rg
+347.2440944881890346 34.0159842519684616 Td
+(t) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.471 0.275 0.106 rg
+361.4173228346456881 34.0159842519684616 Td
+(h) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.447 0.271 0.114 rg
+375.5905511811023985 34.0159842519684616 Td
+(.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.42 0.267 0.122 rg
+389.7637795275591088 34.0159842519684616 Td
+(a) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0.396 0.263 0.129 rg
+403.9370078740157624 34.0159842519684616 Td
+(i) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+503.6026771653543506 34.0159842519684616 Td
+(Page 17) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+42.5196850393700814 697.3230708661417339 Td
+(also a deep sense of satisfaction when I resolve it and see the system running smoothly and securely.) Tj
+ET
+BT
+/F9 11 Tf
+12.6499999999999986 TL
+0. g
+28.3464566929133888 668.9766141732283131 Td
+(Goals & Requirements) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R 31 0 R 33 0 R 35 0 R ]
+/Count 17
+>>
+endobj
+37 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+38 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+39 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+40 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+41 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+42 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+43 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+44 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+45 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+46 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+47 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+48 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+49 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+50 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+51 0 obj
+<<
+/Type /XObject
+/Subtype /Image
+/Width 320
+/Height 62
+/ColorSpace /DeviceRGB
+/BitsPerComponent 8
+/DecodeParms <</Colors 3 /BitsPerComponent 8 /Columns 320>>
+/SMask 52 0 R
+/Length 59520
+>>
+stream
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               €8ÿ€8ÿ€4û‡8ÿ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        t4ûw2ûx1ú{1ù}2ú3û‚2úƒ3û†2ú‡8ÿ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         p0ÿr2ûs1úu1úw1ùz2ú|2û~2ú2ûƒ2ú…2úˆ3ûŠ4ú                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   p0ÿn0ùq0ús1úu1ùw1ùz2ú|2û~2ú3úƒ2ú†3û‡3úŠ3ûŒ3ú0ÿ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             p4ûn1ùp1ús1út1úw1úy2ú|2ú}3û€0÷€3ù…3ú‡3úŠ3ûŒ3û4û8ÿ                                                                                                                                                                                                                                                                                                         ŸpÏœhÎhÎŸhÎŸhÌŸgË gÌ¢gÌ£gË£eË¥eÊ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                l0ûn1ùp1úr2úu1úw1ùy1ú{2û}2ú            Š3ûŒ3ú3û4ú8ÿ            @ï@‡êB‡êB‡êD‡ç                     P‡çJ‚çJ‚çM‚çPƒç   P€ßP‚äR‚äR€âU€âX€ç                        `€ß`}ß`zß`zß`|ß                                                                                                                                                                              —hÏœiÍiÎhÌŸhÌ gÍ¡gÌ¢eÌ£gÌ¤fË£fË                                                                                                                                                                                                                                                                                                                                                                                                                                                   ß`8Ş_4İ^3İ^1ß`0                                                                                                                           k0ùm1ùp1ùr1ùt2úw1ùy2ú{2ú}2ú€0÷            2ú3û3û’4û0ÿ            @‡ç@ˆë@†êB†éC‡ê                     LƒçL„çL‚åM‚æO„å      QåSäSåT€ãU€ä                     `€ß^}á_|à_|ßa|àc{á                                                                                                                                                                              ŸhÏ›hÍœhÍgÍŸgÍ gÍ¡gÌ¡fË¢fË£fË£fË                                                                                                                                                                                                                                                                                                                                                                                                                                                   Û^4İ^4Ş^3İ_2Ş^0                                                                                                                        m2úm1ùo1úq1ùt1úv1úy2ú{2ú}2ú€2û€0ù            3ü3ú’3û•3û               @‡ç@‡êA‡êA†êC‡ê                     LƒçKƒæMƒçN‚æO‚å      TƒãR€äSäT€äU€ãX€ã                  ]}á^}á_}à_|àa}à                                                                                                                                                                                 ŸpÏ›hÍhÍhËhËŸfË¢gÌ¢fÌ£fË¤fË£fÉ                                                                                                                                                                                                            É^‘È]Ê]È]ŒÏ`                                                                                                                                                                                                                        Ü^3İ]3İ^3Ş_2Ş_0                                                                                                                     k0úm1ùo1ùr1ùs1ùw2úx1úz1ú}2ú€2û‚2ú„4ú            5ü‘4û•4û—4û               @‡ç@‡êA‡êA†êC‡ê                     LƒçKƒçL‚åM‚åO„å         S€äSåT€ãU€ãUã               `€ß]~á^}à_|à_|à`|ß                                                                                                                                                                                                   ¡fÍ¡fË£fË¤fË¥fË                                                                                                                                                                                                            È_É^Ê]É]ŒÏ`‡                                                                                                                                                                                                                        ß`8İ^3Ş^2İ^1İ^0                                                                                                                  k0úm1ùo1ùq1ùt2úv1úx2ú{3ú}2ú2ú‚2û„2û†2úˆ3ü‹4û4û3ü’4û“4û–4û™4ı               @‡ç@‡êA†éB‡êC‡ê                     LƒçLƒæMƒæM‚æO„å         P€çSäTåU€ãV€äX€ã            \â]~á^}á_}à_{á                                                                                                                                                                                                      ¡fË¢fÌ¢fË¤fË¥fË                                                                                                                                                                                                            È]É]Ê^É^ŒÏ`‡                                                                                                                                                                                                                           ß`@Û`4ß`0                                                                                                   e0úe1ùe1ùf0ùg0ùj1ùl1ùo1úq1út2úv2úx2ú{2ú}2û2ú2úƒ3ú†2úˆ3ûŠ3ú2û3û‘3û”4û–3û˜4ûš5ú               @‡ç?‡êA†éA†êC†è                     LƒçKƒæMƒæMƒæOƒç            T€ãT€ãV€ãW€ãWã         \€ã\~á]~á^}à_}à`€ß                                                                                                                                                                                                      ¡fÍ¡fË¢fË£fË£fË                                                                                                                                                                                                            È]É]É^É^Ï`‡                                                                                                                                                                                                                                                                                                                                    h0÷d0ùe0ùe0ùg0új0úl1úo1ùq1ùs1úv2úx2úz2ú}2ú2ú‚2ûƒ3ú†2ûˆ2û‹3û3û3ú‘4û”3û–4û™4ûš5ü                  @‡ç?ˆëA‡êB†éC‡ê                     LƒçLƒæL‚æMƒæO„å            P€ßT€ãU€ãV€ãWãX€ã      \â\~á]}á^}á^~ß                           p€ßjzßkyİkxİmwÛnwİpxß                                    |t×}rÖ}rÕr×tØ€rÕ€p×                                    pÓlÓmÒmÒmÑ“lÏŸpÏ                                       ¡fÍ¢fÌ£eË¤fË£fË                                    ¯`Ï²cÆ²`Èµ`Çµ`Ç·`Ç·`Ç                              ¿`¿¿`»¿`»¿\»         ¿`·Â]¶Â_´À]²Á\±Â`¯¿`¯                  Ï`¯Â`¥Ä]¤Å_¤Å]¢Å^¡Æ`Ÿ                        Ç`—Ç\“Ë`“Ç`“É^É^É^É^ŒÌ`ŒË`‹Ë`‡Ë\‡Ë`‡Ë`‡Ê`…                           Ï`|Ï_wÍ]uÏ_uÏ^tÏ`t                                                                                          ß`P×`MÚ_KÚ_KÙ_JÙ^HÙ`Fß`P                        Ú`:Û`<Û`8ß`8Û`8Û`8ß`8ß`4ß`4ß`0                                                                                             c0ùd0ùe0ùh0ùj0ùl0ún0ùp1ùs1úv2úw1ùz2ú|1ù2ú2úƒ3ú…3úˆ3ûŠ3ûŒ3û3û‘4û”3û–4û—3úš4ûš5ú                  @‡ç?ˆë@‡êB†éC‡ê                     LƒçKƒæMƒçM‚åO„å               UæU€ãV€ãWâXã   \€ã[â\~á]}á^}à`€ß                     hxßhzİiyİiyİjyİkyÜmyÜmxİoxÜowÛpxß                        zuÚytØ{s×|s×}r×~r×~rÖ€rÖqÖ‚rÕ‡p×                        jÕŒmÒmÒlÒlÑlÑ‘lÑ’kĞ“kĞ•jÑ                                    ¡fÍ¡fË¢fË¤fË£fË                                 ±cÈ±aÆ²aÇ³aÆ´`Æµ`Å¶`Å·`Å¸_Æ·`Ç                        ¾^¾¾]¼¿]»¿]º   ¿`·À]·À]¶Á^´À]³Á]²Â]²Â^°¿`¯            Ç`§Ã]¦Ä]¦Ä^¥Å]¤Å^£Å]¢Å] Å]ŸÆ^Ç\               Ç`—Ç]”È^“È^’É]‘È]É]Ê^É]ŒÉ]‹Ê^ŠÊ]‰Ê]‡Ê]†Ë^…Ë]„                     Ì^zÍ^yÎ^xÎ^wÎ^vÏ^uÏ]sÏ^rĞ^rÏ`p                                                                              ß`PÖ_NÖ^NØ^MØ^LØ^JÙ^IØ^GÙ^GÙ^FÛ^D                     Û_;Û]9Û^8Ü^7Ü^6İ^5İ^4İ^3Ş^1Ş_1                                                                                          h0÷d0ùe1ùg1új0ùk0ùn1úp1ùr1úu1úw1úz2ú|2ú~2û€2úƒ2ú†2û‡3úŠ2û3û3û‘3û“3û•4û˜4ûš4ûœ5ü                     @‡ç@‡êA‡êB†éC‡ê                     LƒçLƒæL‚æN‚æO‚å                  U€ãV€äWãX€ãX€ãZ~áZ~á\~â]}á^~á                     h€ßfzŞgyİhyİjzİkyİkxÜlxİmwÛoxÜnwÛpwÛpzÚ                  ysÙytØztØ{s×|sØ}r×~r×€r×€rÖrÖqÕ‚pÕ‡p×                  ŒnÔŒnÒŒnÒmÑmÒmÒ‘lÑ‘lĞ“lÑ“kĞ”kĞ•kÏ                                 ŸfË¡gÌ£fË£eË£fÉ                           ¯pÏ¯cÈ°bÇ±aÆ²aÇ³aÆ´`Æµ`Å¶`Å·_Ä¸_Ä¸_Ä¹^Ç                     ¾^¾¿]¼¿]»¿]º¿`ºÀ]¸À]¶À]µÁ]µÁ^³Á]²Á]°Â]°            Ç`§Ä^©Ã]§Ä]§Ã]¤Ä]¤Ä]£Å]¢Å^¡Å]ŸÅ]Æ^Å]œ            Ç`—Ç]”Ç]“È^’È^‘È]É]É^É]ŒÊ^ŒÊ^ŠÊ]ˆÊ^‡Ë]‡Ë]…Ë]„                  Í_{Í]zÎ^yÎ]xÎ]wÏ^vÏ]tÎ^sÏ^rÏ^qÏ]pÏ]p                                                                        ×`P×^P×^O×]MØ]LØ^KØ^JØ^IÙ^HØ^FÙ^EÙ^DÚ^Dß`P               Û];Ü^:Ü_9Ü^7İ]6İ^5İ^4İ^2İ^1Ş_0                                                                                          e0ùe0úg0úi0úl1ún1ùp1ùs1úu1ùw2úz2ú{2ù~2û3úƒ2ú…3ú‡3úŠ3ú‹3ú3û‘3û”3û–4ü—4ûš3û›4û5ü                     @‡ç@†êA†éB†éA†è                     LƒçKƒæL‚æM‚åO„å                  T€ãVãW€ãW~ãY~âZâ[~á\~â^~á                     h€ßfzŞfzİgzİhyİiyŞkzİlxÛlyİmxÜnxÛowÛpwÛqvÚ€€ß            xx×xuÙxsØztØ{tØ|rÖ|sÖ~r×rÖ€qÖqÖ‚pÖ‚qÕ„qÖ               pÕŠnÓŒmÓŒmÒnÒmÒnÑlÑ’lĞ’kÑ“kĞ”kÏ•kÏ–kÑ                              ¡fÍ¢gÌ£fË£fË¥fË                           ¯bÈ¯bÈ°bÇ±aÆ²aÆ³`Ç³`Å´`È¶`Æ·`Å¹_Åº_Åº^Ä¿`Ç                  ¾^¾¿]½¾]»¿]º¿^¹¿]¸À]¶À]µÁ^´À]³Á]²Á]±Â]°            Â^ªÃ]©Ã^§Ã]¥Ä]¥Ã^£Â]¢Æ^¡Å] Æ]ŸÆ^Æ^Æ]›È^š         ¿`È]•È]•È]”È]É^É]É^É]ŒÉ]ŠÊ]ŠÌ]ŠÌ]ˆÌ]‡Ì]…Ë\…               Í^|Í]{Î]zÍ^yÎ^xÎ]xÍ^wÏ_vÏ^sÏ^rĞ^qÏ^pĞ^oÓ`p                                                                     ×]RÖ^P×^O×^MØ_M×^L×]JØ^J×^HÙ^GÙ^EÙ^EÙ^CÙ^B               Ü^;Û^:İ_:Ü^8İ^6Ü^5İ^3Ş^2İ^2Ş_1                                                                                       h0÷e0ùg0ùi1ùk1ùn1ùp1ús1úu2ùw1ùy2ú{2ú~2ú€2ú‚2ú…2ú‡3ûŠ3ûŒ2û4û3ú“4û–3û—4û™4û›4û›4ü                        @‡ç@‡ê@‡êB†éC†ê                     LƒçLƒçL„çM‚æMƒæ                     U€ãWãXãYâY~ã[~á\}âZzß                     f{ßezßgzŞgzŞhyŞhxß         pxßnxÜoxÛpwÛqvÚrvÛ            xuØxuØytÙztØzsÙ€pß         €p×€qÖ‚qÖƒqÕ„qÕƒpÓ            ‰nÒŠnÒ‹nÓŒmÒŒlÑ            •jÏ“kĞ”kÏ•jÏ–kÏŸpÏ                           ¡fÍ¡fË¢fË£fË¥dË                        ­bÇ®bÇ°aÈ°aÇ±aÇ¯`Ã            ·`Å¸_Å¹^Äº^Ä»_Ä                  ¾^¾¾]¼¿]¼¿]»À]º¿]·À]·¿]µ¿\³¿\³¿\²Á^³¿]¯         Ã`«Â]ªÃ^©Ã]§Ä^§Ï`¯            Ã\ŸÅ]Æ]œÆ]œÇ]›                        È]É]É^É]ŒÏ`‡                              Ï`€Í]|Ì^{Í^{Î^zÌ\v            Ï^rÏ^qĞ^pĞ^oĞ_m                                                                  ×`P×^R×^Q×^O×^N×`P            ×]HÚ_FÚ^DÚ]CÚ^B                              Û`4İ^4İ^3Ş_2Ş]0                                                                                       d0ùf0ùh0úk1ùn1úp1ùr1ùt1ùw2úy2ú{2ú~2ú€2ú‚2ú…3ú‡2û‰4ûŒ3û4û3û“4û–4û—4û™5û›4û›4ûŸ0ÿ                        @‡ç?‡êA‡êA‡êA‡ê                     LƒçK„çLƒæM‚æM‚æ                     X€çW€ãXâYâZ~âZ}â[}â                        d{ßfzŞfzİgzİhxß               ppßowÜpwÛqwÛrvÚ         uuÚwtÙxtØytØzsØ                  €p×‚qÖƒqÕƒpÕƒpÔ         ‡pÒŠoÓŠnÒ‹nÒŒmÓ                  ’jÏ”kÏ•kÏ–jÏ—jÏ                           ¡fË¢gÌ£fÌ£eË£fÉ                        ­bÈ®bÈ¯bÇ°bÇ²`Ç                  ¸_Ä¸^Äº_Ä»^Ä¿`¿               ¾^¾¿]½¾]»¿^»¿]¹¿]·                              Â\©Ã]ªÄ]ªÃ]§Â]§                  Æ]ŸÆ^Å]›Æ]›Ï`Ÿ                     Ê]É^É]É^ŒÏ`‡                              Ì]}Í^}Í^{Î^{Ì\z                  Ï]pĞ^pĞ^oĞ^nÏ`j                                                               ×\P×]Q×]P×_PØ`P                  Ú_EÚ^DÚ_DÚ^AÚ`@                           Û`4İ^4İ^2Ş^1Ş_0                                                                                       h0÷j2ùl0ùn2ùp1úr1út2úv1ùy2ú{2û}2ú€3û‚2ú…3ú‡3ú‰3ú‹3û3ú3û’3ú•4û—3û™5ü›4û›4û›4û                           @‡ç@‡ê@†éA†éC‡ê                     LƒçKƒæLƒæMƒæMƒæ                        V€ãXâY~ãZ~â[~á\|â                     d|ßdzßezßfzİgzŞ                     owÛovÛqwÛruÚ         vtÙwuØxtØytØzuØ                     qÕ‚qÕ„pÕ„pÔ         ˆoÔ‰nÓ‹nÔ‹nÒ‹lÓ                  pÏ”kĞ•jÏ•jÏ—iÏ                           ¡fË¢fÌ£fË¤eË¥dË                     ¯eÊ­cÈ®bÈ¯bÇ°aÆ                     º^Æ¹_Äº^Ä»^Ä½]Å               ¾^¾¿]½¿]¼¿]¹¿^¹                                                                  Æ]Æ]œÆ]œÆ\šÇ`Ÿ                     È]É]É]É]ŒÏ`‡                           Ï`€Í]~Ì^}Í^|Î^z                     Ï\pÏ^pĞ^oĞ^mÏ]m                                                                                                Ù^FÙ^DÚ]CÙ^B×\D                           Û`4İ^4İ^3İ^2Ş]0                                                                                                   q1ùt2úv2ùx1ùz1ú}2ú2ú‚3ú„3ú‡3ú‰3ú‹3ú3ú3û’4û”3ú–3ú™4û›4ü›3û›6û                              @‡ç@‡êA†éA†éC†ê                     LƒçLƒæL‚åMƒæOƒæ                     V€âV€ãXâYâZ~ãZ}â\â                     dzİe{ŞezŞfzŞgzß                                          wuÚwtÙxtØytØxt×                                          ˆnÓ‰nÓŠnÓŒnÓ‡pÏpÏpÏpÏpÏpÏ—pÏ—pÏ”jĞ•kÏ—jĞ˜jÏ                           ¡hË¢fÌ£fÌ¤eÌ£fË                     ­bÆ®bÈ®bÇ¯bÇ±dÊ·hÇ·hÇ·`Ç·`Ç·`Ç·`Ç·`Ç·`Å¹_Ä¹^Ä»^Å½^Å               ¾]½¾]¼¿^»¿]»¿Zº                                                ÅZ¥Â`¥Â`¥Â`¢Â`ŸÂ]ŸÅ^Æ^Æ]›Æ]šÇ`Ÿ                     Ê_É]Ê^Ê^Ï`‡                           Ì\€Í]~Ì]}Í^|Ì]{Ï`€Ï`xÏ`xÏ`xÏ`pÏ`pÏ`pÏ`pĞ^pĞ^oĞ^nĞ_m                                                                              ×`PÖ`I×`J×`J×`H×`HÚ_EÙ^EÚ_DÙ^BÛ`D                           Û`4İ^4İ^3İ^1Ş_0                                                                                                   u2úv2úx1ùz2ù}2ú2ú‚2ú„3û†3ú‰3û‹3ú3ú4û’4û”4û–4û™3û›4û›4ûš3ú                                 @‡ç@†éA‡êB†éC‡ê                     LƒçKƒæLƒæNƒæM‚æ                     V€âWâW~ãX~ãZ~á[~á[}â]}â                  d}ád{ŞfzŞgzŞfyÜ                                          wuÚwtÙxtØytÙxp×                                       ‡pÏˆnÓ‰oÓŠnÓ‹nÒŒnÒmÒmÒlÑlÑ‘lÑ’lÑ“kĞ”lĞ•jĞ–kÏ—iÏ                           ¡fË¢fÌ¢fË¤eË¥fË                     ®cÈ­cÈ¯bÉ¯bÇ±aÈ±aÇ²aÆ³aÇ´`Æµ`Å¶_Æ·_Å¸_Å¹^Å¹^Ä»^Ä¼_Å               ¾^¾¿]¼¿]»¿^º¿`·                                       Ç`§Ä]¨Ã]¥Ã]¤Ä]£Ä^£Å]¢Å] Å^ŸÅ^Æ^Æ^›Ç^›Ç`Ÿ                     È]É]É]É^ŒÇX‡                           Ë]€Í^~Í]|Í^|Í^{Í^yÎ^yÎ]wÎ^vÎ]uÏ]sÏ]rÏ^qĞ^pĞ^oĞ^mĞ]l                                                                     ß`P×^NÖ^NØ^LØ^KØ^JÙ^IØ^HØ^GÙ^FÙ^DÙ^CÚ^B×\D                           Û`4İ^3Ş_3İ^1Ş_0                                                                                                   x0÷y2úz1ù}2ú2ú2úƒ3û…2úˆ3ú‹3ú3ú4û‘3ú”4û–4û˜4û›5ûœ4üœ3ü                                    @‡ç@‡ê@‡êB‡êC‡ê                     LƒçKƒæLƒæM‚åOƒæ                  U€äV€ãWâX~âYãZ~á[~â\~á]}â`€ß               cyŞdzßezßfzŞhxß                                          vvÙwuÙwtÙysØxp×                                       ‡pÏ‰oÔ‰nÓŠnÓŒnÓŒnÓmÒmÒmÑmÑ’lÑ‘kĞ“kĞ”kĞ•kĞ–jĞ—jÏ                           ŸfË¡fÌ¢fË¤eÌ¥dË                     ¬aÇ­bÇ¯bÈ¯bÇ°bÇ±aÇ³aÇ³aÆ´`Åµ`Æ¶_Æ·_Å¸_Ä¹^Åº_Ä»^Ä¼_Ä               ¾^¾¿]½¿]»¿]»¿`·                                    Å`ªÃ^¨Ã]§Ã]¦Ä]¦Ä]¤Ä]¢Ä]¡Å] Å]ŸÆ]Å]œÇ]œÆ]šÇ`Ÿ                     Ê]É^É]É^ŒÏ`‡                           Í^~Í^Ì^}Í^|Í^{Î]yÏ^xÍ^wÎ]vÎ]uÏ]sÏ^sĞ^qĞ^pÏ]nÑ]mÒ]m                                                                  Õ`P×^P×^O×^NØ^M×]KØ^JØ^IØ^HÙ^GÙ^EÚ^DÙ^CÚ^BÛ`D                           Û`4İ]4İ^3Ş^1Ş_1                                                                                                      z0ú}2ú2ú3úƒ2ú†3ú‰4û‹3û3ú3ú‘4û”4û–4û˜4û›4û›4ûœ3û                                       @‡ç@‡êA†éA†éC†ê                     LƒçKƒçLƒçMƒæM‚æ               X€ßUäVãWãX€ãX€çY~á[~á\}á\}á^~á               czßdzŞf{ŞfzßhzÜ                                          utÙwuÙxuØytØxp×                                       ‡pÏˆoÓ‰nÓŠnÓŒnÒŒmÓmÒmÒlÒlĞ’lÒ“lÒ“kÏ”kĞ”kÏ—kĞ˜kÏ                           ¡hË¡fË¢fË£fË¥dË                     ­bÈ­cÈ®bÈ¯bÇ°aÇ°aÇ²aÇ³`Æ´aÆ¶`Æ¶`Ä·`Ä¸`Ä¸_Äº]Ã»_Ä»]Â               ¾^¾¿]½¿]»¿]»¿X·                                 Ç`¯Ã^ªÃ^¨Ä]¨Ä^¦Ä]¦Â\£ÇXŸÇXŸÇXŸÇXŸÄ\Æ^Æ^œÆ]šÇ`Ÿ                     È]É]É^Ê^Ï`‡                           Ë^~Ì^~Í^}Í^|Í^zÎ]yÎ]xÎ]xÏ]wÏ]uÏ]sÏ]qÏ]qĞ]pĞ_oĞ_oÑ_m                                                               ×`PÖ^QÖ^P×^O×^NØ_MÙ`M×`P×`H×XH×`HÛ_FÙ^DÙ^CÚ^BÛ`D                           Û`4Ü^4İ^3Ş^1Ş]0                                                                                                         €5ú2úƒ3ú†2ûˆ3ú‹2ûŒ3û3ú’3û“3û–3û˜4û›4û›5û›4ü                                          @‡ç@‡êA‡êB†éC…ê                     LƒçKƒæLƒæM‚æO‚å               U€äU€ãV€ãW€ãX€ä   X€ß[~â\}á]~á^}á`€ß            d|ßdzßfzŞfzŞgzß                                          vuÙwuÙxtØytØzuÚ                                       pÏˆoÓ‰oÓŠnÓŒnÒ                                                               ¡hË¡fË£fË¤eË£fÉ                     ­dÇ­bÈ¯bÈ®aÇ¯bÈ                                                   ¾]¾¾]¼¿]¼¿]º¿`·                                 Â_«Ã]ªÄ]©Ã^§Ã\¥                  Ä]Æ]Æ^œÆ]›Ç`Ÿ                     Ê]É^É]Ê]Ï`‡                           Í]€Ì^~Ì^}Í]{Í^z                                                                                                   ×]RÖ^QÖ^P×^O×_O                  Ù_GÙ^DÚ]CÚ_C×\@                           Û`4İ^4İ^2Ş^2Ş_0                                                                                          ÿ@ÿ‹<ÿ‹:ÿ‹8      …5ú…2úˆ4ûŠ3úŒ3ú3ú’3û“4û•4û˜4üš4û›4û›4ûœ3ü                                             @ˆë@‡êB†éB†éP€ß                  JƒåK„çLƒçM‚åNå            P€ßT€ãU€äVãWãX€ç      \~á[}â\}à]|á_}à            c|ÜdzßfzŞgzŞgzß                     pvÜpxÚpxÚrxÚ         uuÚwtÙxtÙytØzuÚ                     ‚r×‚r×‚pÕƒpÓ         ˆoÔ‰nÓŠnÓŒnÓ‹lÓ                                                            ¡fÍ¢gÌ£gË¤fË£fÉ                     «dÇ®cÉ¯bÈ®aÇ°aÇ                                                   ¾^¾¾]½¿]¼À]»¿`·                                 Ã_«Ã]ªÃ]¨Ã^§Å`ª                  Æ]Æ]Æ]›Æ^šÇ`Ÿ                     È]É]É]É]ŒÏ`‡                           Ê`€Í]~Í]|Í^|Í^{                                                                                                   Ö_S×_R×^PÖ]O×`P                  Ú_GÚ^EÙ^CÙ^B×\@                           Û`4İ^4İ^3İ^1Ş]0                                                                                    ÿ@ÿ?ÿ=ÿŒ:ÿ‹8ÿ‰7ÿˆ4ÿ€0   Š5úŠ3úŒ3ú3û‘4û“4û•4û—4úš4û›4û›4ûœ4ü›4ü                                             @†éA‡êA‡êC†éD…é                  J„çLƒæLƒæM‚æP€ã            S€åUäU€ãV€ãWä         `€ß\~â]}á^}á^}à`|ß         `€ße{ßezŞfzŞgzŞp€ß                  owÜpwÜpvÛrwÚ         xt×wuÙxtÙytØ{tØ                  €p×‚pÖ‚qÕ„pÕ…pÕ         ‰nÓ‰nÓ‹mÓŒnÓmÓ                        •jÏpÏ                              ŸfË¢gÌ£fÌ¤eË¥fË                     ¯`Ï­bÈ®bÈ¯bÇ°aÇ¯cÉ                     ¯`Ï¹\Â                     ¾^¾¿]½¿]¼¿]º¿X·                                 Â^ªÂ]©Ã]©Ä]§ÇX§                  Å]Æ]œÆ^œÆ]šÇ`Ÿ                     É]É]É]É^ŒË`‹                              Ì^~Í^}Í^|Î^{Í]y                        Ï^n                              ß`pÓ^`Ó]_Ô__×``                        Ö]S×]Q×^P×^OÙ\M                  Ù^EÙ^DÚ^CÚ^B×\@                           Û`4İ^4Ş^2Ş^2Ş_0                                                                                 ÿ@ÿ@ÿ=ÿ‹;ÿŠ9ÿ‰6ÿ‡4ÿ†1ÿ…/      Š5ú3ú4û“4û•4û—4ûš4û›4ûœ4ü›4û›4ûœ4ı                                             @‡ç@‡êA‡êC†éD†éE…ê            K„èKƒæLƒæMƒæN‚æ            R€äSäTäU€ãV€âX€ç            \~á]}á]}à_|á_{ß            czİezŞgzİhzŞizßp€ß            nxÛnvÛqwÛqwÛrwÚ            wtØxtÙytÙztØztÙ            €€ß€qÖ‚qÖƒpÕƒpÔ…pÕ         pÏŠoÓŠnÒ‹nÒŒnÒmÒpÏ            ŸpÏ”kÑ•jÏ–kÏŸpÏ                           ¡fË¢gÌ£fË£eË¥fË                        ­dÇ®bÈ°bÈ°aÇ±aÆ²bÇ               ·`Ã¹_Åº^Ä»^Å                  ¾^¾¾]¼¿]»¿]º¿`·                                 Ã]¬Ä]ªÃ^©Ã]§Ä]¨            Ï`ŸÅ]ŸÅ]Å]œÆ^œÆ]šÇ`Ÿ                     È^É^É^Ê]Ê]‹                              Í]€Í^}Í]|Í]zÍ^yÏ^z               Ï`pÏ]pĞ^oÑ^n                           Ô^bÓ]`Ó^_Ó^_Ô^^ß``                     Ö^QÖ^Q×]P×^OØ]M            ß`PÚ_FÙ^FÚ^EÙ^CÚ^B×\D                           Û`4İ^4İ^3İ^2Ş]0                                                                                 ÿ@ÿ=ÿŒ:ÿŠ9ÿ‰6ÿ‡4ÿ†2ÿ…/ÿ„.ÿ…+      8ÿ‘3ú•5ü˜4û™4û›5ûœ4ü›4û›4û›4û›4û                                                @‡êB†éB†éC…èD…èF…èF…éI„èI„çJ„çKƒçK‚æMƒæMƒæ            RåS€äTäUäU€ä               `€ß\}á]|á_|à_|àb{ß         `€ße{ßgzßhzŞhzİiyİjxÛjxÚlxÛmwÛnwÛowÛqwÜqvÜpx×            xt×xtØysÙzs×{s×{sØ~sØ}r×rØ€rÕqÖ‚qÕƒpÖ„qÖ               ‰mÑŠnÓ‹nÒnÓmÒmÑmÒ‘lÓ’kÑ”mÒ’kĞ”kĞ•kÏ–jĞ˜kÑ         —hÏiÏhÍhÍŸgÍŸgÍ¡fÌ¢gÌ£eË£fË¤eÊ¥eÉ¦cÉ§cÉ¨cÉªdÊ         ¯`Ï¯cÈ¯bÈ°bÇ±aÇ²aÆ³`Æ³`Åµ`Åµ`Å·`Æ·^Ä¹_Åº^Äº^Ä·`¿               ¾^¾¾^¼¿]»¿^º¿`·                                 Â]ªÂ^ªÃ^¨Ã]§Ä^§Ä]¦Å^¥Å^£Å] Å]¡Å]Å^Å]œÆ]›Æ]›Ç`Ÿ                     Ç`É^É^É]ŒÉ^‹Ê^ŠË]ˆÉ^‡Ë]†Ë_†Ì^„Ï`‡            Î_}Í]{Í^{Í^zÎ]wÎ^wÍ^vÏ`xÏ^sĞ^rÏ^qĞ]oĞ^oĞ]nÏ\l                     Ó`dÓ^bÓ^aÓ^_Ó^^Ó^]Õ]]                     ×\T×^R×^Q×^O×^NØ^L×^LÙ^JØ]IÙ^GÙ^GÚ^EÙ^DÚ^CÚ^BÙ\@            Ü_<Ü_9Ú^8Ü_8Ü_6Ü^5İ^4İ^3Ş_2Ş^0Ş_/İ^.Ş^-ß^-à^,                                                                  ÿŒ<ÿŒ;ÿŠ8ÿ‰7ÿˆ4ÿ†1ÿ…/ÿƒ-ÿ‚*ÿ(               ™5ú›4û›4û›4û›4û›4ûœ5üœ6ü                                                @€ïA†éC†éC…éD†éF…èF„èG„çH„çIƒçKƒçKƒæLƒå            RƒåRäSäT€ãU€ãX€ç                  ^~á^}â_}à`}àa|à`€ß         ezßfzŞgzŞhyİiyŞjxİkxİlxÜmxÛnwÛowÛpvÛpuÚ                  xt×ytØzs×zsØ|s×|r×~rÖrÖ€qÖ€qÕqÕ‚pÖ‡p×                  ‹nÓ‹nÓŒnÒmÓlÑmÑ‘lÒ‘lÑ’lÑ“kĞ•kÑ•kĞ—kĞŸpÏ         ŸhÏœhÍœhÍgÍŸgÌŸgÌ gË¢fÌ¢fË£eË¤eË¦eË§eË¨eÊ¨dÉ©cÉ            ¯`Ç¯aÇ±aÈ±aÇ²aÆ³`Æ´`Æµ`Å¶_Å·_Å¸_Æ¹_Åº^Äº]Å                  ¾]¾¿]¼¿]»¿^º¿X·                                    Ã^©Ã]©Ã]§Ä]¦Ä^¥Ä]£Ä]¢Å^¢Å] Å^ŸÅ]Æ]Æ^œÆ]šÆ\™                        Ê]É]É]ŒÊ^‹Ê^ŠÊ]ˆÊ^‡Ë^†Ë^…Ë^„Ì\ƒ            Ï`€Ì]|Í]zÍ^yÎ]xÎ^wÎ^vÏ]tÏ^tÏ^sÏ^qÏ]pĞ^oÏ^n                        Õ`eÒ^bÓ]`Ó^`Ó^^Ô^]Õ`]                        ×]P×^P×^O×^N×^LØ^L×^JØ^IØ^HØ^FÙ^EÙ^EÙ^CÚ_CÚ^C            Ü_;Û^:İ^9Ü^7Ü^6Ü^5İ^4İ^2Ş^1İ^0Ş]/ß^.Ş^-Ş^+ß^*                                                               ÿ@ÿŒ;ÿŠ9ÿ‰6ÿ‡4ÿ‡1ÿ…0ÿƒ-ÿ‚+ÿ(ÿ&               ›5ú›4û›5û›4û›4û›4ûš5ú                                                      @€ïB…éC…èE†éE…èF…èH„çI„çI„çK„çIƒæ            P€çQäSäS€äT€ãU€ä                     `€ß]}á_}á`}à`|àb{ß            hxßhyŞizİixİkyİkxÜmyÜnxÜnxÛowÛpx×                        ysÙzsÙ{sØ|sØ}sØ~rÖrÖ€qÖqÖ‚r×€pß                        ‹lÓnÑnÒlÑlÒlÑkĞ‘kĞ’kĞ”kĞ“jÏ               —hÏœhÎgÎhÍgÌ fÍ¡gÌ¢gÌ£fË£eÊ¤eÊ¦eË¦dÊ¨dÊ¨dÉ©cÉ                  ¯bÇ±`Ç²aÆ³aÆ´`Å¶`Æ¶`Å·_Å·_Äº_Æº`Å                     ¾]¾¾]¼¿]»¿]º¿X·                                    ¿`§Â^§Ã]§Ä^¦Ä]¥Ä]¤Ä]£Ä]¡Ä^ Ä]ŸÅ^Æ]œÆ]›Æ]šÆ^š                        Ï`È]É]ŒÉ^‹Ê^ŠÊ]‰Ê]‡Ë^‡Ë^…Ì^…Í`‚                  Ë^zÎ^yÎ^xÎ^wÏ]uÏ^uÏ^tÏ]rÏ^qÏ]pÏ\p                              Ò^aÓ^aÓ^_Ó^^Õ_^Ï`X                        Ï`PÖ]P×^O×^N×^LØ]KØ^JØ^IÙ_IØ]G×]EÙ^DÙ^CÚ^BÚ]A            Û_;Û^9Û^8İ^7İ]6İ^5Ü^4İ^2İ_2Ş^0Ş^0Ş^.ß^-ß^+ß]*                                                                  ÿŠ8ÿ‰7ÿ‡4ÿ†1ÿ…/ÿƒ-ÿƒ*ÿ(ÿ€&ÿ€(               ›4û›4û›4ûœ4ü›4û                                                                  @‡çD†èE…éG„èG…éG„æHƒç                  P€äP€äR€äU€äR€âX€ç                        `|ß`zß`zß`zßbzß                  hxÛhxİiyÜlxÜlyÜnwÚpxÛ                                    |sÖ{tØ|s×s×r×qÖ€pß                                    ‹lÏnÑlĞlĞ’lÒ‘lÏ“lÏŸpÏ                  ŸpÏhÍhÍhÍŸhÍŸeÊ¢hÍ¢eÊ¢eÊ¥eÍ¥eÊ¥bÇ§bÊ§eÊ§bÇ©cÉ                     ¯`Ï²`Ç³aÈ´`Æ¶`Æ·`Å¸`Äº`Å                           ¿\¿¿]½¿]½¿]º¿`¯                                          ÅZ¥Ã^¦Ã]¥Ä_¤Å]¢Ä`¢Ï`Ÿ   Ç`ŸÅ]Å]šÅ]šÆ\™                              Ç\‹Ê^ŠÊ]ŠÊ]ˆÌ]ˆË_†Ê]…Ï`€                           Ì\vÏ_wÍ]uÏ]tÏ_sÏ^sÏ\p                                    Ï``Ò]`Ó]_Ó^^Ï``                                 ×`PÙ^NØ_MØ_LÙ]JØ^Jß`P   ß`@×]E×`E×]BÙ`C            ×`<Ú`8Ú`8Ú`8Ú`5Ú`5Ú]2Ú]2Ü]0Ü`0Ü`0Ü]-Ü`-Ü`-ß`-                                                                  ÿ€@ÿ†3ÿ†2ÿ†/ÿƒ-ÿ‚+ÿ)ÿ€'ÿ#                  —0÷4ı›4û                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ÿˆ5ÿ‡2ÿ…/ÿƒ,ÿ‚+ÿ€(ÿ€&ÿ$ÿ€                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ÿ‡4ÿ†2ÿ…/ÿƒ-ÿ‚+ÿ*ÿ€'ÿ€$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ÿ‡0ÿƒ0ÿ‡(ÿ€(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+endstream
+endobj
+52 0 obj
+<<
+/Type /XObject
+/Subtype /Image
+/Width 320
+/Height 62
+/ColorSpace /DeviceGray
+/BitsPerComponent 8
+/DecodeParms <</Predictor 12 /Colors 1 /BitsPerComponent 8 /Columns 320>>
+/Length 19840
+>>
+stream
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @                                                                                                                                                                                                                                                                                                                         @¿ïÿÿşÿß                                                                                                                                                                                                                                                                                                                    ïÿÿÿşÿşÿÿşÏ                                                                                                                                                                                                                                                                                                                 îşÿÿÿşÿÿÿşÿÿÿ                                                                                                                                                                                                                                                                                                                @ßşÿşşÿÿ¿`PÏÿşÿÿ                                                                                                    ¿¿¿¿¿¿¿¿¿`                                                                                                                                                                                                ÿÿÿÿÿşşŸ    ¿ÿÿÿ     ```@        ```@ ````         P```@                                                           ÿÿÿÿşÿşÿÿ€                                                                                                                                                  ¿ÿß0                                         Ÿÿÿÿÿÿÿÿÿ@    `şÿÿ     şÿÿ¿       @ÿÿÿŸ  ßÿşÿ¾        ÿÿÿÿ_                                                           ÿÿşşşÿÿÿÿ€                                                                                                                                                 €şşÿÏ                                        ŸÿşÿşşÿÿşşP    Pÿşî      ÿÿş¿       @ÿÿÿŸ  @ÿÿÿÿ@      Ÿşÿÿß                                                           €€€€€¿şşÿ€                                                                    ŸŸŸ                                                                        şşÿÏ                                       Ÿÿÿÿÿÿşşÿşÿ    Ÿÿÿ¿      ÿşş¿       @şÿÿŸ   ¿şÿÿ¿      ÿÿÿş@                                                                 ÿÿÿ€                                                                    ¿ÿşÿ                                                                          ßşÿ€                                      ŸÿÿÿÿşÿÿşÿşşşŸ@@Ÿÿÿÿ      ÿÿş¿       @ÿÿÿŸ    şşÿş@    ¯ÿÿÿŸ                                                                  €şÿÿ                                                                    ¿şÿÿ                                                                          @                                 oßßßŞßÿÿşÿÿÿÿşÿÿÿÿÿÿşşÿÿşÿ0      şÿş¿       @ÿÿş    €ÿÿÿ¿   @ÿÿÿÿ                                                                   ÿÿÿ€                                                                    ¿ÿÿÿ                                                                                                              ÿÿÿşşÿÿÿÿÿÿşÿÿşÿşşÿÿÿÿşÿşß       şÿÿ¿       @ÿÿşŸ    ïÿÿÿ@  ¿ÿÿÿ€         oŸo             @pŸŸ`             @oŸŸP             şşÿ€            PŸŸ@          0@@@   @pŸŸP      `ŸŸP        @@@@ÏÿÿÿP@@@@@0         @ŸŸ@                              `ŸŸP        0@@@@@@@@0                               Ÿşÿÿÿşşÿÿÿÿşÿÿÿÿÿşÿÿşÿşÿÿÿ`       şşÿ¿       @ÿÿÿŸ     oÿşÿ¿ @ÿÿÿß         Ÿÿÿşÿÿşÿ¯         0¿ÿÿÿşÿÿÿŸ         0¿ÿşÿÿÿÿï            ÿÿÿ€           oïÿÿÿÿÿÿŞ         ßÿÿß  ¿şÿÿÿşÿ     ¯ÿÿşÿşÿÿß      ÿÿÿşÿşşÿÿÿşÿÿÿ¿       oïÿÿÿÿşÿŞP                          ïÿÿÿşÿÿÿ       ¿ÿÿÿÿÿÿÿş¿                               ÿÿÿÿÿÿÿşşşÿÿşÿÿşÿşşşÿÿÿÿÿß        ÿÿÿ¿       @ÿÿÿŸ      Ïÿÿş@ßÿşÿ_        ßÿÿÿÿÿşÿÿşï0      _îÿÿşşşşÿÿÿß       _ïÿÿşÿşÿşÿşŸ           €ÿÿÿ€         ¿ÿÿÿÿÿÿÿÿÿÿ_       ßÿÿÿ0îÿÿşÿÿÿŞ     ßÿşÿşşşÿÿÿşŸ     ÿÿÿÿÿÿÿÿşÿÿÿşÿ¿      Ÿşşÿşşşÿÿÿÿp                         ßÿşşşÿÿşÿÿşÏ     ¿ÿÿÿşşÿÿÿ¿                              Ÿşşşÿÿÿÿÿÿÿÿşÿÿÿÿÿÿşÿşşÿşÿ`        ÿÿÿ¿       @ÿÿÿŸ      @ÿşşïÿÿşß        ßÿÿşîŸ€¯ßÿÿÿß     ÿşÿÿï¯ÿÿşÿ¿     0ÿşÿÿî€¿şÿÿÿ          ÿşÿ€         ÿÿÿÿ¿€ßÿşşï       ßşÿÿßÿÿÿÿÿÿÿ¿    ßşÿÿŞ€`o¯şÿÿÿo   ŸŸŸŸïÿÿÿ¯ŸŸŸŸŸ     ÿşÿÿ¿ßÿşÿş@                       Ÿÿÿÿï€`o ÿÿÿÿ€     ¾ÿÿÿşÿşşÿ¿                              ÿÿÿÿÿÿÿÿÿÿşÿÿÿÿÿşşÿÿÿşÿÿÿŞ         ÿşÿ¾       @ÿşÿ¿       ¿ÿÿÿşÿş0       şÿşß     Îÿÿÿ    ¿ÿşÿŸ    ßşÿÿ@    ßÿÿÿ    0ïÿÿÿ         ÿÿÿ        `ÿşÿß@    €ÿÿş¿      ßÿşşşÿ¿`@@Po`   @ÿÿşß    €ÿÿşŞ        ¿ÿÿÿ            şÿÿÿP    €ÿÿÿ¿                       ÿÿÿß     `ÿşşï          @ÿÿÿ¿                             ÿşÿÿÿÿÿÿÿÿÿÿÿÿşÿşÿşÿşÿÿşÿ          şşş¿       @şÿÿ¿        ÿÿÿşşŸ        ïÿÿÿ      ïÿÿß   0ÿÿÿß      @şÿÿ   `ÿÿÿ¿      `ÿÿÿ         €ÿşÿ€        ßşÿÿ`      ¿ÿÿş     ßşÿÿş`          P¿¿¿`      îÿÿş       ¿ÿÿÿ           ¯şşÿo      ¿ÿÿÿ0                     @¿¿¿p      Ïşÿş0         @ÿÿş¿                              €€€¿ÿÿÿÿşşÿÿÿÿÿÿÿşÿÿşÿşş€          ÿÿş¿       @ÿÿş¿        ¯ÿşÿÿP       @şşÿ°       Ïşÿş   €ÿÿÿo       ÿÿş¿   ¿ÿşÿ@      îÿÿ¿         €şÿş       0ÿÿÿÏ       oÿÿÿ`     ßşşÿ€                      ¿ÿşş        ¿ÿÿÿ           şÿÿß       Pÿÿÿp                                 ÿşÿ@         @ÿÿÿ¿                                  ÿÿÿşÿÿÿÿÿÿÿÿÿÿÿÿÿşş€           ÿÿÿ¿       @ÿÿş¿       Pşÿÿşş¿       €ÿÿÿo              ¿şÿÿ@              ÿşÿï        ßÿşï         €şşş€       pşÿÿ       `ÿÿş     ßÿÿş0                0`````Ïÿÿÿ        ¿ÿşÿ          Pşÿÿ¿       @ÿÿÿŸ                           P````¿ÿÿÿ@         @ÿÿÿ¿                                 ÿÿÿÿÿşşÿşÿÿÿÿÿÿşÿÿŸ            ÿÿÿ¿       @ÿÿÿ¿       ßÿşşÿÿş`      ÿÿÿP              ¿şÿÿ               ÿÿÿÿÿÿÿÿÿÿÿÿÿşÿş         €şÿş       ÿşÿşÿÿÿÿÿşÿÿşÿÿŸ     ßÿÿÿ               ïÿÿÿşÿÿÿÿÿş        ¿ÿÿÿ          pÿşÿÿÿÿÿÿÿÿÿÿÿÿÿ¯                       ïşşÿşÿÿÿÿÿÿ@         @şÿÿ¿                                  ïÿÿÿÿÿÿÿÿÿÿÿşÿÿÿşŸ             ÿşş¿       @ÿşÿ¿      `ÿÿÿÏÿşÿî      şşÿ@              ßÿşÿ               şÿÿÿÿÿÿÿÿÿÿÿÿÿşÿ         €ÿÿş        ÿşÿÿÿşÿÿÿşÿÿşÿşŸ     ßşÿş             0ïÿÿşşÿÿşÿşÿşÿ        ¿şÿÿ          ÿÿÿÿşşÿÿÿşÿşşÿş¿                      0ßÿÿÿÿÿÿÿÿÿşÿÿ@         @şÿş¿                                  0ïÿÿÿÿÿşÿÿÿÿÿÿÿÿ              ÿÿş¿       @ÿşş¿      ßÿÿş  ÿÿş     Ÿÿÿş`              Ïÿÿÿ               ÿÿÿï¿¿¿¿¿¿¿¿¿¿¿¿         €ÿÿÿ       Ÿÿÿÿß¿¿¿¿¿¿¿¿¿¿¿p     ßÿÿş             ïÿşÿ¿P    Ïÿÿÿ        ¿şÿÿ          €ÿÿÿß¿¿¿¿¿¿¿¿¿¿¿                      ßÿÿÿ¿P    ¯ÿÿÿ@         @ÿÿş¿                                   0ïÿşÿşÿÿşÿşÿşÿŞ               ÿşÿŞ       @ÿşÿŸ     ŸÿşÿŸ  îÿÿï     €şÿşo              ¯ÿÿÿ0             ÿÿÿß                     €ÿÿş€       €ÿÿÿp                 ßÿşş            şşÿ€      ¿şÿş        ¿ÿÿş          `ÿÿş                                 `ÿÿÿŸ      Ÿÿşÿ@         @şÿÿ¿                              P€€@  0ïÿÿÿÿşÿÿşÿÿÿß               ïşÿş      €şşÿ€     ÿşÿÿ   €şÿş¿    PşÿÿŸ       P```   şÿÿo       ```@   ßÿÿş@                    ÿÿÿ€       @ÿşÿ¿                 ßÿşş            ¿ÿÿÿ0      ¿şÿÿ        ¿şÿÿ          0şşÿï                                 ¯ÿÿÿ@      Ÿÿÿÿ@         @ÿÿÿ¿                             ßÿşşÿ 0ïÿşÿÿÿÿşÿÿşŞ               ¯ÿşÿ€      ßÿÿÿ@    ¯ÿÿÿŸ   îÿÿÿ@   ïÿÿï      ßşşß   @ÿşÿ¿       şÿş¯   ÿşş¿        `          €ÿşş       ïşÿÿP       P       ßşşÿ            ßÿşş       ßÿÿÿ        ¯şÿÿ@          Ïÿÿÿp        o          ¯         ¿şşÿP      Ïÿÿş@         @ÿşÿ¿                           ßÿÿÿşÿÿ¯  0ïÿÿÿÿşÿşÿÿŞ               @şşÿï0    ÿÿÿß    `ÿşÿÿ     şÿşÏ    ÿÿÿ¾    şÿÿŸ    ¿şÿÿ    Ïÿşÿ`   ïÿÿÿŸ    ÿÏ         €ÿÿÿ€        €ÿşÿï`     @Ïş      ßÿÿÿ            ¯şÿÿ    ¯ÿÿÿÿ        ÿÿş¿          `ÿÿÿÿo      ¿ÿ         ßşÿÿß        ÿşÿ    ÿşÿÿ@         @ÿÿÿ¿                           `ÿşÿşÿÿÿÿ0   ŸÏÿÿşÿşÿÎ                ¿ÿşÿÿ¯ßÿÿÿÿP    ßÿşşŸ     îşÿşp   ïşÿÿß€`¿ÿÿÿî     @ÿşÿÿÏo`ïşÿşŞ     pÿÿÿÿßŸopïÿÿş    Şßßßßîÿşÿïßßßß¿   Ïÿÿÿÿ¿€`€¿ÿÿÿÿ      ßÿÿÿ            `ÿÿÿÿ¿Ÿîÿÿÿÿş        @ÿÿÿÿß€¯ß     ¿şÿÿşß€`o¾ÿşÿÿ@       @ÿÿÿÿÿ`       @ÿÿÿÿÏ€ïÿşÿşÿP    ¯ßßßßßÿÿÿşßßßßŞ                      Ïşşÿşşÿÿÿ_      ÿÿÿÿÿÿP                ßÿÿşÿÿÿÿÿÿÿ€    ÿşÿÿ       €şÿÿï   0ïşÿşşşÿÿÿÿï0      €ÿÿşÿÿÿÿşÿÿß       €ÿÿşÿÿşÿÿÿşÿ¿    ÿÿşÿÿÿşÿÿÿşÿÿÿß     ßşÿÿÿşÿÿÿşÿÿ`      ßÿÿÿ             ÏşÿşÿÿÿÿÿÿîşÿÿP        ¿şÿÿÿÿÿÿÿÿP    ¿ÿÿşÿÿşÿÿÿÿÿ€        0ÿşÿÿÿ`        Ÿşÿÿÿÿÿÿÿÿïÿÿÿo    ¿ÿşÿÿÿÿÿşÿşşÿÿÿ                     ÿÿÿÿşÿÿÿÿ_      ÿÿÿÿ¿0                  ŸÿÿÿÿÿÿşŞP     ïÿÿÿŸ       îÿÿş     ¿ÿşÿÿÿÿÿ¿         PßşÿşÿÿşşŸ        @ßÿÿşÿÿÿÿî€      şşÿÿşÿÿÿÿÿşÿşÿß      €îÿÿÿşÿşÿ¿0       ßÿÿÿ               ÿÿşÿÿÿïp€ÿÿÿ        Ÿÿÿÿÿÿÿÿş`      €ßÿÿşÿÿÿÿ¿@          ßÿÿÿß         ÿÿÿşşÿïp`ÿÿÿ¿    ¿ÿÿşşÿÿşÿşÿÿÿÿş                      `ÿÿÿÿşşş      ÿÿ¿@                       pŸ¿¯@      0````         @````      @¯¿¯@            P¿¿Ÿo            @€¯¿¯@      ``````````````P       `¿¿Ÿp0         P```              0¯¿Ÿp  ```P          @¿¿Ÿ`         P¯¿Ÿo@             ¿             ¯¿Ÿo ```P    @``````````````                      PÿşÿÿÿÿŸ       @                                                                                                                                                                                                                                                                                                              ßÿÿşÿÿş¿                                                                                                                                                                                                                                                                                                                      @ÿÿÿÿï¯@                                                                                                                                                                                                                                                                                                                          @                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+endstream
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 37 0 R
+/F2 38 0 R
+/F3 39 0 R
+/F4 40 0 R
+/F5 41 0 R
+/F6 42 0 R
+/F7 43 0 R
+/F8 44 0 R
+/F9 45 0 R
+/F10 46 0 R
+/F11 47 0 R
+/F12 48 0 R
+/F13 49 0 R
+/F14 50 0 R
+>>
+/XObject <<
+/I0 51 0 R
+>>
+>>
+endobj
+53 0 obj
+<<
+/Producer (jsPDF 3.0.1)
+/CreationDate (D:20250829174721+05'30')
+>>
+endobj
+54 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 55
+0000000000 65535 f 
+0000103099 00000 n 
+0000184840 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000006902 00000 n 
+0000007039 00000 n 
+0000012524 00000 n 
+0000012661 00000 n 
+0000019547 00000 n 
+0000019685 00000 n 
+0000026245 00000 n 
+0000026384 00000 n 
+0000033279 00000 n 
+0000033418 00000 n 
+0000040870 00000 n 
+0000041009 00000 n 
+0000043933 00000 n 
+0000044072 00000 n 
+0000050894 00000 n 
+0000051033 00000 n 
+0000056772 00000 n 
+0000056911 00000 n 
+0000063799 00000 n 
+0000063938 00000 n 
+0000070988 00000 n 
+0000071127 00000 n 
+0000073365 00000 n 
+0000073504 00000 n 
+0000080258 00000 n 
+0000080397 00000 n 
+0000085897 00000 n 
+0000086036 00000 n 
+0000092899 00000 n 
+0000093038 00000 n 
+0000100413 00000 n 
+0000100552 00000 n 
+0000103266 00000 n 
+0000103392 00000 n 
+0000103523 00000 n 
+0000103657 00000 n 
+0000103795 00000 n 
+0000103919 00000 n 
+0000104048 00000 n 
+0000104180 00000 n 
+0000104316 00000 n 
+0000104444 00000 n 
+0000104571 00000 n 
+0000104700 00000 n 
+0000104833 00000 n 
+0000104935 00000 n 
+0000105031 00000 n 
+0000164775 00000 n 
+0000185104 00000 n 
+0000185190 00000 n 
+trailer
+<<
+/Size 55
+/Root 54 0 R
+/Info 53 0 R
+/ID [ <D64D5AADAD750B52621C3E61C75E9D0A> <D64D5AADAD750B52621C3E61C75E9D0A> ]
+>>
+startxref
+185294
+%%EOF
