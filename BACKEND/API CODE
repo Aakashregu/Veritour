@@ -1,0 +1,1002 @@
+import os
+import secrets
+from datetime import datetime, timedelta
+from typing import List, Optional
+
+import uvicorn
+from fastapi import FastAPI, Depends, HTTPException, status, Query
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+from pydantic import BaseModel, EmailStr
+from sqlalchemy import create_engine, Column, Integer, String, TIMESTAMP, ForeignKey, Boolean, DECIMAL, TEXT, DATE
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, Session, relationship
+
+# --- Configuration ---
+DATABASE_URL = "sqlite:///./touristsafety.db"
+SECRET_KEY = secrets.token_urlsafe(32)
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+# --- Database Setup ---
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+# --- Password Hashing ---
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+# --- OAuth2 Scheme ---
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+
+# --- SQLAlchemy Models (models.py) ---
+class Tourist(Base):
+    __tablename__ = "Tourist"
+    tourist_id = Column(Integer, primary_key=True, index=True)
+    full_name = Column(String(255), nullable=False)
+    photo_url = Column(String(255))
+    blood_type = Column(String(5))
+    created_at = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    digital_id = relationship("DigitalID", back_populates="tourist", uselist=False)
+    trips = relationship("Trip", back_populates="tourist")
+    emergency_contacts = relationship("EmergencyContact", back_populates="tourist")
+    incidents = relationship("Incident", back_populates="tourist")
+    location_history = relationship("LocationHistory", back_populates="tourist")
+    location_share_sessions = relationship("LocationShareSession", back_populates="tourist")
+
+class DigitalID(Base):
+    __tablename__ = "DigitalID"
+    digital_id = Column(String(255), primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'), unique=True)
+    document_type = Column(String(50), nullable=False)
+    document_number = Column(String(100), nullable=False)
+    issue_date = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    expiry_date = Column(TIMESTAMP, nullable=False)
+    status = Column(String(20), nullable=False)
+    activation_qr_code = Column(TEXT, nullable=False, unique=True)
+    tourist = relationship("Tourist", back_populates="digital_id")
+
+class Trip(Base):
+    __tablename__ = "Trip"
+    trip_id = Column(Integer, primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'))
+    start_date = Column(DATE, nullable=False)
+    end_date = Column(DATE, nullable=False)
+    itinerary_details = Column(TEXT)
+    tourist = relationship("Tourist", back_populates="trips")
+
+class EmergencyContact(Base):
+    __tablename__ = "EmergencyContact"
+    contact_id = Column(Integer, primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'))
+    contact_name = Column(String(255), nullable=False)
+    phone_number = Column(String(20), nullable=False)
+    relationship = Column(String(50))
+    tourist = relationship("Tourist", back_populates="emergency_contacts")
+
+class Role(Base):
+    __tablename__ = "Role"
+    role_id = Column(Integer, primary_key=True, index=True)
+    role_name = Column(String(100), unique=True, nullable=False)
+    description = Column(TEXT)
+    users = relationship("SystemUser", back_populates="role")
+
+class SystemUser(Base):
+    __tablename__ = "SystemUser"
+    user_id = Column(Integer, primary_key=True, index=True)
+    full_name = Column(String(255), nullable=False)
+    email = Column(String(255), unique=True, index=True, nullable=False)
+    password_hash = Column(String(255), nullable=False)
+    department = Column(String(100))
+    role_id = Column(Integer, ForeignKey('Role.role_id'))
+    is_active = Column(Boolean, default=True, nullable=False)
+    role = relationship("Role", back_populates="users")
+
+class Incident(Base):
+    __tablename__ = "Incident"
+    incident_id = Column(Integer, primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'))
+    incident_type = Column(String(50), nullable=False)
+    status = Column(String(50), nullable=False)
+    start_timestamp = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    end_timestamp = Column(TIMESTAMP)
+    last_known_latitude = Column(DECIMAL(9, 6))
+    last_known_longitude = Column(DECIMAL(9, 6))
+    acknowledged_by_user_id = Column(Integer, ForeignKey('SystemUser.user_id'))
+    tourist = relationship("Tourist", back_populates="incidents")
+    acknowledged_by = relationship("SystemUser")
+    logs = relationship("IncidentLog", back_populates="incident")
+    efir = relationship("EFIR", back_populates="incident", uselist=False)
+
+class IncidentLog(Base):
+    __tablename__ = "IncidentLog"
+    log_id = Column(Integer, primary_key=True, index=True)
+    incident_id = Column(Integer, ForeignKey('Incident.incident_id'))
+    user_id = Column(Integer, ForeignKey('SystemUser.user_id'))
+    log_timestamp = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    status_update = Column(String(255))
+    notes = Column(TEXT)
+    incident = relationship("Incident", back_populates="logs")
+    user = relationship("SystemUser")
+
+class LocationShareSession(Base):
+    __tablename__ = "LocationShareSession"
+    session_id = Column(Integer, primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'))
+    start_time = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    end_time = Column(TIMESTAMP, nullable=False)
+    secure_link_token = Column(String(255), unique=True, index=True, nullable=False)
+    is_active = Column(Boolean, default=True, nullable=False)
+    tourist = relationship("Tourist", back_populates="location_share_sessions")
+
+class GeoFencedZone(Base):
+    __tablename__ = "GeoFencedZone"
+    zone_id = Column(Integer, primary_key=True, index=True)
+    zone_name = Column(String(255), nullable=False)
+    risk_type = Column(String(100))
+    zone_geometry_data = Column(TEXT, nullable=False)
+    active_start_time = Column(TIMESTAMP, nullable=False)
+    active_end_time = Column(TIMESTAMP)
+    created_by_user_id = Column(Integer, ForeignKey('SystemUser.user_id'))
+    created_by = relationship("SystemUser")
+
+class EFIR(Base):
+    __tablename__ = "EFIR"
+    efir_id = Column(Integer, primary_key=True, index=True)
+    incident_id = Column(Integer, ForeignKey('Incident.incident_id'), unique=True)
+    efir_number = Column(String(100), unique=True, nullable=False)
+    generated_by_user_id = Column(Integer, ForeignKey('SystemUser.user_id'))
+    submission_timestamp = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    report_details = Column(TEXT, nullable=False)
+    incident = relationship("Incident", back_populates="efir")
+    generated_by = relationship("SystemUser")
+
+class LocationHistory(Base):
+    __tablename__ = "LocationHistory"
+    history_id = Column(Integer, primary_key=True, index=True)
+    tourist_id = Column(Integer, ForeignKey('Tourist.tourist_id'))
+    latitude = Column(DECIMAL(9, 6), nullable=False)
+    longitude = Column(DECIMAL(9, 6), nullable=False)
+    timestamp = Column(TIMESTAMP, nullable=False, default=datetime.utcnow)
+    tourist = relationship("Tourist", back_populates="location_history")
+
+# LocationShareContact is an association table, can be defined using SQLAlchemy's Table construct if no extra columns are needed.
+# For simplicity with FastAPI, representing it as a model can be easier.
+
+# --- Pydantic Schemas (schemas.py) ---
+
+# --- Token Schemas ---
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id: Optional[str] = None
+    user_type: Optional[str] = None
+
+# --- User Schemas ---
+class RoleBase(BaseModel):
+    role_name: str
+    description: Optional[str] = None
+
+class RoleCreate(RoleBase):
+    pass
+
+class Role(RoleBase):
+    role_id: int
+    class Config:
+        orm_mode = True
+
+class SystemUserBase(BaseModel):
+    full_name: str
+    email: EmailStr
+    department: Optional[str] = None
+
+class SystemUserCreate(SystemUserBase):
+    password: str
+    role_id: int
+
+class SystemUserUpdate(BaseModel):
+    full_name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    department: Optional[str] = None
+    role_id: Optional[int] = None
+    is_active: Optional[bool] = None
+
+class SystemUserOut(SystemUserBase):
+    user_id: int
+    role_id: int
+    is_active: bool
+    class Config:
+        orm_mode = True
+
+# --- Tourist & Onboarding Schemas ---
+class DocumentVerificationRequest(BaseModel):
+    document_type: str
+    document_number: str
+
+class VerifiedTouristDetails(BaseModel):
+    full_name: str
+    photo_url: Optional[str] = None
+    blood_type: Optional[str] = "O+"
+
+class DocumentVerificationResponse(BaseModel):
+    verification_status: str
+    tourist_details: Optional[VerifiedTouristDetails] = None
+    # In a real app, this might be a temporary ID to link verification to issuance
+    verified_tourist_id: Optional[int] = None 
+
+class EmergencyContactBase(BaseModel):
+    contact_name: str
+    phone_number: str
+    relationship: Optional[str] = None
+
+class EmergencyContactCreate(EmergencyContactBase):
+    pass
+
+class EmergencyContact(EmergencyContactBase):
+    contact_id: int
+    tourist_id: int
+    class Config:
+        orm_mode = True
+
+class IssueIdRequest(BaseModel):
+    verified_tourist_id: int
+    trip_start_date: datetime
+    trip_end_date: datetime
+    itinerary_details: Optional[str] = None
+    emergency_contacts: List[EmergencyContactCreate]
+
+class DigitalIdResponse(BaseModel):
+    digital_id: str
+    issue_date: datetime
+    expiry_date: datetime
+    status: str
+    activation_qr_code: str
+
+class TouristActivateRequest(BaseModel):
+    activation_token_from_qr: str
+
+class TouristActivateResponse(BaseModel):
+    tourist_id: int
+    full_name: str
+    jwt_token: str
+
+class DigitalIdDetails(BaseModel):
+    digital_id: str
+    document_type: str
+    document_number: str
+    issue_date: datetime
+    expiry_date: datetime
+    status: str
+    class Config:
+        orm_mode = True
+
+class TripDetails(BaseModel):
+    trip_id: int
+    start_date: datetime
+    end_date: datetime
+    itinerary_details: Optional[str]
+    class Config:
+        orm_mode = True
+
+class TouristProfile(BaseModel):
+    tourist_id: int
+    full_name: str
+    photo_url: Optional[str]
+    blood_type: Optional[str]
+    digital_id_details: Optional[DigitalIdDetails]
+    trip_details: List[TripDetails]
+    emergency_contacts: List[EmergencyContact]
+
+# --- Location & Incident Schemas ---
+class LocationUpdateRequest(BaseModel):
+    latitude: float
+    longitude: float
+    timestamp: datetime
+
+class PanicRequest(BaseModel):
+    latitude: float
+    longitude: float
+    timestamp: datetime
+
+class IncidentBase(BaseModel):
+    incident_type: str
+    status: str
+
+class IncidentCreate(IncidentBase):
+    tourist_id: int
+    start_timestamp: datetime
+    last_known_latitude: float
+    last_known_longitude: float
+
+class IncidentOut(IncidentBase):
+    incident_id: int
+    tourist_id: int
+    start_timestamp: datetime
+    class Config:
+        orm_mode = True
+
+class IncidentSummary(BaseModel):
+    incident_id: int
+    tourist_id: int
+    incident_type: str
+    status: str
+    start_timestamp: datetime
+    tourist_name: str
+    class Config:
+        orm_mode = True
+
+class IncidentLogCreate(BaseModel):
+    status_update: Optional[str] = None
+    notes: Optional[str] = None
+
+class IncidentLogOut(IncidentLogCreate):
+    log_id: int
+    incident_id: int
+    user_id: int
+    log_timestamp: datetime
+    class Config:
+        orm_mode = True
+
+class IncidentDetails(IncidentOut):
+    end_timestamp: Optional[datetime]
+    last_known_latitude: Optional[float]
+    last_known_longitude: Optional[float]
+    acknowledged_by_user_id: Optional[int]
+    tourist_profile: Optional[TouristProfile]
+    incident_logs: List[IncidentLogOut]
+
+class IncidentStatusUpdate(BaseModel):
+    status: str
+
+# --- Location Sharing Schemas ---
+class LocationShareRequest(BaseModel):
+    duration_minutes: int
+    contact_ids: List[int]
+
+class LocationShareResponse(BaseModel):
+    session_id: int
+    secure_link_token: str
+    end_time: datetime
+
+class PublicLocationView(BaseModel):
+    tourist_name: str
+    latitude: float
+    longitude: float
+    last_updated_timestamp: datetime
+    session_expiry_time: datetime
+
+# --- GeoFence Schemas ---
+class GeoFencedZoneBase(BaseModel):
+    zone_name: str
+    risk_type: Optional[str] = None
+    zone_geometry_data: str
+    active_start_time: datetime
+    active_end_time: Optional[datetime] = None
+
+class GeoFencedZoneCreate(GeoFencedZoneBase):
+    pass
+
+class GeoFencedZone(GeoFencedZoneBase):
+    zone_id: int
+    created_by_user_id: int
+    class Config:
+        orm_mode = True
+
+# --- EFIR Schemas ---
+class EFIRCreateRequest(BaseModel):
+    additional_report_details: str
+
+class EFIRResponse(BaseModel):
+    efir_id: int
+    efir_number: str
+    submission_timestamp: datetime
+
+# --- Location History Schema ---
+class LocationHistoryPoint(BaseModel):
+    latitude: float
+    longitude: float
+    timestamp: datetime
+    class Config:
+        orm_mode = True
+
+# --- Analytics Schemas ---
+class HeatmapPoint(BaseModel):
+    latitude: float
+    longitude: float
+    intensity: int
+
+class IncidentsByType(BaseModel):
+    type: str
+    count: int
+
+class IncidentSummaryReport(BaseModel):
+    total_incidents: int
+    incidents_by_type: List[IncidentsByType]
+    average_response_time: Optional[str]
+    incident_hotspots: List[dict]
+
+# --- Generic Response Schemas ---
+class StatusMessage(BaseModel):
+    status: str
+    message: str
+
+
+# --- Database Dependency ---
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+# Create database tables on startup
+Base.metadata.create_all(bind=engine)
+
+# --- Authentication (auth.py) ---
+def verify_password(plain_password, hashed_password):
+    return pwd_context.verify(plain_password, hashed_password)
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        user_id: str = payload.get("id")
+        user_type: str = payload.get("user_type")
+        if user_id is None or user_type != "system_user":
+            raise credentials_exception
+        token_data = TokenData(id=user_id, user_type=user_type)
+    except JWTError:
+        raise credentials_exception
+    user = db.query(SystemUser).filter(SystemUser.user_id == token_data.id).first()
+    if user is None or not user.is_active:
+        raise credentials_exception
+    return user
+
+def get_current_tourist(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        tourist_id: str = payload.get("id")
+        user_type: str = payload.get("user_type")
+        if tourist_id is None or user_type != "tourist":
+            raise credentials_exception
+        token_data = TokenData(id=tourist_id, user_type=user_type)
+    except JWTError:
+        raise credentials_exception
+    tourist = db.query(Tourist).filter(Tourist.tourist_id == token_data.id).first()
+    if tourist is None:
+        raise credentials_exception
+    return tourist
+
+
+# --- FastAPI Application Instance ---
+app = FastAPI(title="Tourist Safety API")
+
+
+# --- API Routers ---
+
+# --- Onboarding Router ---
+onboarding_router = FastAPI()
+
+@onboarding_router.post("/verify-document", response_model=DocumentVerificationResponse)
+def verify_document(request: DocumentVerificationRequest, db: Session = Depends(get_db)):
+    # This is a mock verification. In a real system, this would call a government API.
+    if request.document_number.startswith("VALID"): # Mock condition
+        # Check if tourist already exists
+        existing_digital_id = db.query(DigitalID).filter(DigitalID.document_number == request.document_number).first()
+        if existing_digital_id:
+             raise HTTPException(status_code=400, detail="Document number already registered.")
+
+        # Create a new tourist record upon successful mock verification
+        tourist_details = VerifiedTouristDetails(full_name="John Doe", photo_url="http://example.com/photo.jpg")
+        new_tourist = Tourist(
+            full_name=tourist_details.full_name,
+            photo_url=tourist_details.photo_url,
+            blood_type=tourist_details.blood_type
+        )
+        db.add(new_tourist)
+        db.commit()
+        db.refresh(new_tourist)
+
+        return {
+            "verification_status": "Success",
+            "tourist_details": tourist_details,
+            "verified_tourist_id": new_tourist.tourist_id
+        }
+    else:
+        return {"verification_status": "Failed", "tourist_details": None, "verified_tourist_id": None}
+
+@onboarding_router.post("/issue-id", response_model=DigitalIdResponse)
+def issue_id(request: IssueIdRequest, db: Session = Depends(get_db)):
+    tourist = db.query(Tourist).filter(Tourist.tourist_id == request.verified_tourist_id).first()
+    if not tourist:
+        raise HTTPException(status_code=404, detail="Verified tourist not found")
+
+    # Create Trip
+    new_trip = Trip(
+        tourist_id=tourist.tourist_id,
+        start_date=request.trip_start_date,
+        end_date=request.trip_end_date,
+        itinerary_details=request.itinerary_details
+    )
+    db.add(new_trip)
+
+    # Add Emergency Contacts
+    for contact in request.emergency_contacts:
+        new_contact = EmergencyContact(tourist_id=tourist.tourist_id, **contact.dict())
+        db.add(new_contact)
+
+    # Create Digital ID
+    # This should be a much more robust generation in production
+    activation_token = secrets.token_urlsafe(32)
+    digital_id_val = f"DID-{secrets.token_hex(8).upper()}"
+
+    new_digital_id = DigitalID(
+        digital_id=digital_id_val,
+        tourist_id=tourist.tourist_id,
+        document_type="Passport", # Mocked for now
+        document_number=f"VALID-{secrets.token_hex(4)}", # Mocked for now
+        expiry_date=request.trip_end_date,
+        status="Issued",
+        activation_qr_code=activation_token
+    )
+    db.add(new_digital_id)
+    db.commit()
+    db.refresh(new_digital_id)
+
+    return {
+        "digital_id": new_digital_id.digital_id,
+        "issue_date": new_digital_id.issue_date,
+        "expiry_date": new_digital_id.expiry_date,
+        "status": new_digital_id.status,
+        "activation_qr_code": new_digital_id.activation_qr_code
+    }
+
+app.include_router(onboarding_router, prefix="/onboarding", tags=["Onboarding"])
+
+# --- Tourist Router ---
+tourist_router = FastAPI()
+
+@tourist_router.post("/activate", response_model=TouristActivateResponse)
+def activate_tourist_profile(request: TouristActivateRequest, db: Session = Depends(get_db)):
+    digital_id = db.query(DigitalID).filter(DigitalID.activation_qr_code == request.activation_token_from_qr).first()
+    if not digital_id or digital_id.status != "Issued":
+        raise HTTPException(status_code=400, detail="Invalid or already used activation token")
+
+    digital_id.status = "Active"
+    db.commit()
+    db.refresh(digital_id)
+
+    tourist = digital_id.tourist
+    access_token = create_access_token(
+        data={"id": str(tourist.tourist_id), "user_type": "tourist"},
+        expires_delta=timedelta(days=30) # Longer token for tourists
+    )
+
+    return {
+        "tourist_id": tourist.tourist_id,
+        "full_name": tourist.full_name,
+        "jwt_token": access_token
+    }
+
+@tourist_router.get("/me", response_model=TouristProfile)
+def get_my_profile(current_tourist: Tourist = Depends(get_current_tourist), db: Session = Depends(get_db)):
+    # Eagerly load related data to avoid multiple queries
+    tourist = db.query(Tourist).filter(Tourist.tourist_id == current_tourist.tourist_id).one()
+    digital_id_details = DigitalIdDetails.from_orm(tourist.digital_id) if tourist.digital_id else None
+    
+    return {
+        "tourist_id": tourist.tourist_id,
+        "full_name": tourist.full_name,
+        "photo_url": tourist.photo_url,
+        "blood_type": tourist.blood_type,
+        "digital_id_details": digital_id_details,
+        "trip_details": tourist.trips,
+        "emergency_contacts": tourist.emergency_contacts
+    }
+
+@tourist_router.get("/me/emergency-contacts", response_model=List[EmergencyContact])
+def get_my_emergency_contacts(current_tourist: Tourist = Depends(get_current_tourist)):
+    return current_tourist.emergency_contacts
+
+@tourist_router.post("/me/emergency-contacts", response_model=EmergencyContact, status_code=status.HTTP_201_CREATED)
+def add_emergency_contact(contact: EmergencyContactCreate, current_tourist: Tourist = Depends(get_current_tourist), db: Session = Depends(get_db)):
+    db_contact = EmergencyContact(**contact.dict(), tourist_id=current_tourist.tourist_id)
+    db.add(db_contact)
+    db.commit()
+    db.refresh(db_contact)
+    return db_contact
+
+@tourist_router.delete("/me/emergency-contacts/{contact_id}", response_model=StatusMessage)
+def delete_emergency_contact(contact_id: int, current_tourist: Tourist = Depends(get_current_tourist), db: Session = Depends(get_db)):
+    contact = db.query(EmergencyContact).filter(EmergencyContact.contact_id == contact_id, EmergencyContact.tourist_id == current_tourist.tourist_id).first()
+    if not contact:
+        raise HTTPException(status_code=404, detail="Contact not found")
+    db.delete(contact)
+    db.commit()
+    return {"status": "success", "message": "Emergency contact deleted successfully"}
+
+app.include_router(tourist_router, prefix="/tourist", tags=["Tourist"])
+
+
+# --- Location & Incident Router ---
+location_incident_router = FastAPI()
+
+@location_incident_router.post("/location", response_model=StatusMessage)
+def update_location(location: LocationUpdateRequest, current_tourist: Tourist = Depends(get_current_tourist), db: Session = Depends(get_db)):
+    history_entry = LocationHistory(
+        tourist_id=current_tourist.tourist_id,
+        latitude=location.latitude,
+        longitude=location.longitude,
+        timestamp=location.timestamp
+    )
+    db.add(history_entry)
+    db.commit()
+    return {"status": "success", "message": "Location updated"}
+
+@location_incident_router.post("/incidents/panic", response_model=IncidentOut, status_code=status.HTTP_201_CREATED)
+def trigger_panic(panic_data: PanicRequest, current_tourist: Tourist = Depends(get_current_tourist), db: Session = Depends(get_db)):
+    new_incident = Incident(
+        tourist_id=current_tourist.tourist_id,
+        incident_type="Panic Button",
+        status="New",
+        start_timestamp=panic_data.timestamp,
+        last_known_latitude=panic_data.latitude,
+        last_known_longitude=panic_data.longitude
+    )
+    db.add(new_incident)
+    db.commit()
+    db.refresh(new_incident)
+    return new_incident
+
+app.include_router(location_incident_router, tags=["Location & Incidents (Tourist)"])
+
+
+# --- System Auth Router ---
+auth_router = FastAPI()
+
+@auth_router.post("/login", response_model=Token)
+def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    user = db.query(SystemUser).filter(SystemUser.email == form_data.username).first()
+    if not user or not verify_password(form_data.password, user.password_hash):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(
+        data={"id": str(user.user_id), "user_type": "system_user"}, expires_delta=access_token_expires
+    )
+    return {"access_token": access_token, "token_type": "bearer"}
+
+app.include_router(auth_router, prefix="/auth", tags=["System Auth"])
+
+
+# --- Incident Management Router (Authorities) ---
+incidents_mgmt_router = FastAPI()
+
+@incidents_mgmt_router.get("", response_model=List[IncidentSummary])
+def get_incidents(
+    status: Optional[str] = Query(None),
+    incident_type: Optional[str] = Query(None),
+    start_date: Optional[datetime] = Query(None),
+    end_date: Optional[datetime] = Query(None),
+    current_user: SystemUser = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    query = db.query(Incident).join(Tourist)
+    if status:
+        query = query.filter(Incident.status == status)
+    if incident_type:
+        query = query.filter(Incident.incident_type == incident_type)
+    if start_date:
+        query = query.filter(Incident.start_timestamp >= start_date)
+    if end_date:
+        query = query.filter(Incident.start_timestamp <= end_date)
+    incidents = query.order_by(Incident.start_timestamp.desc()).all()
+    
+    # Manually construct response to include tourist name
+    response = []
+    for inc in incidents:
+        response.append(IncidentSummary(
+            incident_id=inc.incident_id,
+            tourist_id=inc.tourist_id,
+            incident_type=inc.incident_type,
+            status=inc.status,
+            start_timestamp=inc.start_timestamp,
+            tourist_name=inc.tourist.full_name
+        ))
+    return response
+
+@incidents_mgmt_router.get("/{incident_id}", response_model=IncidentDetails)
+def get_incident_details(incident_id: int, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    incident = db.query(Incident).filter(Incident.incident_id == incident_id).first()
+    if not incident:
+        raise HTTPException(status_code=404, detail="Incident not found")
+    
+    tourist = incident.tourist
+    tourist_profile = TouristProfile(
+        tourist_id=tourist.tourist_id,
+        full_name=tourist.full_name,
+        photo_url=tourist.photo_url,
+        blood_type=tourist.blood_type,
+        digital_id_details=DigitalIdDetails.from_orm(tourist.digital_id) if tourist.digital_id else None,
+        trip_details=tourist.trips,
+        emergency_contacts=tourist.emergency_contacts
+    )
+
+    return IncidentDetails(
+        **incident.__dict__,
+        tourist_profile=tourist_profile,
+        incident_logs=incident.logs
+    )
+
+@incidents_mgmt_router.post("/{incident_id}/acknowledge", response_model=IncidentOut)
+def acknowledge_incident(incident_id: int, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    incident = db.query(Incident).filter(Incident.incident_id == incident_id).first()
+    if not incident:
+        raise HTTPException(status_code=404, detail="Incident not found")
+    if incident.acknowledged_by_user_id is not None:
+        raise HTTPException(status_code=400, detail="Incident already acknowledged")
+    
+    incident.acknowledged_by_user_id = current_user.user_id
+    incident.status = "Acknowledged"
+    db.commit()
+    db.refresh(incident)
+    return incident
+
+@incidents_mgmt_router.post("/{incident_id}/logs", response_model=IncidentLogOut, status_code=status.HTTP_201_CREATED)
+def add_incident_log(incident_id: int, log_data: IncidentLogCreate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    incident = db.query(Incident).filter(Incident.incident_id == incident_id).first()
+    if not incident:
+        raise HTTPException(status_code=404, detail="Incident not found")
+    
+    new_log = IncidentLog(
+        incident_id=incident_id,
+        user_id=current_user.user_id,
+        **log_data.dict()
+    )
+    db.add(new_log)
+    db.commit()
+    db.refresh(new_log)
+    return new_log
+
+@incidents_mgmt_router.put("/{incident_id}/status", response_model=IncidentOut)
+def update_incident_status(incident_id: int, status_update: IncidentStatusUpdate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    incident = db.query(Incident).filter(Incident.incident_id == incident_id).first()
+    if not incident:
+        raise HTTPException(status_code=404, detail="Incident not found")
+    incident.status = status_update.status
+    if status_update.status in ["Resolved", "Closed"]:
+        incident.end_timestamp = datetime.utcnow()
+    db.commit()
+    db.refresh(incident)
+    return incident
+
+@incidents_mgmt_router.post("/{incident_id}/efir", response_model=EFIRResponse, status_code=status.HTTP_201_CREATED)
+def create_efir(incident_id: int, efir_data: EFIRCreateRequest, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    incident = db.query(Incident).filter(Incident.incident_id == incident_id).first()
+    if not incident:
+        raise HTTPException(status_code=404, detail="Incident not found")
+    if incident.efir:
+        raise HTTPException(status_code=400, detail="E-FIR already exists for this incident")
+
+    tourist = incident.tourist
+    report_details = f"E-FIR for incident ID {incident_id}\n"
+    report_details += f"Tourist Name: {tourist.full_name}\n"
+    report_details += f"Incident Type: {incident.incident_type}\n"
+    report_details += f"Start Time: {incident.start_timestamp}\n"
+    report_details += f"Location: {incident.last_known_latitude}, {incident.last_known_longitude}\n\n"
+    report_details += f"Additional Details:\n{efir_data.additional_report_details}"
+    
+    new_efir = EFIR(
+        incident_id=incident_id,
+        efir_number=f"EFIR-{datetime.utcnow().year}-{incident_id}",
+        generated_by_user_id=current_user.user_id,
+        report_details=report_details
+    )
+    db.add(new_efir)
+    db.commit()
+    db.refresh(new_efir)
+    return new_efir
+
+app.include_router(incidents_mgmt_router, prefix="/incidents", tags=["Incident Management"])
+
+
+# --- Admin Router ---
+admin_router = FastAPI()
+
+@admin_router.get("/users", response_model=List[SystemUserOut])
+def list_users(current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    # In a real app, you'd check if current_user.role.role_name == 'Admin'
+    users = db.query(SystemUser).all()
+    return users
+
+@admin_router.post("/users", response_model=SystemUserOut, status_code=status.HTTP_201_CREATED)
+def create_user(user: SystemUserCreate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_user = db.query(SystemUser).filter(SystemUser.email == user.email).first()
+    if db_user:
+        raise HTTPException(status_code=400, detail="Email already registered")
+    hashed_password = get_password_hash(user.password)
+    db_user = SystemUser(
+        full_name=user.full_name,
+        email=user.email,
+        password_hash=hashed_password,
+        department=user.department,
+        role_id=user.role_id
+    )
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+@admin_router.put("/users/{user_id}", response_model=SystemUserOut)
+def update_user(user_id: int, user_update: SystemUserUpdate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_user = db.query(SystemUser).filter(SystemUser.user_id == user_id).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    update_data = user_update.dict(exclude_unset=True)
+    for key, value in update_data.items():
+        setattr(db_user, key, value)
+    
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+@admin_router.delete("/users/{user_id}", response_model=StatusMessage)
+def delete_user(user_id: int, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_user = db.query(SystemUser).filter(SystemUser.user_id == user_id).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    # Instead of deleting, we deactivate the user
+    db_user.is_active = False
+    db.commit()
+    return {"status": "success", "message": "User deactivated successfully"}
+
+@admin_router.get("/roles", response_model=List[Role])
+def list_roles(current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    return db.query(Role).all()
+
+app.include_router(admin_router, prefix="/admin", tags=["Admin"])
+
+
+# --- Other Routers (Zones, Analytics, etc.) ---
+
+# --- GeoFenced Zones Router ---
+zones_router = FastAPI()
+
+@zones_router.post("", response_model=GeoFencedZone, status_code=status.HTTP_201_CREATED)
+def create_zone(zone_data: GeoFencedZoneCreate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    new_zone = GeoFencedZone(**zone_data.dict(), created_by_user_id=current_user.user_id)
+    db.add(new_zone)
+    db.commit()
+    db.refresh(new_zone)
+    return new_zone
+
+@zones_router.get("", response_model=List[GeoFencedZone])
+def list_zones(
+    is_active: Optional[bool] = Query(None),
+    current_user: SystemUser = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    query = db.query(GeoFencedZone)
+    if is_active is not None:
+        if is_active:
+            now = datetime.utcnow()
+            query = query.filter(GeoFencedZone.active_start_time <= now, (GeoFencedZone.active_end_time == None) | (GeoFencedZone.active_end_time >= now))
+        else:
+             now = datetime.utcnow()
+             query = query.filter((GeoFencedZone.active_start_time > now) | (GeoFencedZone.active_end_time < now))
+    return query.all()
+
+@zones_router.put("/{zone_id}", response_model=GeoFencedZone)
+def update_zone(zone_id: int, zone_data: GeoFencedZoneCreate, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_zone = db.query(GeoFencedZone).filter(GeoFencedZone.zone_id == zone_id).first()
+    if not db_zone:
+        raise HTTPException(status_code=404, detail="Zone not found")
+    for key, value in zone_data.dict().items():
+        setattr(db_zone, key, value)
+    db.commit()
+    db.refresh(db_zone)
+    return db_zone
+
+@zones_router.delete("/{zone_id}", response_model=StatusMessage)
+def delete_zone(zone_id: int, current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_zone = db.query(GeoFencedZone).filter(GeoFencedZone.zone_id == zone_id).first()
+    if not db_zone:
+        raise HTTPException(status_code=404, detail="Zone not found")
+    db.delete(db_zone)
+    db.commit()
+    return {"status": "success", "message": "Zone deleted successfully"}
+
+app.include_router(zones_router, prefix="/zones", tags=["GeoFenced Zones"])
+
+
+# --- Tourist Data Router (for Authorities) ---
+tourist_data_router = FastAPI()
+
+@tourist_data_router.get("/{tourist_id}/location-history", response_model=List[LocationHistoryPoint])
+def get_tourist_location_history(
+    tourist_id: int, 
+    start_timestamp: datetime, 
+    end_timestamp: datetime,
+    current_user: SystemUser = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    history = db.query(LocationHistory).filter(
+        LocationHistory.tourist_id == tourist_id,
+        LocationHistory.timestamp >= start_timestamp,
+        LocationHistory.timestamp <= end_timestamp
+    ).order_by(LocationHistory.timestamp.asc()).all()
+    return history
+
+app.include_router(tourist_data_router, prefix="/tourists", tags=["Tourist Data (Authorities)"])
+
+
+# --- Analytics Router ---
+analytics_router = FastAPI()
+
+@analytics_router.get("/heatmap")
+def get_heatmap_data(current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    # This is a simplified mock. A real implementation would require complex geo-spatial queries
+    # and aggregation, possibly on a separate data warehouse.
+    locations = db.query(LocationHistory.latitude, LocationHistory.longitude).limit(1000).all()
+    heatmap_data = []
+    for lat, lon in locations:
+        heatmap_data.append([float(lat), float(lon), 1]) # Intensity is mocked to 1
+    return heatmap_data
+
+@analytics_router.get("/incidents/summary", response_model=IncidentSummaryReport)
+def get_incidents_summary(current_user: SystemUser = Depends(get_current_user), db: Session = Depends(get_db)):
+    # This is a simplified mock. 
+    total_incidents = db.query(Incident).count()
+    return {
+        "total_incidents": total_incidents,
+        "incidents_by_type": [{"type": "Panic Button", "count": total_incidents}],
+        "average_response_time": "15 minutes",
+        "incident_hotspots": [{"lat": 12.9716, "lon": 77.5946, "count": 50}]
+    }
+
+app.include_router(analytics_router, prefix="/analytics", tags=["Analytics"])
+
+
+# --- Root Endpoint ---
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Tourist Safety API"}
+
+# --- Main execution block (for running with `python main.py`) ---
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+How to Use:
+Install FastAPI and SQLAlchemy: pip install fastapi sqlalchemy uvicorn
+Save this code to a file named app.py
+Run with: uvicorn app:app --reload
+Access the API documentation at http://localhost/docs

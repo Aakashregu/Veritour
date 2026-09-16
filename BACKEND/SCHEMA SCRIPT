@@ -1,0 +1,255 @@
+CREATE TABLE Tourist (
+     tourist_id INTEGER 
+    PRIMARY KEY,
+    full_name VARCHAR(
+    255
+) NOT NULL,
+    photo_url VARCHAR(
+    255
+),
+    blood_type VARCHAR(
+    5
+),
+    created_at TIMESTAMP NOT NULL 
+);
+ 
+CREATE TABLE DigitalID (
+     digital_id VARCHAR(
+    255
+) 
+    PRIMARY KEY,
+    tourist_id INTEGER UNIQUE,
+    document_type VARCHAR(
+    50
+) NOT NULL,
+    document_number VARCHAR(
+    100
+) NOT NULL,
+    issue_date TIMESTAMP NOT NULL,
+    expiry_date TIMESTAMP NOT NULL,
+    status VARCHAR(
+    20
+) NOT NULL,
+    activation_qr_code TEXT NOT NULL,
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+) 
+);
+ 
+CREATE TABLE Trip (
+     trip_id INTEGER 
+    PRIMARY KEY,
+    tourist_id INTEGER,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    itinerary_details TEXT,
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+) 
+);
+ 
+CREATE TABLE EmergencyContact (
+     contact_id INTEGER 
+    PRIMARY KEY,
+    tourist_id INTEGER,
+    contact_name VARCHAR(
+    255
+) NOT NULL,
+    phone_number VARCHAR(
+    20
+) NOT NULL,
+    relationship VARCHAR(
+    50
+),
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+) 
+);
+ 
+CREATE TABLE Role (
+     role_id INTEGER 
+    PRIMARY KEY,
+    role_name VARCHAR(
+    100
+) UNIQUE NOT NULL,
+    description TEXT 
+);
+ 
+CREATE TABLE SystemUser (
+     user_id INTEGER 
+    PRIMARY KEY,
+    full_name VARCHAR(
+    255
+) NOT NULL,
+    email VARCHAR(
+    255
+) UNIQUE NOT NULL,
+    password_hash VARCHAR(
+    255
+) NOT NULL,
+    department VARCHAR(
+    100
+),
+    role_id INTEGER,
+    is_active BOOLEAN NOT NULL,
+    FOREIGN KEY (
+    role_id
+) REFERENCES Role(
+    role_id
+) 
+);
+ 
+CREATE TABLE Incident (
+     incident_id INTEGER 
+    PRIMARY KEY,
+    tourist_id INTEGER,
+    incident_type VARCHAR(
+    50
+) NOT NULL,
+    status VARCHAR(
+    50
+) NOT NULL,
+    start_timestamp TIMESTAMP NOT NULL,
+    end_timestamp TIMESTAMP,
+    last_known_latitude DECIMAL(
+    9,6
+),
+    last_known_longitude DECIMAL(
+    9,6
+),
+    acknowledged_by_user_id INTEGER,
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+),
+    FOREIGN KEY (
+    acknowledged_by_user_id
+) REFERENCES SystemUser(
+    user_id
+) 
+);
+ 
+CREATE TABLE IncidentLog (
+     log_id INTEGER 
+    PRIMARY KEY,
+    incident_id INTEGER,
+    user_id INTEGER,
+    log_timestamp TIMESTAMP NOT NULL,
+    status_update VARCHAR(
+    255
+),
+    notes TEXT,
+    FOREIGN KEY (
+    incident_id
+) REFERENCES Incident(
+    incident_id
+),
+    FOREIGN KEY (
+    user_id
+) REFERENCES SystemUser(
+    user_id
+) 
+);
+ 
+CREATE TABLE LocationShareSession (
+     session_id INTEGER 
+    PRIMARY KEY,
+    tourist_id INTEGER,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL,
+    secure_link_token VARCHAR(
+    255
+) UNIQUE NOT NULL,
+    is_active BOOLEAN NOT NULL,
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+) 
+);
+ 
+CREATE TABLE LocationShareContact (
+     session_id INTEGER,
+    contact_id INTEGER,
+    PRIMARY KEY (
+    session_id,
+    contact_id
+),
+    FOREIGN KEY (
+    session_id
+) REFERENCES LocationShareSession(
+    session_id
+),
+    FOREIGN KEY (
+    contact_id
+) REFERENCES EmergencyContact(
+    contact_id
+) 
+);
+ 
+CREATE TABLE GeoFencedZone (
+     zone_id INTEGER 
+    PRIMARY KEY,
+    zone_name VARCHAR(
+    255
+) NOT NULL,
+    risk_type VARCHAR(
+    100
+),
+    zone_geometry_data TEXT NOT NULL,
+    active_start_time TIMESTAMP NOT NULL,
+    active_end_time TIMESTAMP,
+    created_by_user_id INTEGER,
+    FOREIGN KEY (
+    created_by_user_id
+) REFERENCES SystemUser(
+    user_id
+) 
+);
+ 
+CREATE TABLE EFIR (
+     efir_id INTEGER 
+    PRIMARY KEY,
+    incident_id INTEGER UNIQUE,
+    efir_number VARCHAR(
+    100
+) UNIQUE NOT NULL,
+    generated_by_user_id INTEGER,
+    submission_timestamp TIMESTAMP NOT NULL,
+    report_details TEXT NOT NULL,
+    FOREIGN KEY (
+    incident_id
+) REFERENCES Incident(
+    incident_id
+),
+    FOREIGN KEY (
+    generated_by_user_id
+) REFERENCES SystemUser(
+    user_id
+) 
+);
+ 
+CREATE TABLE LocationHistory (
+     history_id INTEGER 
+    PRIMARY KEY,
+    tourist_id INTEGER,
+    latitude DECIMAL(
+    9,6
+) NOT NULL,
+    longitude DECIMAL(
+    9,6
+) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    FOREIGN KEY (
+    tourist_id
+) REFERENCES Tourist(
+    tourist_id
+) 
+);
