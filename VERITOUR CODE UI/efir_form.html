@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour Authority • E-FIR Generation Form
+  </title>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Site Theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page specific CSS -->
+  <link href="efir_form.css" rel="stylesheet"/>
+ </head>
+ <body class="role-police d-flex flex-column min-vh-100">
+  <!-- Header (required for authority pages) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-label="Toggle sidebar" class="btn btn-outline-light me-2" id="sidebarToggle">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="./authority_dashboard.html">
+     <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour Authority
+     </span>
+    </a>
+    <button aria-controls="authNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#authNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="authNavbar">
+     <form class="d-flex ms-auto me-3" role="search" style="max-width:420px;">
+      <input aria-label="Search" class="form-control form-control-sm me-2" placeholder="Search Tourist/Incident ID" type="search"/>
+      <button class="btn btn-outline-light btn-sm" type="submit">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+      </button>
+     </form>
+     <div class="d-flex align-items-center">
+      <button class="btn btn-warning btn-sm me-2 role-police" id="ackNextBtn">
+       <i class="fa-solid fa-bolt me-1">
+       </i>
+       Acknowledge Next
+      </button>
+      <button class="btn btn-light btn-sm me-2 role-tourism" id="newZoneBtn">
+       <i class="fa-solid fa-plus me-1">
+       </i>
+       New Zone
+      </button>
+      <a aria-label="Notifications" class="btn btn-link text-white me-2" href="#" title="Notifications">
+       <i class="fa-solid fa-bell">
+       </i>
+      </a>
+      <a aria-label="Messages" class="btn btn-link text-white me-2" href="#" title="Messages">
+       <i class="fa-solid fa-envelope">
+       </i>
+      </a>
+      <div class="dropdown">
+       <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="authProfileMenu">
+        <img alt="avatar" class="rounded-circle me-2" height="28" src="https://via.placeholder.com/28" width="28"/>
+        <strong id="authProfileName">
+         SI Arjun Mehta
+        </strong>
+       </a>
+       <ul aria-labelledby="authProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+        <li class="px-3 py-1">
+         <small class="text-muted" id="authProfileRole">
+          Police Officer
+         </small>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Settings
+         </a>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Keyboard Shortcuts
+         </a>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./login_page.html">
+          Logout
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <div class="container-fluid flex-grow-1">
+   <div class="row g-0">
+    <!-- Sidebar (left) -->
+    <div class="col-auto">
+     <aside class="auth-sidebar d-flex flex-column flex-shrink-0 p-3 bg-light border-end h-100">
+      <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="./authority_dashboard.html">
+       <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+       <span class="fs-6 fw-bold" style="color:#0d6efd;">
+        VeriTour Ops
+       </span>
+      </a>
+      <div class="d-flex align-items-center mt-3 mb-2">
+       <img alt="Avatar" class="rounded-circle me-2" src="https://via.placeholder.com/40"/>
+       <div>
+        <div class="fw-semibold" id="authUserName">
+         SI Arjun Mehta
+        </div>
+        <small class="text-muted" id="authUserRole">
+         Police
+        </small>
+       </div>
+      </div>
+      <hr/>
+      <div class="section-title">
+       Operations
+      </div>
+      <ul class="nav nav-pills flex-column mb-2">
+       <li class="nav-item">
+        <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html">
+         <i class="fa-solid fa-gauge me-2">
+         </i>
+         Dashboard
+        </a>
+       </li>
+       <li>
+        <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html#map">
+         <i class="fa-solid fa-map me-2">
+         </i>
+         Real-Time Map
+        </a>
+       </li>
+       <li class="role-police">
+        <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html#incidentQueue">
+         <i class="fa-solid fa-siren-on me-2">
+         </i>
+         Incident Queue
+        </a>
+       </li>
+      </ul>
+      <div class="section-title role-police">
+       Cases
+      </div>
+      <ul class="nav nav-pills flex-column mb-2 role-police">
+       <li>
+        <a class="nav-link" data-page="incident_details" href="./incident_details.html">
+         <i class="fa-solid fa-siren-on me-2">
+         </i>
+         Active Incidents
+        </a>
+       </li>
+       <li>
+        <a class="nav-link" data-page="tourist_profile" href="./tourist_profile.html">
+         <i class="fa-solid fa-user me-2">
+         </i>
+         Tourist Profiles
+        </a>
+       </li>
+       <li>
+        <a class="nav-link active" data-page="efir_form" href="./efir_form.html">
+         <i class="fa-solid fa-file-signature me-2">
+         </i>
+         Generate E-FIR
+        </a>
+       </li>
+      </ul>
+      <div class="section-title role-tourism">
+       Zone Management
+      </div>
+      <ul class="nav nav-pills flex-column mb-2 role-tourism">
+       <li>
+        <a class="nav-link" data-page="zone_editor" href="./zone_editor.html">
+         <i class="fa-solid fa-draw-polygon me-2">
+         </i>
+         Zone Editor
+        </a>
+       </li>
+       <li>
+        <a aria-controls="zonesSubmenu" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#zonesSubmenu" role="button">
+         <span>
+          <i class="fa-solid fa-triangle-exclamation me-2">
+          </i>
+          High-Risk Zones
+         </span>
+         <i class="fa-solid fa-chevron-down small">
+         </i>
+        </a>
+        <div class="collapse ms-3" id="zonesSubmenu">
+         <ul class="nav flex-column">
+          <li>
+           <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html">
+            Create New Zone
+           </a>
+          </li>
+          <li>
+           <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html#manage">
+            Manage Zones
+           </a>
+          </li>
+         </ul>
+        </div>
+       </li>
+      </ul>
+      <div class="section-title">
+       Analytics
+      </div>
+      <ul class="nav nav-pills flex-column mb-2">
+       <li>
+        <a class="nav-link" data-page="analytics_dashboard" href="./analytics_dashboard.html">
+         <i class="fa-solid fa-chart-line me-2">
+         </i>
+         Analytics &amp; Reporting
+        </a>
+       </li>
+      </ul>
+      <div class="mt-auto pt-2">
+       <a class="btn btn-outline-secondary w-100" href="#">
+        <i class="fa-solid fa-gear me-2">
+        </i>
+        Preferences
+       </a>
+      </div>
+     </aside>
+    </div>
+    <!-- Main content -->
+    <div class="col">
+     <main class="content-area p-3 p-lg-4">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="breadcrumb small">
+       <ol class="breadcrumb mb-2">
+        <li class="breadcrumb-item">
+         <a href="./authority_dashboard.html">
+          Authority
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="./incident_details.html">
+          Incidents
+         </a>
+        </li>
+        <li aria-current="page" class="breadcrumb-item active">
+         Generate E-FIR
+        </li>
+       </ol>
+      </nav>
+      <!-- Page header -->
+      <div class="page-header">
+       <div class="d-flex align-items-center gap-3">
+        <h1 class="page-title mb-0">
+         E-FIR Generation Form
+        </h1>
+        <span class="badge-soft info">
+         <i class="fa-regular fa-circle-check me-1">
+         </i>
+         Auto-populated from Digital ID
+        </span>
+       </div>
+       <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-light btn-sm" id="printBtn" type="button">
+         <i class="fa-solid fa-print me-1">
+         </i>
+         Print
+        </button>
+        <a class="btn btn-outline-primary btn-sm" href="./authority_dashboard.html#map">
+         <i class="fa-solid fa-map-location-dot me-1">
+         </i>
+         Map View
+        </a>
+       </div>
+      </div>
+      <!-- System feedback area -->
+      <div class="alert alert-info d-flex align-items-center" role="alert">
+       <i class="fa-solid fa-shield-halved me-2">
+       </i>
+       <div>
+        All E-FIR submissions are recorded in the audit log. Ensure accuracy before submission.
+       </div>
+      </div>
+      <div class="row g-4">
+       <!-- Left: Tourist summary -->
+       <div class="col-12 col-lg-4">
+        <div class="card h-100 position-sticky top-0 tourist-summary-card">
+         <div class="card-header">
+          <div class="title d-flex align-items-center gap-2">
+           <i class="fa-solid fa-user-shield text-primary">
+           </i>
+           <span class="widget-title">
+            Tourist Overview
+           </span>
+          </div>
+         </div>
+         <div class="card-body">
+          <div class="d-flex align-items-start gap-3 mb-3">
+           <img alt="Tourist Photo" class="rounded border" height="96" id="touristPhoto" onerror="this.onerror=null;this.src='https://picsum.photos/seed/missing/96/96';" src="https://example.com/missing-photo.jpg" width="96"/>
+           <div>
+            <div class="fw-bold" id="touristName">
+             —
+            </div>
+            <div class="text-muted small" id="touristDemographics">
+             —
+            </div>
+            <div class="text-muted small" id="touristNationality">
+             —
+            </div>
+           </div>
+          </div>
+          <dl class="row mb-0 small">
+           <dt class="col-5">
+            ID Number
+           </dt>
+           <dd class="col-7" id="touristIdNumber">
+            —
+           </dd>
+           <dt class="col-5">
+            Emergency Contact
+           </dt>
+           <dd class="col-7" id="touristEmergency">
+            —
+           </dd>
+           <dt class="col-5">
+            Incident ID
+           </dt>
+           <dd class="col-7">
+            <span class="badge bg-secondary" id="incidentIdBadge">
+             —
+            </span>
+           </dd>
+          </dl>
+         </div>
+         <div class="card-footer d-flex justify-content-between align-items-center">
+          <a class="btn btn-outline-primary btn-sm" href="./tourist_profile.html">
+           <i class="fa-solid fa-user me-1">
+           </i>
+           Profile
+          </a>
+          <a class="btn btn-outline-secondary btn-sm" href="./incident_details.html">
+           <i class="fa-solid fa-list me-1">
+           </i>
+           Incident
+          </a>
+         </div>
+        </div>
+       </div>
+       <!-- Right: E-FIR form -->
+       <div class="col-12 col-lg-8">
+        <form id="efirForm" novalidate="">
+         <input id="touristId" name="touristId" type="hidden" value=""/>
+         <input id="incidentId" name="incidentId" type="hidden" value=""/>
+         <!-- Incident Details Section -->
+         <div class="card mb-4">
+          <div class="card-header">
+           <div class="title d-flex align-items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-warning">
+            </i>
+            <span class="widget-title">
+             Incident Details
+            </span>
+           </div>
+           <span class="text-muted small">
+            Some fields are auto-filled from the alert log
+           </span>
+          </div>
+          <div class="card-body">
+           <div class="mb-3">
+            <label class="form-label">
+             Last Known Location
+            </label>
+            <div class="input-group">
+             <input class="form-control" id="lastLocation" readonly="" type="text"/>
+             <a class="input-group-text text-decoration-none" href="./authority_dashboard.html#map" title="View on map">
+              <i class="fa-solid fa-location-arrow">
+              </i>
+             </a>
+            </div>
+            <div class="form-text">
+             Coordinates captured from the last device ping.
+            </div>
+           </div>
+           <div class="row g-3">
+            <div class="col-md-6">
+             <label class="form-label">
+              Last Contact Timestamp
+             </label>
+             <input class="form-control" id="lastContact" readonly="" type="text"/>
+            </div>
+            <div class="col-md-6">
+             <label class="form-label" for="reportDateTime">
+              Date and Time of Report
+             </label>
+             <input class="form-control" id="reportDateTime" name="reportDateTime" required="" type="datetime-local"/>
+             <div class="invalid-feedback">
+              Report time cannot be in the future.
+             </div>
+            </div>
+           </div>
+           <div class="mt-3">
+            <label class="form-label" for="placeOfOccurrence">
+             Place of Occurrence
+            </label>
+            <input class="form-control" id="placeOfOccurrence" name="placeOfOccurrence" placeholder="Describe the probable location (landmark, area, district)" required="" type="text"/>
+            <div class="invalid-feedback">
+             Place of occurrence is required.
+            </div>
+           </div>
+           <div class="mt-3">
+            <label class="form-label" for="incidentNarrative">
+             Incident Narrative
+            </label>
+            <textarea class="form-control" id="incidentNarrative" minlength="50" name="incidentNarrative" placeholder="Provide a detailed description including witness statements, timeline, and any leads." required="" rows="6"></textarea>
+            <div class="invalid-feedback">
+             Please provide at least 50 characters describing the incident.
+            </div>
+            <div class="form-text">
+             <i class="fa-regular fa-lightbulb me-1">
+             </i>
+             Pro tip: Include who, what, when, where, why, and how.
+            </div>
+           </div>
+          </div>
+         </div>
+         <!-- Reporting Officer Section -->
+         <div class="card mb-4">
+          <div class="card-header">
+           <div class="title d-flex align-items-center gap-2">
+            <i class="fa-solid fa-user-tie text-success">
+            </i>
+            <span class="widget-title">
+             Reporting Officer
+            </span>
+           </div>
+           <span class="text-muted small">
+            Auto-filled from your profile
+           </span>
+          </div>
+          <div class="card-body">
+           <div class="row g-3">
+            <div class="col-md-6">
+             <label class="form-label">
+              Officer Name &amp; Rank
+             </label>
+             <input class="form-control" id="officerName" readonly="" type="text"/>
+            </div>
+            <div class="col-md-6">
+             <label class="form-label">
+              Police Station
+             </label>
+             <input class="form-control" id="officerStation" readonly="" type="text"/>
+            </div>
+           </div>
+          </div>
+         </div>
+         <!-- Attachments / Evidence (optional, mock) -->
+         <div class="card mb-4">
+          <div class="card-header">
+           <div class="title d-flex align-items-center gap-2">
+            <i class="fa-solid fa-paperclip text-secondary">
+            </i>
+            <span class="widget-title">
+             Attachments (Optional)
+            </span>
+           </div>
+           <span class="text-muted small">
+            Upload photos or documents supporting the report
+           </span>
+          </div>
+          <div class="card-body">
+           <div class="row g-3 align-items-end">
+            <div class="col-md-8">
+             <label class="form-label" for="evidenceUpload">
+              Add files
+             </label>
+             <input class="form-control" id="evidenceUpload" multiple="" type="file"/>
+             <div class="form-text">
+              Accepted: JPG, PNG, PDF (max 10MB each)
+             </div>
+            </div>
+            <div class="col-md-4 text-md-end">
+             <button class="btn btn-light" id="scanNearbyCams" type="button">
+              <i class="fa-solid fa-video me-1">
+              </i>
+              Fetch Nearby CCTV
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+         <!-- Sticky action dock inside main column -->
+         <div class="action-dock d-flex flex-wrap gap-2 justify-content-end align-items-center">
+          <div class="me-auto text-muted small d-none d-md-block">
+           <i class="fa-regular fa-clock me-1">
+           </i>
+           <span id="autosaveStatus">
+            Draft not saved
+           </span>
+          </div>
+          <button class="btn btn-light" id="cancelBtn" type="button">
+           <i class="fa-solid fa-xmark me-1">
+           </i>
+           Cancel
+          </button>
+          <button class="btn btn-outline-secondary" id="saveDraftBtn" type="button">
+           <i class="fa-regular fa-floppy-disk me-1">
+           </i>
+           Save Draft
+          </button>
+          <button class="btn btn-light d-md-none" id="printBtnDock" type="button">
+           <i class="fa-solid fa-print me-1">
+           </i>
+           Print
+          </button>
+          <button class="btn btn-primary" disabled="" id="submitBtn" type="submit">
+           <span class="btn-label">
+            <i class="fa-solid fa-paper-plane me-1">
+            </i>
+            Submit E-FIR
+           </span>
+           <span aria-hidden="true" class="spinner-border spinner-border-sm d-none" role="status">
+           </span>
+          </button>
+         </div>
+        </form>
+       </div>
+      </div>
+     </main>
+    </div>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="border-top bg-light py-2 mt-auto">
+   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small class="text-muted mb-1 mb-md-0">
+     © 2025 VeriTour •
+     <a class="text-decoration-none" href="#">
+      Terms
+     </a>
+     •
+     <a class="text-decoration-none" href="#">
+      Privacy
+     </a>
+    </small>
+    <div class="d-flex align-items-center">
+     <span class="badge text-bg-secondary me-2">
+      <i class="fa-solid fa-signal me-1">
+      </i>
+      Live
+     </span>
+     <a class="btn btn-outline-primary btn-sm role-police" href="./efir_form.html">
+      <i class="fa-solid fa-file-signature me-1">
+      </i>
+      Generate E-FIR
+     </a>
+     <a class="btn btn-outline-success btn-sm role-tourism ms-2" href="./zone_editor.html">
+      <i class="fa-solid fa-draw-polygon me-1">
+      </i>
+      Create Zone
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Toast Container for feedback (SweetAlert2 will also be used) -->
+  <div class="position-fixed top-0 end-0 p-3" id="toastContainer" style="z-index: 1080;">
+  </div>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js">
+  </script>
+  <!-- Bootstrap JS -->
+  <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script>
+   // Page data (mock/pre-fill)
+const efirState = {
+    efirData: {},
+    isSubmitting: false,
+    submissionStatus: null,
+    validationErrors: {},
+    touristId: 'TST-04219',
+    incidentId: 'INC-2025-00189',
+};
+
+const touristData = {
+    name: 'Alexandra Chen',
+    gender: 'Female',
+    age: 29,
+    nationality: 'Singapore',
+    idNumber: 'Passport E12345678',
+    emergency: 'Liam Chen (+65 9123 4567)',
+    photoUrl: 'https://example.com/missing-photo.jpg'
+};
+
+const incidentData = {
+    lastLocation: '12.9716, 77.5946 (MG Road, Bengaluru)',
+    lastContact: '2025-01-08T16:45:00+05:30'
+};
+
+const officerDetails = {
+    nameRank: 'Sub-Inspector Arjun Mehta',
+    station: 'MG Road Police Station, Bengaluru'
+};
+
+// Utilities
+function formatForDateTimeLocal(dt = new Date()) {
+    const pad = (n) => n.toString().padStart(2, '0');
+    const year = dt.getFullYear();
+    const month = pad(dt.getMonth() + 1);
+    const day = pad(dt.getDate());
+    const hours = pad(dt.getHours());
+    const minutes = pad(dt.getMinutes());
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
+}
+
+function isFuture(dtStr) {
+    try {
+        return new Date(dtStr).getTime() > Date.now();
+    } catch {
+        return false;
+    }
+}
+
+function debounce(fn, delay = 500) {
+    let t;
+    return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), delay);
+    };
+}
+
+// Populate overview
+function populateOverview() {
+    document.getElementById('touristName').textContent = touristData.name;
+    document.getElementById('touristDemographics').textContent = `${touristData.gender} • ${touristData.age} yrs`;
+    document.getElementById('touristNationality').textContent = touristData.nationality;
+    document.getElementById('touristIdNumber').textContent = touristData.idNumber;
+    document.getElementById('touristEmergency').textContent = touristData.emergency;
+    document.getElementById('incidentIdBadge').textContent = efirState.incidentId;
+    const img = document.getElementById('touristPhoto');
+    img.src = touristData.photoUrl;
+
+    document.getElementById('touristId').value = efirState.touristId;
+    document.getElementById('incidentId').value = efirState.incidentId;
+
+    document.getElementById('lastLocation').value = incidentData.lastLocation;
+    const lc = new Date(incidentData.lastContact);
+    document.getElementById('lastContact').value = lc.toLocaleString();
+
+    const reportInput = document.getElementById('reportDateTime');
+    reportInput.value = formatForDateTimeLocal(new Date());
+
+    document.getElementById('officerName').value = officerDetails.nameRank;
+    document.getElementById('officerStation').value = officerDetails.station;
+}
+
+// Validation
+function validateForm() {
+    const place = document.getElementById('placeOfOccurrence');
+    const narrative = document.getElementById('incidentNarrative');
+    const report = document.getElementById('reportDateTime');
+
+    let valid = true;
+
+    // Place required
+    if (!place.value.trim()) {
+        place.classList.add('is-invalid');
+        valid = false;
+    } else {
+        place.classList.remove('is-invalid');
+    }
+
+    // Narrative required + min length
+    if (!narrative.value.trim() || narrative.value.trim().length < 50) {
+        narrative.classList.add('is-invalid');
+        valid = false;
+    } else {
+        narrative.classList.remove('is-invalid');
+    }
+
+    // Report date not in future
+    if (!report.value || isFuture(report.value)) {
+        report.classList.add('is-invalid');
+        valid = false;
+    } else {
+        report.classList.remove('is-invalid');
+    }
+
+    document.getElementById('submitBtn').disabled = !valid || efirState.isSubmitting;
+    return valid;
+}
+
+const debouncedValidate = debounce(validateForm, 200);
+
+// Draft handling
+const draftKey = () => `efirDraft_${efirState.incidentId}`;
+
+function saveDraft(toast = true) {
+    const draft = {
+        touristId: document.getElementById('touristId').value,
+        incidentId: document.getElementById('incidentId').value,
+        reportDateTime: document.getElementById('reportDateTime').value,
+        placeOfOccurrence: document.getElementById('placeOfOccurrence').value,
+        incidentNarrative: document.getElementById('incidentNarrative').value,
+        when: new Date().toISOString()
+    };
+    localStorage.setItem(draftKey(), JSON.stringify(draft));
+    document.getElementById('autosaveStatus').textContent = `Draft saved ${new Date(draft.when).toLocaleTimeString()}`;
+    if (toast) {
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            timer: 1800,
+            showConfirmButton: false,
+            icon: 'success',
+            title: 'Draft saved'
+        });
+    }
+}
+
+function loadDraftIfAny() {
+    const s = localStorage.getItem(draftKey());
+    if (!s) return;
+    try {
+        const d = JSON.parse(s);
+        if (d.reportDateTime) document.getElementById('reportDateTime').value = d.reportDateTime;
+        if (d.placeOfOccurrence) document.getElementById('placeOfOccurrence').value = d.placeOfOccurrence;
+        if (d.incidentNarrative) document.getElementById('incidentNarrative').value = d.incidentNarrative;
+        document.getElementById('autosaveStatus').textContent = `Draft loaded (${new Date(d.when).toLocaleTimeString()})`;
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            timer: 2200,
+            showConfirmButton: false,
+            icon: 'info',
+            title: 'Draft restored'
+        });
+    } catch {}
+}
+
+function clearDraft() {
+    localStorage.removeItem(draftKey());
+}
+
+// Submit flow
+async function submitEfir(e) {
+    e.preventDefault();
+    if (!validateForm()) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Check required fields',
+            text: 'Please complete the required fields and ensure the narrative is detailed.'
+        });
+        return;
+    }
+    efirState.isSubmitting = true;
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.querySelector('.spinner-border').classList.remove('d-none');
+    submitBtn.querySelector('.btn-label').classList.add('d-none');
+
+    // Simulate API call
+    const payload = {
+        touristId: document.getElementById('touristId').value,
+        incidentId: document.getElementById('incidentId').value,
+        reportDateTime: document.getElementById('reportDateTime').value,
+        placeOfOccurrence: document.getElementById('placeOfOccurrence').value,
+        incidentNarrative: document.getElementById('incidentNarrative').value,
+        officer: officerDetails
+    };
+
+    try {
+        // Simulated delay
+        await new Promise(r => setTimeout(r, 1400));
+        // Simulated success
+        const efirNumber = `EFIR-${Math.floor(Math.random()*900000+100000)}`;
+        clearDraft();
+        efirState.submissionStatus = 'success';
+        Swal.fire({
+            icon: 'success',
+            title: 'E-FIR Submitted',
+            html: `<div class="text-start">Your E-FIR has been submitted successfully.<br><strong>E-FIR No:</strong> ${efirNumber}</div>`,
+            confirmButtonText: 'Back to Incident',
+            allowOutsideClick: false
+        }).then(() => {
+            window.location.href = './incident_details.html';
+        });
+    } catch (err) {
+        efirState.submissionStatus = 'error';
+        Swal.fire({
+            icon: 'error',
+            title: 'Submission failed',
+            text: 'Network error. Please try again or save as draft.'
+        });
+    } finally {
+        efirState.isSubmitting = false;
+        submitBtn.querySelector('.spinner-border').classList.add('d-none');
+        submitBtn.querySelector('.btn-label').classList.remove('d-none');
+        validateForm();
+    }
+}
+
+// Cancel handler
+function handleCancel() {
+    const hasData = [
+        document.getElementById('placeOfOccurrence').value,
+        document.getElementById('incidentNarrative').value
+    ].some(v => v && v.trim().length);
+
+    if (!hasData) {
+        window.location.href = './incident_details.html';
+        return;
+    }
+
+    Swal.fire({
+        icon: 'question',
+        title: 'Discard changes?',
+        text: 'You have unsaved changes. Save draft before exiting?',
+        showCancelButton: true,
+        confirmButtonText: 'Save Draft and Exit',
+        cancelButtonText: 'Discard',
+        showDenyButton: true,
+        denyButtonText: 'Stay',
+    }).then((res) => {
+        if (res.isConfirmed) {
+            saveDraft(false);
+            window.location.href = './incident_details.html';
+        } else if (res.isDismissed && res.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = './incident_details.html';
+        }
+    });
+}
+
+// Sidebar toggle (mobile)
+function initSidebarToggle() {
+    const btn = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.auth-sidebar');
+    btn?.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+}
+
+// Ack next (mock)
+function initAckNext() {
+    const btn = document.getElementById('ackNextBtn');
+    btn?.addEventListener('click', () => {
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            timer: 1800,
+            showConfirmButton: false,
+            icon: 'success',
+            title: 'Next incident acknowledged'
+        });
+    });
+}
+
+// Print
+function initPrint() {
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('printBtnDock').addEventListener('click', () => window.print());
+}
+
+// Nearby CCTV (mock)
+function initCCTV() {
+    document.getElementById('scanNearbyCams').addEventListener('click', () => {
+        Swal.fire({
+            title: 'Fetching nearby CCTV feeds…',
+            html: '<div class="skeleton" style="height:10px;margin:6px 0;"></div><div class="skeleton" style="height:10px;margin:6px 0;"></div><div class="skeleton" style="height:10px;margin:6px 0;"></div>',
+            didOpen: () => {
+                Swal.showLoading();
+            },
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            timer: 1500,
+        }).then(() => {
+            Swal.fire({
+                icon: 'info',
+                title: '3 sources found',
+                text: 'CCTV IDs: MG-17, MG-21, BLR-MG-05. Footage queued in evidence manager.'
+            });
+        });
+    });
+}
+
+// Auto-save on changes (debounced)
+function initAutosaveListeners() {
+    ['reportDateTime', 'placeOfOccurrence', 'incidentNarrative'].forEach(id => {
+        const el = document.getElementById(id);
+        el.addEventListener('input', () => {
+            debouncedValidate();
+        });
+        el.addEventListener('change', () => {
+            saveDraft(false);
+            debouncedValidate();
+        });
+    });
+}
+
+// DOM Ready
+document.addEventListener('DOMContentLoaded', () => {
+    populateOverview();
+    loadDraftIfAny();
+    initSidebarToggle();
+    initAckNext();
+    initPrint();
+    initCCTV();
+    initAutosaveListeners();
+    validateForm();
+
+    document.getElementById('saveDraftBtn').addEventListener('click', () => saveDraft(true));
+    document.getElementById('cancelBtn').addEventListener('click', handleCancel);
+    document.getElementById('efirForm').addEventListener('submit', submitEfir);
+});
+  </script>
+ </body>
+</html>

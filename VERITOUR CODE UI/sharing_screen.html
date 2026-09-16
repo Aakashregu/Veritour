@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour • Share My Location
+  </title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Site Theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page Specific CSS -->
+  <link href="sharing_screen.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Header (needed on this page) -->
+  <nav class="navbar navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-controls="touristSidebar" class="btn btn-outline-light me-2" data-bs-target="#touristSidebar" data-bs-toggle="offcanvas" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="./tourist_dashboard.html">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/56/28';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour
+     </span>
+    </a>
+    <div class="d-flex align-items-center">
+     <span class="badge bg-success me-2 d-none d-sm-inline" id="safetyStatusPill">
+      <i class="fa-solid fa-shield-heart me-1">
+      </i>
+      Safe
+     </span>
+     <button class="btn btn-danger me-2 d-none d-sm-inline" id="headerSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-1">
+      </i>
+      SOS
+     </button>
+     <button class="btn btn-link text-white me-2" title="Notifications">
+      <i class="fa-solid fa-bell">
+      </i>
+     </button>
+     <div class="dropdown">
+      <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="touristProfileMenu">
+       <img alt="profile" class="rounded-circle me-2" height="28" onerror="this.onerror=null;this.src='https://picsum.photos/seed/user/28/28';" src="https://via.placeholder.com/28" width="28"/>
+       <strong>
+        Me
+       </strong>
+      </a>
+      <ul aria-labelledby="touristProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+       <li>
+        <a class="dropdown-item" href="./tourist_profile.html">
+         Settings
+        </a>
+       </li>
+       <li>
+        <a class="dropdown-item" href="./location_portal.html">
+         Support
+        </a>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item" href="./login_page.html">
+         Logout
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <!-- Sidebar (Offcanvas) - needed on this page) -->
+  <div aria-labelledby="touristSidebarLabel" class="offcanvas offcanvas-start tourist-offcanvas" id="touristSidebar" tabindex="-1">
+   <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="touristSidebarLabel">
+     Menu
+    </h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body d-flex flex-column">
+    <div class="d-flex align-items-center mb-3">
+     <img alt="Avatar" class="rounded-circle me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/traveler/40/40';" src="https://via.placeholder.com/40"/>
+     <div>
+      <div class="fw-semibold">
+       Traveler
+      </div>
+      <small class="text-muted">
+       Tourist
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link" data-page="tourist_dashboard" href="./tourist_dashboard.html">
+       <i class="fa-solid fa-house me-2">
+       </i>
+       Dashboard
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="safety_map" href="./safety_map.html">
+       <i class="fa-solid fa-map-location-dot me-2">
+       </i>
+       Safety Map
+      </a>
+     </li>
+     <li>
+      <a class="nav-link active" data-page="sharing_screen" href="./sharing_screen.html">
+       <i class="fa-solid fa-share-nodes me-2">
+       </i>
+       Share My Location
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="activation_screen" href="./activation_screen.html">
+       <i class="fa-solid fa-id-card me-2">
+       </i>
+       Activate Digital ID
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="./tourist_profile.html">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Settings
+      </a>
+     </li>
+     <li>
+      <a aria-controls="touristHelpCollapse" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#touristHelpCollapse" role="button">
+       <span>
+        <i class="fa-solid fa-circle-info me-2">
+        </i>
+        Help &amp; Info
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse ms-3 mt-1" id="touristHelpCollapse">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" href="./location_portal.html">
+          Safety Tips
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1" href="./location_portal.html">
+          Privacy Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+    </ul>
+    <div class="mt-auto">
+     <button class="btn btn-danger w-100" id="quickSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-2">
+      </i>
+      SOS
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Main Content -->
+  <main class="container container-max py-3 sharing-screen-scope">
+   <!-- Breadcrumb -->
+   <nav aria-label="breadcrumb" class="breadcrumb">
+    <ol class="breadcrumb mb-2">
+     <li class="breadcrumb-item">
+      <a href="./tourist_dashboard.html">
+       Home
+      </a>
+     </li>
+     <li aria-current="page" class="breadcrumb-item active">
+      Share My Location
+     </li>
+    </ol>
+   </nav>
+   <!-- Screen Header -->
+   <div class="page-header">
+    <div class="d-flex align-items-center gap-2">
+     <button class="btn btn-light" id="backBtn">
+      <i class="fa-solid fa-arrow-left">
+      </i>
+     </button>
+     <h1 class="page-title m-0">
+      Share My Location
+     </h1>
+    </div>
+    <div class="view-switcher d-none d-md-inline-flex" title="View options (for lists below)">
+     <div class="option active">
+      <i class="fa-solid fa-table">
+      </i>
+     </div>
+     <div class="option">
+      <i class="fa-solid fa-grip">
+      </i>
+     </div>
+     <div class="option">
+      <i class="fa-solid fa-border-all">
+      </i>
+     </div>
+    </div>
+   </div>
+   <!-- Info Alert -->
+   <div class="alert alert-info d-flex align-items-center" role="alert">
+    <i class="fa-solid fa-shield-halved me-2">
+    </i>
+    Your live location is shared securely and can be revoked at any time.
+   </div>
+   <!-- Sharing Setup Form (hidden when active) -->
+   <section class="card mb-4" id="setupFormCard">
+    <div class="card-header">
+     <div class="title">
+      Start a Location Sharing Session
+     </div>
+    </div>
+    <div class="card-body">
+     <!-- Contacts -->
+     <div class="mb-3">
+      <div class="fw-semibold mb-2">
+       Who do you want to share with?
+      </div>
+      <div class="d-grid gap-2" id="contactsLoading">
+       <div class="skeleton" style="height:48px">
+       </div>
+       <div class="skeleton" style="height:48px">
+       </div>
+       <div class="skeleton" style="height:48px">
+       </div>
+      </div>
+      <ul class="list-group list-group-flush d-none" id="contactsList">
+      </ul>
+     </div>
+     <!-- Duration -->
+     <div class="mb-3">
+      <div class="fw-semibold mb-2">
+       How long for?
+      </div>
+      <div aria-label="Duration options" class="btn-group" id="durationGroup" role="group">
+       <button class="btn btn-outline-primary duration-btn" data-duration="1h" type="button">
+        1 Hour
+       </button>
+       <button class="btn btn-outline-primary duration-btn" data-duration="4h" type="button">
+        4 Hours
+       </button>
+       <button class="btn btn-outline-primary duration-btn" data-duration="eod" type="button">
+        End of Day
+       </button>
+      </div>
+     </div>
+     <!-- Start Button -->
+     <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-primary" disabled="" id="startSharingBtn">
+       <i class="fa-solid fa-location-arrow me-1">
+       </i>
+       Start Sharing
+      </button>
+      <small class="text-muted">
+       Select at least one contact and a duration
+      </small>
+     </div>
+    </div>
+   </section>
+   <!-- Active Sharing View (visible when active) -->
+   <section class="card mb-4 d-none" id="activeViewCard">
+    <div class="card-header">
+     <div class="title">
+      Location Sharing Active
+     </div>
+    </div>
+    <div class="card-body">
+     <div class="active-session-card p-3 rounded mb-3 d-flex align-items-start gap-3">
+      <div class="status-dot success mt-1">
+      </div>
+      <div>
+       <div class="fw-semibold mb-1">
+        <i class="fa-solid fa-satellite-dish me-2 text-success">
+        </i>
+        You are currently sharing your live location.
+       </div>
+       <div class="text-muted">
+        Your contacts will see your real-time updates until the session ends.
+       </div>
+      </div>
+     </div>
+     <div class="row g-3">
+      <div class="col-md-6">
+       <div class="bg-surface border rounded p-3 h-100">
+        <div class="fw-semibold mb-2">
+         Shared with:
+        </div>
+        <div class="d-flex flex-wrap gap-2" id="sharedWithBadges">
+        </div>
+       </div>
+      </div>
+      <div class="col-md-6">
+       <div class="bg-surface border rounded p-3 h-100">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+         <div class="fw-semibold">
+          Sharing ends in:
+         </div>
+         <span class="badge bg-primary" id="timeRemaining">
+         </span>
+        </div>
+        <div aria-label="Time remaining" aria-valuemax="100" aria-valuemin="0" class="progress" role="progressbar">
+         <div class="progress-bar" id="timeProgress" style="width: 100%">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="d-flex align-items-center gap-2 mt-3">
+      <button class="btn btn-danger" id="stopSharingBtn">
+       <i class="fa-solid fa-stop me-1">
+       </i>
+       Stop Sharing
+      </button>
+      <small class="text-muted">
+       You can stop at any time. A confirmation is required.
+      </small>
+     </div>
+    </div>
+   </section>
+   <!-- Recent Sessions (mock data table) -->
+   <section class="card">
+    <div class="card-header">
+     <div class="d-flex flex-wrap w-100 align-items-center justify-content-between gap-2">
+      <div class="title">
+       Recent Sharing Sessions
+      </div>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+       <input class="form-control form-control-sm" id="sessionSearch" placeholder="Search recipients" type="text"/>
+       <select class="form-select form-select-sm" id="statusFilter" style="min-width:160px">
+        <option value="">
+         All Statuses
+        </option>
+        <option value="Active">
+         Active
+        </option>
+        <option value="Ended">
+         Ended
+        </option>
+        <option value="Expired">
+         Expired
+        </option>
+       </select>
+      </div>
+     </div>
+    </div>
+    <div class="card-body p-0">
+     <div class="table-responsive">
+      <table class="table table-theme mb-0" id="sessionsTable">
+       <thead>
+        <tr>
+         <th data-sort="date" role="button">
+          Date
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th>
+          Recipients
+         </th>
+         <th data-sort="duration" role="button">
+          Duration
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th>
+          Status
+         </th>
+         <th>
+          Actions
+         </th>
+        </tr>
+       </thead>
+       <tbody id="sessionsTbody">
+        <!-- rows injected by JS -->
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between align-items-center">
+     <small class="text-muted" id="paginationInfo">
+      Showing 1–6 of 6
+     </small>
+     <div aria-label="Pagination" class="btn-group btn-group-sm" role="group">
+      <button class="btn btn-light" disabled="" id="prevPageBtn">
+       <i class="fa-solid fa-chevron-left">
+       </i>
+      </button>
+      <button class="btn btn-light" disabled="" id="nextPageBtn">
+       <i class="fa-solid fa-chevron-right">
+       </i>
+      </button>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer (Fixed Bottom Quick Nav) - needed on this page -->
+  <nav class="navbar bg-white border-top fixed-bottom">
+   <div class="container-fluid d-flex justify-content-around">
+    <a class="text-decoration-none text-muted text-center" data-page="tourist_dashboard" href="./tourist_dashboard.html">
+     <i class="fa-solid fa-house">
+     </i>
+     <div class="small">
+      Home
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="safety_map" href="./safety_map.html">
+     <i class="fa-solid fa-map-location-dot">
+     </i>
+     <div class="small">
+      Map
+     </div>
+    </a>
+    <button class="btn btn-danger rounded-pill px-4" id="footerSosBtn">
+     <i class="fa-solid fa-triangle-exclamation me-1">
+     </i>
+     SOS
+    </button>
+    <a class="text-decoration-none text-muted text-center" data-page="sharing_screen" href="./sharing_screen.html">
+     <i class="fa-solid fa-share-nodes">
+     </i>
+     <div class="small">
+      Share
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="activation_screen" href="./activation_screen.html">
+     <i class="fa-solid fa-id-card">
+     </i>
+     <div class="small">
+      My ID
+     </div>
+    </a>
+   </div>
+  </nav>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js">
+  </script>
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Page Script -->
+  <script>
+   // Mock emergency contacts
+const mockContacts = [{
+    id: 1,
+    name: 'Alex Johnson',
+    avatar: 'https://picsum.photos/seed/alex/40/40'
+}, {
+    id: 2,
+    name: 'Priya Singh',
+    avatar: 'https://picsum.photos/seed/priya/40/40'
+}, {
+    id: 3,
+    name: 'Diego Ramirez',
+    avatar: 'https://picsum.photos/seed/diego/40/40'
+}, {
+    id: 4,
+    name: 'Mei Chen',
+    avatar: 'https://picsum.photos/seed/mei/40/40'
+}, {
+    id: 5,
+    name: 'Sarah Williams',
+    avatar: 'https://picsum.photos/seed/sarah/40/40'
+}, {
+    id: 6,
+    name: 'Omar Khalid',
+    avatar: 'https://picsum.photos/seed/omar/40/40'
+}];
+
+// State
+let selectedContactIds = new Set();
+let selectedDurationKey = null; // '1h' | '4h' | 'eod'
+let isSharingActive = false;
+let sessionTimer = null;
+let sessionStart = null;
+let sessionEnd = null;
+
+// Elements
+const contactsLoading = document.getElementById('contactsLoading');
+const contactsList = document.getElementById('contactsList');
+const startBtn = document.getElementById('startSharingBtn');
+const durationGroup = document.getElementById('durationGroup');
+const setupFormCard = document.getElementById('setupFormCard');
+const activeViewCard = document.getElementById('activeViewCard');
+const sharedWithBadges = document.getElementById('sharedWithBadges');
+const timeRemaining = document.getElementById('timeRemaining');
+const timeProgress = document.getElementById('timeProgress');
+
+// Utility: duration key to ms
+function durationToMs(key) {
+    if (key === '1h') return 60 * 60 * 1000;
+    if (key === '4h') return 4 * 60 * 60 * 1000;
+    if (key === 'eod') {
+        const now = new Date();
+        const end = new Date(now);
+        end.setHours(23, 59, 59, 999);
+        return end - now;
+    }
+    return 0;
+}
+
+function renderContacts(list) {
+    contactsList.innerHTML = '';
+    list.forEach(c => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item contact-item d-flex align-items-center justify-content-between';
+        li.innerHTML = `
+          <div class="d-flex align-items-center gap-2">
+            <img src="${c.avatar}" alt="${c.name}" class="rounded-circle" width="36" height="36" onerror="this.onerror=null;this.src='https://picsum.photos/seed/${encodeURIComponent(c.name)}/36/36';">
+            <span class="contact-name">${c.name}</span>
+          </div>
+          <div class="form-check m-0">
+            <input class="form-check-input contact-check" type="checkbox" value="${c.id}">
+          </div>
+        `;
+        // toggle on row click
+        li.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('contact-check')) return; // checkbox handles itself
+            const chk = li.querySelector('.contact-check');
+            chk.checked = !chk.checked;
+            toggleContactSelection(c.id, chk.checked, li);
+        });
+        // checkbox change
+        li.querySelector('.contact-check').addEventListener('change', (e) => {
+            toggleContactSelection(c.id, e.target.checked, li);
+        });
+        contactsList.appendChild(li);
+    });
+}
+
+function toggleContactSelection(id, checked, row) {
+    if (checked) {
+        selectedContactIds.add(id);
+        row.classList.add('selected');
+    } else {
+        selectedContactIds.delete(id);
+        row.classList.remove('selected');
+    }
+    validateStartButton();
+}
+
+function validateStartButton() {
+    startBtn.disabled = !(selectedContactIds.size > 0 && !!selectedDurationKey);
+}
+
+// Duration selection
+durationGroup.querySelectorAll('.duration-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        durationGroup.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedDurationKey = btn.dataset.duration;
+        validateStartButton();
+    });
+});
+
+// Start sharing
+startBtn.addEventListener('click', async () => {
+    const contacts = mockContacts.filter(c => selectedContactIds.has(c.id));
+    const durationMs = durationToMs(selectedDurationKey);
+    if (!durationMs) return;
+
+    // Fake API call
+    await Swal.fire({
+        title: 'Start Sharing?',
+        html: `Share your live location with <b>${contacts.length}</b> contact(s) for <b>${formatDuration(durationMs)}</b>.`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Start',
+    }).then(res => {
+        if (res.isConfirmed) {
+            beginSession(contacts, durationMs);
+            Swal.fire({
+                title: 'Sharing Started',
+                text: 'Your live location is now being shared.',
+                icon: 'success',
+                timer: 1500,
+                showConfirmButton: false
+            });
+        }
+    });
+});
+
+function beginSession(contacts, durationMs) {
+    isSharingActive = true;
+    sessionStart = new Date();
+    sessionEnd = new Date(sessionStart.getTime() + durationMs);
+    // UI switch
+    setupFormCard.classList.add('d-none');
+    activeViewCard.classList.remove('d-none');
+    // recipients
+    sharedWithBadges.innerHTML = '';
+    contacts.forEach(c => {
+        const b = document.createElement('span');
+        b.className = 'badge-soft info';
+        b.innerHTML = `<i class="fa-solid fa-user"></i> ${c.name}`;
+        sharedWithBadges.appendChild(b);
+    });
+    // start timer
+    startCountdown();
+    // add to recent sessions mock
+    addRecentSession({
+        date: new Date(),
+        recipients: contacts.map(c => c.name).join(', '),
+        durationMs,
+        status: 'Active'
+    });
+}
+
+function startCountdown() {
+    updateCountdown();
+    clearInterval(sessionTimer);
+    sessionTimer = setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown() {
+    const now = new Date();
+    const total = sessionEnd - sessionStart;
+    const remaining = Math.max(0, sessionEnd - now);
+    timeRemaining.textContent = formatDuration(remaining);
+    const pct = Math.max(0, Math.min(100, Math.round((remaining / total) * 100)));
+    timeProgress.style.width = pct + '%';
+    timeProgress.setAttribute('aria-valuenow', String(pct));
+    if (remaining <= 0) {
+        terminateSession('Expired');
+        Swal.fire({
+            title: 'Session Ended',
+            text: 'Your sharing session has expired.',
+            icon: 'info'
+        });
+    }
+}
+
+function terminateSession(statusLabel = 'Ended') {
+    isSharingActive = false;
+    clearInterval(sessionTimer);
+    sessionTimer = null;
+    activeViewCard.classList.add('d-none');
+    setupFormCard.classList.remove('d-none');
+    // reset selection but keep contacts in UI
+    selectedContactIds.clear();
+    document.querySelectorAll('.contact-check').forEach(c => {
+        c.checked = false;
+    });
+    document.querySelectorAll('.contact-item').forEach(r => r.classList.remove('selected'));
+    durationGroup.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
+    selectedDurationKey = null;
+    validateStartButton();
+    // update recent sessions latest row status from Active to new status
+    updateLatestActiveRowStatus(statusLabel);
+}
+
+document.getElementById('stopSharingBtn').addEventListener('click', async () => {
+    const result = await Swal.fire({
+        title: 'Stop Sharing?',
+        text: 'Are you sure you want to stop sharing your live location?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Stop',
+        confirmButtonColor: '#d33'
+    });
+    if (result.isConfirmed) {
+        terminateSession('Ended');
+        Swal.fire({
+            title: 'Stopped',
+            text: 'Your live location is no longer shared.',
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false
+        });
+    }
+});
+
+// Back navigation
+document.getElementById('backBtn').addEventListener('click', () => {
+    window.location.href = './tourist_dashboard.html';
+});
+
+// SOS handlers
+['headerSosBtn', 'quickSosBtn', 'footerSosBtn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', async () => {
+        const res = await Swal.fire({
+            title: 'Send SOS?',
+            text: 'This will alert nearby authorities and your emergency contacts.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Send SOS',
+            confirmButtonColor: '#d33'
+        });
+        if (res.isConfirmed) {
+            Swal.fire({
+                title: 'SOS Sent',
+                text: 'Authorities and contacts have been notified.',
+                icon: 'success'
+            });
+        }
+    });
+});
+
+// Load contacts (simulate API)
+setTimeout(() => {
+    contactsLoading.classList.add('d-none');
+    contactsList.classList.remove('d-none');
+    renderContacts(mockContacts);
+}, 800);
+
+// Recent Sessions Table (mock)
+const sessions = [{
+    date: new Date(Date.now() - 86400000 * 1),
+    recipients: 'Alex Johnson, Priya Singh',
+    durationMs: 3600000,
+    status: 'Ended'
+}, {
+    date: new Date(Date.now() - 86400000 * 2),
+    recipients: 'Mei Chen',
+    durationMs: 14400000,
+    status: 'Ended'
+}, {
+    date: new Date(Date.now() - 86400000 * 3),
+    recipients: 'Diego Ramirez',
+    durationMs: 3600000,
+    status: 'Expired'
+}, {
+    date: new Date(Date.now() - 86400000 * 5),
+    recipients: 'Sarah Williams',
+    durationMs: 14400000,
+    status: 'Ended'
+}, {
+    date: new Date(Date.now() - 86400000 * 7),
+    recipients: 'Alex Johnson',
+    durationMs: 3600000,
+    status: 'Ended'
+}, {
+    date: new Date(Date.now() - 86400000 * 10),
+    recipients: 'Omar Khalid',
+    durationMs: 14400000,
+    status: 'Ended'
+}];
+
+function addRecentSession(row) {
+    sessions.unshift(row);
+    renderSessions();
+}
+
+function updateLatestActiveRowStatus(newStatus) {
+    const idx = sessions.findIndex(r => r.status === 'Active');
+    if (idx !== -1) {
+        sessions[idx].status = newStatus;
+        renderSessions();
+    }
+}
+
+let currentSort = {
+    key: 'date',
+    dir: 'desc'
+};
+let currentPage = 1;
+const pageSize = 10; // enough for our mock, no pagination needed but ready
+
+function formatDate(d) {
+    return d.toLocaleString();
+}
+
+function formatDuration(ms) {
+    const totalSec = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    if (h >= 1) return `${h}h ${m}m`;
+    return `${m}m`;
+}
+
+function renderSessions() {
+    const search = document.getElementById('sessionSearch').value.toLowerCase();
+    const statusVal = document.getElementById('statusFilter').value;
+    let filtered = sessions.filter(r => (!statusVal || r.status === statusVal) && r.recipients.toLowerCase().includes(search));
+    // sort
+    filtered.sort((a, b) => {
+        let vA, vB;
+        if (currentSort.key === 'date') {
+            vA = a.date.getTime();
+            vB = b.date.getTime();
+        } else if (currentSort.key === 'duration') {
+            vA = a.durationMs;
+            vB = b.durationMs;
+        } else {
+            vA = 0;
+            vB = 0;
+        }
+        return currentSort.dir === 'asc' ? vA - vB : vB - vA;
+    });
+    // pagination (simple)
+    const total = filtered.length;
+    const start = (currentPage - 1) * pageSize;
+    const end = Math.min(start + pageSize, total);
+    const pageRows = filtered.slice(start, end);
+
+    const tbody = document.getElementById('sessionsTbody');
+    tbody.innerHTML = '';
+    pageRows.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${formatDate(r.date)}</td>
+          <td>${r.recipients}</td>
+          <td>${formatDuration(r.durationMs)}</td>
+          <td>
+            <span class="badge ${r.status==='Active'?'bg-info':(r.status==='Ended'?'bg-success':'bg-warning')}">${r.status}</span>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-light me-1" title="Details"><i class="fa-solid fa-eye"></i></button>
+            ${r.status==='Active' ? '<button class="btn btn-sm btn-danger" title="Stop"><i class="fa-solid fa-stop"></i></button>' : ''}
+          </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    document.getElementById('paginationInfo').textContent = `Showing ${total===0?0:start+1}–${end} of ${total}`;
+    document.getElementById('prevPageBtn').disabled = currentPage === 1;
+    document.getElementById('nextPageBtn').disabled = end >= total;
+}
+
+document.getElementById('sessionSearch').addEventListener('input', () => {
+    currentPage = 1;
+    renderSessions();
+});
+document.getElementById('statusFilter').addEventListener('change', () => {
+    currentPage = 1;
+    renderSessions();
+});
+document.querySelectorAll('#sessionsTable thead th[role="button"]').forEach(th => {
+    th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        if (currentSort.key === key) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort.key = key;
+            currentSort.dir = 'asc';
+        }
+        renderSessions();
+    });
+});
+document.getElementById('prevPageBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderSessions();
+    }
+});
+document.getElementById('nextPageBtn').addEventListener('click', () => {
+    currentPage++;
+    renderSessions();
+});
+
+// Initial render
+renderSessions();
+  </script>
+ </body>
+</html>

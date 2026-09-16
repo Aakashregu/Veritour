@@ -1,0 +1,129 @@
+/* Onboarding Portal Page Styles (onboarding_portal.css) */
+:root {
+    --nav-height: 56px
+    }
+body {
+    font-family: "Poppins", var(--font-sans)
+    }
+/* Layout adjustments */
+.page-shell {
+    min-height: calc(100vh - var(--nav-height))
+    }
+.onboard-sidebar {
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto
+    }
+main {
+    padding: 12px
+    }
+@media (max-width: 991.98px) {
+    .onboard-sidebar {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        bottom: 0;
+        z-index: 1020;
+        background: #f8f9fa;
+        width: 260px;
+        display: none
+        }
+    .onboard-sidebar:not(.d-none) {
+        display: flex
+        }
+    main {
+        padding: 12px
+        }
+    }
+/* Stepper */
+.wizard-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 12px
+    }
+.wizard-stepper .step {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 6px;
+    min-width: 120px
+    }
+.wizard-stepper .bubble {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--neutral-soft);
+    color: var(--text);
+    border: 2px solid var(--border-color);
+    transition: all 0.2s ease
+    }
+.wizard-stepper .label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 600
+    }
+.wizard-stepper .step.active .bubble {
+    background: var(--color-primary);
+    color: var(--text-on-primary);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-1)
+    }
+.wizard-stepper .step.active .label {
+    color: var(--text-strong)
+    }
+.wizard-stepper .step.done .bubble {
+    background: var(--primary-soft);
+    color: var(--text-strong);
+    border-color: var(--color-primary)
+    }
+.wizard-stepper .step.done .label {
+    color: var(--text)
+    }
+.wizard-stepper .connector {
+    flex: 1;
+    height: 4px;
+    background: var(--neutral-soft);
+    border-radius: 4px;
+    position: relative
+    }
+/* QR code box */
+.qr-box {
+    width: 190px;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-2);
+    background: var(--surface-0);
+    box-shadow: var(--shadow-0)
+    }
+/* Sticky recent activity */
+.recent-activity.sticky-md-top {
+    top: calc(var(--nav-height) + 12px)
+    }
+/* Buttons and badges minor tweaks */
+#manualOverrideBtn {
+    border-color: #ffc107
+    }
+/* Table sorting visual hint */
+th.sortable {
+    cursor: pointer;
+    user-select: none
+    }
+th.sortable:hover {
+    background: var(--neutral-soft)
+    }
+/* Review panel cards */
+#reviewPanel .border {
+    border-color: var(--border-color) !important
+    }
+/* Accessibility focus */
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25)
+    }

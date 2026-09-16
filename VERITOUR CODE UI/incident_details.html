@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Incident Details | VeriTour Authority
+  </title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkfHZR8jAC9OWB3MEj2cG2b/rf8KBtbDWEQ9Y+XcE0vZ8qW6F2vNhbbXg==" referrerpolicy="no-referrer" rel="stylesheet">
+   <!-- Leaflet (Map) -->
+   <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+    </script>
+    <!-- Global Theme CSS -->
+    <link href="style.css" rel="stylesheet"/>
+    <!-- Page-specific CSS -->
+    <link href="incident_details.css" rel="stylesheet"/>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- Authority Unified Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button class="btn btn-outline-light me-2" id="sidebarToggle" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="./authority_dashboard.html">
+     <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour Authority
+     </span>
+    </a>
+    <button aria-controls="authNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#authNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="authNavbar">
+     <form class="d-flex ms-auto me-3" role="search" style="max-width:420px;">
+      <input aria-label="Search" class="form-control form-control-sm me-2" placeholder="Search Tourist/Incident ID" type="search"/>
+      <button class="btn btn-outline-light btn-sm" type="submit">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+      </button>
+     </form>
+     <div class="d-flex align-items-center">
+      <button class="btn btn-warning btn-sm me-2 role-police" id="ackNextBtn">
+       <i class="fa-solid fa-bolt me-1">
+       </i>
+       Acknowledge Next
+      </button>
+      <button class="btn btn-light btn-sm me-2 role-tourism" id="newZoneBtn">
+       <i class="fa-solid fa-plus me-1">
+       </i>
+       New Zone
+      </button>
+      <button class="btn btn-link text-white me-2" title="Notifications">
+       <i class="fa-solid fa-bell">
+       </i>
+      </button>
+      <button class="btn btn-link text-white me-2" title="Messages">
+       <i class="fa-solid fa-envelope">
+       </i>
+      </button>
+      <div class="dropdown">
+       <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="authProfileMenu">
+        <img alt="avatar" class="rounded-circle me-2" height="28" src="https://via.placeholder.com/28" width="28"/>
+        <strong id="authProfileName">
+         Officer Priya
+        </strong>
+       </a>
+       <ul aria-labelledby="authProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+        <li class="px-3 py-1">
+         <small class="text-muted" id="authProfileRole">
+          Police Officer
+         </small>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Settings
+         </a>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Keyboard Shortcuts
+         </a>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./login_page.html">
+          Logout
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <div class="container-fluid">
+   <div class="d-flex">
+    <!-- Authority Unified Sidebar (Police & Tourism) -->
+    <aside class="auth-sidebar d-flex flex-column flex-shrink-0 p-3 bg-light border-end h-100" id="leftSidebar">
+     <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="#">
+      <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+      <span class="fs-6 fw-bold" style="color:#0d6efd;">
+       VeriTour Ops
+      </span>
+     </a>
+     <div class="d-flex align-items-center mt-3 mb-2">
+      <img alt="Avatar" class="rounded-circle me-2" src="https://via.placeholder.com/40"/>
+      <div>
+       <div class="fw-semibold" id="authUserName">
+        Officer Priya
+       </div>
+       <small class="text-muted" id="authUserRole">
+        Police Officer
+       </small>
+      </div>
+     </div>
+     <hr/>
+     <div class="section-title">
+      Operations
+     </div>
+     <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item">
+       <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html">
+        <i class="fa-solid fa-gauge me-2">
+        </i>
+        Dashboard
+       </a>
+      </li>
+      <li>
+       <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html#map">
+        <i class="fa-solid fa-map me-2">
+        </i>
+        Real-Time Map
+       </a>
+      </li>
+      <li class="role-police">
+       <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html#incidentQueue">
+        <i class="fa-solid fa-siren-on me-2">
+        </i>
+        Incident Queue
+       </a>
+      </li>
+     </ul>
+     <div class="section-title role-police">
+      Cases
+     </div>
+     <ul class="nav nav-pills flex-column mb-2 role-police">
+      <li>
+       <a class="nav-link active" data-page="incident_details" href="./incident_details.html">
+        <i class="fa-solid fa-siren-on me-2">
+        </i>
+        Active Incidents
+       </a>
+      </li>
+      <li>
+       <a class="nav-link" data-page="tourist_profile" href="./tourist_profile.html">
+        <i class="fa-solid fa-user me-2">
+        </i>
+        Tourist Profiles
+       </a>
+      </li>
+      <li>
+       <a class="nav-link" data-page="efir_form" href="./efir_form.html">
+        <i class="fa-solid fa-file-signature me-2">
+        </i>
+        Generate E-FIR
+       </a>
+      </li>
+     </ul>
+     <div class="section-title role-tourism">
+      Zone Management
+     </div>
+     <ul class="nav nav-pills flex-column mb-2 role-tourism">
+      <li>
+       <a class="nav-link" data-page="zone_editor" href="./zone_editor.html">
+        <i class="fa-solid fa-draw-polygon me-2">
+        </i>
+        Zone Editor
+       </a>
+      </li>
+      <li>
+       <a aria-controls="zonesSubmenu" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#zonesSubmenu" role="button">
+        <span>
+         <i class="fa-solid fa-triangle-exclamation me-2">
+         </i>
+         High-Risk Zones
+        </span>
+        <i class="fa-solid fa-chevron-down small">
+        </i>
+       </a>
+       <div class="collapse ms-3" id="zonesSubmenu">
+        <ul class="nav flex-column">
+         <li>
+          <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html">
+           Create New Zone
+          </a>
+         </li>
+         <li>
+          <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html">
+           Manage Zones
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+     <div class="section-title">
+      Analytics
+     </div>
+     <ul class="nav nav-pills flex-column mb-2">
+      <li>
+       <a class="nav-link" data-page="analytics_dashboard" href="./analytics_dashboard.html">
+        <i class="fa-solid fa-chart-line me-2">
+        </i>
+        Analytics &amp; Reporting
+       </a>
+      </li>
+     </ul>
+     <div class="mt-auto pt-2">
+      <a class="btn btn-outline-secondary w-100" href="#">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Preferences
+      </a>
+     </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-grow-1">
+     <!-- Breadcrumb -->
+     <nav aria-label="breadcrumb" class="breadcrumb mt-2">
+      <ol class="breadcrumb mb-0">
+       <li class="breadcrumb-item">
+        <a href="./authority_dashboard.html">
+         Authority Dashboard
+        </a>
+       </li>
+       <li class="breadcrumb-item">
+        <a href="./authority_dashboard.html#incidentQueue">
+         Incidents
+        </a>
+       </li>
+       <li aria-current="page" class="breadcrumb-item active">
+        Incident Details
+       </li>
+      </ol>
+     </nav>
+     <!-- Incident Header (Sticky Subheader) -->
+     <section class="incident-header app-card mt-2">
+      <div class="card-body py-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+       <div class="d-flex align-items-center gap-3 flex-wrap">
+        <div>
+         <div class="small text-muted">
+          Incident ID
+         </div>
+         <div class="fw-bold" id="incidentId">
+          INC-230147
+         </div>
+        </div>
+        <div class="vr d-none d-md-block">
+        </div>
+        <div>
+         <div class="small text-muted">
+          Type
+         </div>
+         <div class="fw-semibold" id="incidentType">
+          <i class="fa-solid fa-person-circle-question me-1 text-warning">
+          </i>
+          Distress Alert
+         </div>
+        </div>
+        <div class="vr d-none d-md-block">
+        </div>
+        <div>
+         <div class="small text-muted">
+          Tourist
+         </div>
+         <div class="fw-semibold" id="touristName">
+          Ava Thompson
+         </div>
+        </div>
+        <div class="vr d-none d-md-block">
+        </div>
+        <div class="d-flex align-items-center gap-2">
+         <span class="badge status-badge new" id="statusBadge">
+          <i class="fa-solid fa-circle-dot me-1">
+          </i>
+          <span id="statusText">
+           New
+          </span>
+         </span>
+         <span class="text-muted">
+          •
+         </span>
+         <span class="elapsed-time" id="elapsedTime">
+          00:03:42
+         </span>
+        </div>
+       </div>
+       <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="dropdown me-1">
+         <button aria-expanded="false" class="btn btn-light btn-sm dropdown-toggle" data-bs-toggle="dropdown" type="button">
+          <i class="fa-solid fa-arrows-rotate me-1">
+          </i>
+          Update Status
+         </button>
+         <ul class="dropdown-menu dropdown-menu-end" id="statusMenu">
+          <li>
+           <button class="dropdown-item" data-status="Acknowledged">
+            Acknowledged
+           </button>
+          </li>
+          <li>
+           <button class="dropdown-item" data-status="In Progress">
+            In Progress
+           </button>
+          </li>
+          <li>
+           <button class="dropdown-item" data-status="Resolved">
+            Resolved
+           </button>
+          </li>
+         </ul>
+        </div>
+        <a class="btn btn-outline-primary btn-sm role-police" href="#" id="generateEfirBtn">
+         <i class="fa-solid fa-file-signature me-1">
+         </i>
+         Generate E-FIR
+        </a>
+        <button class="btn btn-outline-success btn-sm" id="closeIncidentBtn">
+         <i class="fa-solid fa-check-double me-1">
+         </i>
+         Close Incident
+        </button>
+        <button class="btn btn-warning btn-sm" id="acknowledgeBtn">
+         <i class="fa-solid fa-hand-paper me-1">
+         </i>
+         Acknowledge
+        </button>
+       </div>
+      </div>
+     </section>
+     <!-- Main Content Layout -->
+     <div class="row g-3 mt-2">
+      <!-- Left: Live Map -->
+      <div class="col-lg-8">
+       <div class="card h-100">
+        <div class="card-header">
+         <div class="widget-title">
+          Live Map
+         </div>
+         <div class="d-flex align-items-center gap-2">
+          <span class="badge-soft info">
+           <i class="fa-solid fa-location-crosshairs me-1">
+           </i>
+           Real-time
+          </span>
+         </div>
+        </div>
+        <div class="card-body p-0">
+         <div id="incidentMap">
+         </div>
+        </div>
+        <div class="card-footer small text-muted">
+         <i class="fa-solid fa-circle-info me-1">
+         </i>
+         Blue markers: Nearby units • Pulsing marker: Tourist • Trail shows last 15 min movement
+        </div>
+       </div>
+      </div>
+      <!-- Right: Details Panel -->
+      <div class="col-lg-4">
+       <div class="card sticky-panel">
+        <div class="card-header">
+         <div class="widget-title">
+          Details
+         </div>
+        </div>
+        <div class="card-body">
+         <!-- Tabs -->
+         <ul class="nav nav-tabs" id="detailsTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+           <button aria-controls="profileTabPane" aria-selected="true" class="nav-link active" data-bs-target="#profileTabPane" data-bs-toggle="tab" id="profile-tab" role="tab" type="button">
+            <i class="fa-solid fa-id-card-clip me-1">
+            </i>
+            Tourist Profile
+           </button>
+          </li>
+          <li class="nav-item" role="presentation">
+           <button aria-controls="timelineTabPane" aria-selected="false" class="nav-link" data-bs-target="#timelineTabPane" data-bs-toggle="tab" id="timeline-tab" role="tab" type="button">
+            <i class="fa-solid fa-timeline me-1">
+            </i>
+            Incident Timeline
+           </button>
+          </li>
+         </ul>
+         <div class="tab-content pt-3" id="detailsTabsContent">
+          <!-- Tourist Profile Tab -->
+          <div aria-labelledby="profile-tab" class="tab-pane fade show active" id="profileTabPane" role="tabpanel" tabindex="0">
+           <div class="user-profile-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+             <img alt="Tourist Photo" class="rounded-circle" height="64" id="touristPhoto" onerror="this.onerror=null;this.src='https://picsum.photos/id/237/120/120'" src="https://picsum.photos/seed/ava/120/120" width="64"/>
+             <div>
+              <div class="user-name">
+               Ava Thompson
+              </div>
+              <div class="text-muted">
+               Tourist ID: T-77420
+              </div>
+             </div>
+            </div>
+            <div class="row g-2">
+             <div class="col-6">
+              <div class="small text-muted">
+               Nationality
+              </div>
+              <div class="fw-semibold">
+               Canadian
+              </div>
+             </div>
+             <div class="col-6">
+              <div class="small text-muted">
+               Age
+              </div>
+              <div class="fw-semibold">
+               29
+              </div>
+             </div>
+             <div class="col-6">
+              <div class="small text-muted">
+               Blood Type
+              </div>
+              <div class="fw-semibold">
+               O+
+              </div>
+             </div>
+             <div class="col-6">
+              <div class="small text-muted">
+               Last Known Device
+              </div>
+              <div class="fw-semibold">
+               iPhone 14
+              </div>
+             </div>
+            </div>
+            <hr/>
+            <div class="mb-2 fw-semibold">
+             Emergency Contacts
+            </div>
+            <ul class="list-group list-group-flush mb-2">
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+               <div class="fw-semibold">
+                Liam Thompson
+               </div>
+               <small class="text-muted">
+                Brother • +1 416-555-0137
+               </small>
+              </div>
+              <a class="btn btn-outline-success btn-sm" href="tel:+14165550137">
+               <i class="fa-solid fa-phone">
+               </i>
+              </a>
+             </li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+               <div class="fw-semibold">
+                Noah Patel
+               </div>
+               <small class="text-muted">
+                Friend • +1 604-555-0198
+               </small>
+              </div>
+              <a class="btn btn-outline-success btn-sm" href="tel:+16045550198">
+               <i class="fa-solid fa-phone">
+               </i>
+              </a>
+             </li>
+             <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+               <div class="fw-semibold">
+                Embassy Hotline
+               </div>
+               <small class="text-muted">
+                24x7 • +1 613-555-0173
+               </small>
+              </div>
+              <a class="btn btn-outline-success btn-sm" href="tel:+16135550173">
+               <i class="fa-solid fa-phone">
+               </i>
+              </a>
+             </li>
+            </ul>
+            <div class="d-grid">
+             <a class="btn btn-info btn-sm" href="./tourist_profile.html?id=T-77420">
+              <i class="fa-solid fa-user-pen me-1">
+              </i>
+              View Full Profile
+             </a>
+            </div>
+           </div>
+          </div>
+          <!-- Incident Timeline Tab -->
+          <div aria-labelledby="timeline-tab" class="tab-pane fade" id="timelineTabPane" role="tabpanel" tabindex="0">
+           <!-- Add Log Entry Form -->
+           <div class="mb-3">
+            <label class="form-label" for="logEntryText">
+             Add Log Entry
+            </label>
+            <textarea class="form-control" id="logEntryText" placeholder="Log an action or observation..." rows="3"></textarea>
+            <div class="d-flex justify-content-end mt-2">
+             <button class="btn btn-primary btn-sm" id="addLogBtn">
+              <i class="fa-solid fa-plus me-1">
+              </i>
+              Add Entry
+             </button>
+            </div>
+           </div>
+           <!-- Filters & Controls -->
+           <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+            <div class="input-group input-group-sm" style="max-width: 260px;">
+             <span class="input-group-text">
+              <i class="fa-solid fa-magnifying-glass">
+              </i>
+             </span>
+             <input class="form-control" id="timelineSearch" placeholder="Search timeline..." type="text"/>
+            </div>
+            <div aria-label="Filter type" class="btn-group btn-group-sm" role="group">
+             <input autocomplete="off" checked="" class="btn-check" id="filterAll" name="filterType" type="radio"/>
+             <label class="btn btn-outline-secondary" for="filterAll">
+              All
+             </label>
+             <input autocomplete="off" class="btn-check" id="filterSystem" name="filterType" type="radio"/>
+             <label class="btn btn-outline-secondary" for="filterSystem">
+              System
+             </label>
+             <input autocomplete="off" class="btn-check" id="filterManual" name="filterType" type="radio"/>
+             <label class="btn btn-outline-secondary" for="filterManual">
+              Manual
+             </label>
+            </div>
+           </div>
+           <!-- Timeline Table -->
+           <div class="table-responsive">
+            <table class="table table-theme table-sm" id="timelineTable">
+             <thead>
+              <tr>
+               <th data-sort="time" role="button">
+                Time
+                <i class="fa-solid fa-sort ms-1">
+                </i>
+               </th>
+               <th>
+                Type
+               </th>
+               <th>
+                Actor
+               </th>
+               <th>
+                Details
+               </th>
+               <th>
+                Action
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <!-- rows injected by JS -->
+             </tbody>
+            </table>
+           </div>
+           <div class="d-flex justify-content-between align-items-center mt-2">
+            <small class="text-muted" id="paginationInfo">
+             Showing 1–5 of 12
+            </small>
+            <div class="btn-group btn-group-sm" role="group">
+             <button class="btn btn-light" id="prevPageBtn">
+              <i class="fa-solid fa-chevron-left">
+              </i>
+             </button>
+             <button class="btn btn-light" id="nextPageBtn">
+              <i class="fa-solid fa-chevron-right">
+              </i>
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+   </div>
+  </div>
+  <!-- Authority Unified Footer -->
+  <footer class="border-top bg-light py-2 mt-3">
+   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small class="text-muted mb-1 mb-md-0">
+     © 2025 VeriTour •
+     <a class="text-decoration-none" href="#">
+      Terms
+     </a>
+     •
+     <a class="text-decoration-none" href="#">
+      Privacy
+     </a>
+    </small>
+    <div class="d-flex align-items-center">
+     <span class="badge text-bg-secondary me-2">
+      <i class="fa-solid fa-signal me-1">
+      </i>
+      Live
+     </span>
+     <a class="btn btn-outline-primary btn-sm me-2 role-police" href="./efir_form.html">
+      <i class="fa-solid fa-file-signature me-1">
+      </i>
+      Generate E-FIR
+     </a>
+     <a class="btn btn-outline-success btn-sm role-tourism" href="./zone_editor.html">
+      <i class="fa-solid fa-draw-polygon me-1">
+      </i>
+      Create Zone
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Toast Container -->
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080">
+   <div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-success border-0" id="appToast" role="alert">
+    <div class="d-flex">
+     <div class="toast-body" id="toastMsg">
+      Action completed
+     </div>
+     <button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Day.js for time formatting -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js">
+  </script>
+  <script>
+   dayjs.extend(window.dayjs_plugin_relativeTime);
+  </script>
+  <!-- Bootstrap 5 JS -->
+  <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Leaflet JS -->
+  <script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script>
+   // Global State (mocked/demo)
+const state = {
+    user: {
+        name: 'Officer Priya',
+        role: 'Police Officer',
+        permissions: ['canAcknowledge', 'canUpdateStatus', 'canGenerateEFIR']
+    },
+    incident: {
+        id: 'INC-230147',
+        touristId: 'T-77420',
+        type: 'Distress Alert',
+        status: 'New',
+        startTimeISO: dayjs().subtract(3, 'minute').subtract(42, 'second').toISOString(),
+        isAcknowledged: false
+    },
+    map: {
+        center: [28.6139, 77.2090], // New Delhi sample
+        zoom: 14,
+        touristTrail: [
+            [28.6150, 77.2070],
+            [28.6143, 77.2080],
+            [28.6139, 77.2090],
+            [28.6133, 77.2105],
+            [28.6128, 77.2112]
+        ],
+        nearbyUnits: [{
+            id: 'Unit-34',
+            pos: [28.6162, 77.2101]
+        }, {
+            id: 'Unit-07',
+            pos: [28.6118, 77.2074]
+        }, {
+            id: 'Unit-21',
+            pos: [28.6103, 77.2130]
+        }]
+    },
+    timeline: {
+        sortAsc: false,
+        page: 1,
+        pageSize: 5,
+        filter: 'all',
+        search: '',
+        entries: [{
+            time: dayjs().subtract(3, 'minute').subtract(42, 'second').toISOString(),
+            type: 'System',
+            actor: 'Sensor',
+            details: 'SOS activated on device.',
+            id: 'E1'
+        }, {
+            time: dayjs().subtract(3, 'minute').toISOString(),
+            type: 'System',
+            actor: 'Platform',
+            details: 'Location fix acquired (GPS).',
+            id: 'E2'
+        }, {
+            time: dayjs().subtract(2, 'minute').toISOString(),
+            type: 'System',
+            actor: 'Platform',
+            details: 'Nearby units alerted (3).',
+            id: 'E3'
+        }, {
+            time: dayjs().subtract(90, 'second').toISOString(),
+            type: 'Manual',
+            actor: 'Dispatcher',
+            details: 'Dispatch message sent to Unit-34.',
+            id: 'E4'
+        }, {
+            time: dayjs().subtract(70, 'second').toISOString(),
+            type: 'System',
+            actor: 'Platform',
+            details: 'Tourist moved 50m SE.',
+            id: 'E5'
+        }, {
+            time: dayjs().subtract(45, 'second').toISOString(),
+            type: 'Manual',
+            actor: 'Officer Priya',
+            details: 'Calling emergency contact...',
+            id: 'E6'
+        }, {
+            time: dayjs().subtract(20, 'second').toISOString(),
+            type: 'System',
+            actor: 'Platform',
+            details: 'Unit-34 is 300m away.',
+            id: 'E7'
+        }]
+    }
+};
+
+// Role-based visibility controls
+function applyRoleVisibility() {
+    const isPolice = state.user.role.toLowerCase().includes('police');
+    document.querySelectorAll('.role-police').forEach(el => el.style.display = isPolice ? '' : 'none');
+    document.querySelectorAll('.role-tourism').forEach(el => el.style.display = isPolice ? 'none' : '');
+}
+
+// Update Status Badge
+function setStatus(newStatus) {
+    state.incident.status = newStatus;
+    const badge = document.getElementById('statusBadge');
+    const text = document.getElementById('statusText');
+    badge.className = 'badge status-badge ' + statusClass(newStatus);
+    text.textContent = newStatus;
+    if (newStatus !== 'New') {
+        const ackBtn = document.getElementById('acknowledgeBtn');
+        if (ackBtn) ackBtn.classList.add('d-none');
+    }
+}
+
+function statusClass(st) {
+    switch ((st || '').toLowerCase()) {
+        case 'new':
+            return 'new';
+        case 'acknowledged':
+            return 'acknowledged';
+        case 'in progress':
+            return 'inprogress';
+        case 'resolved':
+            return 'resolved';
+        default:
+            return 'new';
+    }
+}
+
+// Elapsed Time counter
+function startElapsedTimer() {
+    const el = document.getElementById('elapsedTime');
+    const start = dayjs(state.incident.startTimeISO);
+
+    function tick() {
+        const diff = dayjs().diff(start, 'second');
+        const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+        const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+        const s = String(diff % 60).padStart(2, '0');
+        el.textContent = `${h}:${m}:${s}`;
+    }
+    tick();
+    setInterval(tick, 1000);
+}
+
+// Toast helper
+function showToast(message, variant = 'success') {
+    const toastEl = document.getElementById('appToast');
+    const toastMsg = document.getElementById('toastMsg');
+    toastEl.classList.remove('text-bg-success', 'text-bg-danger', 'text-bg-warning', 'text-bg-info');
+    toastEl.classList.add('text-bg-' + (variant || 'success'));
+    toastMsg.textContent = message;
+    const t = new bootstrap.Toast(toastEl, {
+        delay: 2500
+    });
+    t.show();
+}
+
+// SweetAlert helper
+function alertSuccess(title, text) {
+    return Swal.fire({
+        icon: 'success',
+        title,
+        text,
+        confirmButtonColor: '#0d6efd'
+    });
+}
+
+// Initialize Leaflet Map
+function initMap() {
+    const map = L.map('incidentMap').setView(state.map.center, state.map.zoom);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // Tourist pulsing marker
+    const pulseIcon = L.divIcon({
+        className: 'pulse-icon',
+        html: '<div class="pulse-marker"></div>'
+    });
+    const touristMarker = L.marker(state.map.touristTrail[state.map.touristTrail.length - 1], {
+            icon: pulseIcon
+        })
+        .addTo(map)
+        .bindPopup(`<strong>Tourist</strong><br>${dayjs().format('YYYY-MM-DD HH:mm:ss')}<br>${state.map.touristTrail[state.map.touristTrail.length-1][0].toFixed(4)}, ${state.map.touristTrail[state.map.touristTrail.length-1][1].toFixed(4)}`);
+
+    // Movement history polyline
+    L.polyline(state.map.touristTrail, {
+        color: '#0d6efd',
+        weight: 3,
+        opacity: 0.8
+    }).addTo(map);
+
+    // Nearby units
+    state.map.nearbyUnits.forEach(u => {
+        const m = L.marker(u.pos, {
+            title: u.id
+        }).addTo(map);
+        m.bindPopup(`<strong>${u.id}</strong><br>ETA ~ ${Math.floor(2+Math.random()*5)} min`);
+    });
+
+    // Simulate live position update
+    setInterval(() => {
+        const last = state.map.touristTrail[state.map.touristTrail.length - 1];
+        const next = [last[0] + (Math.random() - 0.5) * 0.0008, last[1] + (Math.random() - 0.5) * 0.0008];
+        state.map.touristTrail.push(next);
+        touristMarker.setLatLng(next).setPopupContent(`<strong>Tourist</strong><br>${dayjs().format('YYYY-MM-DD HH:mm:ss')}<br>${next[0].toFixed(4)}, ${next[1].toFixed(4)}`);
+        L.polyline([last, next], {
+            color: '#0d6efd',
+            weight: 3,
+            opacity: 0.6
+        }).addTo(map);
+    }, 8000);
+}
+
+// Timeline rendering
+function renderTimeline() {
+    const tbody = document.querySelector('#timelineTable tbody');
+    tbody.innerHTML = '';
+    let items = [...state.timeline.entries];
+    // Filter
+    if (state.timeline.filter === 'system') items = items.filter(e => e.type.toLowerCase() === 'system');
+    if (state.timeline.filter === 'manual') items = items.filter(e => e.type.toLowerCase() === 'manual');
+    // Search
+    if (state.timeline.search) {
+        const q = state.timeline.search.toLowerCase();
+        items = items.filter(e => (e.details + ' ' + e.actor).toLowerCase().includes(q));
+    }
+    // Sort by time desc/asc
+    items.sort((a, b) => state.timeline.sortAsc ? (dayjs(a.time).valueOf() - dayjs(b.time).valueOf()) : (dayjs(b.time).valueOf() - dayjs(a.time).valueOf()));
+
+    // Pagination
+    const total = items.length;
+    const startIdx = (state.timeline.page - 1) * state.timeline.pageSize;
+    const pageItems = items.slice(startIdx, startIdx + state.timeline.pageSize);
+
+    pageItems.forEach(e => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="text-nowrap">${dayjs(e.time).format('YYYY-MM-DD HH:mm:ss')}</td>
+          <td><span class="badge-soft ${e.type.toLowerCase()==='system'?'info':'primary'}">${e.type}</span></td>
+          <td>${e.actor}</td>
+          <td>${e.details}</td>
+          <td><button class="btn btn-link btn-sm" data-id="${e.id}"><i class="fa-solid fa-eye"></i></button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    // Pagination info
+    const from = total === 0 ? 0 : startIdx + 1;
+    const to = Math.min(startIdx + state.timeline.pageSize, total);
+    document.getElementById('paginationInfo').textContent = `Showing ${from}–${to} of ${total}`;
+
+    // Bind view actions
+    tbody.querySelectorAll('button[data-id]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = e.currentTarget.getAttribute('data-id');
+            const item = state.timeline.entries.find(x => x.id === id);
+            if (item) {
+                Swal.fire({
+                    title: 'Timeline Event',
+                    html: `<div class="text-start">
+                        <div><strong>Time:</strong> ${dayjs(item.time).format('YYYY-MM-DD HH:mm:ss')}</div>
+                        <div><strong>Type:</strong> ${item.type}</div>
+                        <div><strong>Actor:</strong> ${item.actor}</div>
+                        <div class="mt-2"><strong>Details:</strong><br>${item.details}</div>
+                     </div>`,
+                    icon: 'info',
+                    confirmButtonColor: '#0d6efd'
+                });
+            }
+        });
+    });
+
+    // Prev/Next buttons
+    const maxPage = Math.ceil(total / state.timeline.pageSize) || 1;
+    document.getElementById('prevPageBtn').disabled = state.timeline.page <= 1;
+    document.getElementById('nextPageBtn').disabled = state.timeline.page >= maxPage;
+}
+
+function bindTimelineControls() {
+    document.getElementById('timelineSearch').addEventListener('input', (e) => {
+        state.timeline.search = e.target.value.trim();
+        state.timeline.page = 1;
+        renderTimeline();
+    });
+    document.getElementById('prevPageBtn').addEventListener('click', () => {
+        state.timeline.page = Math.max(1, state.timeline.page - 1);
+        renderTimeline();
+    });
+    document.getElementById('nextPageBtn').addEventListener('click', () => {
+        state.timeline.page = state.timeline.page + 1;
+        renderTimeline();
+    });
+    document.querySelector('th[data-sort="time"]').addEventListener('click', () => {
+        state.timeline.sortAsc = !state.timeline.sortAsc;
+        renderTimeline();
+    });
+    document.getElementById('filterAll').addEventListener('change', () => {
+        state.timeline.filter = 'all';
+        state.timeline.page = 1;
+        renderTimeline();
+    });
+    document.getElementById('filterSystem').addEventListener('change', () => {
+        state.timeline.filter = 'system';
+        state.timeline.page = 1;
+        renderTimeline();
+    });
+    document.getElementById('filterManual').addEventListener('change', () => {
+        state.timeline.filter = 'manual';
+        state.timeline.page = 1;
+        renderTimeline();
+    });
+
+    document.getElementById('addLogBtn').addEventListener('click', () => {
+        const ta = document.getElementById('logEntryText');
+        const text = ta.value.trim();
+        if (!text) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Empty note',
+                text: 'Please enter a note before submitting.',
+                confirmButtonColor: '#0d6efd'
+            });
+            return;
+        }
+        // optimistic add
+        const entry = {
+            time: dayjs().toISOString(),
+            type: 'Manual',
+            actor: state.user.name,
+            details: text,
+            id: 'E' + (Math.random().toString(36).slice(2, 7))
+        };
+        state.timeline.entries.push(entry);
+        ta.value = '';
+        state.timeline.page = 1; // show latest on page 1 (since sort desc default)
+        renderTimeline();
+        showToast('Log entry added');
+    });
+}
+
+// Acknowledge Button
+function bindActions() {
+    const ackBtn = document.getElementById('acknowledgeBtn');
+    if (!state.user.permissions.includes('canAcknowledge') || state.incident.status !== 'New') {
+        ackBtn.classList.add('d-none');
+    }
+    ackBtn.addEventListener('click', async () => {
+        ackBtn.disabled = true;
+        const res = await Swal.fire({
+            title: 'Acknowledge Incident?',
+            text: 'You will take ownership and stop escalations.',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Acknowledge',
+            cancelButtonText: 'Cancel',
+            confirmButtonColor: '#0d6efd'
+        });
+        if (!res.isConfirmed) {
+            ackBtn.disabled = false;
+            return;
+        }
+        // simulate API
+        setTimeout(() => {
+            state.incident.isAcknowledged = true;
+            setStatus('Acknowledged');
+            state.timeline.entries.push({
+                time: dayjs().toISOString(),
+                type: 'Manual',
+                actor: state.user.name,
+                details: 'Incident acknowledged.',
+                id: 'E' + (Math.random().toString(36).slice(2, 7))
+            });
+            renderTimeline();
+            showToast('Incident acknowledged');
+        }, 700);
+    });
+
+    // Update Status dropdown
+    document.querySelectorAll('#statusMenu .dropdown-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const newStatus = item.getAttribute('data-status');
+            if (!state.user.permissions.includes('canUpdateStatus')) return;
+            setStatus(newStatus);
+            state.timeline.entries.push({
+                time: dayjs().toISOString(),
+                type: 'Manual',
+                actor: state.user.name,
+                details: `Status changed to ${newStatus}.`,
+                id: 'E' + (Math.random().toString(36).slice(2, 7))
+            });
+            renderTimeline();
+            showToast(`Status updated to ${newStatus}`, newStatus === 'Resolved' ? 'success' : 'info');
+        });
+    });
+
+    // Close Incident
+    document.getElementById('closeIncidentBtn').addEventListener('click', async () => {
+        const res = await Swal.fire({
+            title: 'Close Incident?',
+            text: 'This will mark the incident as Resolved.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, close',
+            cancelButtonText: 'Cancel',
+            confirmButtonColor: '#198754'
+        });
+        if (res.isConfirmed) {
+            setStatus('Resolved');
+            state.timeline.entries.push({
+                time: dayjs().toISOString(),
+                type: 'Manual',
+                actor: state.user.name,
+                details: 'Incident closed as Resolved.',
+                id: 'E' + (Math.random().toString(36).slice(2, 7))
+            });
+            renderTimeline();
+            alertSuccess('Incident Closed', 'The incident has been marked as Resolved.');
+        }
+    });
+
+    // Generate E-FIR
+    const efirBtn = document.getElementById('generateEfirBtn');
+    if (!state.user.permissions.includes('canGenerateEFIR')) {
+        efirBtn.classList.add('d-none');
+    }
+    efirBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = `./efir_form.html?incidentId=${encodeURIComponent(state.incident.id)}&touristId=${encodeURIComponent(state.incident.touristId)}`;
+        window.location.href = url;
+    });
+
+    // Header "Acknowledge Next" demo action
+    document.getElementById('ackNextBtn').addEventListener('click', () => {
+        Swal.fire({
+            icon: 'info',
+            title: 'Acknowledge Next',
+            text: 'This would fetch the next pending incident from the queue.',
+            confirmButtonColor: '#0d6efd'
+        });
+    });
+
+    // Sidebar toggle (small screens)
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+        document.getElementById('leftSidebar').classList.toggle('d-none');
+    });
+}
+
+// Initialize page
+window.addEventListener('DOMContentLoaded', () => {
+    // Populate header basics
+    document.getElementById('incidentId').textContent = state.incident.id;
+    document.getElementById('incidentType').innerHTML = `<i class=\"fa-solid fa-person-circle-question me-1 text-warning\"></i>${state.incident.type}`;
+    document.getElementById('touristName').textContent = 'Ava Thompson';
+    setStatus(state.incident.status);
+    applyRoleVisibility();
+    startElapsedTimer();
+    initMap();
+    bindActions();
+    bindTimelineControls();
+    renderTimeline();
+});
+  </script>
+ </body>
+</html>

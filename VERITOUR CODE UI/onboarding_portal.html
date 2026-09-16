@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour • Onboarding Portal
+  </title>
+  <!-- Brand Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Flatpickr Datepicker -->
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
+  <!-- SweetAlert2 -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"/>
+  <!-- Site Theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page-specific CSS -->
+  <link href="onboarding_portal.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Entry Point Staff Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-label="Toggle sidebar" class="btn btn-outline-light me-2" id="onboardSidebarToggle">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="./onboarding_portal.html">
+     <img alt="VeriTour" class="me-2" height="28" onerror="this.src='https://picsum.photos/seed/veritour-logo/120/28'" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png"/>
+     VeriTour Onboarding
+    </a>
+    <button aria-controls="onboardNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#onboardNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="onboardNavbar">
+     <form class="d-flex ms-auto me-3" role="search" style="max-width:420px;">
+      <input aria-label="Search" class="form-control form-control-sm me-2" placeholder="Search by Name / Passport / Aadhaar" type="search"/>
+      <button class="btn btn-outline-light btn-sm" type="submit">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+      </button>
+     </form>
+     <div class="d-flex align-items-center">
+      <a class="btn btn-light btn-sm me-2" data-page="onboarding_portal" href="./onboarding_portal.html">
+       <i class="fa-solid fa-plus me-1">
+       </i>
+       Start New
+      </a>
+      <a class="btn btn-link text-white me-2" href="./tourist_dashboard.html" title="Notifications">
+       <i class="fa-solid fa-bell">
+       </i>
+      </a>
+      <div class="dropdown">
+       <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="onboardProfileMenu">
+        <img alt="avatar" class="rounded-circle me-2" height="28" onerror="this.src='https://picsum.photos/seed/staff/28/28'" src="https://via.placeholder.com/28" width="28"/>
+        <strong>
+         Staff
+        </strong>
+       </a>
+       <ul aria-labelledby="onboardProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+        <li>
+         <a class="dropdown-item" href="./tourist_dashboard.html">
+          Shift Details
+         </a>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./user_form.html">
+          Settings
+         </a>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./login_page.html">
+          Logout
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <div class="page-shell d-flex">
+   <!-- Left Sidebar (Navigation) -->
+   <style>
+    .onboard-sidebar { width: 260px; }
+      .onboard-sidebar .nav-link { color:#333; border-radius:.375rem; }
+      .onboard-sidebar .nav-link:hover { background-color: rgba(13,110,253,.08); color:#0d6efd; }
+      .onboard-sidebar .nav-link.active { background-color:#0d6efd; color:#fff; }
+   </style>
+   <aside class="onboard-sidebar d-flex flex-column flex-shrink-0 p-3 bg-light border-end h-100" id="leftSidebar">
+    <a class="d-flex align-items-center mb-3 text-decoration-none" href="#">
+     <img alt="VeriTour" class="me-2" onerror="this.src='https://picsum.photos/seed/veritour-sidebar/112/28'" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fs-6 fw-bold" style="color:#0d6efd;">
+      Onboarding
+     </span>
+    </a>
+    <div class="d-flex align-items-center mb-2">
+     <img alt="Avatar" class="rounded-circle me-2" onerror="this.src='https://picsum.photos/seed/avatar-staff/40/40'" src="https://via.placeholder.com/40"/>
+     <div>
+      <div class="fw-semibold">
+       Entry Staff
+      </div>
+      <small class="text-muted">
+       Kiosk
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <div class="d-grid gap-2 mb-3">
+     <button class="btn btn-success" id="startScanBtn">
+      <i class="fa-solid fa-qrcode me-2">
+      </i>
+      Start Scan
+     </button>
+    </div>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link active" data-page="onboarding_portal" href="#top">
+       <i class="fa-solid fa-id-card me-2">
+       </i>
+       New Onboarding
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="onboarding_portal" href="#recentActivity">
+       <i class="fa-solid fa-clock-rotate-left me-2">
+       </i>
+       Recent Activity
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="onboarding_portal" href="#pending">
+       <i class="fa-solid fa-list-check me-2">
+       </i>
+       Pending Verifications
+      </a>
+     </li>
+     <li>
+      <a aria-controls="onboardHelpCollapse" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#onboardHelpCollapse" role="button">
+       <span>
+        <i class="fa-solid fa-circle-question me-2">
+        </i>
+        Help &amp; Guides
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse ms-3" id="onboardHelpCollapse">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" href="#help-scan">
+          How to Scan Documents
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1" href="#help-override">
+          Manual Override Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+    </ul>
+   </aside>
+   <!-- Main Content Area -->
+   <main class="flex-grow-1" id="top">
+    <div class="container-fluid py-3">
+     <!-- Breadcrumb -->
+     <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb mb-0">
+       <li class="breadcrumb-item">
+        <a href="./tourist_dashboard.html">
+         Home
+        </a>
+       </li>
+       <li aria-current="page" class="breadcrumb-item active">
+        Onboarding Portal
+       </li>
+      </ol>
+     </nav>
+     <!-- Page Header -->
+     <div class="page-header">
+      <div class="d-flex align-items-center gap-2">
+       <h1 class="page-title mb-0">
+        <i class="fa-solid fa-id-card-clip text-primary me-2">
+        </i>
+        Tourist Onboarding
+       </h1>
+       <span class="badge bg-info-subtle text-info border">
+        Secure ID Issuance
+       </span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+       <div class="input-group input-group-sm" style="width: 240px;">
+        <label class="input-group-text" for="roleSelect">
+         <i class="fa-solid fa-user-shield">
+         </i>
+        </label>
+        <select class="form-select" id="roleSelect">
+         <option selected="" value="Entry Staff">
+          Role: Entry Staff
+         </option>
+         <option value="Supervisor">
+          Role: Supervisor
+         </option>
+        </select>
+       </div>
+       <a class="btn btn-outline-primary btn-sm" href="./analytics_dashboard.html">
+        <i class="fa-solid fa-chart-line me-1">
+        </i>
+        Analytics
+       </a>
+      </div>
+     </div>
+     <!-- Quick Metric + Trend -->
+     <div class="row g-3 mb-3">
+      <div class="col-12 col-md-8 col-lg-8">
+       <div class="card h-100">
+        <div class="card-header">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-calendar-day text-primary">
+          </i>
+          <span class="widget-title">
+           Todays Onboarding Summary
+          </span>
+         </div>
+         <div class="text-muted small">
+          Auto-updated every 5 mins
+         </div>
+        </div>
+        <div class="card-body">
+         <div class="row g-3">
+          <div class="col-4 text-center">
+           <div class="metric-title">
+            Completed
+           </div>
+           <div class="metric-value" id="metricCompleted">
+            18
+           </div>
+          </div>
+          <div class="col-4 text-center">
+           <div class="metric-title">
+            Pending
+           </div>
+           <div class="metric-value text-warning" id="metricPending">
+            6
+           </div>
+          </div>
+          <div class="col-4 text-center">
+           <div class="metric-title">
+            Overrides
+           </div>
+           <div class="metric-value text-info" id="metricOverrides">
+            2
+           </div>
+          </div>
+         </div>
+         <canvas class="mt-3" height="70" id="trendChart">
+         </canvas>
+        </div>
+       </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-4">
+       <div class="alert alert-info h-100 d-flex align-items-center">
+        <i class="fa-solid fa-circle-info me-2">
+        </i>
+        Use the sidebar "Start Scan" or the Scan button in Step 1 to begin document capture.
+       </div>
+      </div>
+     </div>
+     <div class="row g-3">
+      <!-- Wizard Area -->
+      <div class="col-12 col-lg-8">
+       <div class="card mb-3">
+        <div class="card-body">
+         <!-- Stepper -->
+         <div class="wizard-stepper mb-3">
+          <div class="step" data-step="1">
+           <div class="bubble">
+            <i class="fa-solid fa-passport">
+            </i>
+           </div>
+           <div class="label">
+            Identity Verification
+           </div>
+          </div>
+          <div class="connector">
+          </div>
+          <div class="step" data-step="2">
+           <div class="bubble">
+            <i class="fa-solid fa-plane">
+            </i>
+           </div>
+           <div class="label">
+            Trip Details
+           </div>
+          </div>
+          <div class="connector">
+          </div>
+          <div class="step" data-step="3">
+           <div class="bubble">
+            <i class="fa-solid fa-qrcode">
+            </i>
+           </div>
+           <div class="label">
+            Issue &amp; Activate
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- Step 1: Identity Verification -->
+       <section class="card mb-3" id="step1">
+        <div class="card-header">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-shield-check text-primary">
+          </i>
+          <span class="widget-title">
+           Identity Verification
+          </span>
+         </div>
+         <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-secondary" id="verificationStatusBadge">
+           Idle
+          </span>
+         </div>
+        </div>
+        <div class="card-body">
+         <div class="row g-3">
+          <div class="col-12 d-flex gap-2">
+           <button class="btn btn-primary" id="scanBtn">
+            <i class="fa-solid fa-qrcode me-1">
+            </i>
+            Scan Passport/Aadhaar
+           </button>
+           <button class="btn btn-info" disabled="" id="verifyBtn">
+            <i class="fa-solid fa-robot me-1">
+            </i>
+            Verify Identity
+           </button>
+           <button class="btn btn-light" id="manualEntryBtn">
+            <i class="fa-solid fa-keyboard me-1">
+            </i>
+            Manual Entry
+           </button>
+           <button class="btn btn-warning d-none" id="manualOverrideBtn">
+            <i class="fa-solid fa-triangle-exclamation me-1">
+            </i>
+            Manual Override
+           </button>
+          </div>
+          <div class="col-12">
+           <div class="row g-3">
+            <div class="col-md-6">
+             <label class="form-label">
+              Full Name
+             </label>
+             <input class="form-control" id="fullName" placeholder="e.g., Maria Gomez" required="" type="text"/>
+            </div>
+            <div class="col-md-3">
+             <label class="form-label">
+              Document Type
+             </label>
+             <select class="form-select" id="docType">
+              <option selected="" value="Passport">
+               Passport
+              </option>
+              <option value="Aadhaar">
+               Aadhaar
+              </option>
+              <option value="Visa">
+               Visa
+              </option>
+             </select>
+            </div>
+            <div class="col-md-3">
+             <label class="form-label">
+              Document No.
+             </label>
+             <input class="form-control" id="docNumber" placeholder="e.g., N1234567" required="" type="text"/>
+            </div>
+            <div class="col-md-3">
+             <label class="form-label">
+              Date of Birth
+             </label>
+             <input class="form-control" id="dob" required="" type="date"/>
+            </div>
+            <div class="col-md-3">
+             <label class="form-label">
+              Nationality
+             </label>
+             <input class="form-control" id="nationality" placeholder="e.g., Spain" type="text"/>
+            </div>
+            <div class="col-md-6">
+             <label class="form-label">
+              Address (as per document)
+             </label>
+             <input class="form-control" id="address" placeholder="Street, City, Country" type="text"/>
+            </div>
+           </div>
+           <div class="form-text mt-2">
+            Fields become read-only after successful verification to ensure data integrity.
+           </div>
+          </div>
+          <div class="col-12 d-flex justify-content-end gap-2">
+           <button class="btn btn-primary" disabled="" id="toStep2">
+            Next
+            <i class="fa-solid fa-arrow-right-long ms-1">
+            </i>
+           </button>
+          </div>
+         </div>
+        </div>
+       </section>
+       <!-- Step 2: Trip Details -->
+       <section class="card mb-3 d-none" id="step2">
+        <div class="card-header">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-suitcase-rolling text-primary">
+          </i>
+          <span class="widget-title">
+           Trip Details
+          </span>
+         </div>
+         <span class="badge bg-success d-none" id="tripSavedBadge">
+          <i class="fa-solid fa-check me-1">
+          </i>
+          Saved
+         </span>
+        </div>
+        <div class="card-body">
+         <div class="row g-3">
+          <div class="col-md-4">
+           <label class="form-label">
+            Trip Start Date
+           </label>
+           <input class="form-control" id="tripStart" placeholder="Select start date" type="text"/>
+           <div class="form-text">
+            Start date cannot be in the past.
+           </div>
+          </div>
+          <div class="col-md-4">
+           <label class="form-label">
+            Trip End Date
+           </label>
+           <input class="form-control" id="tripEnd" placeholder="Select end date" type="text"/>
+           <div class="form-text">
+            End date must be after the start date.
+           </div>
+          </div>
+          <div class="col-md-4">
+           <label class="form-label">
+            Planned Cities
+           </label>
+           <input class="form-control" id="tripCities" placeholder="e.g., Delhi, Jaipur, Agra" type="text"/>
+          </div>
+          <div class="col-12">
+           <h6 class="mb-2">
+            Emergency Contact
+           </h6>
+           <div class="row g-3">
+            <div class="col-md-6">
+             <label class="form-label">
+              Contact Name
+             </label>
+             <input class="form-control" id="emgName" placeholder="Full name" type="text"/>
+            </div>
+            <div class="col-md-6">
+             <label class="form-label">
+              Contact Phone
+             </label>
+             <input class="form-control" id="emgPhone" placeholder="e.g., +91 98765 43210" type="tel"/>
+             <div class="invalid-feedback">
+              Enter a valid phone number.
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-12 d-flex justify-content-between">
+           <button class="btn btn-light" id="backTo1">
+            <i class="fa-solid fa-arrow-left-long me-1">
+            </i>
+            Back
+           </button>
+           <div class="d-flex gap-2">
+            <button class="btn btn-info" id="saveTripBtn">
+             <i class="fa-solid fa-floppy-disk me-1">
+             </i>
+             Save Details
+            </button>
+            <button class="btn btn-primary" disabled="" id="toStep3">
+             Next
+             <i class="fa-solid fa-arrow-right-long ms-1">
+             </i>
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <!-- Step 3: Issue & Activate -->
+       <section class="card mb-3 d-none" id="step3">
+        <div class="card-header">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-certificate text-primary">
+          </i>
+          <span class="widget-title">
+           Issue Digital Tourist ID &amp; Activation
+          </span>
+         </div>
+         <span class="badge bg-warning text-dark d-none" id="activationStatusBadge">
+          <i class="fa-solid fa-hourglass-half me-1">
+          </i>
+          Waiting for Activation
+         </span>
+        </div>
+        <div class="card-body">
+         <!-- Review Panel -->
+         <div class="row g-3">
+          <div class="col-12">
+           <div class="bg-muted rounded p-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+             <strong>
+              Review &amp; Confirm
+             </strong>
+             <button class="btn btn-link btn-sm" id="editBackBtn">
+              <i class="fa-solid fa-pen-to-square me-1">
+              </i>
+              Edit
+             </button>
+            </div>
+            <div class="row small g-2" id="reviewPanel">
+             <!-- Populated by JS -->
+            </div>
+           </div>
+          </div>
+          <div class="col-12 d-flex align-items-center gap-2">
+           <button class="btn btn-success" id="issueBtn">
+            <i class="fa-solid fa-check-circle me-1">
+            </i>
+            Issue Digital ID
+           </button>
+           <div class="d-none" id="issueLoading">
+            <span aria-hidden="true" class="spinner-border spinner-border-sm text-success" role="status">
+            </span>
+            <span class="text-success ms-1">
+             Issuing on blockchain...
+            </span>
+           </div>
+          </div>
+          <div class="col-12 d-none" id="qrSection">
+           <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+             <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-qrcode text-primary">
+              </i>
+              <span class="widget-title">
+               Activation QR Code
+              </span>
+             </div>
+             <div class="badge bg-warning text-dark">
+              <i class="fa-regular fa-clock me-1">
+              </i>
+              Expires in 10 mins
+             </div>
+            </div>
+            <div class="card-body d-flex flex-column flex-md-row align-items-center gap-3">
+             <div class="qr-box" id="qrCode">
+             </div>
+             <div>
+              <p class="mb-2">
+               Ask the tourist to scan this QR code using the VeriTour mobile app to activate their Digital Tourist ID.
+              </p>
+              <div class="d-flex gap-2 align-items-center">
+               <span class="badge bg-warning text-dark" id="activationStateText">
+                <i class="fa-solid fa-hourglass-half me-1">
+                </i>
+                Waiting for Activation
+               </span>
+               <button class="btn btn-outline-secondary btn-sm" id="simulateActivationBtn">
+                <i class="fa-solid fa-vial me-1">
+                </i>
+                Simulate Activation
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-12 d-none" id="completeSection">
+           <div class="alert alert-success d-flex align-items-center">
+            <i class="fa-solid fa-circle-check me-2">
+            </i>
+            Digital Tourist ID activated successfully.
+           </div>
+           <div class="d-flex gap-2">
+            <a class="btn btn-primary" href="./activation_screen.html">
+             <i class="fa-solid fa-eye me-1">
+             </i>
+             View Activation
+            </a>
+            <button class="btn btn-light" id="startNewBtn">
+             <i class="fa-solid fa-plus me-1">
+             </i>
+             Start New Onboarding
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <!-- Pending Verifications Section (anchor) -->
+       <section class="card mb-4" id="pending">
+        <div class="card-header">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-list-check text-primary">
+          </i>
+          <span class="widget-title">
+           Pending Verifications
+          </span>
+         </div>
+        </div>
+        <div class="card-body">
+         <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+           <thead>
+            <tr>
+             <th scope="col">
+              Name
+             </th>
+             <th scope="col">
+              Document
+             </th>
+             <th scope="col">
+              Status
+             </th>
+             <th scope="col">
+              Last Updated
+             </th>
+             <th class="text-end" scope="col">
+              Action
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td>
+              John Peterson
+             </td>
+             <td>
+              Passport N2217890
+             </td>
+             <td>
+              <span class="badge bg-warning text-dark">
+               Awaiting API
+              </span>
+             </td>
+             <td>
+              26 Aug 2025, 14:12
+             </td>
+             <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary">
+               Resume
+              </button>
+             </td>
+            </tr>
+            <tr>
+             <td>
+              Anita Sharma
+             </td>
+             <td>
+              Aadhaar 5678 2211 9988
+             </td>
+             <td>
+              <span class="badge bg-info text-dark">
+               Manual Review
+              </span>
+             </td>
+             <td>
+              26 Aug 2025, 13:47
+             </td>
+             <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary">
+               Resume
+              </button>
+             </td>
+            </tr>
+            <tr>
+             <td>
+              Wei Chen
+             </td>
+             <td>
+              Passport E8890123
+             </td>
+             <td>
+              <span class="badge bg-warning text-dark">
+               Verification Failed
+              </span>
+             </td>
+             <td>
+              26 Aug 2025, 12:59
+             </td>
+             <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary">
+               Resume
+              </button>
+             </td>
+            </tr>
+            <tr>
+             <td>
+              Sara Ali
+             </td>
+             <td>
+              Passport P4477001
+             </td>
+             <td>
+              <span class="badge bg-secondary">
+               Incomplete
+              </span>
+             </td>
+             <td>
+              26 Aug 2025, 11:23
+             </td>
+             <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary">
+               Resume
+              </button>
+             </td>
+            </tr>
+            <tr>
+             <td>
+              Oliver Smith
+             </td>
+             <td>
+              Aadhaar 3344 7788 9900
+             </td>
+             <td>
+              <span class="badge bg-warning text-dark">
+               Awaiting API
+              </span>
+             </td>
+             <td>
+              26 Aug 2025, 10:55
+             </td>
+             <td class="text-end">
+              <button class="btn btn-sm btn-outline-primary">
+               Resume
+              </button>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div class="d-flex justify-content-between align-items-center mt-2 small text-muted">
+          <div>
+           Showing 1	6 of 28
+          </div>
+          <div class="d-flex align-items-center gap-1">
+           <button class="btn btn-sm btn-light" disabled="">
+            Prev
+           </button>
+           <button class="btn btn-sm btn-light">
+            Next
+           </button>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+      <!-- Right: Recent Activity Panel -->
+      <div class="col-12 col-lg-4" id="recentActivity">
+       <div class="card recent-activity sticky-md-top">
+        <div class="card-header d-flex justify-content-between align-items-center">
+         <div class="d-flex align-items-center gap-2">
+          <i class="fa-solid fa-clock-rotate-left text-primary">
+          </i>
+          <span class="widget-title">
+           Recent Activity
+          </span>
+         </div>
+         <div class="dropdown">
+          <button class="btn btn-sm btn-light dropdown-toggle" data-bs-toggle="dropdown">
+           Filter
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+           <li>
+            <a class="dropdown-item activity-filter active" data-status="all" href="#">
+             All
+            </a>
+           </li>
+           <li>
+            <a class="dropdown-item activity-filter" data-status="Activated" href="#">
+             Activated
+            </a>
+           </li>
+           <li>
+            <a class="dropdown-item activity-filter" data-status="Pending" href="#">
+             Pending
+            </a>
+           </li>
+           <li>
+            <a class="dropdown-item activity-filter" data-status="Manual Override" href="#">
+             Manual Override
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="card-body">
+         <div class="input-group input-group-sm mb-2">
+          <span class="input-group-text">
+           <i class="fa-solid fa-magnifying-glass">
+           </i>
+          </span>
+          <input class="form-control" id="activitySearch" placeholder="Search name or document..." type="text"/>
+         </div>
+         <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle" id="activityTable">
+           <thead>
+            <tr>
+             <th class="sortable" data-key="name">
+              Name
+              <i class="fa-solid fa-sort ms-1">
+              </i>
+             </th>
+             <th>
+              Status
+             </th>
+             <th class="sortable" data-key="time">
+              Time
+              <i class="fa-solid fa-sort ms-1">
+              </i>
+             </th>
+             <th class="text-end">
+              Action
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <!-- Rows populated by JS -->
+           </tbody>
+          </table>
+         </div>
+         <div class="small text-muted d-flex justify-content-between mt-1">
+          <span id="activityCount">
+           0 records
+          </span>
+          <a class="text-decoration-none" href="./authority_dashboard.html">
+           Open full log
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Help anchors -->
+     <div class="mt-4" id="help-scan">
+      <div class="alert alert-light border d-flex align-items-start">
+       <i class="fa-solid fa-book-open me-2 mt-1 text-primary">
+       </i>
+       <div>
+        <strong>
+         How to Scan Documents:
+        </strong>
+        <div class="small">
+         Position the document within the scanner frame. Ensure good lighting. Use the "Scan Passport/Aadhaar" button. If OCR fails, use Manual Entry.
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="mt-2 mb-4" id="help-override">
+      <div class="alert alert-warning border-warning d-flex align-items-start">
+       <i class="fa-solid fa-triangle-exclamation me-2 mt-1">
+       </i>
+       <div>
+        <strong>
+         Manual Override Policy:
+        </strong>
+        <div class="small">
+         Only Supervisors can override failed or unavailable API checks. The override reason and user ID are logged for audit.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <!-- Footer -->
+  <footer class="border-top bg-light py-2 mt-auto">
+   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small class="text-muted mb-1 mb-md-0">
+     © 2025 VeriTour •
+     <a class="text-decoration-none" href="#">
+      Terms
+     </a>
+     •
+     <a class="text-decoration-none" href="#">
+      Privacy
+     </a>
+    </small>
+    <div>
+     <a class="btn btn-outline-success btn-sm" href="./analytics_dashboard.html">
+      <i class="fa-solid fa-book-open me-1">
+      </i>
+      Training
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- Toast Container -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+   <div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-primary border-0" id="liveToast" role="alert">
+    <div class="d-flex">
+     <div class="toast-body" id="toastMessage">
+      Action completed
+     </div>
+     <button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Modal: Activity Details -->
+  <div aria-hidden="true" class="modal fade" id="activityModal" tabindex="-1">
+   <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">
+       <i class="fa-solid fa-user-clock text-primary me-1">
+       </i>
+       Onboarding Record
+      </h5>
+      <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+      </button>
+     </div>
+     <div class="modal-body" id="activityModalBody">
+      <!-- Filled by JS -->
+     </div>
+     <div class="modal-footer">
+      <button class="btn btn-light" data-bs-dismiss="modal" type="button">
+       Close
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js">
+  </script>
+  <script>
+   // Global State
+const state = {
+    currentStep: 1,
+    role: 'Entry Staff',
+    touristData: {
+        fullName: '',
+        docType: 'Passport',
+        docNumber: '',
+        dob: '',
+        nationality: '',
+        address: '',
+        tripStart: '',
+        tripEnd: '',
+        tripCities: '',
+        emgName: '',
+        emgPhone: ''
+    },
+    verificationStatus: 'idle', // idle | verifying | verified | failed | api_unavailable | overridden
+    isSubmitting: false,
+    qrCodeData: '',
+    activationStatus: 'idle' // idle | waiting | activated
+};
+
+// Utilities
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+const showToast = (msg) => {
+    $('#toastMessage').textContent = msg;
+    const t = new bootstrap.Toast($('#liveToast'));
+    t.show();
+};
+const setBadge = (elm, text, cls) => {
+    elm.className = 'badge ' + cls;
+    elm.textContent = text;
+};
+
+// Sidebar toggle for small screens
+$('#onboardSidebarToggle').addEventListener('click', () => {
+    const aside = $('#leftSidebar');
+    aside.classList.toggle('d-none');
+});
+
+// Role switcher
+$('#roleSelect').addEventListener('change', (e) => {
+    state.role = e.target.value;
+    updateManualOverrideVisibility();
+    showToast('Role set to ' + state.role);
+});
+
+// Stepper status
+function renderStepper() {
+    $$('.wizard-stepper .step').forEach(step => {
+        const n = Number(step.getAttribute('data-step'));
+        step.classList.toggle('active', n === state.currentStep);
+        step.classList.toggle('done', n < state.currentStep);
+    });
+    $$('.wizard-stepper .connector').forEach((c, i) => {
+        c.classList.toggle('done', i < state.currentStep - 1);
+    });
+}
+
+// Navigation between steps
+function goToStep(n) {
+    state.currentStep = n;
+    // Show/hide sections
+    $('#step1').classList.toggle('d-none', n !== 1);
+    $('#step2').classList.toggle('d-none', n !== 2);
+    $('#step3').classList.toggle('d-none', n !== 3);
+    renderStepper();
+    if (n === 3) buildReviewPanel();
+}
+
+// Scan simulation
+function simulateScan() {
+    $('#scanBtn').disabled = true;
+    $('#scanBtn').innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Scanning...';
+    setTimeout(() => {
+        // Populate sample data
+        state.touristData.fullName = 'Maria Gomez';
+        state.touristData.docType = 'Passport';
+        state.touristData.docNumber = 'N1234567';
+        state.touristData.dob = '1990-05-14';
+        state.touristData.nationality = 'Spain';
+        state.touristData.address = 'Calle de Alcal0 35, Madrid, Spain';
+        fillIdentityFields();
+        $('#verifyBtn').disabled = false;
+        $('#scanBtn').disabled = false;
+        $('#scanBtn').innerHTML = '<i class="fa-solid fa-qrcode me-1"></i>Scan Passport/Aadhaar';
+        showToast('Document scan completed. Please verify.');
+    }, 1500);
+}
+
+function fillIdentityFields() {
+    $('#fullName').value = state.touristData.fullName;
+    $('#docType').value = state.touristData.docType;
+    $('#docNumber').value = state.touristData.docNumber;
+    $('#dob').value = state.touristData.dob;
+    $('#nationality').value = state.touristData.nationality;
+    $('#address').value = state.touristData.address;
+}
+
+// Verify simulation
+function verifyIdentity() {
+    state.verificationStatus = 'verifying';
+    setBadge($('#verificationStatusBadge'), 'Verifying...', 'bg-info');
+    $('#verifyBtn').disabled = true;
+    $('#scanBtn').disabled = true;
+    // simulate API latency and result
+    setTimeout(() => {
+        const r = Math.random();
+        if (r < 0.75) {
+            state.verificationStatus = 'verified';
+            setBadge($('#verificationStatusBadge'), 'Verified', 'bg-success');
+            lockIdentityFields(true);
+            $('#toStep2').disabled = false;
+            showToast('Identity verified successfully.');
+        } else if (r < 0.88) {
+            state.verificationStatus = 'api_unavailable';
+            setBadge($('#verificationStatusBadge'), 'API Unavailable', 'bg-secondary');
+            $('#verifyBtn').disabled = false;
+            $('#scanBtn').disabled = false;
+            showToast('Verification API is unavailable. Try again or request override.');
+        } else {
+            state.verificationStatus = 'failed';
+            setBadge($('#verificationStatusBadge'), 'Verification Failed', 'bg-danger');
+            $('#verifyBtn').disabled = false;
+            $('#scanBtn').disabled = false;
+            showToast('Verification failed. Please review details.');
+        }
+        updateManualOverrideVisibility();
+    }, 1400);
+}
+
+function lockIdentityFields(lock) {
+    ['fullName', 'docType', 'docNumber', 'dob', 'nationality', 'address'].forEach(id => {
+        const el = $('#' + id);
+        if (lock) el.setAttribute('disabled', 'disabled');
+        else el.removeAttribute('disabled');
+    });
+}
+
+function updateManualOverrideVisibility() {
+    const eligible = (state.verificationStatus === 'failed' || state.verificationStatus === 'api_unavailable') && state.role === 'Supervisor';
+    $('#manualOverrideBtn').classList.toggle('d-none', !eligible);
+}
+
+// Manual entry
+$('#manualEntryBtn').addEventListener('click', () => {
+    lockIdentityFields(false);
+    showToast('Manual entry enabled.');
+    $('#verifyBtn').disabled = false;
+});
+
+// Manual override flow
+$('#manualOverrideBtn').addEventListener('click', async () => {
+    const {
+        value: reason
+    } = await Swal.fire({
+        title: 'Manual Override',
+        input: 'textarea',
+        inputLabel: 'Provide reason for override',
+        inputPlaceholder: 'Describe why the automated verification is being bypassed...',
+        inputAttributes: {
+            'aria-label': 'Override reason'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Confirm Override',
+        confirmButtonColor: '#0d6efd'
+    });
+    if (reason) {
+        state.verificationStatus = 'overridden';
+        setBadge($('#verificationStatusBadge'), 'Overridden by Supervisor', 'bg-warning text-dark');
+        lockIdentityFields(true);
+        $('#toStep2').disabled = false;
+        showToast('Override recorded. Proceed to next step.');
+    }
+});
+
+// Inputs update state
+['fullName', 'docType', 'docNumber', 'dob', 'nationality', 'address'].forEach(id => {
+    $('#' + id).addEventListener('input', (e) => {
+        state.touristData[id === 'docType' ? 'docType' : id] = e.target.value;
+    });
+});
+
+// Buttons wiring
+$('#scanBtn').addEventListener('click', simulateScan);
+$('#startScanBtn').addEventListener('click', () => {
+    window.scrollTo({
+        top: $('#step1').offsetTop - 90,
+        behavior: 'smooth'
+    });
+    simulateScan();
+});
+$('#verifyBtn').addEventListener('click', verifyIdentity);
+$('#toStep2').addEventListener('click', () => goToStep(2));
+
+// Step 2: Trip details
+const today = new Date();
+const startPicker = flatpickr('#tripStart', {
+    minDate: today,
+    dateFormat: 'd M Y',
+    onChange: (dates) => {
+        if (dates[0]) endPicker.set('minDate', new Date(dates[0].getTime() + 86400000));
+    }
+});
+const endPicker = flatpickr('#tripEnd', {
+    minDate: new Date(today.getTime() + 86400000),
+    dateFormat: 'd M Y'
+});
+
+function validateTripForm() {
+    const phone = $('#emgPhone').value.trim();
+    const phoneValid = /^([+]?\d[\s-]?){7,15}$/.test(phone);
+    if (!phoneValid) {
+        $('#emgPhone').classList.add('is-invalid');
+    } else {
+        $('#emgPhone').classList.remove('is-invalid');
+    }
+    const start = startPicker.input.value;
+    const end = endPicker.input.value;
+    return phoneValid && !!start && !!end;
+}
+
+$('#saveTripBtn').addEventListener('click', () => {
+    state.touristData.tripStart = startPicker.input.value;
+    state.touristData.tripEnd = endPicker.input.value;
+    state.touristData.tripCities = $('#tripCities').value.trim();
+    state.touristData.emgName = $('#emgName').value.trim();
+    state.touristData.emgPhone = $('#emgPhone').value.trim();
+    if (!validateTripForm()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid entries',
+            text: 'Please ensure dates and phone number are valid.'
+        });
+        return;
+    }
+    $('#tripSavedBadge').classList.remove('d-none');
+    showToast('Trip details saved.');
+    $('#toStep3').disabled = false;
+});
+
+$('#backTo1').addEventListener('click', () => goToStep(1));
+$('#toStep3').addEventListener('click', () => goToStep(3));
+
+// Step 3: Review and Issue
+function buildReviewPanel() {
+    const d = state.touristData;
+    const fields = [
+        ['Full Name', d.fullName],
+        ['Document', d.docType + ' ' + d.docNumber],
+        ['DOB', d.dob],
+        ['Nationality', d.nationality],
+        ['Address', d.address],
+        ['Trip Dates', d.tripStart + ' 	1 ' + d.tripEnd],
+        ['Planned Cities', d.tripCities || '-'],
+        ['Emergency Contact', d.emgName + ' (' + d.emgPhone + ')']
+    ];
+    const html = fields.map(([k, v]) => `<div class="col-12 col-md-6"><div class="border rounded p-2 bg-white"><div class="text-muted small">${k}</div><div class="fw-semibold">${v || '-'}</div></div></div>`).join('');
+    $('#reviewPanel').innerHTML = html;
+}
+
+$('#editBackBtn').addEventListener('click', () => goToStep(2));
+
+$('#issueBtn').addEventListener('click', () => {
+    if (!validateTripForm()) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Complete trip details',
+            text: 'Please ensure trip details are saved and valid.'
+        });
+        return;
+    }
+    $('#issueBtn').disabled = true;
+    $('#issueLoading').classList.remove('d-none');
+    // Simulate blockchain issuance
+    setTimeout(() => {
+        $('#issueLoading').classList.add('d-none');
+        $('#qrSection').classList.remove('d-none');
+        $('#activationStatusBadge').classList.remove('d-none');
+        state.activationStatus = 'waiting';
+        state.qrCodeData = 'veritour:activate:' + Math.random().toString(36).slice(2);
+        QRCode.toCanvas(document.createElement('canvas'), state.qrCodeData, {
+            width: 180
+        }, function(err, canvas) {
+            if (!err) {
+                const qrBox = $('#qrCode');
+                qrBox.innerHTML = '';
+                qrBox.appendChild(canvas);
+            }
+        });
+        showToast('Digital ID issued. Awaiting activation...');
+    }, 1600);
+});
+
+$('#simulateActivationBtn').addEventListener('click', () => {
+    if (state.activationStatus !== 'waiting') return;
+    $('#simulateActivationBtn').disabled = true;
+    setTimeout(() => {
+        state.activationStatus = 'activated';
+        setBadge($('#activationStatusBadge'), 'ID Activated', 'bg-success');
+        setBadge($('#activationStateText'), 'ID Activated', 'bg-success');
+        $('#completeSection').classList.remove('d-none');
+        showToast('Activation confirmed.');
+    }, 1200);
+});
+
+$('#startNewBtn').addEventListener('click', () => {
+    // Reset state
+    Object.assign(state, {
+        currentStep: 1,
+        role: state.role,
+        touristData: {
+            fullName: '',
+            docType: 'Passport',
+            docNumber: '',
+            dob: '',
+            nationality: '',
+            address: '',
+            tripStart: '',
+            tripEnd: '',
+            tripCities: '',
+            emgName: '',
+            emgPhone: ''
+        },
+        verificationStatus: 'idle',
+        isSubmitting: false,
+        qrCodeData: '',
+        activationStatus: 'idle'
+    });
+    // Reset UI
+    ['fullName', 'docType', 'docNumber', 'dob', 'nationality', 'address'].forEach(id => {
+        const el = $('#' + id);
+        el.value = '';
+        el.removeAttribute('disabled');
+    });
+    startPicker.clear();
+    endPicker.clear();
+    $('#tripCities').value = '';
+    $('#emgName').value = '';
+    $('#emgPhone').value = '';
+    $('#tripSavedBadge').classList.add('d-none');
+    $('#toStep2').disabled = true;
+    $('#toStep3').disabled = true;
+    $('#verifyBtn').disabled = true;
+    $('#scanBtn').disabled = false;
+    setBadge($('#verificationStatusBadge'), 'Idle', 'bg-secondary');
+    $('#issueBtn').disabled = false;
+    $('#qrSection').classList.add('d-none');
+    $('#completeSection').classList.add('d-none');
+    $('#activationStatusBadge').classList.add('d-none');
+    goToStep(1);
+    showToast('Ready for a new onboarding.');
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Recent Activity: Mock data
+const activityData = [{
+    name: 'Priya Nair',
+    status: 'Activated',
+    time: '26 Aug 2025, 15:20',
+    doc: 'Aadhaar 8811 2233 4455'
+}, {
+    name: 'Liam Brown',
+    status: 'Pending',
+    time: '26 Aug 2025, 14:55',
+    doc: 'Passport K9900123'
+}, {
+    name: 'Chen Wei',
+    status: 'Manual Override',
+    time: '26 Aug 2025, 14:38',
+    doc: 'Passport E8890123'
+}, {
+    name: 'Ava Wilson',
+    status: 'Activated',
+    time: '26 Aug 2025, 14:10',
+    doc: 'Passport P4477001'
+}, {
+    name: 'Ravi Kumar',
+    status: 'Pending',
+    time: '26 Aug 2025, 13:44',
+    doc: 'Aadhaar 3344 7788 9900'
+}, {
+    name: 'Emma Davis',
+    status: 'Activated',
+    time: '26 Aug 2025, 13:02',
+    doc: 'Passport N2217890'
+}];
+let activitySort = {
+    key: 'time',
+    dir: 'desc'
+};
+let activityFilter = 'all';
+
+function renderActivity() {
+    const q = $('#activitySearch').value.toLowerCase();
+    let rows = activityData.filter(r => (activityFilter === 'all' || r.status === activityFilter) && (r.name.toLowerCase().includes(q) || r.doc.toLowerCase().includes(q)));
+    rows.sort((a, b) => {
+        const k = activitySort.key;
+        if (k === 'name') return activitySort.dir === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+        // time: just compare strings as formatted same
+        return activitySort.dir === 'asc' ? a.time.localeCompare(b.time) : b.time.localeCompare(a.time);
+    });
+    const tbody = $('#activityTable tbody');
+    tbody.innerHTML = rows.map(r => `
+        <tr>
+          <td>${r.name}</td>
+          <td>${statusBadge(r.status)}</td>
+          <td>${r.time}</td>
+          <td class="text-end"><button class="btn btn-sm btn-light view-activity" data-name="${r.name}"><i class="fa-regular fa-eye"></i></button></td>
+        </tr>`).join('');
+    $('#activityCount').textContent = `${rows.length} records`;
+    $$('.view-activity').forEach(btn => btn.addEventListener('click', (e) => openActivityModal(e.target.closest('button').dataset.name)));
+}
+
+function statusBadge(s) {
+    if (s === 'Activated') return '<span class="badge bg-success">Activated</span>';
+    if (s === 'Pending') return '<span class="badge bg-warning text-dark">Pending</span>';
+    if (s === 'Manual Override') return '<span class="badge bg-info text-dark">Manual Override</span>';
+    return '<span class="badge bg-secondary">-</span>';
+}
+
+function openActivityModal(name) {
+    const rec = activityData.find(r => r.name === name);
+    if (!rec) return;
+    $('#activityModalBody').innerHTML = `
+        <div class="d-flex align-items-center mb-2">
+          <img src="https://picsum.photos/seed/${encodeURIComponent(name)}/48/48" class="rounded-circle me-2" alt="${name}">
+          <div>
+            <div class="fw-semibold">${rec.name}</div>
+            <div class="small text-muted">${rec.doc}</div>
+          </div>
+        </div>
+        <div class="mb-2">Status: ${statusBadge(rec.status)}</div>
+        <div class="small text-muted">Updated: ${rec.time}</div>
+        <hr>
+        <div class="small">Summary: Onboarding processed at Gate A. No anomalies detected.</div>
+      `;
+    const m = new bootstrap.Modal($('#activityModal'));
+    m.show();
+}
+
+$('#activitySearch').addEventListener('input', renderActivity);
+$$('.activity-filter').forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    $$('.activity-filter').forEach(x => x.classList.remove('active'));
+    e.target.classList.add('active');
+    activityFilter = e.target.dataset.status;
+    renderActivity();
+}));
+$$('#activityTable thead th.sortable').forEach(th => th.addEventListener('click', () => {
+    const key = th.dataset.key;
+    if (activitySort.key === key) activitySort.dir = activitySort.dir === 'asc' ? 'desc' : 'asc';
+    else {
+        activitySort.key = key;
+        activitySort.dir = 'asc';
+    }
+    renderActivity();
+}));
+
+// Trend Chart
+function initChart() {
+    const ctx = document.getElementById('trendChart').getContext('2d');
+    const data = [12, 15, 9, 18, 14, 20, 17];
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Onboardings',
+                data,
+                fill: true,
+                borderColor: getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim() || '#0d6efd',
+                backgroundColor: 'rgba(13,110,253,0.12)',
+                tension: 0.35,
+                pointRadius: 3
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    intersect: false,
+                    mode: 'index'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 5
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+    renderStepper();
+    renderActivity();
+    initChart();
+});
+  </script>
+ </body>
+</html>

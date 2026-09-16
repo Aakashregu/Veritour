@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour Admin • Create / Edit User
+  </title>
+  <!-- Brand Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+   <!-- Global Theme CSS -->
+   <link href="style.css" rel="stylesheet">
+    <!-- Page-specific CSS -->
+    <link href="user_form.css" rel="stylesheet"/>
+   </link>
+  </link>
+ </head>
+ <body>
+  <!-- System Administrator Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-label="Toggle sidebar" class="btn btn-outline-light me-2" id="adminSidebarToggle" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand" href="./admin_dashboard.html">
+     VeriTour Admin
+    </a>
+    <button aria-controls="adminNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#adminNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="adminNavbar">
+     <form class="d-flex ms-auto me-3" role="search" style="max-width:420px;">
+      <input aria-label="Search" class="form-control form-control-sm me-2" placeholder="Search users" type="search"/>
+      <button aria-label="Submit search" class="btn btn-outline-light btn-sm" type="submit">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+      </button>
+     </form>
+     <div class="d-flex align-items-center">
+      <a class="btn btn-light btn-sm me-2" data-page="user_form" href="./user_form.html">
+       <i class="fa-solid fa-user-plus me-1">
+       </i>
+       Add User
+      </a>
+      <button aria-label="Notifications" class="btn btn-link text-white me-2" title="Notifications">
+       <i class="fa-solid fa-bell">
+       </i>
+      </button>
+      <div class="dropdown">
+       <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="adminProfileMenu">
+        <img alt="avatar" class="rounded-circle me-2" height="28" onerror="this.onerror=null;this.src='https://picsum.photos/seed/admin/28/28';" src="https://via.placeholder.com/28" width="28"/>
+        <strong>
+         Admin
+        </strong>
+       </a>
+       <ul aria-labelledby="adminProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+        <li>
+         <a class="dropdown-item" href="#">
+          Settings
+         </a>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./login_page.html">
+          Logout
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <div class="admin-shell d-flex">
+   <!-- System Administrator Sidebar (visible on admin pages) -->
+   <aside class="admin-sidebar d-flex flex-column flex-shrink-0 p-3 bg-light border-end h-100">
+    <a class="d-flex align-items-center mb-3 me-md-auto text-decoration-none" href="./admin_dashboard.html">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/56/28';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fs-6 fw-bold" style="color:#0d6efd;">
+      Admin
+     </span>
+    </a>
+    <div class="d-flex align-items-center mb-2">
+     <img alt="Avatar" class="rounded-circle me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/avatar/40/40';" src="https://via.placeholder.com/40"/>
+     <div>
+      <div class="fw-semibold">
+       Administrator
+      </div>
+      <small class="text-muted">
+       System Admin
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link" data-page="admin_dashboard" href="./admin_dashboard.html">
+       <i class="fa-solid fa-gauge me-2">
+       </i>
+       Dashboard
+      </a>
+     </li>
+     <li>
+      <a aria-controls="userMgmtSub" aria-expanded="true" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#userMgmtSub" role="button">
+       <span>
+        <i class="fa-solid fa-users me-2">
+        </i>
+        User Management
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse show ms-3" id="userMgmtSub">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" data-page="admin_dashboard" href="./admin_dashboard.html">
+          All Users
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1 active" data-page="user_form" href="./user_form.html">
+          Create / Edit User
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li>
+      <a class="nav-link" data-page="admin_dashboard" href="./admin_dashboard.html#systemHealth">
+       <i class="fa-solid fa-heart-pulse me-2">
+       </i>
+       System Health
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="admin_dashboard" href="./admin_dashboard.html#auditLogs">
+       <i class="fa-solid fa-clipboard-list me-2">
+       </i>
+       Audit Logs
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="admin_dashboard" href="./admin_dashboard.html#settings">
+       <i class="fa-solid fa-sliders me-2">
+       </i>
+       Settings
+      </a>
+     </li>
+    </ul>
+    <div class="mt-auto pt-2">
+     <a class="btn btn-outline-primary w-100" href="./user_form.html">
+      <i class="fa-solid fa-user-plus me-2">
+      </i>
+      Add User
+     </a>
+    </div>
+   </aside>
+   <!-- Main Content Area -->
+   <main class="admin-main flex-grow-1">
+    <div class="container-fluid py-3">
+     <!-- Breadcrumb and Title -->
+     <nav aria-label="breadcrumb" class="breadcrumb">
+      <ol class="breadcrumb mb-2">
+       <li class="breadcrumb-item">
+        <a href="./admin_dashboard.html">
+         Admin
+        </a>
+       </li>
+       <li class="breadcrumb-item">
+        <a href="./admin_dashboard.html">
+         User Management
+        </a>
+       </li>
+       <li aria-current="page" class="breadcrumb-item active">
+        <span id="pageCrumb">
+         Create User
+        </span>
+       </li>
+      </ol>
+     </nav>
+     <div class="page-header">
+      <div class="d-flex align-items-center gap-2">
+       <h1 class="page-title m-0" id="pageTitle">
+        <i class="fa-solid fa-user-gear me-2 text-primary">
+        </i>
+        Create User
+       </h1>
+       <span class="badge rounded-pill text-bg-info d-none" id="editModeBadge">
+        <i class="fa-solid fa-pen-to-square me-1">
+        </i>
+        Edit Mode
+       </span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+       <span class="badge-soft info">
+        <i class="fa-solid fa-circle-info me-1">
+        </i>
+        Fields marked with * are required
+       </span>
+      </div>
+     </div>
+     <!-- System feedback / alert placeholder -->
+     <div class="mb-3" id="alertPlaceholder">
+     </div>
+     <!-- User Management Form -->
+     <form class="needs-validation" id="userForm" novalidate="">
+      <div class="app-card mb-4">
+       <div class="card-header">
+        <div class="title d-flex align-items-center gap-2">
+         <i class="fa-solid fa-id-card-clip text-primary">
+         </i>
+         <span class="widget-title">
+          User Information
+         </span>
+        </div>
+       </div>
+       <div class="card-body">
+        <div class="mb-3">
+         <label class="form-label" for="fullName">
+          Full Name *
+         </label>
+         <input class="form-control" id="fullName" name="fullName" placeholder="Enter user's full name" required="" type="text"/>
+         <div class="invalid-feedback">
+          Full name is required.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="email">
+          Official Email Address *
+         </label>
+         <input class="form-control" id="email" name="email" placeholder="user@department.gov.in" required="" type="email"/>
+         <div class="form-text">
+          This will be the login username. Cannot be changed after creation.
+         </div>
+         <div class="invalid-feedback">
+          Please enter a valid official email address.
+         </div>
+        </div>
+        <div class="mb-3">
+         <label class="form-label" for="employeeId">
+          Employee ID *
+         </label>
+         <input class="form-control" id="employeeId" name="employeeId" placeholder="Enter official ID" required="" type="text"/>
+         <div class="invalid-feedback">
+          Employee ID is required.
+         </div>
+        </div>
+        <div class="mb-0">
+         <label class="form-label" for="department">
+          Department *
+         </label>
+         <select class="form-select" id="department" name="department" required="">
+          <option disabled="" selected="" value="">
+           Choose department
+          </option>
+          <option value="Police">
+           Police
+          </option>
+          <option value="Tourism Department">
+           Tourism Department
+          </option>
+          <option value="System Administration">
+           System Administration
+          </option>
+         </select>
+         <div class="invalid-feedback">
+          Please select a department.
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="app-card mb-4">
+       <div class="card-header">
+        <div class="title d-flex align-items-center gap-2">
+         <i class="fa-solid fa-user-shield text-primary">
+         </i>
+         <span class="widget-title">
+          Role &amp; Permissions
+         </span>
+        </div>
+       </div>
+       <div class="card-body">
+        <div class="mb-3">
+         <label class="form-label" for="role">
+          User Role *
+         </label>
+         <select class="form-select" id="role" name="role" required="">
+          <!-- options injected based on department -->
+         </select>
+         <div class="form-text">
+          Changing the role resets permissions to role defaults.
+         </div>
+         <div class="invalid-feedback">
+          Please select a role.
+         </div>
+        </div>
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+         <label class="form-label m-0">
+          Specific Permissions
+         </label>
+         <div aria-label="Permission quick actions" class="btn-group btn-group-sm" role="group">
+          <button class="btn btn-light" id="selectAllPerms" type="button">
+           <i class="fa-solid fa-square-check me-1">
+           </i>
+           Select All
+          </button>
+          <button class="btn btn-light" id="clearPerms" type="button">
+           <i class="fa-regular fa-square me-1">
+           </i>
+           Clear
+          </button>
+         </div>
+        </div>
+        <div class="permissions-grid" id="permissionsGrid">
+        </div>
+        <small class="text-muted d-block mt-2">
+         <i class="fa-solid fa-circle-exclamation me-1 text-warning">
+         </i>
+         Some permissions may be disabled based on the selected role.
+        </small>
+       </div>
+      </div>
+      <!-- Sticky Action Bar -->
+      <div class="form-action-bar">
+       <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+         <span class="text-muted small" id="formStatus">
+          <i class="fa-regular fa-clock me-1">
+          </i>
+          Unsaved changes
+         </span>
+         <div class="d-flex gap-2">
+          <a class="btn btn-light" href="./admin_dashboard.html" id="cancelBtn">
+           <i class="fa-solid fa-xmark me-1">
+           </i>
+           Cancel
+          </a>
+          <button class="btn btn-primary" id="submitBtn" type="submit">
+           <span class="label" id="submitLabel">
+            Create User
+           </span>
+           <span aria-hidden="true" class="spinner-border spinner-border-sm ms-2 d-none" id="submitSpinner" role="status">
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </form>
+     <!-- Reference: Recent Users List (helps provide context) -->
+     <div class="app-card mt-4">
+      <div class="card-header">
+       <div class="title d-flex align-items-center gap-2">
+        <i class="fa-solid fa-users-viewfinder text-primary">
+        </i>
+        <span class="widget-title">
+         Recent Users
+        </span>
+       </div>
+       <div class="d-flex gap-2">
+        <input class="form-control form-control-sm" id="userSearch" placeholder="Search name or email" style="max-width:260px;" type="text"/>
+        <select class="form-select form-select-sm" id="userDeptFilter" style="max-width:220px;">
+         <option value="">
+          All Departments
+         </option>
+         <option value="Police">
+          Police
+         </option>
+         <option value="Tourism Department">
+          Tourism Department
+         </option>
+         <option value="System Administration">
+          System Administration
+         </option>
+        </select>
+       </div>
+      </div>
+      <div class="card-body p-0">
+       <div class="table-responsive">
+        <table class="table table-theme mb-0" id="recentUsersTable">
+         <thead>
+          <tr>
+           <th class="sortable" data-sort="name" style="min-width:180px;">
+            Name
+            <i class="fa-solid fa-sort ms-1 text-muted">
+            </i>
+           </th>
+           <th style="min-width:240px;">
+            Email
+           </th>
+           <th class="sortable" data-sort="department">
+            Department
+            <i class="fa-solid fa-sort ms-1 text-muted">
+            </i>
+           </th>
+           <th>
+            Role
+           </th>
+           <th class="text-end" style="min-width:160px;">
+            Last Login
+           </th>
+           <th class="text-end" style="min-width:120px;">
+            Actions
+           </th>
+          </tr>
+         </thead>
+         <tbody id="recentUsersTbody">
+          <!-- rows injected by JS -->
+         </tbody>
+        </table>
+       </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between align-items-center">
+       <small class="text-muted" id="paginationInfo">
+        Showing 1–6 of 6
+       </small>
+       <div aria-label="Pagination" class="btn-group btn-group-sm" role="group">
+        <button class="btn btn-light" disabled="" id="prevPage">
+         <i class="fa-solid fa-angle-left">
+         </i>
+        </button>
+        <button class="btn btn-light" disabled="" id="nextPage">
+         <i class="fa-solid fa-angle-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <!-- System Administrator Footer -->
+  <footer class="border-top bg-light py-2 mt-auto">
+   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small class="text-muted mb-1 mb-md-0">
+     © 2025 VeriTour •
+     <a class="text-decoration-none" href="#">
+      Terms
+     </a>
+     •
+     <a class="text-decoration-none" href="#">
+      Privacy
+     </a>
+    </small>
+    <div>
+     <span class="badge text-bg-success">
+      <i class="fa-solid fa-circle-check me-1">
+      </i>
+      99.9% Uptime
+     </span>
+    </div>
+   </div>
+  </footer>
+  <!-- Toast Container (feedback) -->
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1060">
+   <div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-success border-0" id="saveToast" role="alert">
+    <div class="d-flex">
+     <div class="toast-body">
+      <i class="fa-solid fa-circle-check me-1">
+      </i>
+      User saved successfully.
+     </div>
+     <button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <!-- Bootstrap JS -->
+  <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script>
+   // Core state and configuration
+const qs = (s, r = document) => r.querySelector(s);
+const qsa = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+const rolesByDept = {
+    'Police': ['Police Responder', 'Regional Supervisor'],
+    'Tourism Department': ['Tourism Official', 'Regional Supervisor'],
+    'System Administration': ['System Administrator', 'Regional Supervisor']
+};
+
+const allPermissions = [{
+    key: 'view_incidents',
+    label: 'View Incidents'
+}, {
+    key: 'create_incident',
+    label: 'Create Incident'
+}, {
+    key: 'manage_users',
+    label: 'User Management'
+}, {
+    key: 'view_analytics',
+    label: 'View Analytics'
+}, {
+    key: 'edit_settings',
+    label: 'Edit Settings'
+}, {
+    key: 'approve_reports',
+    label: 'Approve Reports'
+}, {
+    key: 'manage_zones',
+    label: 'Manage Zones'
+}, {
+    key: 'access_safety_map',
+    label: 'Access Safety Map'
+}, {
+    key: 'send_alerts',
+    label: 'Send Alerts'
+}, {
+    key: 'view_tourists_data',
+    label: 'View Tourists Data'
+}];
+
+const rolePolicies = {
+    'Police Responder': {
+        defaults: ['view_incidents', 'create_incident', 'access_safety_map', 'send_alerts'],
+        disabled: ['manage_users', 'edit_settings']
+    },
+    'Tourism Official': {
+        defaults: ['view_incidents', 'view_analytics', 'access_safety_map', 'approve_reports', 'view_tourists_data'],
+        disabled: []
+    },
+    'Regional Supervisor': {
+        defaults: ['view_incidents', 'approve_reports', 'view_analytics', 'manage_zones', 'access_safety_map'],
+        disabled: []
+    },
+    'System Administrator': {
+        defaults: ['view_incidents', 'create_incident', 'manage_users', 'view_analytics', 'edit_settings', 'approve_reports', 'manage_zones', 'access_safety_map', 'send_alerts', 'view_tourists_data'],
+        disabled: []
+    }
+};
+
+const state = {
+    isEditMode: false,
+    isLoading: false,
+    dirty: false,
+    formData: {
+        fullName: '',
+        email: '',
+        employeeId: '',
+        department: '',
+        role: '',
+        permissions: []
+    },
+    sort: {
+        key: 'name',
+        dir: 'asc'
+    }
+};
+
+// Sidebar toggle for mobile
+function initSidebarToggle() {
+    const btn = qs('#adminSidebarToggle');
+    const aside = qs('.admin-sidebar');
+    btn?.addEventListener('click', () => {
+        aside.classList.toggle('show');
+    });
+    // Close when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 992 && aside.classList.contains('show')) {
+            if (!aside.contains(e.target) && !btn.contains(e.target)) {
+                aside.classList.remove('show');
+            }
+        }
+    });
+}
+
+// Populate role options based on department selection
+function renderRoleOptions() {
+    const dept = qs('#department').value;
+    const roleSelect = qs('#role');
+    roleSelect.innerHTML = '';
+    if (!dept) {
+        roleSelect.insertAdjacentHTML('beforeend', '<option value="" disabled selected>Select department first</option>');
+        return;
+    }
+    const roles = rolesByDept[dept] || [];
+    roleSelect.insertAdjacentHTML('beforeend', '<option value="" disabled selected>Choose role</option>');
+    roles.forEach(r => {
+        const opt = document.createElement('option');
+        opt.value = r;
+        opt.textContent = r;
+        roleSelect.appendChild(opt);
+    });
+    // if coming from edit mode with a role outside current dept, keep it temporarily
+    if (state.formData.role && !roles.includes(state.formData.role)) {
+        const opt = document.createElement('option');
+        opt.value = state.formData.role;
+        opt.textContent = state.formData.role + ' (from data)';
+        roleSelect.appendChild(opt);
+    }
+    if (state.formData.role) roleSelect.value = state.formData.role;
+}
+
+// Render permissions checklist based on role
+function renderPermissions() {
+    const grid = qs('#permissionsGrid');
+    grid.innerHTML = '';
+    const role = qs('#role').value;
+    const policy = rolePolicies[role] || {
+        defaults: [],
+        disabled: []
+    };
+
+    // If role changed, reset permissions to defaults unless in edit mode and we purposely keep changes
+    if (!state.isEditMode || (state.isEditMode && state._roleJustChanged)) {
+        state.formData.permissions = [...policy.defaults];
+    }
+
+    allPermissions.forEach(p => {
+        const id = `perm_${p.key}`;
+        const isDisabled = policy.disabled.includes(p.key);
+        const isChecked = state.formData.permissions.includes(p.key);
+        const item = document.createElement('div');
+        item.className = 'form-check form-switch perm-item';
+        item.innerHTML = `
+          <input class="form-check-input" type="checkbox" role="switch" id="${id}" data-key="${p.key}" ${isChecked ? 'checked' : ''} ${isDisabled ? 'disabled' : ''}>
+          <label class="form-check-label" for="${id}">${p.label}</label>
+        `;
+        grid.appendChild(item);
+    });
+
+    // Toggle handler
+    qsa('.perm-item input').forEach(inp => {
+        inp.addEventListener('change', (e) => {
+            const key = e.target.dataset.key;
+            if (e.target.checked) {
+                if (!state.formData.permissions.includes(key)) state.formData.permissions.push(key);
+            } else {
+                state.formData.permissions = state.formData.permissions.filter(k => k !== key);
+            }
+            markDirty();
+        });
+    });
+
+    // Quick actions
+    qs('#selectAllPerms').onclick = () => {
+        const role = qs('#role').value;
+        const policy = rolePolicies[role] || {
+            disabled: []
+        };
+        state.formData.permissions = allPermissions.map(p => p.key).filter(k => !policy.disabled.includes(k));
+        renderPermissions();
+        markDirty();
+    };
+    qs('#clearPerms').onclick = () => {
+        state.formData.permissions = [];
+        renderPermissions();
+        markDirty();
+    };
+
+    state._roleJustChanged = false;
+}
+
+// Validation utilities
+function validateEmail(val) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(val).toLowerCase());
+}
+
+function validateForm() {
+    let valid = true;
+    const fullName = qs('#fullName');
+    const email = qs('#email');
+    const employeeId = qs('#employeeId');
+    const department = qs('#department');
+    const role = qs('#role');
+
+    // Bootstrap native validation UI
+    [fullName, employeeId, department, role].forEach(el => {
+        if (!el.value) {
+            el.classList.add('is-invalid');
+            valid = false;
+        } else {
+            el.classList.remove('is-invalid');
+        }
+    });
+
+    if (!validateEmail(email.value)) {
+        email.classList.add('is-invalid');
+        valid = false;
+    } else {
+        email.classList.remove('is-invalid');
+    }
+
+    return valid;
+}
+
+function markDirty() {
+    if (!state.dirty) {
+        state.dirty = true;
+        qs('#formStatus').innerHTML = '<i class="fa-regular fa-pen-to-square me-1"></i>Unsaved changes';
+    }
+}
+
+function attachFormListeners() {
+    ['fullName', 'email', 'employeeId'].forEach(id => {
+        qs('#' + id).addEventListener('input', () => {
+            state.formData[id] = qs('#' + id).value.trim();
+            markDirty();
+        });
+        qs('#' + id).addEventListener('blur', validateForm);
+    });
+
+    qs('#department').addEventListener('change', () => {
+        state.formData.department = qs('#department').value;
+        state.formData.role = '';
+        renderRoleOptions();
+        renderPermissions(); // will empty grid if no role
+        markDirty();
+    });
+
+    qs('#role').addEventListener('change', () => {
+        state.formData.role = qs('#role').value;
+        state._roleJustChanged = true;
+        renderPermissions();
+        markDirty();
+    });
+
+    qs('#userForm').addEventListener('submit', onSubmit);
+    qs('#cancelBtn').addEventListener('click', onCancel);
+}
+
+async function onSubmit(e) {
+    e.preventDefault();
+    if (!validateForm()) {
+        qs('#alertPlaceholder').innerHTML = `<div class="alert alert-warning d-flex align-items-center" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i><div>Please review the highlighted fields.</div></div>`;
+        return;
+    }
+
+    state.isLoading = true;
+    qs('#submitSpinner').classList.remove('d-none');
+    qs('#submitBtn').setAttribute('disabled', '');
+
+    // Simulate API save
+    setTimeout(async () => {
+        state.isLoading = false;
+        qs('#submitSpinner').classList.add('d-none');
+        qs('#submitBtn').removeAttribute('disabled');
+        state.dirty = false;
+
+        await Swal.fire({
+            icon: 'success',
+            title: state.isEditMode ? 'Changes saved' : 'User created',
+            text: 'The user account has been saved successfully.',
+            confirmButtonText: 'Continue'
+        });
+        window.location.href = './admin_dashboard.html?notice=user_saved';
+    }, 900);
+}
+
+async function onCancel(e) {
+    if (state.dirty) {
+        e.preventDefault();
+        const res = await Swal.fire({
+            title: 'Discard changes?',
+            text: 'You have unsaved changes. This action cannot be undone.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Discard',
+            cancelButtonText: 'Stay on page'
+        });
+        if (res.isConfirmed) {
+            window.location.href = './admin_dashboard.html';
+        }
+    }
+}
+
+// Mock fetch for edit mode
+function fetchUserMock(id) {
+    const sample = {
+        '1001': {
+            fullName: 'Anita Sharma',
+            email: 'anita.sharma@department.gov.in',
+            employeeId: 'EMP1001',
+            department: 'Tourism Department',
+            role: 'Tourism Official',
+            permissions: ['view_incidents', 'view_analytics', 'access_safety_map', 'approve_reports', 'view_tourists_data']
+        },
+        '2001': {
+            fullName: 'Rohit Verma',
+            email: 'rohit.verma@police.gov.in',
+            employeeId: 'POL2001',
+            department: 'Police',
+            role: 'Police Responder',
+            permissions: ['view_incidents', 'create_incident', 'access_safety_map', 'send_alerts']
+        }
+    };
+    return new Promise(resolve => setTimeout(() => resolve(sample[id] || null), 500));
+}
+
+async function initEditModeIfNeeded() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    if (!id) return;
+
+    state.isEditMode = true;
+    qs('#editModeBadge').classList.remove('d-none');
+    qs('#pageTitle').innerHTML = '<i class="fa-solid fa-user-gear me-2 text-primary"></i>Edit User';
+    qs('#pageCrumb').textContent = 'Edit User';
+
+    const data = await fetchUserMock(id);
+    if (data) {
+        state.formData = JSON.parse(JSON.stringify(data));
+        qs('#fullName').value = data.fullName;
+        qs('#email').value = data.email;
+        qs('#email').setAttribute('disabled', '');
+        qs('#employeeId').value = data.employeeId;
+        qs('#department').value = data.department;
+        renderRoleOptions();
+        qs('#role').value = data.role;
+        // Permissions from user record
+        state._roleJustChanged = false;
+        renderPermissions();
+        // Apply user permissions to UI
+        state.formData.permissions.forEach(k => {
+            const inp = qs(`#perm_${k}`);
+            if (inp) inp.checked = true;
+        });
+    } else {
+        qs('#alertPlaceholder').innerHTML = `<div class="alert alert-danger" role="alert"><i class='fa-solid fa-circle-exclamation me-2'></i>Unable to load user with ID ${id}. Creating a new user instead.</div>`;
+        state.isEditMode = false;
+    }
+    qs('#submitLabel').textContent = state.isEditMode ? 'Save Changes' : 'Create User';
+}
+
+// Recent users table (mock data)
+const usersData = [{
+    id: '2001',
+    name: 'Rohit Verma',
+    email: 'rohit.verma@police.gov.in',
+    department: 'Police',
+    role: 'Police Responder',
+    lastLogin: '2025-08-10 09:15'
+}, {
+    id: '3012',
+    name: 'Priya Nair',
+    email: 'priya.nair@tourism.gov.in',
+    department: 'Tourism Department',
+    role: 'Tourism Official',
+    lastLogin: '2025-08-09 17:42'
+}, {
+    id: '4210',
+    name: 'Arun Gupta',
+    email: 'arun.gupta@sysadmin.gov.in',
+    department: 'System Administration',
+    role: 'System Administrator',
+    lastLogin: '2025-08-08 11:02'
+}, {
+    id: '3777',
+    name: 'Neha Singh',
+    email: 'neha.singh@tourism.gov.in',
+    department: 'Tourism Department',
+    role: 'Regional Supervisor',
+    lastLogin: '2025-08-11 13:28'
+}, {
+    id: '1555',
+    name: 'Vikram Rao',
+    email: 'vikram.rao@police.gov.in',
+    department: 'Police',
+    role: 'Regional Supervisor',
+    lastLogin: '2025-08-07 08:36'
+}, {
+    id: '1001',
+    name: 'Anita Sharma',
+    email: 'anita.sharma@department.gov.in',
+    department: 'Tourism Department',
+    role: 'Tourism Official',
+    lastLogin: '2025-08-10 19:21'
+}];
+
+let tableState = {
+    page: 1,
+    pageSize: 6,
+    sortKey: 'name',
+    sortDir: 'asc',
+    q: '',
+    dept: ''
+};
+
+function renderRecentUsers() {
+    let rows = [...usersData];
+    const {
+        q,
+        dept,
+        sortKey,
+        sortDir,
+        page,
+        pageSize
+    } = tableState;
+
+    if (q) {
+        const qq = q.toLowerCase();
+        rows = rows.filter(r => r.name.toLowerCase().includes(qq) || r.email.toLowerCase().includes(qq));
+    }
+    if (dept) rows = rows.filter(r => r.department === dept);
+
+    rows.sort((a, b) => {
+        const av = String(a[sortKey]).toLowerCase();
+        const bv = String(b[sortKey]).toLowerCase();
+        if (av < bv) return sortDir === 'asc' ? -1 : 1;
+        if (av > bv) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    const total = rows.length;
+    const start = (page - 1) * pageSize;
+    const end = Math.min(start + pageSize, total);
+    const pageRows = rows.slice(start, end);
+
+    const tbody = qs('#recentUsersTbody');
+    tbody.innerHTML = '';
+    pageRows.forEach(u => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><div class="d-flex align-items-center"><img src="https://via.placeholder.com/28" class="rounded-circle me-2" alt="" onerror="this.onerror=null;this.src='https://picsum.photos/seed/${u.id}/28/28';"><span>${u.name}</span></div></td>
+          <td>${u.email}</td>
+          <td>${u.department}</td>
+          <td>${u.role}</td>
+          <td class="text-end"><span class="text-muted">${u.lastLogin}</span></td>
+          <td class="text-end">
+            <a class="btn btn-sm btn-light me-1" href="./user_form.html?id=${u.id}" title="Edit"><i class="fa-solid fa-pen"></i></a>
+            <button class="btn btn-sm btn-light text-danger" title="Delete" data-id="${u.id}"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    qs('#paginationInfo').textContent = total ? `Showing ${start + 1}–${end} of ${total}` : 'No results';
+    qs('#prevPage').disabled = page <= 1;
+    qs('#nextPage').disabled = end >= total;
+
+    // Delete handlers
+    qsa('button[title="Delete"]').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            const id = e.currentTarget.getAttribute('data-id');
+            const res = await Swal.fire({
+                icon: 'warning',
+                title: 'Delete user?',
+                text: 'This will remove the user from the system.',
+                showCancelButton: true,
+                confirmButtonText: 'Delete',
+                cancelButtonText: 'Cancel'
+            });
+            if (res.isConfirmed) {
+                // Simulate delete
+                const idx = usersData.findIndex(u => u.id === id);
+                if (idx >= 0) usersData.splice(idx, 1);
+                renderRecentUsers();
+                const toastEl = qs('#saveToast');
+                toastEl.querySelector('.toast-body').innerHTML = `<i class='fa-solid fa-circle-check me-1'></i>User deleted.`;
+                new bootstrap.Toast(toastEl).show();
+            }
+        });
+    });
+}
+
+function attachTableListeners() {
+    qs('#userSearch').addEventListener('input', (e) => {
+        tableState.q = e.target.value.trim();
+        tableState.page = 1;
+        renderRecentUsers();
+    });
+    qs('#userDeptFilter').addEventListener('change', (e) => {
+        tableState.dept = e.target.value;
+        tableState.page = 1;
+        renderRecentUsers();
+    });
+    qsa('#recentUsersTable thead th.sortable').forEach(th => {
+        th.style.cursor = 'pointer';
+        th.addEventListener('click', () => {
+            const key = th.getAttribute('data-sort');
+            if (tableState.sortKey === key) {
+                tableState.sortDir = tableState.sortDir === 'asc' ? 'desc' : 'asc';
+            } else {
+                tableState.sortKey = key;
+                tableState.sortDir = 'asc';
+            }
+            renderRecentUsers();
+        });
+    });
+    qs('#prevPage').addEventListener('click', () => {
+        if (tableState.page > 1) {
+            tableState.page--;
+            renderRecentUsers();
+        }
+    });
+    qs('#nextPage').addEventListener('click', () => {
+        tableState.page++;
+        renderRecentUsers();
+    });
+}
+
+function hydrateFormFromState() {
+    qs('#fullName').value = state.formData.fullName || '';
+    qs('#email').value = state.formData.email || '';
+    qs('#employeeId').value = state.formData.employeeId || '';
+    if (state.formData.department) qs('#department').value = state.formData.department;
+    renderRoleOptions();
+    if (state.formData.role) qs('#role').value = state.formData.role;
+    renderPermissions();
+}
+
+function showSaveToastFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('notice') === 'user_saved') {
+        const toastEl = qs('#saveToast');
+        new bootstrap.Toast(toastEl).show();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // Typography override to Poppins for this page
+    document.body.style.fontFamily = '\'Poppins\', var(--font-sans)';
+
+    initSidebarToggle();
+    renderRoleOptions();
+    renderPermissions();
+    attachFormListeners();
+    await initEditModeIfNeeded();
+    hydrateFormFromState();
+
+    // Recent users table
+    attachTableListeners();
+    renderRecentUsers();
+
+    showSaveToastFromQuery();
+
+    // Submit label
+    qs('#submitLabel').textContent = state.isEditMode ? 'Save Changes' : 'Create User';
+
+    // When any input changes, update crumb too
+    qs('#fullName').addEventListener('input', () => {
+        if (state.isEditMode) qs('#pageCrumb').textContent = 'Edit User';
+    });
+});
+  </script>
+ </body>
+</html>

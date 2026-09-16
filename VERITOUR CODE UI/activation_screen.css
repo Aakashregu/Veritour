@@ -1,0 +1,113 @@
+/* Activation Screen - Page specific styles (activation_screen.css) */
+/* Use brand typography */
+body {
+    font-family: "Poppins", var(--font-sans)
+    }
+/* Keep content above fixed footer */
+.activation-shell {
+    padding-bottom: 84px
+    }
+/* Sidebar theming as provided */
+.tourist-offcanvas .nav-link {
+    color: #333;
+    border-radius: 0.375rem
+    }
+.tourist-offcanvas .nav-link:hover {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd
+    }
+.tourist-offcanvas .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff
+    }
+/* Scanner container & overlay frame */
+.scanner-container {
+    min-height: 360px;
+    background: #000;
+    position: relative;
+    display: grid;
+    place-items: center
+    }
+.scanner-container video {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover
+    }
+.scanner-frame {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 280px;
+    height: 280px;
+    transform: translate(-50%, -50%);
+    pointer-events: none
+    }
+.scanner-frame .corner {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(13, 110, 253, 0.95)
+    }
+.scanner-frame .corner.tl {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-top-left-radius: 8px
+    }
+.scanner-frame .corner.tr {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-top-right-radius: 8px
+    }
+.scanner-frame .corner.bl {
+    bottom: 0;
+    left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom-left-radius: 8px
+    }
+.scanner-frame .corner.br {
+    bottom: 0;
+    right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-bottom-right-radius: 8px
+    }
+/* Status card */
+.status-card .card-body {
+    display: grid;
+    align-content: start
+    }
+/* Responsiveness */
+@media (max-width: 575.98px) {
+    .scanner-frame {
+        width: 220px;
+        height: 220px
+        }
+    .activation-shell {
+        padding-bottom: 96px
+        }
+    }
+/* Adjust html5-qrcode default scan region to blend with theme */
+#qr-reader__scan_region {
+    overflow: hidden
+    }
+#qr-reader__dashboard {
+    display: none !important
+    }
+#qr-reader__camera_selection {
+    max-width: 100%
+    }
+/* Optional: subtle animated glow on active scan frame */
+@keyframes scanGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, .25);
+        } 50% {
+        box-shadow: 0 0 0 8px rgba(13, 110, 253, 0);
+        }
+    }
+.scanner-frame {
+    animation: scanGlow 2.4s ease-in-out infinite
+    }

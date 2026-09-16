@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour | Secure Login
+  </title>
+  <!-- Brand Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+   <!-- SweetAlert2 CSS (optional, for theming) -->
+   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Site Theme -->
+    <link href="style.css" rel="stylesheet"/>
+    <!-- Page specific CSS -->
+    <link href="login_page.css" rel="stylesheet"/>
+   </link>
+  </link>
+ </head>
+ <body class="d-flex flex-column min-vh-100">
+  <!-- Header: Common Public Minimal -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+   <div class="container-fluid">
+    <a aria-label="VeriTour Home" class="navbar-brand d-flex align-items-center" href="#">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/120/32';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:32px;"/>
+     <span class="fw-bold" style="color:#0d6efd;">
+      VeriTour
+     </span>
+    </a>
+    <button aria-controls="publicNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#publicNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="publicNavbar">
+     <ul class="navbar-nav ms-auto align-items-lg-center">
+      <li class="nav-item me-2">
+       <a class="nav-link" href="#" title="Help">
+        <i class="fa-solid fa-circle-question me-1">
+        </i>
+        Help
+       </a>
+      </li>
+      <li class="nav-item d-none d-lg-block">
+       <span class="badge rounded-pill text-bg-light" id="publicStatusBadge">
+        Secure Portal
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- Main Content -->
+  <main class="flex-grow-1 d-flex align-items-center py-5">
+   <div class="container">
+    <div class="row justify-content-center">
+     <div class="col-12 col-md-8 col-lg-5">
+      <div class="login-form-container">
+       <!-- Brand -->
+       <div class="login-brand text-center mb-3">
+        <img alt="VeriTour" class="login-logo mx-auto" height="56" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/56/56';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" width="56"/>
+        <h1 class="h4 fw-bold mt-2 mb-0" style="color:#0d6efd;">
+         VeriTour Secure Login
+        </h1>
+        <small class="text-muted">
+         Authorized personnel only (Police, Tourism Officials, Admins, Entry Staff)
+        </small>
+       </div>
+       <!-- System feedback -->
+       <div class="alert alert-warning py-2 px-3 mb-3" role="status">
+        <div class="d-flex align-items-center gap-2">
+         <i class="fa-solid fa-shield-halved text-warning">
+         </i>
+         <small>
+          For security, sessions may be monitored and recorded.
+         </small>
+        </div>
+       </div>
+       <!-- Error display (server/API) -->
+       <div aria-live="assertive" class="alert alert-danger d-none" id="authError" role="alert">
+       </div>
+       <!-- Authentication Form -->
+       <form class="needs-validation" id="authForm" novalidate="">
+        <div class="mb-3">
+         <label class="form-label" for="email">
+          Official Email or Username
+         </label>
+         <div class="input-group">
+          <span class="input-group-text bg-light">
+           <i class="fa-solid fa-user">
+           </i>
+          </span>
+          <input autocomplete="username" class="form-control" id="email" name="email" placeholder="Official Email / Username" required="" type="text"/>
+         </div>
+         <div class="form-text">
+          Use your government-issued email. Usernames are also accepted for testing.
+         </div>
+         <div class="invalid-feedback">
+          Please enter a valid email or username.
+         </div>
+        </div>
+        <div class="mb-2">
+         <label class="form-label" for="password">
+          Password
+         </label>
+         <div class="input-group">
+          <span class="input-group-text bg-light">
+           <i class="fa-solid fa-lock">
+           </i>
+          </span>
+          <input autocomplete="current-password" class="form-control password-input-field" id="password" name="password" placeholder="Password" required="" type="password"/>
+          <button aria-label="Toggle password visibility" class="btn btn-light" id="togglePassword" type="button">
+           <i aria-hidden="true" class="fa-solid fa-eye toggle-visibility-icon">
+           </i>
+          </button>
+         </div>
+         <div class="invalid-feedback">
+          Password is required.
+         </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+         <div class="form-check">
+          <input class="form-check-input" id="rememberMe" type="checkbox" value="1"/>
+          <label class="form-check-label" for="rememberMe">
+           Remember me
+          </label>
+         </div>
+         <a class="small" href="./activation_screen.html">
+          Forgot Password?
+         </a>
+        </div>
+        <div class="d-grid gap-2">
+         <button class="btn btn-primary" id="loginBtn" type="submit">
+          <span class="btn-label">
+           <i class="fa-solid fa-right-to-bracket me-1">
+           </i>
+           Login
+          </span>
+          <span class="btn-loading d-none">
+           <span aria-hidden="true" class="spinner-border spinner-border-sm me-2" role="status">
+           </span>
+           Signing in...
+          </span>
+         </button>
+        </div>
+        <div class="mt-3">
+         <div aria-hidden="true" class="progress d-none" id="loginProgress">
+          <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">
+          </div>
+         </div>
+        </div>
+       </form>
+      </div>
+      <!-- Test Accounts for Demo -->
+      <div class="card mt-4 shadow-sm">
+       <div class="card-header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+         <i class="fa-solid fa-id-badge text-info">
+         </i>
+         <span class="fw-semibold">
+          Demo Credentials
+         </span>
+        </div>
+        <span class="badge bg-info text-light">
+         For testing only
+        </span>
+       </div>
+       <div class="card-body p-0">
+        <div class="table-responsive">
+         <table class="table table-sm mb-0">
+          <thead class="table-light">
+           <tr>
+            <th scope="col">
+             Role
+            </th>
+            <th scope="col">
+             Username / Email
+            </th>
+            <th scope="col">
+             Password
+            </th>
+            <th scope="col">
+             Redirects to
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             Police
+            </td>
+            <td>
+             <code>
+              police@veritour.gov
+             </code>
+             or
+             <code>
+              police.officer
+             </code>
+            </td>
+            <td>
+             <code>
+              Secure#123
+             </code>
+            </td>
+            <td>
+             <a href="./authority_dashboard.html">
+              authority_dashboard.html
+             </a>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Tourism Official
+            </td>
+            <td>
+             <code>
+              tourism.official@veritour.gov
+             </code>
+             or
+             <code>
+              tourism.official
+             </code>
+            </td>
+            <td>
+             <code>
+              Travel#456
+             </code>
+            </td>
+            <td>
+             <a href="./analytics_dashboard.html">
+              analytics_dashboard.html
+             </a>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             System Admin
+            </td>
+            <td>
+             <code>
+              admin@veritour.gov
+             </code>
+             or
+             <code>
+              sys.admin
+             </code>
+            </td>
+            <td>
+             <code>
+              Admin#789
+             </code>
+            </td>
+            <td>
+             <a href="./admin_dashboard.html">
+              admin_dashboard.html
+             </a>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             Entry Point Staff
+            </td>
+            <td>
+             <code>
+              entry.staff@veritour.gov
+             </code>
+             or
+             <code>
+              entry.staff
+             </code>
+            </td>
+            <td>
+             <code>
+              Gate#321
+             </code>
+            </td>
+            <td>
+             <a href="./location_portal.html">
+              location_portal.html
+             </a>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+      <p class="text-center mt-3 text-muted small">
+       Use any of the above credentials to test role-based redirects.
+      </p>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- Footer: Common Public Minimal -->
+  <footer class="border-top bg-light py-3 mt-auto">
+   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="d-flex align-items-center mb-2 mb-md-0">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/96/24';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:24px;"/>
+     <small class="text-muted">
+      © 2025 VeriTour
+     </small>
+    </div>
+    <ul class="nav">
+     <li class="nav-item">
+      <a class="nav-link px-2 small" href="#">
+       <i class="fa-solid fa-file-contract me-1">
+       </i>
+       Terms
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link px-2 small" href="#">
+       <i class="fa-solid fa-user-shield me-1">
+       </i>
+       Privacy
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Bootstrap 5 Bundle (with Popper) -->
+  <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN6jIEaF5n" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js">
+  </script>
+  <script>
+   // Typography preference: set Poppins if available
+document.documentElement.style.setProperty('--font-sans', "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'");
+
+// Update status badge for accessibility
+(function() {
+    const badge = document.getElementById('publicStatusBadge');
+    if (badge) {
+        badge.classList.remove('text-bg-light');
+        badge.classList.add('text-bg-success');
+        badge.textContent = 'Secure Portal • Online';
+    }
+})();
+
+// Demo users and role-based redirects
+const USERS = [{
+    emails: ['police@veritour.gov'],
+    usernames: ['police.officer'],
+    password: 'Secure#123',
+    role: 'Police',
+    redirect: './authority_dashboard.html'
+}, {
+    emails: ['tourism.official@veritour.gov'],
+    usernames: ['tourism.official'],
+    password: 'Travel#456',
+    role: 'Tourism Official',
+    redirect: './analytics_dashboard.html'
+}, {
+    emails: ['admin@veritour.gov'],
+    usernames: ['sys.admin'],
+    password: 'Admin#789',
+    role: 'System Admin',
+    redirect: './admin_dashboard.html'
+}, {
+    emails: ['entry.staff@veritour.gov'],
+    usernames: ['entry.staff'],
+    password: 'Gate#321',
+    role: 'Entry Point Staff',
+    redirect: './location_portal.html'
+}];
+
+const form = document.getElementById('authForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const errorBox = document.getElementById('authError');
+const loginBtn = document.getElementById('loginBtn');
+const btnLabel = loginBtn.querySelector('.btn-label');
+const btnLoading = loginBtn.querySelector('.btn-loading');
+const progressWrap = document.getElementById('loginProgress');
+const progressBar = progressWrap ? progressWrap.querySelector('.progress-bar') : null;
+
+// Remember me functionality
+const rememberMe = document.getElementById('rememberMe');
+const savedUser = localStorage.getItem('vt_saved_user');
+if (savedUser) {
+    emailInput.value = savedUser;
+    rememberMe.checked = true;
+}
+
+// Toggle password visibility
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const isPwd = passwordInput.getAttribute('type') === 'password';
+    passwordInput.setAttribute('type', isPwd ? 'text' : 'password');
+    this.querySelector('i').classList.toggle('fa-eye');
+    this.querySelector('i').classList.toggle('fa-eye-slash');
+    passwordInput.focus();
+});
+
+// Simple validator: if input includes '@', validate as email; else accept non-empty username
+function isValidEmailOrUsername(val) {
+    if (!val) return false;
+    if (val.includes('@')) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        return re.test(val);
+    }
+    return val.trim().length > 0; // username acceptable for testing
+}
+
+function setLoading(loading) {
+    loginBtn.disabled = loading;
+    btnLabel.classList.toggle('d-none', loading);
+    btnLoading.classList.toggle('d-none', !loading);
+    if (progressWrap && progressBar) {
+        progressWrap.classList.toggle('d-none', !loading);
+        if (loading) {
+            progressBar.style.width = '0%';
+            progressBar.setAttribute('aria-valuenow', '0');
+            let pct = 0;
+            const timer = setInterval(() => {
+                pct = Math.min(100, pct + Math.floor(Math.random() * 20) + 5);
+                progressBar.style.width = pct + '%';
+                progressBar.setAttribute('aria-valuenow', String(pct));
+                if (pct >= 100) clearInterval(timer);
+            }, 180);
+        }
+    }
+}
+
+function showError(message) {
+    errorBox.textContent = message;
+    errorBox.classList.remove('d-none');
+    errorBox.focus();
+    Swal.fire({
+        icon: 'error',
+        title: 'Login failed',
+        text: message,
+        confirmButtonColor: getComputedStyle(document.documentElement).getPropertyValue('--color-primary') || '#0d6efd'
+    });
+}
+
+function clearError() {
+    errorBox.classList.add('d-none');
+    errorBox.textContent = '';
+}
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    clearError();
+
+    const identifier = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    // Bootstrap validation UI
+    if (!isValidEmailOrUsername(identifier)) {
+        emailInput.classList.add('is-invalid');
+    } else {
+        emailInput.classList.remove('is-invalid');
+    }
+    if (!password) {
+        passwordInput.classList.add('is-invalid');
+    } else {
+        passwordInput.classList.remove('is-invalid');
+    }
+
+    if (!isValidEmailOrUsername(identifier) || !password) {
+        showError('Please provide valid credentials.');
+        return;
+    }
+
+    // Persist remembered user
+    if (rememberMe.checked) localStorage.setItem('vt_saved_user', identifier);
+    else localStorage.removeItem('vt_saved_user');
+
+    // Simulate API call
+    setLoading(true);
+
+    setTimeout(() => {
+        // Find user by email or username
+        const user = USERS.find(u => u.emails.includes(identifier.toLowerCase()) || u.usernames.includes(identifier.toLowerCase()));
+        if (!user || user.password !== password) {
+            setLoading(false);
+            showError('Invalid credentials. Please check your username/email and password.');
+            return;
+        }
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome, ' + user.role,
+            text: 'Redirecting to your dashboard... ',
+            timer: 1200,
+            timerProgressBar: true,
+            showConfirmButton: false
+        });
+
+        // Finalize progress
+        if (progressBar) {
+            progressBar.style.width = '100%';
+            progressBar.setAttribute('aria-valuenow', '100');
+        }
+
+        setTimeout(() => {
+            window.location.href = user.redirect;
+        }, 900);
+    }, 900);
+});
+
+// Improve UX: submit on Enter in inputs triggers form submit automatically by browser
+  </script>
+ </body>
+</html>

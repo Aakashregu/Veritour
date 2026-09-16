@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour • Secure Location Viewing Portal
+  </title>
+  <!-- Brand typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+  <!-- Leaflet (Map) -->
+  <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet"/>
+  <!-- SweetAlert2 -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"/>
+  <!-- Site theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page-specific CSS (standard link) -->
+  <link href="location_portal.css" rel="stylesheet"/>
+  <!-- Page-specific CSS (as requested tag) -->
+  <style href="location_portal.css" rel="stylesheet">
+  </style>
+ </head>
+ <body class="view-tiles">
+  <!-- Header: Common Public Minimal (sticky on this page for portal context) -->
+  <nav aria-label="Public minimal header" class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+   <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="./login_page.html">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritourlogo/80/32'" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:32px;"/>
+     <span class="fw-bold" style="color:#0d6efd;">
+      VeriTour
+     </span>
+    </a>
+    <button aria-controls="publicNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#publicNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="publicNavbar">
+     <ul class="navbar-nav ms-auto align-items-lg-center">
+      <li class="nav-item me-2">
+       <a class="nav-link" data-bs-placement="bottom" data-bs-title="Get help about this portal" data-bs-toggle="tooltip" href="#" title="Help">
+        <i class="fa-solid fa-circle-question me-1">
+        </i>
+        Help
+       </a>
+      </li>
+      <li class="nav-item d-none d-lg-block">
+       <span class="badge rounded-pill text-bg-light" id="publicStatusBadge">
+        <i class="fa-solid fa-shield-halved me-1 text-success">
+        </i>
+        Secure Portal
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- Main content -->
+  <main class="main-panel p-0" id="mainContent">
+   <!-- Map Wrapper fills remaining viewport between header and footer -->
+   <section class="map-wrap position-relative">
+    <!-- Title overlay (PortalHeader.PageTitle) -->
+    <div aria-live="polite" class="map-title-overlay app-card shadow-1 p-3 m-3 bg-white border" id="titleOverlay" role="region">
+     <div class="d-flex align-items-center gap-2">
+      <div aria-hidden="true" class="status-dot info" id="modeDot">
+      </div>
+      <div>
+       <h1 class="h5 mb-1" id="pageTitle">
+        Live Location for
+        <span class="tourist-name">
+         Tourist
+        </span>
+       </h1>
+       <div class="small text-muted" id="lastUpdatedText" title="Last update timestamp">
+        Updated just now
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Map canvas (LiveMapView.MapCanvas) -->
+    <div class="rounded-0" id="map">
+    </div>
+    <!-- Map toolbar (controls) -->
+    <div aria-label="Map controls" class="map-toolbar app-card shadow-1 p-2 d-flex align-items-center gap-2" role="toolbar">
+     <div class="form-check form-switch m-0" title="Toggle follow mode">
+      <input checked="" class="form-check-input" id="followSwitch" role="switch" type="checkbox"/>
+      <label class="form-check-label small" for="followSwitch">
+       <i class="fa-solid fa-person-walking-arrow-loop-left me-1">
+       </i>
+       Follow
+      </label>
+     </div>
+     <button class="btn btn-light btn-sm" data-bs-title="Recenter on tourist" data-bs-toggle="tooltip" id="recenterBtn">
+      <i class="fa-solid fa-crosshairs">
+      </i>
+     </button>
+     <button class="btn btn-light btn-sm" data-bs-title="Copy secure link" data-bs-toggle="tooltip" id="copyLinkBtn">
+      <i class="fa-solid fa-link">
+      </i>
+     </button>
+     <a class="btn btn-light btn-sm" data-bs-title="Open in Google Maps" data-bs-toggle="tooltip" id="externalMapsBtn" rel="noopener" target="_blank">
+      <i class="fa-brands fa-google">
+      </i>
+     </a>
+    </div>
+    <!-- Session Info Panel (SessionInfoPanel) -->
+    <aside aria-label="Session info" class="session-panel app-card shadow-2 border" role="complementary">
+     <!-- Emergency Alert Banner (Conditional) -->
+     <div class="d-none emergency-banner text-danger" id="emergencyBanner">
+      <i class="fa-solid fa-triangle-exclamation me-2">
+      </i>
+      <span class="fw-bold">
+       EMERGENCY ALERT
+      </span>
+      <span class="ms-2" id="emergencyStatus">
+       Alert Sent
+      </span>
+     </div>
+     <div class="p-3">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+       <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-user text-primary">
+        </i>
+        <span class="fw-semibold tourist-name">
+         Tourist
+        </span>
+       </div>
+       <span class="badge-soft info" id="sessionState">
+        <i class="fa-solid fa-satellite-dish me-1">
+        </i>
+        Live
+       </span>
+      </div>
+      <div class="d-flex align-items-center justify-content-between">
+       <div class="small text-muted">
+        Sharing ends in
+       </div>
+       <div class="fw-bold" id="countdown">
+        --:--:--
+       </div>
+      </div>
+      <div class="mt-2 d-flex align-items-center justify-content-between small text-muted">
+       <span>
+        Accuracy:
+        <span id="accuracyText">
+         —
+        </span>
+       </span>
+       <span>
+        Speed:
+        <span id="speedText">
+         —
+        </span>
+       </span>
+      </div>
+      <div class="mt-3 d-flex gap-2">
+       <button class="btn btn-primary btn-sm" id="notifyTouristBtn">
+        <i class="fa-regular fa-bell me-1">
+        </i>
+        Notify Tourist
+       </button>
+       <button class="btn btn-outline-primary btn-sm" id="howItWorksBtn">
+        <i class="fa-regular fa-circle-question me-1">
+        </i>
+        How it works
+       </button>
+      </div>
+     </div>
+    </aside>
+   </section>
+   <!-- Location Update Log (table with sorting/filtering/pagination) -->
+   <section class="container-max px-3 px-md-4 mt-3 mb-4">
+    <div class="card">
+     <div class="card-header">
+      <div class="d-flex flex-wrap w-100 justify-content-between align-items-center gap-2">
+       <div class="title d-flex align-items-center gap-2">
+        <i class="fa-solid fa-list-check text-primary">
+        </i>
+        <span class="widget-title">
+         Recent Location Updates
+        </span>
+       </div>
+       <div class="d-flex align-items-center gap-2">
+        <input class="form-control form-control-sm" id="logFilter" placeholder="Filter (time, source, etc.)" style="max-width:260px;" type="text"/>
+        <div class="view-switcher d-none d-md-inline-flex">
+         <div aria-current="true" class="option active">
+          Table
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="card-body p-0">
+      <div class="table-responsive">
+       <table aria-describedby="logTableCaption" class="table table-theme mb-0" id="logTable">
+        <caption class="visually-hidden" id="logTableCaption">
+         Table of recent GPS updates
+        </caption>
+        <thead>
+         <tr>
+          <th class="sortable" data-sort-key="time" scope="col">
+           Time
+           <i class="fa-solid fa-sort ms-1">
+           </i>
+          </th>
+          <th scope="col">
+           Coordinates
+          </th>
+          <th class="sortable" data-sort-key="accuracy" scope="col">
+           Accuracy (m)
+           <i class="fa-solid fa-sort ms-1">
+           </i>
+          </th>
+          <th class="sortable" data-sort-key="speed" scope="col">
+           Speed (km/h)
+           <i class="fa-solid fa-sort ms-1">
+           </i>
+          </th>
+          <th scope="col">
+           Source
+          </th>
+         </tr>
+        </thead>
+        <tbody id="logTableBody">
+         <!-- Rows injected dynamically -->
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div class="card-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small text-muted" id="paginationInfo">
+       Showing 0-0 of 0
+      </div>
+      <div class="d-flex align-items-center gap-1">
+       <button class="btn btn-light btn-sm" id="prevPage">
+        <i class="fa-solid fa-angle-left">
+        </i>
+       </button>
+       <span class="small text-muted" id="pageIndicator">
+        Page 1
+       </span>
+       <button class="btn btn-light btn-sm" id="nextPage">
+        <i class="fa-solid fa-angle-right">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer: Common Public Minimal -->
+  <footer class="border-top bg-light py-3 mt-auto">
+   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="d-flex align-items-center mb-2 mb-md-0">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritourlogofooter/80/24'" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:24px;"/>
+     <small class="text-muted">
+      © 2025 VeriTour
+     </small>
+    </div>
+    <ul class="nav">
+     <li class="nav-item">
+      <a class="nav-link px-2 small" href="./terms.html">
+       <i class="fa-solid fa-file-contract me-1">
+       </i>
+       Terms
+      </a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link px-2 small" href="./privacy.html">
+       <i class="fa-solid fa-user-shield me-1">
+       </i>
+       Privacy
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Leaflet JS -->
+  <script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js">
+  </script>
+  <script>
+   // Utility: parse URL params
+const params = new URLSearchParams(location.search);
+const touristName = params.get('name') || 'Alex Johnson';
+const latParam = parseFloat(params.get('lat'));
+const lngParam = parseFloat(params.get('lng'));
+const isEmergency = (params.get('emergency') || '').toLowerCase() === 'true';
+const emergencyStatusParam = params.get('estatus') || 'Alert Sent';
+const expiryParam = params.get('exp'); // ISO or epoch seconds
+
+// Initial coordinates (Times Square fallback)
+let currentCoords = {
+    lat: isFinite(latParam) ? latParam : 40.7580,
+    lng: isFinite(lngParam) ? lngParam : -73.9855
+};
+
+// DOM bindings
+const nameEls = document.querySelectorAll('.tourist-name');
+nameEls.forEach(el => el.textContent = touristName);
+document.getElementById('pageTitle').innerHTML = `Live Location for <span class="tourist-name">${touristName}</span>`;
+
+// Emergency banner
+const emergencyBanner = document.getElementById('emergencyBanner');
+const emergencyStatusEl = document.getElementById('emergencyStatus');
+const modeDot = document.getElementById('modeDot');
+if (isEmergency) {
+    emergencyBanner.classList.remove('d-none');
+    emergencyStatusEl.textContent = emergencyStatusParam;
+    modeDot.classList.remove('info');
+    modeDot.classList.add('error');
+} else {
+    modeDot.classList.remove('error');
+    modeDot.classList.add('info');
+}
+
+// Compute expiry timestamp
+let expiryTs;
+if (expiryParam) {
+    const asNum = Number(expiryParam);
+    expiryTs = isFinite(asNum) ? new Date(asNum * 1000) : new Date(expiryParam);
+} else {
+    expiryTs = new Date(Date.now() + 15 * 60 * 1000); // +15 minutes default
+}
+
+// Initialize Leaflet map
+let map, marker;
+let userHasInteracted = false;
+let followMode = true;
+const lastUpdatedText = document.getElementById('lastUpdatedText');
+const accuracyText = document.getElementById('accuracyText');
+const speedText = document.getElementById('speedText');
+
+function initMap() {
+    map = L.map('map', {
+        zoomControl: true,
+        attributionControl: true
+    }).setView([currentCoords.lat, currentCoords.lng], 15);
+
+    // OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marker styling: use colored circle marker
+    const markerOptions = {
+        radius: 10,
+        fillColor: isEmergency ? '#CD2026' : '#0d6efd',
+        color: '#ffffff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.9
+    };
+    marker = L.circleMarker([currentCoords.lat, currentCoords.lng], markerOptions).addTo(map);
+    marker.bindPopup(`<div class="fw-semibold mb-1">${touristName}</div><div class="small text-muted">Updated just now</div>`);
+
+    map.on('dragstart', () => {
+        userHasInteracted = true;
+    });
+}
+
+// Resize map height based on viewport and header/footer
+function sizeMap() {
+    const header = document.querySelector('nav.navbar');
+    const footer = document.querySelector('footer');
+    const headerH = header ? header.offsetHeight : 0;
+    const footerH = footer ? footer.offsetHeight : 0;
+    const available = window.innerHeight - headerH - footerH;
+    const mapEl = document.getElementById('map');
+    mapEl.style.height = Math.max(360, available) + 'px';
+    if (map) map.invalidateSize();
+}
+
+window.addEventListener('resize', sizeMap);
+
+// Countdown timer
+const countdownEl = document.getElementById('countdown');
+const sessionStateEl = document.getElementById('sessionState');
+let countdownInterval;
+
+function formatDHMS(ms) {
+    if (ms <= 0) return '00:00:00';
+    const totalSec = Math.floor(ms / 1000);
+    const h = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+    const m = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+    const s = String(totalSec % 60).padStart(2, '0');
+    return `${h}:${m}:${s}`;
+}
+
+function startCountdown() {
+    function tick() {
+        const now = new Date();
+        const diff = expiryTs - now;
+        countdownEl.textContent = formatDHMS(diff);
+        if (diff <= 0) {
+            clearInterval(countdownInterval);
+            onSessionExpire();
+        }
+    }
+    tick();
+    countdownInterval = setInterval(tick, 1000);
+}
+
+// Mock update stream
+let updateTimer;
+const logs = [];
+const updatesPerPage = 6;
+let currentPage = 1;
+let currentSort = {
+    key: 'time',
+    dir: 'desc'
+};
+let filterText = '';
+
+function readableTime(date) {
+    const diff = Date.now() - date.getTime();
+    if (diff < 45 * 1000) return 'Updated just now';
+    const mins = Math.floor(diff / 60000);
+    if (mins < 60) return `Updated ${mins} minute${mins===1?'':'s'} ago`;
+    const hrs = Math.floor(mins / 60);
+    return `Updated ${hrs} hour${hrs===1?'':'s'} ago`;
+}
+
+function pushLog(entry) {
+    logs.unshift(entry); // most recent first
+    renderLogs();
+}
+
+function renderLogs() {
+    // Filter
+    const filtered = logs.filter(row => {
+        if (!filterText) return true;
+        const t = filterText.toLowerCase();
+        return (
+            row.timeStr.toLowerCase().includes(t) ||
+            row.source.toLowerCase().includes(t) ||
+            row.coordsStr.toLowerCase().includes(t)
+        );
+    });
+
+    // Sort
+    filtered.sort((a, b) => {
+        let vA, vB;
+        switch (currentSort.key) {
+            case 'time':
+                vA = a.time;
+                vB = b.time;
+                break;
+            case 'accuracy':
+                vA = a.accuracy;
+                vB = b.accuracy;
+                break;
+            case 'speed':
+                vA = a.speed;
+                vB = b.speed;
+                break;
+            default:
+                vA = a.time;
+                vB = b.time;
+        }
+        const dir = currentSort.dir === 'asc' ? 1 : -1;
+        return (vA > vB ? 1 : vA < vB ? -1 : 0) * dir;
+    });
+
+    // Pagination
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / updatesPerPage));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const start = (currentPage - 1) * updatesPerPage;
+    const end = Math.min(start + updatesPerPage, total);
+    const pageRows = filtered.slice(start, end);
+
+    const tbody = document.getElementById('logTableBody');
+    tbody.innerHTML = pageRows.map(r => `
+        <tr>
+          <td>${r.timeStr}</td>
+          <td><code>${r.coordsStr}</code></td>
+          <td>${r.accuracy.toFixed(0)}</td>
+          <td>${r.speed.toFixed(1)}</td>
+          <td>${r.source}</td>
+        </tr>
+      `).join('');
+
+    document.getElementById('paginationInfo').textContent = `Showing ${total === 0 ? 0 : start + 1}-${end} of ${total}`;
+    document.getElementById('pageIndicator').textContent = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages;
+}
+
+function randomSource() {
+    const sources = ['GPS', 'Cell Tower', 'Wi‑Fi', 'Hybrid'];
+    return sources[Math.floor(Math.random() * sources.length)];
+}
+
+function startUpdates() {
+    // Seed initial log rows
+    for (let i = 0; i < 8; i++) {
+        const jitter = 0.0003 * (Math.random() - 0.5);
+        const jitter2 = 0.0003 * (Math.random() - 0.5);
+        const t = new Date(Date.now() - (8 - i) * 60000);
+        const acc = 5 + Math.random() * 15;
+        const spd = Math.max(0, (Math.random() * 20) - 5);
+        const lat = currentCoords.lat + jitter;
+        const lng = currentCoords.lng + jitter2;
+        pushLog({
+            time: t.getTime(),
+            timeStr: new Date(t).toLocaleString(),
+            coordsStr: `${lat.toFixed(5)}, ${lng.toFixed(5)}`,
+            accuracy: acc,
+            speed: spd,
+            source: randomSource()
+        });
+    }
+
+    let lastUpdate = Date.now();
+    updateTimer = setInterval(() => {
+        // Simulate movement
+        const deltaLat = (Math.random() - 0.5) * 0.0006;
+        const deltaLng = (Math.random() - 0.5) * 0.0006;
+        currentCoords.lat += deltaLat;
+        currentCoords.lng += deltaLng;
+
+        const accuracy = 5 + Math.random() * 10;
+        const speed = Math.max(0, (Math.random() * 18));
+        lastUpdate = Date.now();
+
+        // Update marker
+        marker.setLatLng([currentCoords.lat, currentCoords.lng]);
+        marker.setStyle({
+            fillColor: isEmergency ? '#CD2026' : '#0d6efd'
+        });
+
+        // Recenter if followMode and user not interacted
+        if (followMode && !userHasInteracted) {
+            map.setView([currentCoords.lat, currentCoords.lng]);
+        }
+
+        // Update texts
+        lastUpdatedText.textContent = readableTime(new Date(lastUpdate));
+        marker.setPopupContent(`<div class=\"fw-semibold mb-1\">${touristName}</div><div class=\"small text-muted\">${readableTime(new Date(lastUpdate))}</div>`);
+        accuracyText.textContent = `${accuracy.toFixed(0)} m`;
+        speedText.textContent = `${speed.toFixed(1)} km/h`;
+
+        // Update external maps button
+        const gmapsUrl = `https://www.google.com/maps?q=${currentCoords.lat},${currentCoords.lng}`;
+        document.getElementById('externalMapsBtn').href = gmapsUrl;
+
+        // Push to log
+        pushLog({
+            time: lastUpdate,
+            timeStr: new Date(lastUpdate).toLocaleString(),
+            coordsStr: `${currentCoords.lat.toFixed(5)}, ${currentCoords.lng.toFixed(5)}`,
+            accuracy: accuracy,
+            speed: speed,
+            source: randomSource()
+        });
+    }, 6000);
+}
+
+function stopUpdates() {
+    if (updateTimer) clearInterval(updateTimer);
+}
+
+function onSessionExpire() {
+    stopUpdates();
+    sessionStateEl.innerHTML = '<i class="fa-regular fa-clock me-1"></i>Expired';
+    document.getElementById('sessionState').className = 'badge-soft error';
+
+    // Disable controls
+    document.getElementById('followSwitch').disabled = true;
+    document.getElementById('recenterBtn').disabled = true;
+    document.getElementById('copyLinkBtn').disabled = true;
+    document.getElementById('externalMapsBtn').classList.add('disabled');
+
+    // SweetAlert2 modal
+    Swal.fire({
+        icon: 'info',
+        title: 'Sharing session ended',
+        text: 'This secure location sharing session has expired. No further updates will be received.',
+        confirmButtonText: 'OK'
+    });
+}
+
+// Controls handlers
+document.getElementById('followSwitch').addEventListener('change', (e) => {
+    followMode = e.target.checked;
+    if (followMode) {
+        userHasInteracted = false;
+        map.setView([currentCoords.lat, currentCoords.lng]);
+    }
+});
+
+document.getElementById('recenterBtn').addEventListener('click', () => {
+    userHasInteracted = false;
+    map.setView([currentCoords.lat, currentCoords.lng]);
+});
+
+document.getElementById('copyLinkBtn').addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+        Swal.fire({
+            icon: 'success',
+            title: 'Link copied',
+            timer: 1400,
+            showConfirmButton: false
+        });
+    } catch (e) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Copy failed',
+            text: 'Please copy the link manually.'
+        });
+    }
+});
+
+document.getElementById('notifyTouristBtn').addEventListener('click', () => {
+    Swal.fire({
+        title: 'Notify Tourist',
+        input: 'select',
+        inputOptions: {
+            'ping': 'Send gentle ping',
+            'call': 'Request a call back',
+            'sms': 'Send SMS check-in'
+        },
+        inputPlaceholder: 'Choose an action',
+        showCancelButton: true,
+        confirmButtonText: 'Send'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sent',
+                text: 'Your notification has been sent.'
+            });
+        }
+    });
+});
+
+document.getElementById('howItWorksBtn').addEventListener('click', () => {
+    Swal.fire({
+        title: 'How it works',
+        html: '<div class="text-start">\
+          <p>This secure portal shows real-time location updates shared by the tourist. The link remains valid until the session expires.</p>\
+          <ul class="mb-0">\
+            <li>Markers update as the tourist moves.</li>\
+            <li>Follow mode keeps the map centered on the tourist.</li>\
+            <li>In emergency mode, the marker turns red and an alert banner is shown.</li>\
+          </ul>\
+        </div>',
+        icon: 'info',
+        confirmButtonText: 'Close'
+    });
+});
+
+// Tooltips
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+
+// Log table interactions
+document.getElementById('logFilter').addEventListener('input', (e) => {
+    filterText = e.target.value;
+    currentPage = 1;
+    renderLogs();
+});
+
+document.querySelectorAll('#logTable thead th.sortable').forEach(th => {
+    th.style.cursor = 'pointer';
+    th.addEventListener('click', () => {
+        const key = th.getAttribute('data-sort-key');
+        if (currentSort.key === key) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort.key = key;
+            currentSort.dir = 'desc';
+        }
+        renderLogs();
+    });
+});
+
+document.getElementById('prevPage').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderLogs();
+    }
+});
+document.getElementById('nextPage').addEventListener('click', () => {
+    currentPage++;
+    renderLogs();
+});
+
+// Initialize
+window.addEventListener('load', () => {
+    sizeMap();
+    initMap();
+    startCountdown();
+    startUpdates();
+});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Activation Screen • VeriTour
+  </title>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+  <!-- SweetAlert2 CSS (optional, for dark theme modals) -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css" rel="stylesheet"/>
+  <!-- Global Theme CSS -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page-specific CSS -->
+  <link href="activation_screen.css" rel="stylesheet"/>
+ </head>
+ <body class="view-grid">
+  <!-- Tourist App Header -->
+  <nav class="navbar navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-controls="touristSidebar" class="btn btn-outline-light me-2" data-bs-target="#touristSidebar" data-bs-toggle="offcanvas" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" data-page="tourist_dashboard" href="#">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritourlogo/56/28'" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour
+     </span>
+    </a>
+    <div class="d-flex align-items-center">
+     <span class="badge bg-success me-2 d-none d-sm-inline" id="safetyStatusPill">
+      <i class="fa-solid fa-shield-heart me-1">
+      </i>
+      Safe
+     </span>
+     <button class="btn btn-danger me-2 d-none d-sm-inline" id="headerSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-1">
+      </i>
+      SOS
+     </button>
+     <button class="btn btn-link text-white me-2" id="notifBtn" title="Notifications">
+      <i class="fa-solid fa-bell">
+      </i>
+     </button>
+     <div class="dropdown">
+      <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="touristProfileMenu">
+       <img alt="me" class="rounded-circle me-2" height="28" onerror="this.onerror=null;this.src='https://picsum.photos/seed/user/28/28'" src="https://via.placeholder.com/28" width="28"/>
+       <strong>
+        Me
+       </strong>
+      </a>
+      <ul aria-labelledby="touristProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+       <li>
+        <a class="dropdown-item" data-page="tourist_profile" href="#">
+         Settings
+        </a>
+       </li>
+       <li>
+        <a class="dropdown-item" data-page="onboarding_portal" href="#">
+         Support
+        </a>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item" data-page="login_page" href="#">
+         Logout
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <!-- Tourist App Sidebar (Offcanvas) -->
+  <div aria-labelledby="touristSidebarLabel" class="offcanvas offcanvas-start tourist-offcanvas" id="touristSidebar" tabindex="-1">
+   <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="touristSidebarLabel">
+     Menu
+    </h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body d-flex flex-column">
+    <div class="d-flex align-items-center mb-3">
+     <img alt="Avatar" class="rounded-circle me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/avatar/40/40'" src="https://via.placeholder.com/40"/>
+     <div>
+      <div class="fw-semibold">
+       Traveler
+      </div>
+      <small class="text-muted">
+       Tourist
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link" data-page="tourist_dashboard" href="#">
+       <i class="fa-solid fa-house me-2">
+       </i>
+       Dashboard
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="safety_map" href="#">
+       <i class="fa-solid fa-map-location-dot me-2">
+       </i>
+       Safety Map
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="sharing_screen" href="#">
+       <i class="fa-solid fa-share-nodes me-2">
+       </i>
+       Share My Location
+      </a>
+     </li>
+     <li>
+      <a class="nav-link active" data-page="activation_screen" href="#">
+       <i class="fa-solid fa-id-card me-2">
+       </i>
+       Activate Digital ID
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="tourist_profile" href="#">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Settings
+      </a>
+     </li>
+     <li>
+      <a aria-controls="touristHelpCollapse" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#touristHelpCollapse" role="button">
+       <span>
+        <i class="fa-solid fa-circle-info me-2">
+        </i>
+        Help &amp; Info
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse ms-3 mt-1" id="touristHelpCollapse">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" data-page="onboarding_portal" href="#">
+          Safety Tips
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1" data-page="onboarding_portal" href="#">
+          Privacy Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+    </ul>
+    <div class="mt-auto">
+     <button class="btn btn-danger w-100" id="quickSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-2">
+      </i>
+      SOS
+     </button>
+    </div>
+   </div>
+  </div>
+  <main class="main-panel container py-3 pb-5 activation-shell">
+   <!-- Page Header Title -->
+   <div class="page-header">
+    <div class="d-flex align-items-center gap-2">
+     <i class="fa-solid fa-id-card text-primary">
+     </i>
+     <h1 class="page-title m-0">
+      Activate Your Digital ID
+     </h1>
+    </div>
+    <div class="view-switcher d-none d-md-inline-flex">
+     <div class="option active">
+      <i class="fa-solid fa-qrcode me-1">
+      </i>
+      Scan
+     </div>
+     <div class="option" id="openManualEntry">
+      <i class="fa-solid fa-keyboard me-1">
+      </i>
+      Manual
+     </div>
+    </div>
+   </div>
+   <!-- Instruction Panel -->
+   <div class="app-card mb-3">
+    <div class="card-body">
+     <p class="mb-2 text-muted small">
+      Step 1 of 1
+     </p>
+     <h2 class="h4 text-strong mb-2">
+      Position the QR code within the frame
+     </h2>
+     <p class="mb-0">
+      Use the back camera to scan the unique QR code provided by the entry point official. Your device will request camera permission if not already granted. Keep the code well-lit and stable.
+     </p>
+    </div>
+   </div>
+   <!-- QR Scanner View -->
+   <div class="row g-3">
+    <div class="col-12 col-lg-7">
+     <div class="app-card p-0 overflow-hidden">
+      <div class="bg-muted px-3 py-2 border-bottom d-flex align-items-center justify-content-between">
+       <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-camera text-muted">
+        </i>
+        <span class="fw-semibold">
+         Camera
+        </span>
+       </div>
+       <div>
+        <button class="btn btn-light btn-sm me-2" disabled="" id="toggleFlashBtn">
+         <i class="fa-solid fa-bolt me-1">
+         </i>
+         Torch
+        </button>
+        <button class="btn btn-light btn-sm" disabled="" id="switchCameraBtn">
+         <i class="fa-solid fa-camera-rotate me-1">
+         </i>
+         Switch
+        </button>
+       </div>
+      </div>
+      <div class="scanner-container position-relative" id="qr-reader">
+       <div aria-hidden="true" class="scanner-frame">
+        <div class="corner tl">
+        </div>
+        <div class="corner tr">
+        </div>
+        <div class="corner bl">
+        </div>
+        <div class="corner br">
+        </div>
+       </div>
+       <div class="d-none p-4 text-center" id="cameraFallback">
+        <i class="fa-solid fa-camera-slash fa-2x text-muted mb-2">
+        </i>
+        <p class="mb-2">
+         Unable to access camera. You can enter the activation code manually.
+        </p>
+        <button class="btn btn-primary" id="manualFallbackBtn">
+         <i class="fa-solid fa-keyboard me-2">
+         </i>
+         Enter Code Manually
+        </button>
+       </div>
+      </div>
+      <div class="p-3 border-top bg-white">
+       <div class="d-flex align-items-center text-muted small">
+        <i class="fa-solid fa-info-circle me-2">
+        </i>
+        We scan for valid QR patterns continuously. No images or video are stored.
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Status / Actions Panel -->
+    <div class="col-12 col-lg-5">
+     <div class="app-card status-card h-100">
+      <div class="card-body d-grid gap-3">
+       <!-- Loading / Processing -->
+       <div class="d-none text-center" id="statusProcessing">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+        </div>
+        <div class="mt-2 fw-semibold">
+         Verifying your Digital ID…
+        </div>
+        <div class="text-muted small">
+         Securely checking issuance data with the authority.
+        </div>
+       </div>
+       <!-- Success View -->
+       <div class="d-none text-center" id="statusSuccess">
+        <div class="text-success" style="font-size: 2.25rem;">
+         <i class="fa-solid fa-circle-check">
+         </i>
+        </div>
+        <div class="fw-bold fs-5">
+         Activation Successful
+        </div>
+        <p class="mb-2 text-muted">
+         Your Digital Tourist ID is now linked to this device.
+        </p>
+        <div class="text-start bg-success-soft rounded p-3 small">
+         <div class="d-flex align-items-center mb-1">
+          <span class="status-dot success me-2">
+          </span>
+          <strong>
+           Linked Profile
+          </strong>
+         </div>
+         <div class="text-muted" id="linkedProfile">
+          Name: —
+          <br/>
+          Nationality: —
+          <br/>
+          ID: —
+          <br/>
+          Valid Until: —
+         </div>
+        </div>
+        <div class="d-grid gap-2 mt-2">
+         <button class="btn btn-primary" id="proceedDashboardBtn">
+          <i class="fa-solid fa-arrow-right-to-bracket me-2">
+          </i>
+          Go to Dashboard
+         </button>
+         <a class="text-decoration-none small" data-page="tourist_profile" href="#">
+          View Profile
+         </a>
+        </div>
+       </div>
+       <!-- Error View -->
+       <div class="d-none text-center" id="statusError">
+        <div class="text-danger" style="font-size: 2.25rem;">
+         <i class="fa-solid fa-circle-xmark">
+         </i>
+        </div>
+        <div class="fw-bold fs-5">
+         Activation Failed
+        </div>
+        <p class="mb-2 text-muted" id="errorMessage">
+         We couldn’t validate the QR code. Please try again.
+        </p>
+        <div class="d-grid gap-2">
+         <button class="btn btn-warning" id="retryScanBtn">
+          <i class="fa-solid fa-rotate-right me-2">
+          </i>
+          Try Again
+         </button>
+         <button class="btn btn-light" id="openManualEntry2">
+          <i class="fa-solid fa-keyboard me-2">
+          </i>
+          Enter Code Manually
+         </button>
+        </div>
+       </div>
+       <!-- Idle / Instructions -->
+       <div class="text-center" id="statusIdle">
+        <div class="text-primary" style="font-size: 2rem;">
+         <i class="fa-solid fa-qrcode">
+         </i>
+        </div>
+        <div class="fw-semibold">
+         Ready to Scan
+        </div>
+        <p class="text-muted small mb-2">
+         Align the QR code within the frame. Hold steady until you feel a short vibration.
+        </p>
+        <div class="d-grid gap-2">
+         <button class="btn btn-info" id="startScanBtn">
+          <i class="fa-solid fa-play me-2">
+          </i>
+          Start Scanner
+         </button>
+         <button class="btn btn-light" id="openManualEntry3">
+          <i class="fa-solid fa-keyboard me-2">
+          </i>
+          Manual Entry
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="card-footer small text-muted">
+       Need help? See
+       <a data-page="onboarding_portal" href="#">
+        Activation tips
+       </a>
+       .
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- Tourist App Footer (Fixed Bottom Quick Nav) -->
+  <nav class="navbar bg-white border-top fixed-bottom">
+   <div class="container-fluid d-flex justify-content-around">
+    <a class="text-decoration-none text-muted text-center" data-page="tourist_dashboard" href="#">
+     <i class="fa-solid fa-house">
+     </i>
+     <div class="small">
+      Home
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="safety_map" href="#">
+     <i class="fa-solid fa-map-location-dot">
+     </i>
+     <div class="small">
+      Map
+     </div>
+    </a>
+    <button class="btn btn-danger rounded-pill px-4" id="footerSosBtn">
+     <i class="fa-solid fa-triangle-exclamation me-1">
+     </i>
+     SOS
+    </button>
+    <a class="text-decoration-none text-muted text-center" data-page="sharing_screen" href="#">
+     <i class="fa-solid fa-share-nodes">
+     </i>
+     <div class="small">
+      Share
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="activation_screen" href="#">
+     <i class="fa-solid fa-id-card">
+     </i>
+     <div class="small">
+      My ID
+     </div>
+    </a>
+   </div>
+  </nav>
+  <!-- Toasts Container -->
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080">
+   <div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-primary border-0" id="appToast" role="alert">
+    <div class="d-flex">
+     <div class="toast-body" id="toastBody">
+      Action completed.
+     </div>
+     <button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js">
+  </script>
+  <!-- html5-qrcode library -->
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.10/minified/html5-qrcode.min.js">
+  </script>
+  <script>
+   // Simple router for in-app navigation
+(function() {
+    function go(page) {
+        if (!page) return;
+        window.location.href = `./${page}.html`;
+    }
+    document.querySelectorAll('[data-page]')?.forEach(el => {
+        el.addEventListener('click', e => {
+            e.preventDefault();
+            const p = el.getAttribute('data-page');
+            if (p) go(p);
+        });
+    });
+})();
+
+// SOS handlers using SweetAlert2
+function handleSOS() {
+    Swal.fire({
+        title: 'Confirm SOS',
+        text: 'We will share your live location and emergency details with local authorities and your trusted contacts.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Send SOS',
+        cancelButtonText: 'Cancel'
+    }).then(result => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'SOS Sent',
+                text: 'Help is on the way. Stay where you are if safe.',
+                icon: 'success'
+            });
+        }
+    });
+}
+document.getElementById('headerSosBtn')?.addEventListener('click', handleSOS);
+document.getElementById('footerSosBtn')?.addEventListener('click', handleSOS);
+document.getElementById('quickSosBtn')?.addEventListener('click', handleSOS);
+
+// Toast helper
+let toastEl = document.getElementById('appToast');
+const toast = toastEl ? new bootstrap.Toast(toastEl, {
+    delay: 2600
+}) : null;
+
+function showToast(msg, type = 'primary') {
+    if (!toastEl) return;
+    toastEl.className = `toast align-items-center text-bg-${type} border-0`;
+    document.getElementById('toastBody').innerText = msg;
+    toast.show();
+}
+
+// Activation Manager State
+const state = {
+    scanModeActive: false,
+    activationStatus: 'idle', // idle | processing | success | error
+    errorMessage: '',
+    touristProfileData: null,
+    html5QrCode: null,
+    currentCameraId: null,
+    torchOn: false
+};
+
+// UI elements
+const el = {
+    statusIdle: document.getElementById('statusIdle'),
+    statusProcessing: document.getElementById('statusProcessing'),
+    statusSuccess: document.getElementById('statusSuccess'),
+    statusError: document.getElementById('statusError'),
+    errorMessage: document.getElementById('errorMessage'),
+    linkedProfile: document.getElementById('linkedProfile'),
+    startScanBtn: document.getElementById('startScanBtn'),
+    retryScanBtn: document.getElementById('retryScanBtn'),
+    proceedBtn: document.getElementById('proceedDashboardBtn'),
+    openManualEntry: document.getElementById('openManualEntry'),
+    openManualEntry2: document.getElementById('openManualEntry2'),
+    openManualEntry3: document.getElementById('openManualEntry3'),
+    manualFallbackBtn: document.getElementById('manualFallbackBtn'),
+    qrReader: document.getElementById('qr-reader'),
+    cameraFallback: document.getElementById('cameraFallback'),
+    toggleFlashBtn: document.getElementById('toggleFlashBtn'),
+    switchCameraBtn: document.getElementById('switchCameraBtn')
+};
+
+function setView(status) {
+    state.activationStatus = status;
+    el.statusIdle.classList.toggle('d-none', status !== 'idle');
+    el.statusProcessing.classList.toggle('d-none', status !== 'processing');
+    el.statusSuccess.classList.toggle('d-none', status !== 'success');
+    el.statusError.classList.toggle('d-none', status !== 'error');
+}
+
+// Start QR scanner
+async function startScanner() {
+    try {
+        // Reset UI
+        setView('idle');
+        el.cameraFallback.classList.add('d-none');
+        state.scanModeActive = true;
+
+        if (!state.html5QrCode) {
+            state.html5QrCode = new Html5Qrcode('qr-reader', {
+                verbose: false
+            });
+        }
+
+        const cameras = await Html5Qrcode.getCameras();
+        if (!cameras || cameras.length === 0) throw new Error('No camera found');
+        state.currentCameraId = cameras.find(c => /back|rear|environment/i.test(c.label))?.id || cameras[0].id;
+
+        // Enable camera controls
+        el.switchCameraBtn.disabled = cameras.length < 2;
+        el.toggleFlashBtn.disabled = true; // will toggle after start if supported
+
+        const config = {
+            fps: 10,
+            qrbox: {
+                width: 280,
+                height: 280
+            },
+            aspectRatio: 1.0,
+            experimentalFeatures: {
+                useBarCodeDetectorIfSupported: true
+            }
+        };
+
+        await state.html5QrCode.start({
+            deviceId: {
+                exact: state.currentCameraId
+            }
+        }, config, onScanSuccess, onScanFailure);
+
+        // Torch capability
+        try {
+            const track = state.html5QrCode.getState() !== Html5QrcodeScannerState.NOT_STARTED ? state.html5QrCode.getRunningTrackCameraCapabilities() : null;
+            const canTorch = track && track.torch;
+            el.toggleFlashBtn.disabled = !canTorch;
+        } catch (_) {
+            /* noop */ }
+
+        showToast('Scanner started', 'primary');
+    } catch (err) {
+        console.error(err);
+        el.cameraFallback.classList.remove('d-none');
+        showToast('Camera not available. Use manual entry.', 'warning');
+        Swal.fire({
+            title: 'Camera Access Needed',
+            text: 'Please allow camera access to scan the QR code, or use manual code entry.',
+            icon: 'info'
+        });
+    }
+}
+
+function stopScanner() {
+    if (state.html5QrCode && state.scanModeActive) {
+        state.html5QrCode.stop().catch(() => {}).finally(() => {
+            state.scanModeActive = false;
+        });
+    }
+}
+
+// Toggle torch if supported
+el.toggleFlashBtn?.addEventListener('click', async () => {
+    try {
+        if (!state.html5QrCode) return;
+        state.torchOn = !state.torchOn;
+        await state.html5QrCode.applyVideoConstraints({
+            advanced: [{
+                torch: state.torchOn
+            }]
+        });
+        el.toggleFlashBtn.classList.toggle('btn-warning', state.torchOn);
+    } catch (err) {
+        showToast('Torch not supported', 'secondary');
+    }
+});
+
+// Switch camera
+el.switchCameraBtn?.addEventListener('click', async () => {
+    try {
+        const cameras = await Html5Qrcode.getCameras();
+        if (!cameras || cameras.length < 2) return;
+        const idx = cameras.findIndex(c => c.id === state.currentCameraId);
+        const next = cameras[(idx + 1) % cameras.length];
+        state.currentCameraId = next.id;
+        stopScanner();
+        await startScanner();
+    } catch (err) {
+        console.warn(err);
+    }
+});
+
+// Scan callbacks
+let handledOnce = false;
+
+function onScanSuccess(decodedText, decodedResult) {
+    if (handledOnce) return; // prevent duplicate handling
+    handledOnce = true;
+    stopScanner();
+    setView('processing');
+    // Simulate verification delay
+    let payload;
+    try {
+        // Accept JSON or key=value pairs
+        if (/^\s*\{/.test(decodedText)) payload = JSON.parse(decodedText);
+        else {
+            payload = Object.fromEntries(decodedText.split(/[;&\n]/).map(p => p.trim()).filter(Boolean).map(pair => pair.split('=')));
+        }
+    } catch (err) {
+        return handleActivationError('Invalid QR payload.');
+    }
+    // Simple validation rule for demo
+    if (!payload || !(payload.token || payload.code)) {
+        return handleActivationError('Missing activation token in the QR.');
+    }
+
+    setTimeout(() => {
+        const token = (payload.token || payload.code || '').toString();
+        if (token.startsWith('VT-') || token.length >= 8) {
+            handleActivationSuccess({
+                name: payload.name || 'Alex Traveler',
+                nationality: payload.nationality || 'USA',
+                id: payload.id || 'DTID-' + Math.floor(100000 + Math.random() * 899999),
+                validUntil: payload.expires || '2026-12-31'
+            });
+        } else {
+            handleActivationError('The activation token was not recognized.');
+        }
+    }, 1200);
+}
+
+function onScanFailure(error) {
+    /* ignore continuous failures */ }
+
+function handleActivationSuccess(profile) {
+    state.touristProfileData = profile;
+    setView('success');
+    el.linkedProfile.innerHTML = `Name: ${profile.name}<br>Nationality: ${profile.nationality}<br>ID: ${profile.id}<br>Valid Until: ${profile.validUntil}`;
+    showToast('Digital ID linked to this device', 'success');
+    Swal.fire({
+        title: 'Activated',
+        text: 'Your Digital ID is now active on this device.',
+        icon: 'success',
+        confirmButtonText: 'Continue'
+    });
+}
+
+function handleActivationError(message) {
+    state.errorMessage = message || 'Activation failed.';
+    el.errorMessage.textContent = state.errorMessage;
+    setView('error');
+    showToast(state.errorMessage, 'danger');
+    Swal.fire({
+        title: 'Activation Failed',
+        text: state.errorMessage,
+        icon: 'error'
+    });
+    handledOnce = false; // allow new scans
+}
+
+// Manual entry via SweetAlert2
+async function openManualEntryModal() {
+    const {
+        value: code
+    } = await Swal.fire({
+        title: 'Enter Activation Code',
+        input: 'text',
+        inputLabel: 'Activation Token (e.g., VT-7F2A91C3)',
+        inputPlaceholder: 'Paste or type your activation code',
+        confirmButtonText: 'Verify',
+        showCancelButton: true,
+        inputValidator: value => !value ? 'Please enter a valid code' : undefined
+    });
+    if (code) {
+        setView('processing');
+        setTimeout(() => {
+            if (code.startsWith('VT-') || code.length >= 8) {
+                handleActivationSuccess({
+                    name: 'Alex Traveler',
+                    nationality: 'USA',
+                    id: 'DTID-' + Math.floor(100000 + Math.random() * 899999),
+                    validUntil: '2026-12-31'
+                });
+            } else {
+                handleActivationError('Provided code is invalid.');
+            }
+        }, 900);
+    }
+}
+
+// Bindings
+el.startScanBtn?.addEventListener('click', startScanner);
+el.retryScanBtn?.addEventListener('click', () => {
+    handledOnce = false;
+    startScanner();
+});
+el.proceedBtn?.addEventListener('click', () => {
+    window.location.href = './tourist_dashboard.html';
+});
+el.openManualEntry?.addEventListener('click', openManualEntryModal);
+el.openManualEntry2?.addEventListener('click', openManualEntryModal);
+el.openManualEntry3?.addEventListener('click', openManualEntryModal);
+el.manualFallbackBtn?.addEventListener('click', openManualEntryModal);
+
+// Auto-start scanner on load (after a short delay to let layout settle)
+window.addEventListener('load', () => {
+    setTimeout(() => startScanner(), 300);
+});
+
+// Cleanup on unload
+window.addEventListener('beforeunload', () => {
+    stopScanner();
+});
+  </script>
+ </body>
+</html>

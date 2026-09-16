@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour • Safety Map
+  </title>
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+  <!-- Leaflet CSS -->
+  <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet">
+   <!-- Global theme -->
+   <link href="style.css" rel="stylesheet"/>
+   <!-- Page CSS -->
+   <link href="safety_map.css" rel="stylesheet"/>
+  </link>
+ </head>
+ <body class="view-grid">
+  <!-- Tourist App Header -->
+  <nav class="navbar navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-controls="touristSidebar" class="btn btn-outline-light me-2" data-bs-target="#touristSidebar" data-bs-toggle="offcanvas" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" data-page="tourist_dashboard" href="#">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/120/28';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour
+     </span>
+    </a>
+    <div class="d-flex align-items-center">
+     <span class="badge bg-success me-2 d-none d-sm-inline" id="safetyStatusPill">
+      <i class="fa-solid fa-shield-heart me-1">
+      </i>
+      Safe
+     </span>
+     <button class="btn btn-danger me-2 d-none d-sm-inline" id="headerSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-1">
+      </i>
+      SOS
+     </button>
+     <button class="btn btn-link text-white me-2" id="openAlertsBtn" title="Notifications">
+      <i class="fa-solid fa-bell">
+      </i>
+     </button>
+     <div class="dropdown">
+      <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="touristProfileMenu">
+       <img alt="me" class="rounded-circle me-2" height="28" onerror="this.onerror=null;this.src='https://picsum.photos/seed/avatar/28/28';" src="https://via.placeholder.com/28" width="28"/>
+       <strong>
+        Me
+       </strong>
+      </a>
+      <ul aria-labelledby="touristProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+       <li>
+        <a class="dropdown-item" data-page="tourist_profile" href="#">
+         Settings
+        </a>
+       </li>
+       <li>
+        <a class="dropdown-item" data-page="onboarding_portal" href="#">
+         Support
+        </a>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item" data-page="login_page" href="#">
+         Logout
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <!-- Tourist App Sidebar (Offcanvas) -->
+  <style>
+   .tourist-offcanvas .nav-link { color:#333; border-radius:.375rem; }
+    .tourist-offcanvas .nav-link:hover { background-color: rgba(13,110,253,.1); color:#0d6efd; }
+    .tourist-offcanvas .nav-link.active { background-color:#0d6efd; color:#fff; }
+  </style>
+  <div aria-labelledby="touristSidebarLabel" class="offcanvas offcanvas-start tourist-offcanvas" id="touristSidebar" tabindex="-1">
+   <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="touristSidebarLabel">
+     Menu
+    </h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body d-flex flex-column">
+    <div class="d-flex align-items-center mb-3">
+     <img alt="Avatar" class="rounded-circle me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/guest/40/40';" src="https://via.placeholder.com/40"/>
+     <div>
+      <div class="fw-semibold">
+       Traveler
+      </div>
+      <small class="text-muted">
+       Tourist
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link" data-page="tourist_dashboard" href="#">
+       <i class="fa-solid fa-house me-2">
+       </i>
+       Dashboard
+      </a>
+     </li>
+     <li>
+      <a class="nav-link active" data-page="safety_map" href="#">
+       <i class="fa-solid fa-map-location-dot me-2">
+       </i>
+       Safety Map
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="sharing_screen" href="#">
+       <i class="fa-solid fa-share-nodes me-2">
+       </i>
+       Share My Location
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="activation_screen" href="#">
+       <i class="fa-solid fa-id-card me-2">
+       </i>
+       Activate Digital ID
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="tourist_profile" href="#">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Settings
+      </a>
+     </li>
+     <li>
+      <a aria-controls="touristHelpCollapse" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#touristHelpCollapse" role="button">
+       <span>
+        <i class="fa-solid fa-circle-info me-2">
+        </i>
+        Help &amp; Info
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse ms-3 mt-1" id="touristHelpCollapse">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" href="#">
+          Safety Tips
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1" data-page="onboarding_portal" href="#">
+          Privacy Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+    </ul>
+    <div class="mt-auto">
+     <button class="btn btn-danger w-100" id="quickSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-2">
+      </i>
+      SOS
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Main Content -->
+  <main class="main-panel p-0" id="mainContent">
+   <div class="map-shell position-relative">
+    <!-- Map -->
+    <div class="w-100 h-100" id="safetyMap">
+    </div>
+    <!-- Loading overlay -->
+    <div class="map-loading d-flex align-items-center justify-content-center" id="mapLoading">
+     <div class="text-center">
+      <div class="spinner-border text-primary mb-2" role="status">
+      </div>
+      <div class="text-muted">
+       Loading Safety Map…
+      </div>
+     </div>
+    </div>
+    <!-- Top-left: Area summary card -->
+    <div class="position-absolute top-0 start-0 p-3">
+     <div class="card shadow-sm" style="min-width: 260px;">
+      <div class="card-body py-2">
+       <div class="d-flex align-items-center justify-content-between">
+        <div>
+         <div class="small text-muted">
+          Current Area
+         </div>
+         <div class="fw-semibold" id="areaName">
+          Near You
+         </div>
+        </div>
+        <div class="text-end">
+         <div class="small text-muted">
+          Safety
+         </div>
+         <span class="badge rounded-pill bg-success" id="areaSafetyBadge">
+          Safe
+         </span>
+        </div>
+       </div>
+       <div class="mt-2 small text-muted">
+        <i class="fa-solid fa-location-crosshairs me-1">
+        </i>
+        <span id="gpsAccuracy">
+         Locating…
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Top-right: Open Alerts Panel -->
+    <div class="position-absolute top-0 end-0 p-3">
+     <button class="btn btn-light border shadow-sm" id="openAlertsBtn2">
+      <i class="fa-solid fa-list-check me-2">
+      </i>
+      Alerts &amp; Tips
+     </button>
+    </div>
+    <!-- Bottom-left: Legend -->
+    <div class="position-absolute bottom-0 start-0 p-3">
+     <div class="legend card p-2 shadow-sm">
+      <div class="legend-item">
+       <span class="legend-swatch risk-high">
+       </span>
+       High Risk
+      </div>
+      <div class="legend-item">
+       <span class="legend-swatch risk-moderate">
+       </span>
+       Moderate Risk
+      </div>
+      <div class="legend-item">
+       <span class="legend-swatch risk-low">
+       </span>
+       Low Risk
+      </div>
+      <div class="legend-item">
+       <span class="legend-swatch risk-user">
+       </span>
+       Your Location
+      </div>
+     </div>
+    </div>
+    <!-- Bottom-right: Map FABs -->
+    <div class="position-absolute bottom-0 end-0 p-3">
+     <div class="btn-group-vertical">
+      <button class="btn btn-primary map-fab" disabled="" id="recenterBtn" title="Recenter on my location">
+       <i class="fa-solid fa-crosshairs">
+       </i>
+      </button>
+      <button class="btn btn-light border map-fab" id="toggleZonesBtn" title="Toggle risk zones">
+       <i class="fa-solid fa-layer-group">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- Zone Details Bottom Sheet -->
+  <div aria-labelledby="zoneDetailsLabel" class="offcanvas offcanvas-bottom" id="zoneDetailsSheet" style="height: 42vh;" tabindex="-1">
+   <div class="offcanvas-header">
+    <div>
+     <h5 class="offcanvas-title mb-0" id="zoneDetailsLabel">
+      Zone Details
+     </h5>
+     <div class="small text-muted">
+      Geo-fenced safety information
+     </div>
+    </div>
+    <button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+     <div class="h5 mb-0" id="zdName">
+      —
+     </div>
+     <span class="badge rounded-pill bg-secondary" id="zdRiskBadge">
+      —
+     </span>
+    </div>
+    <p class="mb-3 text-muted" id="zdDesc">
+     Select a zone on the map to view details.
+    </p>
+    <div class="row g-3">
+     <div class="col-12 col-md-6">
+      <div class="card">
+       <div class="card-header">
+        Zone Metadata
+       </div>
+       <div class="card-body small">
+        <div>
+         <span class="text-muted">
+          Zone ID:
+         </span>
+         <span id="zdId">
+          —
+         </span>
+        </div>
+        <div>
+         <span class="text-muted">
+          Risk Level:
+         </span>
+         <span id="zdLevel">
+          —
+         </span>
+        </div>
+        <div>
+         <span class="text-muted">
+          Last Updated:
+         </span>
+         <span id="zdUpdated">
+          2025-01-18 14:32
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-12 col-md-6">
+      <div class="alert alert-warning mb-0">
+       <i class="fa-solid fa-triangle-exclamation me-2">
+       </i>
+       <span id="zdAdvisory">
+        Follow local authority advisories when entering this area.
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Alerts & Tips Panel (Right Offcanvas) -->
+  <div aria-labelledby="alertsPanelLabel" class="offcanvas offcanvas-end" id="alertsPanel" tabindex="-1">
+   <div class="offcanvas-header">
+    <h5 class="mb-0" id="alertsPanelLabel">
+     Nearby Alerts &amp; Tips
+    </h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body d-flex flex-column">
+    <div class="mb-3">
+     <div class="row g-2 align-items-end">
+      <div class="col-6">
+       <label class="form-label">
+        Filter by risk
+       </label>
+       <select class="form-select form-select-sm" id="filterRisk">
+        <option selected="" value="all">
+         All
+        </option>
+        <option value="High">
+         High
+        </option>
+        <option value="Moderate">
+         Moderate
+        </option>
+        <option value="Low">
+         Low
+        </option>
+       </select>
+      </div>
+      <div class="col-6">
+       <label class="form-label">
+        Search
+       </label>
+       <input class="form-control form-control-sm" id="searchIncidents" placeholder="Search..." type="text"/>
+      </div>
+     </div>
+    </div>
+    <div class="card mb-3">
+     <div class="card-header d-flex align-items-center justify-content-between">
+      <span class="widget-title">
+       Recent Incidents
+      </span>
+      <small class="text-muted" id="incidentsSummary">
+       6 records
+      </small>
+     </div>
+     <div class="table-responsive">
+      <table class="table table-theme table-hover mb-0" id="incidentsTable">
+       <thead>
+        <tr>
+         <th data-sort="time" role="button">
+          Time
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th data-sort="type" role="button">
+          Type
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th data-sort="risk" role="button">
+          Risk
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th>
+          Location
+         </th>
+         <th>
+          Action
+         </th>
+        </tr>
+       </thead>
+       <tbody id="incidentsBody">
+        <!-- rows injected by JS -->
+       </tbody>
+      </table>
+     </div>
+     <div class="card-footer d-flex justify-content-between align-items-center small">
+      <div id="paginationInfo">
+       1–6 of 6
+      </div>
+      <div class="btn-group">
+       <button class="btn btn-light btn-sm" disabled="">
+        <i class="fa-solid fa-chevron-left">
+        </i>
+       </button>
+       <button class="btn btn-light btn-sm" disabled="">
+        <i class="fa-solid fa-chevron-right">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="card">
+     <div class="card-header">
+      Risk Distribution
+     </div>
+     <div class="card-body">
+      <canvas height="120" id="riskChart">
+      </canvas>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Tourist App Footer (Fixed Bottom Quick Nav) -->
+  <nav class="navbar bg-white border-top fixed-bottom">
+   <div class="container-fluid d-flex justify-content-around">
+    <a class="text-decoration-none text-muted text-center" data-page="tourist_dashboard" href="#">
+     <i class="fa-solid fa-house">
+     </i>
+     <div class="small">
+      Home
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="safety_map" href="#">
+     <i class="fa-solid fa-map-location-dot">
+     </i>
+     <div class="small">
+      Map
+     </div>
+    </a>
+    <button class="btn btn-danger rounded-pill px-4" id="footerSosBtn">
+     <i class="fa-solid fa-triangle-exclamation me-1">
+     </i>
+     SOS
+    </button>
+    <a class="text-decoration-none text-muted text-center" data-page="sharing_screen" href="#">
+     <i class="fa-solid fa-share-nodes">
+     </i>
+     <div class="small">
+      Share
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="activation_screen" href="#">
+     <i class="fa-solid fa-id-card">
+     </i>
+     <div class="small">
+      My ID
+     </div>
+    </a>
+   </div>
+  </nav>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js">
+  </script>
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Leaflet JS -->
+  <script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js">
+  </script>
+  <script>
+   // Simple router for [data-page] links
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('[data-page]');
+    if (link) {
+        e.preventDefault();
+        const page = link.getAttribute('data-page');
+        if (page) {
+            window.location.href = `./${page}.html`;
+        }
+    }
+});
+
+// SOS handlers via SweetAlert2
+function handleSOS() {
+    Swal.fire({
+        title: 'Confirm SOS? ',
+        text: 'Your live location and profile will be shared with local authorities and your emergency contacts.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Send SOS',
+        cancelButtonText: 'Cancel',
+        confirmButtonColor: '#CD2026'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'SOS Sent',
+                text: 'Help is on the way. Stay in a safe place if possible.',
+                timer: 2800,
+                showConfirmButton: false
+            });
+        }
+    });
+}
+['headerSosBtn', 'footerSosBtn', 'quickSosBtn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', handleSOS);
+});
+
+// Bootstrap offcanvas instances
+const zoneSheet = new bootstrap.Offcanvas('#zoneDetailsSheet');
+const alertsPanel = new bootstrap.Offcanvas('#alertsPanel');
+document.getElementById('openAlertsBtn').addEventListener('click', () => alertsPanel.show());
+document.getElementById('openAlertsBtn2').addEventListener('click', () => alertsPanel.show());
+
+// Leaflet Map setup
+const mapEl = document.getElementById('safetyMap');
+const map = L.map(mapEl, {
+    zoomControl: true,
+    attributionControl: true
+});
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Initial center (fallback if no GPS)
+const fallbackCenter = [1.29027, 103.851959]; // Singapore CBD
+map.setView(fallbackCenter, 14);
+
+// Loading overlay hide after tiles load
+osm.on('load', () => document.getElementById('mapLoading').classList.add('d-none'));
+
+// User Location Marker + Accuracy circle (divIcon pulse)
+const userIcon = L.divIcon({
+    className: 'user-location-icon',
+    html: '<div class="pulse"></div><div class="dot"></div>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10]
+});
+let userMarker = null;
+let accuracyCircle = null;
+let latestCoords = null;
+
+function updateUserLocation(lat, lng, accuracy) {
+    latestCoords = [lat, lng];
+    if (!userMarker) {
+        userMarker = L.marker(latestCoords, {
+            icon: userIcon
+        }).addTo(map).bindTooltip('Your location', {
+            permanent: false
+        });
+    } else {
+        userMarker.setLatLng(latestCoords);
+    }
+    if (!accuracyCircle) {
+        accuracyCircle = L.circle(latestCoords, {
+            radius: accuracy || 25,
+            color: 'rgba(13,110,253,0.9)',
+            fillColor: 'rgba(13,110,253,0.25)',
+            fillOpacity: 0.25,
+            weight: 1
+        }).addTo(map);
+    } else {
+        accuracyCircle.setLatLng(latestCoords).setRadius(accuracy || 25);
+    }
+    document.getElementById('gpsAccuracy').textContent = accuracy ? ('± ' + Math.round(accuracy) + ' m') : '—';
+    document.getElementById('recenterBtn').disabled = false;
+}
+
+// Geolocation
+if ('geolocation' in navigator) {
+    navigator.geolocation.watchPosition((pos) => {
+        const {
+            latitude,
+            longitude,
+            accuracy
+        } = pos.coords;
+        updateUserLocation(latitude, longitude, accuracy);
+    }, (err) => {
+        console.warn('Geolocation error:', err.message);
+        Swal.fire({
+            icon: 'info',
+            title: 'Using approximate location',
+            text: 'We could not access precise GPS. Showing a general area map.',
+            timer: 2500,
+            showConfirmButton: false
+        });
+    }, {
+        enableHighAccuracy: true,
+        maximumAge: 5000,
+        timeout: 10000
+    });
+} else {
+    Swal.fire({
+        icon: 'error',
+        title: 'Geolocation not supported',
+        text: 'Your device/browser does not support geolocation.'
+    });
+}
+
+// Recenter button
+document.getElementById('recenterBtn').addEventListener('click', () => {
+    if (latestCoords) {
+        map.flyTo(latestCoords, Math.max(map.getZoom(), 16));
+    }
+});
+
+// Risk Zones (mock data)
+const riskZonesData = [{
+    id: 'Z-101',
+    name: 'Landslide-Prone Ridge',
+    riskLevel: 'High',
+    description: 'Area with ongoing slope instability due to heavy rainfall. Avoid non-essential travel.',
+    coordinates: [
+        [
+            [1.2927, 103.8448],
+            [1.2940, 103.8495],
+            [1.2910, 103.8512],
+            [1.2896, 103.8462]
+        ]
+    ]
+}, {
+    id: 'Z-208',
+    name: 'Crowded Waterfront Promenade',
+    riskLevel: 'Moderate',
+    description: 'High crowd density during peak hours. Beware of pickpockets and follow crowd control signs.',
+    coordinates: [
+        [
+            [1.2831, 103.8572],
+            [1.2850, 103.8604],
+            [1.2825, 103.8625],
+            [1.2807, 103.8591]
+        ]
+    ]
+}, {
+    id: 'Z-305',
+    name: 'Park After Dark',
+    riskLevel: 'Low',
+    description: 'Low lighting in late hours. Travel in groups and stick to lit pathways.',
+    coordinates: [
+        [
+            [1.3072, 103.8155],
+            [1.3088, 103.8192],
+            [1.3062, 103.8211],
+            [1.3047, 103.8173]
+        ]
+    ]
+}];
+
+function riskColor(level) {
+    switch (level) {
+        case 'High':
+            return '#CD2026'; // error
+        case 'Moderate':
+            return '#FFA500'; // warning
+        case 'Low':
+            return '#198754'; // secondary/success
+        default:
+            return '#6C757D';
+    }
+}
+
+let zonesLayerGroup = L.layerGroup().addTo(map);
+let zonesVisible = true;
+
+function drawZones() {
+    zonesLayerGroup.clearLayers();
+    riskZonesData.forEach(z => {
+        const poly = L.polygon(z.coordinates, {
+            color: riskColor(z.riskLevel),
+            weight: 2,
+            fillColor: riskColor(z.riskLevel),
+            fillOpacity: 0.20
+        }).addTo(zonesLayerGroup);
+        poly.on('click', () => selectZone(z, poly));
+        // Store ref
+        z._layer = poly;
+    });
+}
+
+function selectZone(zone, layer) {
+    // Highlight
+    zonesLayerGroup.eachLayer(l => l.setStyle({
+        weight: 2,
+        dashArray: null
+    }));
+    layer.setStyle({
+        weight: 4,
+        dashArray: '4,2'
+    });
+
+    // Update details panel
+    document.getElementById('zdName').textContent = zone.name;
+    document.getElementById('zdDesc').textContent = zone.description;
+    document.getElementById('zdId').textContent = zone.id;
+    document.getElementById('zdLevel').textContent = zone.riskLevel;
+    const badge = document.getElementById('zdRiskBadge');
+    badge.textContent = zone.riskLevel;
+    badge.className = 'badge rounded-pill ' + (zone.riskLevel === 'High' ? 'bg-danger' : zone.riskLevel === 'Moderate' ? 'bg-warning text-dark' : 'bg-success');
+
+    // Update header status pill
+    const pill = document.getElementById('safetyStatusPill');
+    pill.className = 'badge me-2 d-none d-sm-inline ' + (zone.riskLevel === 'High' ? 'bg-danger' : zone.riskLevel === 'Moderate' ? 'bg-warning text-dark' : 'bg-success');
+    pill.innerHTML = '<i class="fa-solid fa-shield-heart me-1"></i>' + (zone.riskLevel === 'Low' ? 'Safe' : zone.riskLevel);
+    document.getElementById('areaSafetyBadge').className = 'badge rounded-pill ' + (zone.riskLevel === 'High' ? 'bg-danger' : zone.riskLevel === 'Moderate' ? 'bg-warning text-dark' : 'bg-success');
+    document.getElementById('areaSafetyBadge').textContent = (zone.riskLevel === 'Low' ? 'Safe' : zone.riskLevel);
+
+    zoneSheet.show();
+}
+
+drawZones();
+
+// Toggle zones layer
+document.getElementById('toggleZonesBtn').addEventListener('click', () => {
+    zonesVisible = !zonesVisible;
+    if (zonesVisible) {
+        zonesLayerGroup.addTo(map);
+    } else {
+        zonesLayerGroup.remove();
+    }
+});
+
+// Map event feedback (optional logging)
+map.on('moveend', () => {
+    /* Map panned */ });
+map.on('zoomend', () => {
+    /* Map zoomed */ });
+
+// Alerts Panel: mock incidents data
+const incidents = [{
+    time: '2025-01-18 13:50',
+    type: 'Pickpocket',
+    risk: 'Moderate',
+    location: 'Waterfront Promenade',
+    link: 'incident_details.html'
+}, {
+    time: '2025-01-18 12:30',
+    type: 'Road Closure',
+    risk: 'Low',
+    location: 'Bayfront Ave',
+    link: 'incident_details.html'
+}, {
+    time: '2025-01-18 11:45',
+    type: 'Landslide Alert',
+    risk: 'High',
+    location: 'Hill Ridge',
+    link: 'incident_details.html'
+}, {
+    time: '2025-01-18 10:20',
+    type: 'Lost & Found',
+    risk: 'Low',
+    location: 'Merlion Park',
+    link: 'incident_details.html'
+}, {
+    time: '2025-01-18 09:40',
+    type: 'Crowd Control',
+    risk: 'Moderate',
+    location: 'Promenade East',
+    link: 'incident_details.html'
+}, {
+    time: '2025-01-18 09:10',
+    type: 'Weather Advisory',
+    risk: 'Low',
+    location: 'City Center',
+    link: 'incident_details.html'
+}];
+
+let currentSort = {
+    key: 'time',
+    dir: 'desc'
+};
+
+function renderIncidents() {
+    const tbody = document.getElementById('incidentsBody');
+    const riskFilter = document.getElementById('filterRisk').value;
+    const query = document.getElementById('searchIncidents').value.toLowerCase();
+    let rows = incidents.filter(i => (riskFilter === 'all' || i.risk === riskFilter));
+    if (query) {
+        rows = rows.filter(i => Object.values(i).some(v => String(v).toLowerCase().includes(query)));
+    }
+    rows.sort((a, b) => {
+        const k = currentSort.key;
+        let av = a[k],
+            bv = b[k];
+        if (k === 'time') {
+            av = new Date(a.time);
+            bv = new Date(b.time);
+        }
+        if (av < bv) return currentSort.dir === 'asc' ? -1 : 1;
+        if (av > bv) return currentSort.dir === 'asc' ? 1 : -1;
+        return 0;
+    });
+    tbody.innerHTML = rows.map(i => `
+        <tr>
+          <td>${i.time}</td>
+          <td>${i.type}</td>
+          <td><span class="badge ${i.risk==='High'?'bg-danger':i.risk==='Moderate'?'bg-warning text-dark':'bg-success'}">${i.risk}</span></td>
+          <td>${i.location}</td>
+          <td><a href="./${i.link}" class="btn btn-sm btn-light border"><i class="fa-solid fa-up-right-from-square"></i></a></td>
+        </tr>
+      `).join('');
+    document.getElementById('incidentsSummary').textContent = rows.length + ' records';
+    document.getElementById('paginationInfo').textContent = `1–${rows.length} of ${rows.length}`;
+}
+
+document.getElementById('filterRisk').addEventListener('change', renderIncidents);
+document.getElementById('searchIncidents').addEventListener('input', renderIncidents);
+document.querySelectorAll('#incidentsTable thead th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+        const key = th.getAttribute('data-sort');
+        if (currentSort.key === key) {
+            currentSort.dir = (currentSort.dir === 'asc' ? 'desc' : 'asc');
+        } else {
+            currentSort.key = key;
+            currentSort.dir = 'asc';
+        }
+        renderIncidents();
+    });
+});
+
+renderIncidents();
+
+// Chart.js donut for risk distribution
+const ctx = document.getElementById('riskChart');
+const counts = incidents.reduce((acc, i) => {
+    acc[i.risk] = (acc[i.risk] || 0) + 1;
+    return acc;
+}, {});
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['High', 'Moderate', 'Low'],
+        datasets: [{
+            data: [counts['High'] || 0, counts['Moderate'] || 0, counts['Low'] || 0],
+            backgroundColor: ['#CD2026', '#FFA500', '#198754'],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }
+});
+
+// Update area safety badge default
+document.getElementById('areaSafetyBadge').textContent = 'Safe';
+  </script>
+ </body>
+</html>

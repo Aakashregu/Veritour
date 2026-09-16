@@ -1,0 +1,135 @@
+/* safety_map.css — page-specific styles for Safety Map */
+:root {
+    --header-h: 56px;
+    --footer-h: 56px
+    }
+/* Brand typography override for this page */
+body {
+    font-family: "Poppins", var(--font-sans)
+    }
+/* Map shell fills viewport between header and footer */
+.map-shell {
+    height: calc(100vh - var(--header-h) - var(--footer-h))
+    }
+@media (min-width: 576px) {
+    :root {
+        --header-h: 56px;
+        --footer-h: 56px
+        }
+    }
+#safetyMap {
+    width: 100%;
+    height: 100%;
+    background: #eef2f6
+    }
+/* Loading overlay over map */
+.map-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 500;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px)
+    }
+/* Floating action buttons */
+.map-fab {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-1);
+    box-shadow: var(--shadow-1)
+    }
+.map-fab:active {
+    transform: translatey(1px)
+    }
+/* Legend */
+.legend {
+    font-size: var(--font-size-sm)
+    }
+.legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px
+    }
+.legend .legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    }
+.legend .risk-high {
+    background: #CD2026
+    }
+.legend .risk-moderate {
+    background: #FFA500
+    }
+.legend .risk-low {
+    background: #198754
+    }
+.legend .risk-user {
+    background: #0d6efd
+    }
+/* User location pulsing marker */
+.user-location-icon {
+    position: relative
+    }
+.user-location-icon .dot {
+    width: 10px;
+    height: 10px;
+    background: #0d6efd;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    }
+.user-location-icon .pulse {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(13, 110, 253, 0.25);
+    animation: pulseRing 1.8s ease-out infinite
+    }
+@keyframes pulseRing {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0.9;
+        } 80% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+        } 100% {
+        opacity: 0;
+        }
+    }
+/* Offcanvas sizing tweaks */
+#alertsPanel.offcanvas-end {
+    width: min(480px, 92vw)
+    }
+#zoneDetailsSheet.offcanvas-bottom {
+    border-top-left-radius: var(--radius-2);
+    border-top-right-radius: var(--radius-2)
+    }
+/* Cards on map should be subtle */
+.map-shell .card {
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-1)
+    }
+/* Table tweaks */
+#incidentsTable thead th {
+    white-space: nowrap
+    }
+#incidentsTable tbody td {
+    vertical-align: middle
+    }
+/* Ensure footer does not overlap tape on small screens */
+@media (max-width: 575.98px) {
+    .map-shell {
+        height: calc(100vh - 56px - 56px)
+        }
+    }

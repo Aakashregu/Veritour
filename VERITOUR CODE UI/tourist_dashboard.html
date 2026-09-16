@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   VeriTour - Tourist Dashboard
+  </title>
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Site Theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page-specific CSS -->
+  <link href="tourist_dashboard.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Header (Common Component) -->
+  <nav class="navbar navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button aria-controls="touristSidebar" class="btn btn-outline-light me-2" data-bs-target="#touristSidebar" data-bs-toggle="offcanvas" type="button">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+     <img alt="VeriTour" class="me-2" onerror="this.onerror=null;this.src='https://picsum.photos/seed/veritour/56/28';" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour
+     </span>
+    </a>
+    <div class="d-flex align-items-center">
+     <span class="badge bg-success me-2 d-none d-sm-inline" id="safetyStatusPill">
+      <i class="fa-solid fa-shield-heart me-1">
+      </i>
+      Safe
+     </span>
+     <button class="btn btn-danger me-2 d-none d-sm-inline" id="headerSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-1">
+      </i>
+      SOS
+     </button>
+     <button class="btn btn-link text-white me-2" title="Notifications">
+      <i class="fa-solid fa-bell">
+      </i>
+     </button>
+     <div class="dropdown">
+      <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="touristProfileMenu">
+       <img alt="me" class="rounded-circle me-2" height="28" src="https://picsum.photos/seed/tourist/56/56" width="28"/>
+       <strong>
+        Me
+       </strong>
+      </a>
+      <ul aria-labelledby="touristProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+       <li>
+        <a class="dropdown-item" href="./tourist_profile.html">
+         Settings
+        </a>
+       </li>
+       <li>
+        <a class="dropdown-item" href="#">
+         Support
+        </a>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item" href="./login_page.html">
+         Logout
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <!-- Sidebar (Common Component: Offcanvas) -->
+  <div aria-labelledby="touristSidebarLabel" class="offcanvas offcanvas-start tourist-offcanvas" id="touristSidebar" tabindex="-1">
+   <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="touristSidebarLabel">
+     Menu
+    </h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+    </button>
+   </div>
+   <div class="offcanvas-body d-flex flex-column">
+    <div class="d-flex align-items-center mb-3">
+     <img alt="Avatar" class="rounded-circle me-2" src="https://picsum.photos/seed/avatar/40/40"/>
+     <div>
+      <div class="fw-semibold" id="sidebarTravelerName">
+       Traveler
+      </div>
+      <small class="text-muted">
+       Tourist
+      </small>
+     </div>
+    </div>
+    <hr/>
+    <ul class="nav nav-pills flex-column mb-auto">
+     <li class="nav-item">
+      <a class="nav-link" data-page="tourist_dashboard" href="#">
+       <i class="fa-solid fa-house me-2">
+       </i>
+       Dashboard
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="safety_map" href="#">
+       <i class="fa-solid fa-map-location-dot me-2">
+       </i>
+       Safety Map
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="sharing_screen" href="#">
+       <i class="fa-solid fa-share-nodes me-2">
+       </i>
+       Share My Location
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" data-page="activation_screen" href="#">
+       <i class="fa-solid fa-id-card me-2">
+       </i>
+       Activate Digital ID
+      </a>
+     </li>
+     <li>
+      <a class="nav-link" href="./tourist_profile.html">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Settings
+      </a>
+     </li>
+     <li>
+      <a aria-controls="touristHelpCollapse" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#touristHelpCollapse" role="button">
+       <span>
+        <i class="fa-solid fa-circle-info me-2">
+        </i>
+        Help &amp; Info
+       </span>
+       <i class="fa-solid fa-chevron-down small">
+       </i>
+      </a>
+      <div class="collapse ms-3 mt-1" id="touristHelpCollapse">
+       <ul class="nav flex-column">
+        <li>
+         <a class="nav-link py-1" href="#">
+          Safety Tips
+         </a>
+        </li>
+        <li>
+         <a class="nav-link py-1" href="#">
+          Privacy Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+    </ul>
+    <div class="mt-auto">
+     <button class="btn btn-danger w-100" id="quickSosBtn">
+      <i class="fa-solid fa-triangle-exclamation me-2">
+      </i>
+      SOS
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Main Content -->
+  <main class="main-panel container-max pt-3 pb-5">
+   <!-- System feedback area -->
+   <div class="mb-3" id="systemAlertContainer">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+     <i class="fa-solid fa-signal me-2">
+     </i>
+     System online. Last synced:
+     <span id="lastSyncedAt">
+      just now
+     </span>
+     .
+     <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button">
+     </button>
+    </div>
+   </div>
+   <!-- Header Profile Bar (Welcome + Avatar) -->
+   <div class="app-card p-3 d-flex align-items-center justify-content-between mb-4">
+    <div class="d-flex align-items-center gap-3">
+     <img alt="Profile" class="avatar lg" id="welcomeAvatar" onerror="this.onerror=null;this.src='https://picsum.photos/seed/profile/80/80';" src="https://picsum.photos/seed/tourist/80/80">
+      <div>
+       <div class="h5 mb-1">
+        Welcome,
+        <span id="touristName">
+         Traveler
+        </span>
+        !
+       </div>
+       <div class="text-muted small">
+        Your safety is our priority. Explore with confidence.
+       </div>
+      </div>
+     </img>
+    </div>
+    <div class="d-none d-md-block">
+     <a class="btn btn-light" href="./tourist_profile.html">
+      <i class="fa-solid fa-user me-2">
+      </i>
+      Profile
+     </a>
+    </div>
+   </div>
+   <!-- Safety Score and SOS Row -->
+   <div class="row g-4 align-items-stretch">
+    <!-- Safety Score Card -->
+    <div class="col-12 col-lg-6">
+     <div class="app-card h-100 safety-card">
+      <div class="card-header">
+       <div class="title d-flex align-items-center gap-2">
+        <i class="fa-solid fa-shield-heart text-success">
+        </i>
+        <span class="widget-title">
+         Safety Score
+        </span>
+       </div>
+       <button class="btn btn-sm btn-light" id="refreshScoreBtn" title="Refresh Score">
+        <i class="fa-solid fa-rotate">
+        </i>
+       </button>
+      </div>
+      <div class="card-body d-flex flex-column flex-md-row align-items-center justify-content-center gap-4">
+       <div class="chart-wrap" id="safetyChartClickable" role="button" title="View detailed map">
+        <canvas aria-label="Safety score gauge" height="220" id="safetyScoreChart" width="220">
+        </canvas>
+       </div>
+       <div class="text-center text-md-start">
+        <div class="metric-value" id="safetyScoreValue">
+         86
+        </div>
+        <div class="status-text mt-2" id="safetyStatusText">
+         You are in a safe area
+        </div>
+        <div class="mt-3">
+         <button class="btn btn-outline-primary" id="gotoMapFromCard">
+          <i class="fa-solid fa-map-location-dot me-2">
+          </i>
+          Open Safety Map
+         </button>
+        </div>
+        <div class="mt-3 small text-muted">
+         Updated
+         <span id="scoreUpdatedAgo">
+          just now
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="card-footer d-flex align-items-center justify-content-between">
+       <div class="d-flex align-items-center gap-2">
+        <span class="status-dot success" id="statusDot">
+        </span>
+        <small class="text-muted">
+         Live monitoring enabled
+        </small>
+       </div>
+       <div>
+        <div class="form-check form-switch">
+         <input checked="" class="form-check-input" id="autoRefreshSwitch" role="switch" type="checkbox"/>
+         <label class="form-check-label small" for="autoRefreshSwitch">
+          Auto-refresh
+         </label>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- SOS Button Container -->
+    <div class="col-12 col-lg-6">
+     <div class="app-card h-100 d-flex flex-column justify-content-center">
+      <div class="card-header">
+       <div class="title d-flex align-items-center gap-2">
+        <i class="fa-solid fa-triangle-exclamation text-danger">
+        </i>
+        <span class="widget-title">
+         Emergency
+        </span>
+       </div>
+      </div>
+      <div class="card-body">
+       <p class="mb-3 text-muted">
+        In case of an emergency, press the button below. You will have 5 seconds to cancel before the alert is sent to authorities and your emergency contacts.
+       </p>
+       <button class="btn btn-danger sos-big-btn" id="bigSosButton">
+        <i class="fa-solid fa-triangle-exclamation me-2">
+        </i>
+        Send SOS
+       </button>
+       <div class="mt-3 small text-muted" id="sosHint">
+        Your live location will be attached
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Quick Actions -->
+   <div class="app-card mt-4">
+    <div class="card-header">
+     <div class="title d-flex align-items-center gap-2">
+      <i class="fa-solid fa-bolt text-primary">
+      </i>
+      <span class="widget-title">
+       Quick Actions
+      </span>
+     </div>
+    </div>
+    <div class="card-body">
+     <div class="row g-3 quick-actions">
+      <div class="col-12 col-md-4 d-grid">
+       <button class="btn btn-light py-3" data-page="safety_map">
+        <i class="fa-solid fa-map-location-dot me-2">
+        </i>
+        View Map
+       </button>
+      </div>
+      <div class="col-12 col-md-4 d-grid">
+       <button class="btn btn-light py-3" data-page="sharing_screen">
+        <i class="fa-solid fa-share-nodes me-2">
+        </i>
+        Share Location
+       </button>
+      </div>
+      <div class="col-12 col-md-4 d-grid">
+       <button class="btn btn-light py-3" id="openIdBtn">
+        <i class="fa-solid fa-id-card me-2">
+        </i>
+        My ID
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Nearby Incidents & Advisories -->
+   <div class="app-card mt-4">
+    <div class="card-header">
+     <div class="title d-flex align-items-center gap-2">
+      <i class="fa-solid fa-triangle-person-digging text-warning">
+      </i>
+      <span class="widget-title">
+       Nearby Incidents &amp; Advisories
+      </span>
+     </div>
+     <div class="d-flex gap-2">
+      <input class="form-control form-control-sm" id="searchText" placeholder="Search..." type="text"/>
+      <select class="form-select form-select-sm" id="filterType">
+       <option value="">
+        All Types
+       </option>
+       <option value="Theft">
+        Theft
+       </option>
+       <option value="Assistance">
+        Assistance
+       </option>
+       <option value="Roadblock">
+        Roadblock
+       </option>
+       <option value="Advisory">
+        Advisory
+       </option>
+      </select>
+      <select class="form-select form-select-sm" id="filterSeverity">
+       <option value="">
+        All Severity
+       </option>
+       <option value="Low">
+        Low
+       </option>
+       <option value="Medium">
+        Medium
+       </option>
+       <option value="High">
+        High
+       </option>
+      </select>
+     </div>
+    </div>
+    <div class="card-body p-0">
+     <div class="table-responsive">
+      <table class="table table-theme mb-0" id="incidentsTable">
+       <thead>
+        <tr>
+         <th data-sortkey="datetime" role="button">
+          Date/Time
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th>
+          Type
+         </th>
+         <th data-sortkey="distance" role="button">
+          Distance
+          <i class="fa-solid fa-sort ms-1">
+          </i>
+         </th>
+         <th>
+          Severity
+         </th>
+         <th>
+          Status
+         </th>
+         <th>
+          Action
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <!-- Filled by JS -->
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between align-items-center">
+     <small class="text-muted" id="paginationInfo">
+      Showing 0–0 of 0
+     </small>
+     <div aria-label="Pagination" class="btn-group btn-group-sm" role="group">
+      <button class="btn btn-light" disabled="" id="prevPageBtn">
+       <i class="fa-solid fa-chevron-left">
+       </i>
+      </button>
+      <button class="btn btn-light" disabled="" id="nextPageBtn">
+       <i class="fa-solid fa-chevron-right">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Toasts Container -->
+   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+    <div aria-atomic="true" aria-live="assertive" class="toast align-items-center text-bg-primary border-0" id="updateToast" role="alert">
+     <div class="d-flex">
+      <div class="toast-body">
+       <i class="fa-solid fa-circle-check me-2">
+       </i>
+       Safety score updated
+      </div>
+      <button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button">
+      </button>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- Footer (Common Component: Quick Nav) -->
+  <nav class="navbar bg-white border-top fixed-bottom">
+   <div class="container-fluid d-flex justify-content-around">
+    <a class="text-decoration-none text-muted text-center" data-page="tourist_dashboard" href="#">
+     <i class="fa-solid fa-house">
+     </i>
+     <div class="small">
+      Home
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="safety_map" href="#">
+     <i class="fa-solid fa-map-location-dot">
+     </i>
+     <div class="small">
+      Map
+     </div>
+    </a>
+    <button class="btn btn-danger rounded-pill px-4" id="footerSosBtn">
+     <i class="fa-solid fa-triangle-exclamation me-1">
+     </i>
+     SOS
+    </button>
+    <a class="text-decoration-none text-muted text-center" data-page="sharing_screen" href="#">
+     <i class="fa-solid fa-share-nodes">
+     </i>
+     <div class="small">
+      Share
+     </div>
+    </a>
+    <a class="text-decoration-none text-muted text-center" data-page="activation_screen" href="#">
+     <i class="fa-solid fa-id-card">
+     </i>
+     <div class="small">
+      My ID
+     </div>
+    </a>
+   </div>
+  </nav>
+  <!-- JS: Bootstrap, SweetAlert2, Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js">
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+    // Mock user data (would come from Digital ID API)
+    const userData = {
+        firstName: 'Alex',
+        profileImageUrl: 'https://picsum.photos/seed/alex/100/100'
+    };
+    document.getElementById('touristName').textContent = userData.firstName;
+    document.getElementById('sidebarTravelerName').textContent = userData.firstName;
+    const avatarEl = document.getElementById('welcomeAvatar');
+    avatarEl.src = userData.profileImageUrl;
+
+    // Navigation handling: set active and route
+    function goToPage(page) {
+        const map = {
+            'login_page': './login_page.html',
+            'onboarding_portal': './onboarding_portal.html',
+            'activation_screen': './activation_screen.html',
+            'tourist_dashboard': './tourist_dashboard.html',
+            'safety_map': './safety_map.html',
+            'sharing_screen': './sharing_screen.html',
+            'authority_dashboard': './authority_dashboard.html',
+            'incident_details': './incident_details.html',
+            'tourist_profile': './tourist_profile.html',
+            'efir_form': './efir_form.html',
+            'zone_editor': './zone_editor.html',
+            'analytics_dashboard': './analytics_dashboard.html',
+            'admin_dashboard': './admin_dashboard.html',
+            'user_form': './user_form.html',
+            'location_portal': './location_portal.html'
+        };
+        if (map[page]) window.location.href = map[page];
+    }
+
+    function setActiveNav(page) {
+        document.querySelectorAll('[data-page]').forEach(a => {
+            const isActive = a.getAttribute('data-page') === page;
+            a.classList.toggle('active', isActive);
+        });
+    }
+    setActiveNav('tourist_dashboard');
+    document.querySelectorAll('[data-page]').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = el.getAttribute('data-page');
+            if (!page) return;
+            goToPage(page);
+        });
+    });
+
+    // Safety Score Chart (Chart.js) with center text
+    const scoreEl = document.getElementById('safetyScoreValue');
+    const statusTextEl = document.getElementById('safetyStatusText');
+    const statusDot = document.getElementById('statusDot');
+    const safetyPill = document.getElementById('safetyStatusPill');
+
+    let currentScore = 86;
+
+    function colorForScore(score) {
+        if (score >= 75) return ['#198754', 'rgba(25, 135, 84, 0.15)']; // green
+        if (score >= 45) return ['#FFA500', 'rgba(255, 165, 0, 0.2)']; // amber
+        return ['#CD2026', 'rgba(205, 32, 38, 0.15)']; // red
+    }
+
+    function textForScore(score) {
+        if (score >= 75) return 'You are in a safe area';
+        if (score >= 45) return 'Exercise caution';
+        return 'High risk nearby';
+    }
+
+    function dotClassForScore(score) {
+        if (score >= 75) return 'success';
+        if (score >= 45) return 'warning';
+        return 'error';
+    }
+
+    const centerText = {
+        id: 'centerText',
+        afterDatasetsDraw(chart, args, pluginOptions) {
+            const {
+                ctx,
+                chartArea: {
+                    width,
+                    height
+                }
+            } = chart;
+            ctx.save();
+            ctx.font = '700 28px Poppins, system-ui';
+            ctx.fillStyle = '#0b1220';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(currentScore.toString(), width / 2, height / 2 - 8);
+            ctx.font = '500 12px Poppins, system-ui';
+            ctx.fillStyle = '#596273';
+            ctx.fillText('Score', width / 2, height / 2 + 14);
+        }
+    };
+
+    const chartCtx = document.getElementById('safetyScoreChart').getContext('2d');
+    const initialColors = colorForScore(currentScore);
+    const safetyChart = new Chart(chartCtx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [currentScore, 100 - currentScore],
+                backgroundColor: [initialColors[0], initialColors[1]],
+                borderWidth: 0,
+                cutout: '70%'
+            }]
+        },
+        options: {
+            responsive: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: true
+                }
+            }
+        },
+        plugins: [centerText]
+    });
+
+    function updateSafetyScore(newScore, options = {
+        showToast: true
+    }) {
+        currentScore = Math.max(0, Math.min(100, Math.round(newScore)));
+        const colors = colorForScore(currentScore);
+        safetyChart.data.datasets[0].data = [currentScore, 100 - currentScore];
+        safetyChart.data.datasets[0].backgroundColor = [colors[0], colors[1]];
+        safetyChart.update();
+        scoreEl.textContent = currentScore;
+        const txt = textForScore(currentScore);
+        statusTextEl.textContent = txt;
+        const dotMap = ['success', 'warning', 'error'];
+        statusDot.classList.remove('success', 'warning', 'error');
+        statusDot.classList.add(dotClassForScore(currentScore));
+        // Header pill
+        safetyPill.classList.remove('bg-success', 'bg-warning', 'bg-danger');
+        if (currentScore >= 75) safetyPill.classList.add('bg-success');
+        else if (currentScore >= 45) safetyPill.classList.add('bg-warning');
+        else safetyPill.classList.add('bg-danger');
+        safetyPill.innerHTML = (currentScore >= 75 ? '<i class="fa-solid fa-shield-heart me-1"></i>Safe' : (currentScore >= 45 ? '<i class="fa-solid fa-circle-exclamation me-1"></i>Caution' : '<i class="fa-solid fa-triangle-exclamation me-1"></i>Risk'));
+        document.getElementById('scoreUpdatedAgo').textContent = 'just now';
+        if (options.showToast) {
+            const toastEl = document.getElementById('updateToast');
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    }
+
+    // Auto refresh toggle
+    let autoRefreshEnabled = true;
+    let autoRefreshTimer = setInterval(() => {
+        if (autoRefreshEnabled) {
+            const jitter = (Math.random() * 16) - 8; // -8..+8
+            updateSafetyScore(currentScore + jitter);
+        }
+    }, 20000);
+
+    document.getElementById('autoRefreshSwitch').addEventListener('change', (e) => {
+        autoRefreshEnabled = e.target.checked;
+    });
+    document.getElementById('refreshScoreBtn').addEventListener('click', () => {
+        const jitter = (Math.random() * 20) - 10;
+        updateSafetyScore(currentScore + jitter);
+    });
+
+    document.getElementById('gotoMapFromCard').addEventListener('click', () => goToPage('safety_map'));
+    document.getElementById('safetyChartClickable').addEventListener('click', () => goToPage('safety_map'));
+
+    // SOS Flow (SweetAlert2)
+    const sosButtons = [
+        document.getElementById('headerSosBtn'),
+        document.getElementById('footerSosBtn'),
+        document.getElementById('quickSosBtn'),
+        document.getElementById('bigSosButton')
+    ].filter(Boolean);
+
+    function triggerSOS() {
+        let secondsLeft = 5;
+        Swal.fire({
+            title: 'Sending SOS',
+            html: `Alert will be sent in <b><span id="sosCountdown">${secondsLeft}</span>s</b>.<br/><small>Tap Cancel to abort.</small>`,
+            icon: 'warning',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            showCancelButton: true,
+            confirmButtonText: 'Send Now',
+            cancelButtonText: 'Cancel',
+            reverseButtons: true,
+            didOpen: () => {
+                const interval = setInterval(() => {
+                    secondsLeft -= 1;
+                    const el = document.getElementById('sosCountdown');
+                    if (el) el.textContent = secondsLeft;
+                    if (secondsLeft <= 0) {
+                        clearInterval(interval);
+                        Swal.clickConfirm();
+                    }
+                }, 1000);
+            }
+        }).then(result => {
+            if (result.isConfirmed) {
+                // Simulate sending alert to backend
+                Swal.fire({
+                    title: 'Alert Sent',
+                    text: 'Nearby authorities and your emergency contacts have been notified.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    }
+    sosButtons.forEach(btn => btn.addEventListener('click', triggerSOS));
+
+    // Quick actions
+    document.querySelectorAll('.quick-actions [data-page]').forEach(btn => btn.addEventListener('click', () => goToPage(btn.getAttribute('data-page'))));
+    document.getElementById('openIdBtn').addEventListener('click', () => {
+        Swal.fire({
+            title: 'Digital Tourist ID',
+            html: `
+            <div class="text-center">
+              <img src="https://picsum.photos/seed/qrcode/200/200" alt="QR Code" class="rounded border mb-2">
+              <div class="fw-semibold">${userData.firstName} • VeriTour ID</div>
+              <small class="text-muted">Scan to verify identity</small>
+            </div>
+          `,
+            showConfirmButton: true,
+            confirmButtonText: 'Close'
+        });
+    });
+
+    // Incidents table mock data
+    const allIncidents = [{
+        id: 101,
+        datetime: '2025-01-20 14:05',
+        type: 'Theft',
+        distance: 0.4,
+        severity: 'High',
+        status: 'Investigating'
+    }, {
+        id: 102,
+        datetime: '2025-01-20 12:40',
+        type: 'Assistance',
+        distance: 1.2,
+        severity: 'Low',
+        status: 'Resolved'
+    }, {
+        id: 103,
+        datetime: '2025-01-19 19:25',
+        type: 'Roadblock',
+        distance: 2.1,
+        severity: 'Medium',
+        status: 'Active'
+    }, {
+        id: 104,
+        datetime: '2025-01-19 09:10',
+        type: 'Advisory',
+        distance: 0.9,
+        severity: 'Low',
+        status: 'Ongoing'
+    }, {
+        id: 105,
+        datetime: '2025-01-18 22:55',
+        type: 'Theft',
+        distance: 3.5,
+        severity: 'Medium',
+        status: 'Closed'
+    }, {
+        id: 106,
+        datetime: '2025-01-18 08:15',
+        type: 'Assistance',
+        distance: 1.8,
+        severity: 'Low',
+        status: 'Resolved'
+    }];
+    let filtered = [...allIncidents];
+    let sortKey = 'datetime';
+    let sortDir = 'desc';
+    let page = 1;
+    const pageSize = 6; // one page for mock
+
+    function applyFilters() {
+        const q = document.getElementById('searchText').value.toLowerCase();
+        const type = document.getElementById('filterType').value;
+        const sev = document.getElementById('filterSeverity').value;
+        filtered = allIncidents.filter(it => {
+            const matchesQ = q ? (it.type.toLowerCase().includes(q) || it.status.toLowerCase().includes(q)) : true;
+            const matchesType = type ? it.type === type : true;
+            const matchesSev = sev ? it.severity === sev : true;
+            return matchesQ && matchesType && matchesSev;
+        });
+        page = 1;
+        renderTable();
+    }
+
+    function renderTable() {
+        filtered.sort((a, b) => {
+            let va = a[sortKey];
+            let vb = b[sortKey];
+            if (sortKey === 'datetime') {
+                va = new Date(va.replace(' ', 'T'));
+                vb = new Date(vb.replace(' ', 'T'));
+            }
+            const comp = (va > vb) ? 1 : (va < vb ? -1 : 0);
+            return sortDir === 'asc' ? comp : -comp;
+        });
+        const start = (page - 1) * pageSize;
+        const items = filtered.slice(start, start + pageSize);
+        const tbody = document.querySelector('#incidentsTable tbody');
+        tbody.innerHTML = items.map(row => {
+            const sevClass = row.severity === 'High' ? 'badge bg-danger' : (row.severity === 'Medium' ? 'badge bg-warning text-dark' : 'badge bg-success');
+            return `
+            <tr>
+              <td>${row.datetime}</td>
+              <td>${row.type}</td>
+              <td>${row.distance.toFixed(1)} km</td>
+              <td><span class="${sevClass}">${row.severity}</span></td>
+              <td>${row.status}</td>
+              <td>
+                <div class="btn-group btn-group-sm">
+                  <a href="./incident_details.html" class="btn btn-light"><i class="fa-solid fa-eye"></i></a>
+                  <button class="btn btn-light" title="Navigate"><i class="fa-solid fa-location-arrow"></i></button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        // Pagination info
+        const total = filtered.length;
+        const showingTo = Math.min(start + items.length, total);
+        const info = total ? `Showing ${start+1}–${showingTo} of ${total}` : 'Showing 0–0 of 0';
+        document.getElementById('paginationInfo').textContent = info;
+        document.getElementById('prevPageBtn').disabled = page === 1;
+        document.getElementById('nextPageBtn').disabled = showingTo >= total;
+    }
+
+    document.getElementById('prevPageBtn').addEventListener('click', () => {
+        if (page > 1) {
+            page--;
+            renderTable();
+        }
+    });
+    document.getElementById('nextPageBtn').addEventListener('click', () => {
+        const maxPage = Math.ceil(filtered.length / pageSize);
+        if (page < maxPage) {
+            page++;
+            renderTable();
+        }
+    });
+
+    document.getElementById('searchText').addEventListener('input', applyFilters);
+    document.getElementById('filterType').addEventListener('change', applyFilters);
+    document.getElementById('filterSeverity').addEventListener('change', applyFilters);
+
+    document.querySelectorAll('#incidentsTable thead th[role="button"]').forEach(th => {
+        th.addEventListener('click', () => {
+            const key = th.getAttribute('data-sortkey');
+            if (sortKey === key) sortDir = (sortDir === 'asc') ? 'desc' : 'asc';
+            else {
+                sortKey = key;
+                sortDir = (key === 'datetime') ? 'desc' : 'asc';
+            }
+            renderTable();
+        });
+    });
+
+    // Initialize
+    renderTable();
+    updateSafetyScore(currentScore, {
+        showToast: false
+    });
+});
+  </script>
+ </body>
+</html>

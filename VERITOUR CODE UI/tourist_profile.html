@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Tourist Profile • VeriTour Authority
+  </title>
+  <!-- Brand font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+  <!-- Leaflet (Map) -->
+  <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" rel="stylesheet"/>
+  <!-- Site theme -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- Page specific CSS -->
+  <link href="tourist_profile.css" rel="stylesheet"/>
+ </head>
+ <body class="view-grid">
+  <!-- Header (Authority Unified Header) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+   <div class="container-fluid">
+    <button class="btn btn-outline-light me-2" id="sidebarToggle">
+     <i class="fa-solid fa-bars">
+     </i>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="./authority_dashboard.html">
+     <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+     <span class="fw-semibold">
+      VeriTour Authority
+     </span>
+    </a>
+    <button aria-controls="authNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#authNavbar" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="authNavbar">
+     <form class="d-flex ms-auto me-3" role="search" style="max-width:420px;">
+      <input aria-label="Search" class="form-control form-control-sm me-2" placeholder="Search Tourist/Incident ID" type="search"/>
+      <button class="btn btn-outline-light btn-sm" type="submit">
+       <i class="fa-solid fa-magnifying-glass">
+       </i>
+      </button>
+     </form>
+     <div class="d-flex align-items-center">
+      <button class="btn btn-warning btn-sm me-2 role-police" id="ackNextBtn">
+       <i class="fa-solid fa-bolt me-1">
+       </i>
+       Acknowledge Next
+      </button>
+      <button class="btn btn-light btn-sm me-2 role-tourism" id="newZoneBtn">
+       <i class="fa-solid fa-plus me-1">
+       </i>
+       New Zone
+      </button>
+      <a class="btn btn-link text-white me-2" href="#" title="Notifications">
+       <i class="fa-solid fa-bell">
+       </i>
+      </a>
+      <a class="btn btn-link text-white me-2" href="#" title="Messages">
+       <i class="fa-solid fa-envelope">
+       </i>
+      </a>
+      <div class="dropdown">
+       <a aria-expanded="false" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" href="#" id="authProfileMenu">
+        <img alt="avatar" class="rounded-circle me-2" height="28" src="https://via.placeholder.com/28" width="28"/>
+        <strong id="authProfileName">
+         User
+        </strong>
+       </a>
+       <ul aria-labelledby="authProfileMenu" class="dropdown-menu dropdown-menu-end text-small">
+        <li class="px-3 py-1">
+         <small class="text-muted" id="authProfileRole">
+          Role
+         </small>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Settings
+         </a>
+        </li>
+        <li>
+         <a class="dropdown-item" href="#">
+          Keyboard Shortcuts
+         </a>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item" href="./login_page.html">
+          Logout
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <!-- Layout: Sidebar + Main content -->
+  <div class="container-fluid">
+   <div class="d-flex" id="pageLayout">
+    <!-- Sidebar (Authority Unified Sidebar) -->
+    <aside class="auth-sidebar d-none d-md-flex flex-column flex-shrink-0 p-3 bg-light border-end h-100" id="authSidebar">
+     <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="#">
+      <img alt="VeriTour" class="me-2" src="https://dsaishared.blob.core.windows.net/uxcceleratecontainer/projects/68ad54d18ecfc2752de09015/logos/logo_9afd101c-b31c-4be4-aa14-e385ad42bc89.png" style="height:28px;"/>
+      <span class="fs-6 fw-bold" style="color:#0d6efd;">
+       VeriTour Ops
+      </span>
+     </a>
+     <div class="d-flex align-items-center mt-3 mb-2">
+      <img alt="Avatar" class="rounded-circle me-2" src="https://via.placeholder.com/40"/>
+      <div>
+       <div class="fw-semibold" id="authUserName">
+        User
+       </div>
+       <small class="text-muted" id="authUserRoleSide">
+        Role
+       </small>
+      </div>
+     </div>
+     <hr/>
+     <div class="section-title">
+      Operations
+     </div>
+     <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item">
+       <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html">
+        <i class="fa-solid fa-gauge me-2">
+        </i>
+        Dashboard
+       </a>
+      </li>
+      <li>
+       <a class="nav-link" data-page="authority_dashboard" href="./safety_map.html">
+        <i class="fa-solid fa-map me-2">
+        </i>
+        Real-Time Map
+       </a>
+      </li>
+      <li class="role-police">
+       <a class="nav-link" data-page="authority_dashboard" href="./authority_dashboard.html#incidentQueue">
+        <i class="fa-solid fa-siren-on me-2">
+        </i>
+        Incident Queue
+       </a>
+      </li>
+     </ul>
+     <div class="section-title role-police">
+      Cases
+     </div>
+     <ul class="nav nav-pills flex-column mb-2 role-police">
+      <li>
+       <a class="nav-link" data-page="incident_details" href="./incident_details.html">
+        <i class="fa-solid fa-siren-on me-2">
+        </i>
+        Active Incidents
+       </a>
+      </li>
+      <li>
+       <a class="nav-link active" data-page="tourist_profile" href="./tourist_profile.html">
+        <i class="fa-solid fa-user me-2">
+        </i>
+        Tourist Profiles
+       </a>
+      </li>
+      <li>
+       <a class="nav-link" data-page="efir_form" href="./efir_form.html">
+        <i class="fa-solid fa-file-signature me-2">
+        </i>
+        Generate E-FIR
+       </a>
+      </li>
+     </ul>
+     <div class="section-title role-tourism">
+      Zone Management
+     </div>
+     <ul class="nav nav-pills flex-column mb-2 role-tourism">
+      <li>
+       <a class="nav-link" data-page="zone_editor" href="./zone_editor.html">
+        <i class="fa-solid fa-draw-polygon me-2">
+        </i>
+        Zone Editor
+       </a>
+      </li>
+      <li>
+       <a aria-controls="zonesSubmenu" aria-expanded="false" class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#zonesSubmenu" role="button">
+        <span>
+         <i class="fa-solid fa-triangle-exclamation me-2">
+         </i>
+         High-Risk Zones
+        </span>
+        <i class="fa-solid fa-chevron-down small">
+        </i>
+       </a>
+       <div class="collapse ms-3" id="zonesSubmenu">
+        <ul class="nav flex-column">
+         <li>
+          <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html">
+           Create New Zone
+          </a>
+         </li>
+         <li>
+          <a class="nav-link py-1" data-page="zone_editor" href="./zone_editor.html">
+           Manage Zones
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+     <div class="section-title">
+      Analytics
+     </div>
+     <ul class="nav nav-pills flex-column mb-2">
+      <li>
+       <a class="nav-link" data-page="analytics_dashboard" href="./analytics_dashboard.html">
+        <i class="fa-solid fa-chart-line me-2">
+        </i>
+        Analytics &amp; Reporting
+       </a>
+      </li>
+     </ul>
+     <div class="mt-auto pt-2">
+      <a class="btn btn-outline-secondary w-100" href="#">
+       <i class="fa-solid fa-gear me-2">
+       </i>
+       Preferences
+      </a>
+     </div>
+    </aside>
+    <!-- Main content area -->
+    <main class="flex-grow-1 p-3 p-lg-4" id="mainContent">
+     <!-- Breadcrumb -->
+     <nav aria-label="breadcrumb" class="breadcrumb">
+      <ol class="breadcrumb mb-2">
+       <li class="breadcrumb-item">
+        <a href="./authority_dashboard.html">
+         Authority
+        </a>
+       </li>
+       <li class="breadcrumb-item">
+        <a href="./incident_details.html">
+         Incidents
+        </a>
+       </li>
+       <li aria-current="page" class="breadcrumb-item active">
+        Tourist Profile
+       </li>
+      </ol>
+     </nav>
+     <!-- Profile Header -->
+     <section class="app-card mb-3">
+      <div class="card-body">
+       <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+        <div class="profile-photo">
+         <img alt="Tourist Photo" class="rounded" id="touristPhoto" onerror="this.onerror=null;this.src='https://picsum.photos/seed/tourist/240/240';" src="https://picsum.photos/id/1005/240/240"/>
+        </div>
+        <div class="flex-grow-1 w-100">
+         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-2">
+          <div>
+           <h2 class="mb-1" id="touristName">
+            Loading name…
+           </h2>
+           <div class="d-flex flex-wrap gap-2 align-items-center">
+            <span class="badge-soft success" id="statusBadge">
+             <i class="fa-solid fa-shield-heart me-1">
+             </i>
+             <span id="statusText">
+              Safe
+             </span>
+            </span>
+            <span class="tag">
+             <i class="fa-solid fa-id-card me-1">
+             </i>
+             ID:
+             <span class="ms-1" id="touristId">
+              —
+             </span>
+            </span>
+            <span class="tag">
+             <i class="fa-solid fa-flag me-1">
+             </i>
+             <span id="touristNationality">
+              —
+             </span>
+            </span>
+            <span class="tag">
+             <i class="fa-solid fa-calendar-day me-1">
+             </i>
+             <span id="tripValidity">
+              —
+             </span>
+            </span>
+           </div>
+          </div>
+          <div class="text-end">
+           <a class="btn btn-light btn-sm" href="./sharing_screen.html">
+            <i class="fa-solid fa-share-nodes me-1">
+            </i>
+            Secure Share
+           </a>
+          </div>
+         </div>
+         <div class="mt-3 small text-muted">
+          <i class="fa-solid fa-circle-info me-1">
+          </i>
+          This profile is part of the Incident Response workflow. Real-time updates enabled.
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- Sticky Action Toolbar -->
+     <div class="action-toolbar app-card mb-3">
+      <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+       <div aria-label="Actions" class="btn-group" role="group">
+        <a aria-disabled="true" class="btn btn-primary disabled" href="#" id="viewIncidentBtn">
+         <i class="fa-solid fa-eye me-1">
+         </i>
+         View Active Incident
+        </a>
+        <a aria-disabled="true" class="btn btn-danger disabled" href="#" id="generateEfirBtn">
+         <i class="fa-solid fa-file-signature me-1">
+         </i>
+         Generate E-FIR
+        </a>
+       </div>
+       <div class="d-flex align-items-center small text-muted">
+        <i class="fa-solid fa-clock-rotate-left me-1">
+        </i>
+        <span id="lastUpdate">
+         Last update: —
+        </span>
+       </div>
+      </div>
+     </div>
+     <!-- System feedback area -->
+     <div class="alert alert-info d-flex align-items-center gap-2" id="systemFeedback" role="alert">
+      <i class="fa-solid fa-wifi">
+      </i>
+      <div>
+       Connected to Live Location Stream. Monitoring AI anomaly signals…
+      </div>
+     </div>
+     <!-- Tabbed Details Section -->
+     <section class="app-card">
+      <div class="card-header">
+       <div class="title">
+        Details
+       </div>
+       <div class="view-switcher d-none d-lg-inline-flex">
+        <span class="option active">
+         <i class="fa-solid fa-user">
+         </i>
+        </span>
+        <span class="option">
+         <i class="fa-solid fa-map">
+         </i>
+        </span>
+        <span class="option">
+         <i class="fa-solid fa-table">
+         </i>
+        </span>
+       </div>
+      </div>
+      <div class="card-body p-0">
+       <!-- Tabs -->
+       <ul class="nav nav-tabs px-3 pt-3" id="profileTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+         <button aria-controls="locationTab" aria-selected="true" class="nav-link active" data-bs-target="#locationTab" data-bs-toggle="tab" id="location-tab" role="tab" type="button">
+          <i class="fa-solid fa-location-crosshairs me-1">
+          </i>
+          Location &amp; Map
+         </button>
+        </li>
+        <li class="nav-item" role="presentation">
+         <button aria-controls="detailsTab" aria-selected="false" class="nav-link" data-bs-target="#detailsTab" data-bs-toggle="tab" id="details-tab" role="tab" type="button">
+          <i class="fa-solid fa-id-card me-1">
+          </i>
+          Profile Details
+         </button>
+        </li>
+        <li class="nav-item" role="presentation">
+         <button aria-controls="incidentsTab" aria-selected="false" class="nav-link" data-bs-target="#incidentsTab" data-bs-toggle="tab" id="incidents-tab" role="tab" type="button">
+          <i class="fa-solid fa-list me-1">
+          </i>
+          Incident History
+         </button>
+        </li>
+       </ul>
+       <div class="tab-content p-3">
+        <!-- Location & Map Tab -->
+        <div aria-labelledby="location-tab" class="tab-pane fade show active" id="locationTab" role="tabpanel">
+         <div class="row g-3">
+          <div class="col-lg-8">
+           <div class="card h-100">
+            <div class="card-header">
+             <div class="title">
+              <i class="fa-solid fa-map-location-dot me-2">
+              </i>
+              Live Location
+             </div>
+             <div class="d-flex align-items-center gap-2">
+              <button class="btn btn-light btn-sm" id="recenterBtn">
+               <i class="fa-solid fa-crosshairs me-1">
+               </i>
+               Re-center
+              </button>
+              <div class="form-check form-switch m-0">
+               <input checked="" class="form-check-input" id="followSwitch" type="checkbox"/>
+               <label class="form-check-label small" for="followSwitch">
+                Auto-follow
+               </label>
+              </div>
+             </div>
+            </div>
+            <div class="card-body p-0">
+             <div class="map-container skeleton" id="map">
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-4">
+           <div class="card h-100">
+            <div class="card-header">
+             <div class="title">
+              <i class="fa-solid fa-route me-2">
+              </i>
+              Location History
+             </div>
+             <span class="badge-soft info">
+              <i class="fa-solid fa-clock">
+              </i>
+              Last 24h
+             </span>
+            </div>
+            <div class="card-body">
+             <ol class="list-group list-group-numbered small" id="locationHistory">
+              <!-- JS populates entries -->
+             </ol>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- Profile Details Tab -->
+        <div aria-labelledby="details-tab" class="tab-pane fade" id="detailsTab" role="tabpanel">
+         <div class="row g-3">
+          <div class="col-lg-6">
+           <div class="card h-100">
+            <div class="card-header">
+             <div class="title">
+              Personal Information
+             </div>
+            </div>
+            <div class="card-body">
+             <dl class="row mb-0" id="personalInfo">
+              <dt class="col-sm-4">
+               Full Name
+              </dt>
+              <dd class="col-sm-8" id="piName">
+               —
+              </dd>
+              <dt class="col-sm-4">
+               DOB
+              </dt>
+              <dd class="col-sm-8" id="piDob">
+               —
+              </dd>
+              <dt class="col-sm-4">
+               Passport No.
+              </dt>
+              <dd class="col-sm-8" id="piPassport">
+               *********
+              </dd>
+              <dt class="col-sm-4">
+               Blood Type
+              </dt>
+              <dd class="col-sm-8" id="piBlood">
+               —
+              </dd>
+              <dt class="col-sm-4">
+               Nationality
+              </dt>
+              <dd class="col-sm-8" id="piNationality">
+               —
+              </dd>
+             </dl>
+             <div class="small text-muted mt-2">
+              <i class="fa-solid fa-shield-halved me-1">
+              </i>
+              Sensitive fields may be masked unless you have elevated permissions.
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-6">
+           <div class="card h-100">
+            <div class="card-header">
+             <div class="title">
+              Trip Itinerary
+             </div>
+            </div>
+            <div class="card-body">
+             <ul class="list-group" id="itineraryList">
+              <!-- JS items -->
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="col-12">
+           <div class="card">
+            <div class="card-header">
+             <div class="title">
+              Emergency Contacts
+             </div>
+            </div>
+            <div class="card-body">
+             <div class="table-responsive">
+              <table class="table table-theme align-middle mb-0">
+               <thead>
+                <tr>
+                 <th>
+                  Name
+                 </th>
+                 <th>
+                  Relationship
+                 </th>
+                 <th>
+                  Phone
+                 </th>
+                 <th>
+                  Preferred
+                 </th>
+                </tr>
+               </thead>
+               <tbody id="contactsTable">
+                <!-- JS rows -->
+               </tbody>
+              </table>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- Incident History Tab -->
+        <div aria-labelledby="incidents-tab" class="tab-pane fade" id="incidentsTab" role="tabpanel">
+         <div class="card">
+          <div class="card-header">
+           <div class="title">
+            Incident History
+           </div>
+           <div class="d-flex flex-wrap gap-2">
+            <select class="form-select form-select-sm" id="filterType" style="width:auto;">
+             <option value="">
+              All Types
+             </option>
+             <option value="Panic">
+              Panic
+             </option>
+             <option value="AI Anomaly">
+              AI Anomaly
+             </option>
+             <option value="Manual Report">
+              Manual Report
+             </option>
+            </select>
+            <select class="form-select form-select-sm" id="filterStatus" style="width:auto;">
+             <option value="">
+              All Statuses
+             </option>
+             <option value="Active">
+              Active
+             </option>
+             <option value="Resolved">
+              Resolved
+             </option>
+             <option value="Escalated">
+              Escalated
+             </option>
+            </select>
+            <div class="input-group input-group-sm" style="width:220px;">
+             <span class="input-group-text">
+              <i class="fa-solid fa-magnifying-glass">
+              </i>
+             </span>
+             <input class="form-control" id="searchInc" placeholder="Search by ID/type" type="text"/>
+            </div>
+            <div class="btn-group btn-group-sm" role="group">
+             <button class="btn btn-light" id="sortByDate">
+              <i class="fa-solid fa-sort me-1">
+              </i>
+              Date
+             </button>
+             <button class="btn btn-light" id="sortById">
+              <i class="fa-solid fa-hashtag me-1">
+              </i>
+              ID
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="card-body p-0">
+           <div class="table-responsive">
+            <table class="table table-theme mb-0" id="incidentsTable">
+             <thead>
+              <tr>
+               <th>
+                Incident ID
+               </th>
+               <th>
+                Type
+               </th>
+               <th>
+                Date/Time
+               </th>
+               <th>
+                Status
+               </th>
+               <th>
+                Action
+               </th>
+              </tr>
+             </thead>
+             <tbody>
+              <!-- JS rows -->
+             </tbody>
+            </table>
+           </div>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+           <div class="small text-muted" id="paginationInfo">
+            Showing 0–0 of 0
+           </div>
+           <nav>
+            <ul class="pagination pagination-sm mb-0" id="pager">
+             <li class="page-item">
+              <a class="page-link" data-page="prev" href="#">
+               Prev
+              </a>
+             </li>
+             <li class="page-item">
+              <a class="page-link" data-page="next" href="#">
+               Next
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <!-- Helpful navigation to other site pages -->
+     <div class="mt-4 d-flex flex-wrap gap-2">
+      <a class="btn btn-outline-primary btn-sm" href="./tourist_dashboard.html">
+       <i class="fa-solid fa-grid-2">
+       </i>
+       Tourist Dashboard
+      </a>
+      <a class="btn btn-outline-secondary btn-sm" href="./incident_details.html">
+       <i class="fa-solid fa-clipboard-list">
+       </i>
+       Incident Details
+      </a>
+      <a class="btn btn-outline-danger btn-sm" href="./efir_form.html">
+       <i class="fa-solid fa-file-signature">
+       </i>
+       E-FIR Form
+      </a>
+     </div>
+    </main>
+   </div>
+  </div>
+  <!-- Footer (Authority Unified Footer) -->
+  <footer class="border-top bg-light py-2 mt-3">
+   <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <small class="text-muted mb-1 mb-md-0">
+     © 2025 VeriTour •
+     <a class="text-decoration-none" href="#">
+      Terms
+     </a>
+     •
+     <a class="text-decoration-none" href="#">
+      Privacy
+     </a>
+    </small>
+    <div class="d-flex align-items-center">
+     <span class="badge text-bg-secondary me-2">
+      <i class="fa-solid fa-signal me-1">
+      </i>
+      Live
+     </span>
+     <a class="btn btn-outline-primary btn-sm role-police" href="./efir_form.html">
+      <i class="fa-solid fa-file-signature me-1">
+      </i>
+      Generate E-FIR
+     </a>
+     <a class="btn btn-outline-success btn-sm role-tourism" href="./zone_editor.html">
+      <i class="fa-solid fa-draw-polygon me-1">
+      </i>
+      Create Zone
+     </a>
+    </div>
+   </div>
+  </footer>
+  <!-- JS libs -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+  </script>
+  <script crossorigin="" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script>
+   // --- Mock state and data ---
+const user = {
+    name: 'A. Sharma',
+    role: 'Police',
+    permissions: ['E-FIR Generation']
+};
+const tourist = {
+    id: 'VT-TR-009874',
+    name: 'Emily Carter',
+    nationality: 'United Kingdom',
+    trip: {
+        start: '2025-02-10',
+        end: '2025-02-21'
+    },
+    photo: 'https://picsum.photos/id/1005/240/240',
+    dob: '1992-11-08',
+    passport: 'UK12345**89',
+    blood: 'O+',
+    activeAlertStatus: 'Active Alert' // Safe | Active Alert | AI Anomaly
+};
+const itinerary = [{
+    date: '2025-02-11',
+    plan: 'City Museum Tour'
+}, {
+    date: '2025-02-13',
+    plan: 'Hiking – Green Valley'
+}, {
+    date: '2025-02-16',
+    plan: 'Beach & Water Sports'
+}, {
+    date: '2025-02-19',
+    plan: 'Old Fort & Night Market'
+}, {
+    date: '2025-02-20',
+    plan: 'Departure Prep'
+}];
+const contacts = [{
+    name: 'Michael Carter',
+    rel: 'Father',
+    phone: '+44 20 7946 0123',
+    preferred: true
+}, {
+    name: 'Sarah Lee',
+    rel: 'Friend',
+    phone: '+44 7400 555 111',
+    preferred: false
+}];
+const locationHistory = [{
+    ts: '2025-02-20T14:40:00Z',
+    lat: 19.0760,
+    lng: 72.8777,
+    label: 'Gateway Plaza'
+}, {
+    ts: '2025-02-20T15:20:00Z',
+    lat: 19.0855,
+    lng: 72.8891,
+    label: 'Marine Drive'
+}, {
+    ts: '2025-02-20T16:05:00Z',
+    lat: 19.0968,
+    lng: 72.9045,
+    label: 'Fort Area'
+}, {
+    ts: '2025-02-20T16:40:00Z',
+    lat: 19.1041,
+    lng: 72.9152,
+    label: 'Market Square'
+}, {
+    ts: '2025-02-20T17:10:00Z',
+    lat: 19.1129,
+    lng: 72.9256,
+    label: 'Park Entrance'
+}];
+let hasActiveIncident = true;
+let activeIncident = {
+    id: 'INC-2025-11284',
+    state: 'Missing Person Confirmed',
+    status: 'Active'
+};
+
+// --- Role-based visibility ---
+function applyRoleVisibility() {
+    document.querySelectorAll('.role-police').forEach(el => el.style.display = (user.role === 'Police' ? '' : 'none'));
+    document.querySelectorAll('.role-tourism').forEach(el => el.style.display = (user.role === 'Tourism' ? '' : 'none'));
+    document.getElementById('authUserName').textContent = user.name;
+    document.getElementById('authUserRoleSide').textContent = user.role;
+    document.getElementById('authProfileName').textContent = user.name;
+    document.getElementById('authProfileRole').textContent = user.role;
+}
+
+// --- Profile Header population ---
+function populateProfileHeader() {
+    document.getElementById('touristName').textContent = tourist.name;
+    document.getElementById('touristId').textContent = tourist.id;
+    document.getElementById('touristNationality').textContent = tourist.nationality;
+    document.getElementById('tripValidity').textContent = `${formatDate(tourist.trip.start)} – ${formatDate(tourist.trip.end)}`;
+    const badge = document.getElementById('statusBadge');
+    const statusText = document.getElementById('statusText');
+    statusText.textContent = tourist.activeAlertStatus;
+    badge.classList.remove('success', 'error', 'warning');
+    if (tourist.activeAlertStatus === 'Safe') badge.classList.add('success');
+    else if (tourist.activeAlertStatus === 'Active Alert') badge.classList.add('error');
+    else badge.classList.add('warning');
+    // Details tab
+    document.getElementById('piName').textContent = tourist.name;
+    document.getElementById('piDob').textContent = formatDate(tourist.dob);
+    document.getElementById('piPassport').textContent = maskPassport(tourist.passport);
+    document.getElementById('piBlood').textContent = tourist.blood;
+    document.getElementById('piNationality').textContent = tourist.nationality;
+    // Itinerary
+    const itList = document.getElementById('itineraryList');
+    itList.innerHTML = itinerary.map(item => `<li class="list-group-item d-flex justify-content-between"><span><i class='fa-solid fa-calendar-day me-2'></i>${formatDate(item.date)}</span><span class="text-muted">${item.plan}</span></li>`).join('');
+    // Contacts
+    const ctBody = document.getElementById('contactsTable');
+    ctBody.innerHTML = contacts.map(c => `<tr><td>${c.name}</td><td>${c.rel}</td><td><a href='tel:${c.phone.replace(/\s/g,'')}' class='text-decoration-none'><i class='fa-solid fa-phone me-1'></i>${c.phone}</a></td><td>${c.preferred ? '<span class="badge text-bg-success">Yes</span>' : '<span class="badge text-bg-secondary">No</span>'}</td></tr>`).join('');
+}
+
+function maskPassport(p) {
+    if (!p) return '*********';
+    return p.replace(/.(?=.{3})/g, '*');
+}
+
+function formatDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit'
+    });
+}
+
+// --- Action toolbar state ---
+function initActions() {
+    const viewBtn = document.getElementById('viewIncidentBtn');
+    const efirBtn = document.getElementById('generateEfirBtn');
+    // simulate loading
+    setTimeout(() => {
+        if (hasActiveIncident) {
+            viewBtn.classList.remove('disabled');
+            viewBtn.removeAttribute('aria-disabled');
+            viewBtn.href = `./incident_details.html?incidentId=${encodeURIComponent(activeIncident.id)}`;
+        }
+        if (user.permissions.includes('E-FIR Generation') && activeIncident && activeIncident.state === 'Missing Person Confirmed') {
+            efirBtn.classList.remove('disabled');
+            efirBtn.removeAttribute('aria-disabled');
+        }
+        document.getElementById('lastUpdate').textContent = 'Last update: just now';
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2400,
+            icon: 'success',
+            title: 'Tourist profile loaded'
+        });
+    }, 800);
+
+    efirBtn.addEventListener('click', (e) => {
+        if (efirBtn.classList.contains('disabled')) {
+            e.preventDefault();
+            return;
+        }
+        e.preventDefault();
+        Swal.fire({
+            title: 'Generate E-FIR?',
+            text: 'This will open a pre-filled E-FIR form for this tourist.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Proceed',
+            confirmButtonColor: '#d33'
+        }).then(res => {
+            if (res.isConfirmed) {
+                window.location.href = `./efir_form.html?touristId=${encodeURIComponent(tourist.id)}&incidentId=${encodeURIComponent(activeIncident.id)}`;
+            }
+        });
+    });
+}
+
+// --- Map ---
+let map, liveMarker, pathLine, follow = true;
+
+function initMap() {
+    const mapEl = document.getElementById('map');
+    map = L.map(mapEl, {
+        zoomControl: true
+    }).setView([locationHistory[locationHistory.length - 1].lat, locationHistory[locationHistory.length - 1].lng], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+    // High-risk zone overlay (example polygon)
+    const riskPoly = L.polygon([
+        [19.10, 72.88],
+        [19.12, 72.90],
+        [19.11, 72.93],
+        [19.08, 72.91]
+    ], {
+        color: '#CD2026',
+        weight: 2,
+        fillColor: '#CD2026',
+        fillOpacity: 0.12
+    }).addTo(map);
+    riskPoly.bindTooltip('High-Risk Zone', {
+        sticky: true
+    });
+    // Path
+    pathLine = L.polyline(locationHistory.map(p => [p.lat, p.lng]), {
+        color: '#0d6efd',
+        weight: 3
+    }).addTo(map);
+    // Live marker using DivIcon pulse
+    const last = locationHistory[locationHistory.length - 1];
+    const divIcon = L.divIcon({
+        className: 'pulse-marker',
+        html: '<div class="pulse"></div><div class="dot"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+    });
+    liveMarker = L.marker([last.lat, last.lng], {
+        icon: divIcon
+    }).addTo(map).bindPopup(`<b>${tourist.name}</b><br>${last.label}`);
+    setTimeout(() => map.invalidateSize(), 200);
+    mapEl.classList.remove('skeleton');
+
+    // Controls
+    document.getElementById('recenterBtn').addEventListener('click', () => {
+        const pos = liveMarker.getLatLng();
+        map.setView(pos, 15, {
+            animate: true
+        });
+    });
+    document.getElementById('followSwitch').addEventListener('change', (e) => follow = e.target.checked);
+
+    // Click history to fly
+    renderLocationHistory();
+
+    // Simulated live updates
+    simulateLiveUpdates();
+}
+
+function renderLocationHistory() {
+    const list = document.getElementById('locationHistory');
+    list.innerHTML = '';
+    locationHistory.slice().reverse().forEach((p, idx) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center cursor-pointer';
+        const dt = new Date(p.ts);
+        li.innerHTML = `<span><i class='fa-regular fa-clock me-2'></i>${dt.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} — ${p.label}</span><span class='text-muted'>${dt.toLocaleDateString()}</span>`;
+        li.addEventListener('click', () => {
+            map.flyTo([p.lat, p.lng], 15);
+            L.popup().setLatLng([p.lat, p.lng]).setContent(`<small>${dt.toLocaleString()}<br>${p.label}</small>`).openOn(map);
+        });
+        list.appendChild(li);
+    });
+}
+
+function simulateLiveUpdates() {
+    let t = 0;
+    setInterval(() => {
+        // jitter
+        const last = liveMarker.getLatLng();
+        const nLat = last.lat + (Math.random() - 0.5) * 0.0015;
+        const nLng = last.lng + (Math.random() - 0.5) * 0.0015;
+        liveMarker.setLatLng([nLat, nLng]);
+        pathLine.addLatLng([nLat, nLng]);
+        if (follow) map.panTo([nLat, nLng], {
+            animate: true
+        });
+        document.getElementById('lastUpdate').textContent = 'Last update: just now';
+        // periodically append to history
+        t++;
+        if (t % 6 === 0) {
+            const entry = {
+                ts: new Date().toISOString(),
+                lat: nLat,
+                lng: nLng,
+                label: 'Auto Ping'
+            };
+            locationHistory.push(entry);
+            renderLocationHistory();
+        }
+    }, 5000);
+
+    // Simulate status change from Active Alert to Safe
+    setTimeout(() => {
+        tourist.activeAlertStatus = 'Safe';
+        populateProfileHeader();
+        Swal.fire({
+            icon: 'success',
+            title: 'Alert Resolved',
+            text: 'Tourist status updated to Safe',
+            timer: 2500,
+            showConfirmButton: false
+        });
+    }, 18000);
+}
+
+// --- Incident History Table ---
+const allIncidents = [{
+    id: 'INC-2025-11284',
+    type: 'Panic',
+    datetime: '2025-02-20T16:50:00Z',
+    status: 'Active'
+}, {
+    id: 'INC-2025-10978',
+    type: 'AI Anomaly',
+    datetime: '2025-02-18T09:20:00Z',
+    status: 'Resolved'
+}, {
+    id: 'INC-2025-10712',
+    type: 'Manual Report',
+    datetime: '2025-02-15T14:15:00Z',
+    status: 'Resolved'
+}, {
+    id: 'INC-2025-11101',
+    type: 'AI Anomaly',
+    datetime: '2025-02-19T11:40:00Z',
+    status: 'Escalated'
+}, {
+    id: 'INC-2025-10666',
+    type: 'Panic',
+    datetime: '2025-02-14T20:05:00Z',
+    status: 'Resolved'
+}, {
+    id: 'INC-2025-11045',
+    type: 'Manual Report',
+    datetime: '2025-02-18T19:30:00Z',
+    status: 'Resolved'
+}];
+let tableState = {
+    page: 1,
+    pageSize: 5,
+    sortBy: 'datetime',
+    sortDir: 'desc',
+    type: '',
+    status: '',
+    search: ''
+};
+
+function renderIncidents() {
+    let rows = allIncidents.slice();
+    // filter
+    if (tableState.type) rows = rows.filter(r => r.type === tableState.type);
+    if (tableState.status) rows = rows.filter(r => r.status === tableState.status);
+    if (tableState.search) {
+        const s = tableState.search.toLowerCase();
+        rows = rows.filter(r => r.id.toLowerCase().includes(s) || r.type.toLowerCase().includes(s));
+    }
+    // sort
+    rows.sort((a, b) => {
+        let av = a[tableState.sortBy],
+            bv = b[tableState.sortBy];
+        if (tableState.sortBy === 'datetime') {
+            av = new Date(av).getTime();
+            bv = new Date(bv).getTime();
+        }
+        if (av < bv) return tableState.sortDir === 'asc' ? -1 : 1;
+        if (av > bv) return tableState.sortDir === 'asc' ? 1 : -1;
+        return 0;
+    });
+    // paginate
+    const total = rows.length;
+    const start = (tableState.page - 1) * tableState.pageSize;
+    const pageRows = rows.slice(start, start + tableState.pageSize);
+
+    const tbody = document.querySelector('#incidentsTable tbody');
+    tbody.innerHTML = pageRows.map(r => {
+        const dt = new Date(r.datetime);
+        const badge = r.status === 'Active' ? 'warning' : (r.status === 'Escalated' ? 'danger' : 'success');
+        return `<tr class='hoverable-row'>
+          <td class='fw-semibold'>${r.id}</td>
+          <td>${r.type}</td>
+          <td>${dt.toLocaleDateString()} ${dt.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</td>
+          <td><span class='badge text-bg-${badge}'>${r.status}</span></td>
+          <td><a href='./incident_details.html?incidentId=${encodeURIComponent(r.id)}' class='btn btn-sm btn-outline-primary'><i class='fa-solid fa-arrow-up-right-from-square'></i></a></td>
+        </tr>`;
+    }).join('');
+
+    const info = document.getElementById('paginationInfo');
+    const end = Math.min(start + tableState.pageSize, total);
+    info.textContent = total === 0 ? 'No records' : `Showing ${start+1}–${end} of ${total}`;
+
+    const prev = document.querySelector('#pager [data-page="prev"]').parentElement;
+    const next = document.querySelector('#pager [data-page="next"]').parentElement;
+    prev.classList.toggle('disabled', tableState.page === 1);
+    next.classList.toggle('disabled', end >= total);
+}
+
+function initIncidentControls() {
+    document.getElementById('filterType').addEventListener('change', e => {
+        tableState.type = e.target.value;
+        tableState.page = 1;
+        renderIncidents();
+    });
+    document.getElementById('filterStatus').addEventListener('change', e => {
+        tableState.status = e.target.value;
+        tableState.page = 1;
+        renderIncidents();
+    });
+    document.getElementById('searchInc').addEventListener('input', e => {
+        tableState.search = e.target.value;
+        tableState.page = 1;
+        renderIncidents();
+    });
+    document.getElementById('sortByDate').addEventListener('click', () => {
+        tableState.sortBy = 'datetime';
+        tableState.sortDir = tableState.sortDir === 'asc' ? 'desc' : 'asc';
+        renderIncidents();
+    });
+    document.getElementById('sortById').addEventListener('click', () => {
+        tableState.sortBy = 'id';
+        tableState.sortDir = tableState.sortDir === 'asc' ? 'desc' : 'asc';
+        renderIncidents();
+    });
+    document.querySelector('#pager [data-page="prev"]').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (tableState.page > 1) {
+            tableState.page--;
+            renderIncidents();
+        }
+    });
+    document.querySelector('#pager [data-page="next"]').addEventListener('click', (e) => {
+        e.preventDefault();
+        tableState.page++;
+        renderIncidents();
+    });
+}
+
+// --- Sidebar toggle for small screens ---
+function initSidebarToggle() {
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const aside = document.getElementById('authSidebar');
+    toggleBtn.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+            aside.classList.toggle('d-none');
+        } else {
+            // for md+ we can collapse to a narrow rail if desired in future
+            aside.classList.toggle('collapsed-temp');
+            document.getElementById('mainContent').classList.toggle('expanded-temp');
+        }
+    });
+    // Close sidebar when clicking outside on small screens
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 768 && !document.getElementById('authSidebar').contains(e.target) && !document.getElementById('sidebarToggle').contains(e.target)) {
+            document.getElementById('authSidebar').classList.add('d-none');
+        }
+    });
+}
+
+// --- Init ---
+window.addEventListener('DOMContentLoaded', () => {
+    applyRoleVisibility();
+    populateProfileHeader();
+    initActions();
+    initMap();
+    initIncidentControls();
+    renderIncidents();
+    initSidebarToggle();
+});
+  </script>
+ </body>
+</html>

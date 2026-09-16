@@ -1,0 +1,92 @@
+/* zone_editor.css - Page-specific styles for Zone Editor */
+/* Use Poppins on this page for brand typography */
+body {
+    font-family: "Poppins", var(--font-sans)
+    }
+/* Adjust main workspace layout */
+.zone-workspace {
+    min-height: calc(100vh - 56px - 48px);
+    /* navbar + footer approx */
+    }
+/* Left panel sizing */
+.zone-list-panel {
+    width: 360px;
+    max-width: 420px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column
+    }
+.zone-list-panel #zoneListContainer {
+    flex: 1
+    }
+/* Map panel fills remaining space */
+.map-panel {
+    flex: 1;
+    background: var(--surface-0)
+    }
+#map {
+    width: 100%;
+    min-height: calc(100vh - 56px - 48px - 140px);
+    /* header area margin accounted */
+    }
+/* Drawing toolbar overlay */
+.drawing-toolbar {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10
+    }
+.drawing-toolbar .btn {
+    min-width: 36px
+    }
+/* Map legend */
+.map-legend {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 5
+    }
+.legend-box {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 2px
+    }
+/* Zone list item active state leveraging Bootstrap */
+.zone-list-item.active {
+    background-color: rgba(13, 110, 253, 0.08);
+    border-left: 3px solid #0d6efd
+    }
+/* Offcanvas width for comfortable form editing */
+.offcanvas.offcanvas-end {
+    width: 420px
+    }
+@media (max-width: 575.98px) {
+    .offcanvas.offcanvas-end {
+        width: 100%
+        }
+    }
+/* Improve accessibility of small text */
+.form-text {
+    color: var(--text-muted)
+    }
+/* Ensure the sidebar provided styles apply consistently */
+.auth-sidebar .nav-link {
+    color: #333;
+    border-radius: 0.375rem
+    }
+.auth-sidebar .nav-link:hover {
+    background-color: rgba(13, 110, 253, 0.08);
+    color: #0d6efd
+    }
+.auth-sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff
+    }
+.auth-sidebar .section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem
+    }

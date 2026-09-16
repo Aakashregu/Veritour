@@ -1,0 +1,56 @@
+/* login_page.css - Page specific styles (avoid duplicating style.css) */
+/* Use Poppins for this page (fallbacks are defined in head script) */
+body {
+    font-family: "Poppins", var(--font-sans)
+    }
+/* Centered login card enhancements */
+.login-form-container {
+    /* style.css already defines primary card look */
+    padding: var(--space-6)
+    }
+.login-brand .login-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-1)
+    }
+.login-brand small {
+    color: var(--text-muted)
+    }
+/* Input focus ring alignment */
+/* Improve input group aesthetics */
+.input-group-text {
+    min-width: 42px;
+    justify-content: center
+    }
+/* Toggle visibility button alignment */
+#togglePassword {
+    border-left: 0
+    }
+#togglePassword i {
+    width: 18px
+    }
+/* Error box focus for accessibility */
+#authError {
+    outline: none
+    }
+/* Demo credentials table */
+.card .table code {
+    color: var(--text-strong)
+    }
+.card .table a {
+    text-decoration: none
+    }
+.card .table a:hover {
+    text-decoration: underline
+    }
+/* Progress bar spacing */
+#loginProgress {
+    margin-top: 8px
+    }
+/* Responsive tweaks */
+@media (max-width: 575.98px) {
+    .login-form-container {
+        padding: var(--space-4)
+        }
+    }

@@ -1,0 +1,89 @@
+/* analytics_dashboard.css - page-specific styles */
+/* Layout shell to align sidebar and content */
+.main-shell {
+    min-height: 100vh
+    }
+/* Sticky sub-header under navbar for page breadcrumbs/title */
+.analytics-page-header {
+    top: 56px;
+    z-index: var(--z-nav)
+    }
+/* Filter panel background and subtle border */
+.filter-panel {
+    background: var(--surface-0)
+    }
+/* Hotspot map height */
+.hotspot-map {
+    height: 420px;
+    width: 100%;
+    border: 1px solid var(--border-color)
+    }
+/* Chart container responsive heights */
+#incidentsOverTime {
+    min-height: 320px
+    }
+#incidentBreakdown {
+    max-width: 520px
+    }
+/* Table header sort affordance */
+#breakdownTable thead th[role="button"] {
+    cursor: pointer;
+    user-select: none
+    }
+/* Mobile sidebar behavior & overlay */
+@media (max-width: 991.98px) {
+    #leftSidebar {
+        position: fixed;
+        top: 56px;
+        bottom: 0;
+        left: 0;
+        transform: translatex(-100%);
+        transition: transform 0.25s ease;
+        z-index: 1040;
+        overflow-y: auto
+        }
+    #leftSidebar.open {
+        transform: translatex(0)
+        }
+    .content-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1030
+        }
+    .content-overlay.show {
+        display: block
+        }
+    }
+/* Ensure main content has proper spacing */
+main {
+    background: transparent
+    }
+/* Better visual separation for KPI cards */
+.metric-card {
+    border: 1px solid var(--border-color)
+    }
+/* Breadcrumb and header spacing adjustments */
+.page-header .breadcrumb {
+    padding: 0;
+    margin-bottom: 0.25rem
+    }
+/* Minor utility for buttons in tables */
+.btn-group .btn {
+    min-width: 34px
+    }
+/* Improve Choices select to fit theme */
+.choices__inner {
+    border-radius: var(--radius-1);
+    border-color: var(--border-color)
+    }
+.choices__list--multiple .choices__item {
+    background-color: var(--primary-soft);
+    color: var(--text-strong);
+    border: 1px solid rgba(13, 110, 253, 0.25)
+    }
+/* Tabs content card look */
+#vizTabsContent {
+    background: var(--surface-0)
+    }
